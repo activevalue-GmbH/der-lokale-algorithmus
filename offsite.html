@@ -1261,11 +1261,7 @@
 
     .slide.photo-divider .divider-layout {
       max-width: 1180px;
-    }
-
-    .slide.photo-divider .block-number {
-      color: rgba(250, 250, 248, 0.72);
-      text-shadow: 0 20px 58px rgba(0, 0, 0, 0.62);
+      grid-template-columns: minmax(0, 760px);
     }
 
     .slide.photo-divider .divider-copy {
@@ -3064,7 +3060,7 @@
         block: "01",
         kicker: "Block 1",
         headline: "Einordnung & Diagnose.",
-        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
+        photoDivider: "assets/editorial/local-divider-block-1.webp",
         lead: "Jetzt prüfen wir, welche Veränderungen im regionalen Alltag diese neue Logik notwendig machen.",
         note: "Großer Trenner als eigentlicher Start von Block 1. Danach folgt die Evidenzbasis und dann die Diagnose der Menschen in der Region."
       },
@@ -3448,7 +3444,7 @@
         block: "02",
         kicker: "Block 2 · Einordnung",
         headline: "Was bedeutet diese Diagnose für regionale Medien?",
-        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
+        photoDivider: "assets/editorial/local-divider-block-2.webp",
         lead: "Bevor wir KStA.Connect als Antwort formulieren, prüfen wir die eigene Rolle: Was haben Medien international bereits entwickelt, wo liegen die Grenzen, und wer besetzt die Teilfelder?",
         note: "Großer Trenner fuer Block 2. Kurz stehen lassen, damit der Blockwechsel klar wird."
       },
@@ -3655,7 +3651,7 @@
         block: "03",
         kicker: "Block 3",
         headline: "Die Antwort. KStA.Connect.",
-        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
+        photoDivider: "assets/editorial/local-divider-block-3.webp",
         lead: "Der eine Satz. Was ist das?",
         note: "Ab hier wird aus Diagnose Lösung. Diese Folien müssen knapp und sehr präzise werden."
       },
@@ -3826,7 +3822,7 @@
         block: "04",
         kicker: "Block 4",
         headline: "Wie aus Haltung Methode wird.",
-        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
+        photoDivider: "assets/editorial/local-divider-block-4.webp",
         lead: "Die Latte hängt hoch. Jetzt geben wir dem Ganzen Struktur.",
         note: "Neuer konkreter Block 4. Ab hier wird die strategische Haltung in Methode uebersetzt."
       },
@@ -4245,10 +4241,11 @@
       }
 
       if (slide.kind === "divider") {
+        const blockNumberMarkup = slide.photoDivider ? "" : `<div class="block-number">${escapeHtml(slide.block)}</div>`;
         return `
           <div class="content">
             <div class="divider-layout">
-              <div class="block-number">${escapeHtml(slide.block)}</div>
+              ${blockNumberMarkup}
               <div class="divider-copy">
                 <span class="kicker">${escapeHtml(slide.kicker)}</span>
                 <h2>${escapeHtml(slide.headline)}</h2>
