@@ -1231,6 +1231,62 @@
       align-items: center;
     }
 
+    .slide.photo-divider {
+      background-color: #0d0d0c;
+      background-image:
+        linear-gradient(90deg, rgba(11, 11, 10, 0.86) 0%, rgba(11, 11, 10, 0.64) 47%, rgba(11, 11, 10, 0.32) 100%),
+        var(--divider-photo);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .slide.photo-divider::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 28%, rgba(196, 24, 31, 0.24), transparent 30%),
+        linear-gradient(0deg, rgba(11, 11, 10, 0.58), rgba(11, 11, 10, 0.08) 46%, rgba(11, 11, 10, 0.62));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .slide.photo-divider .topline,
+    .slide.photo-divider .footline,
+    .slide.photo-divider .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide.photo-divider .divider-layout {
+      max-width: 1180px;
+    }
+
+    .slide.photo-divider .block-number {
+      color: rgba(250, 250, 248, 0.72);
+      text-shadow: 0 20px 58px rgba(0, 0, 0, 0.62);
+    }
+
+    .slide.photo-divider .divider-copy {
+      max-width: 760px;
+      padding: clamp(28px, 3vw, 46px);
+      border-radius: 34px;
+      background: rgba(11, 11, 10, 0.46);
+      border: 1px solid rgba(250, 250, 248, 0.18);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(3px);
+    }
+
+    .slide.photo-divider .divider-copy h2 {
+      color: rgba(250, 250, 248, 0.96);
+      text-shadow: 0 12px 44px rgba(0, 0, 0, 0.5);
+    }
+
+    .slide.photo-divider .divider-copy .lead {
+      color: rgba(250, 250, 248, 0.74);
+    }
+
     .block-number {
       color: rgba(250, 250, 248, 0.18);
       font-size: clamp(96px, 18vw, 240px);
@@ -3008,6 +3064,7 @@
         block: "01",
         kicker: "Block 1",
         headline: "Einordnung & Diagnose.",
+        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
         lead: "Jetzt prüfen wir, welche Veränderungen im regionalen Alltag diese neue Logik notwendig machen.",
         note: "Großer Trenner als eigentlicher Start von Block 1. Danach folgt die Evidenzbasis und dann die Diagnose der Menschen in der Region."
       },
@@ -3391,6 +3448,7 @@
         block: "02",
         kicker: "Block 2 · Einordnung",
         headline: "Was bedeutet diese Diagnose für regionale Medien?",
+        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
         lead: "Bevor wir KStA.Connect als Antwort formulieren, prüfen wir die eigene Rolle: Was haben Medien international bereits entwickelt, wo liegen die Grenzen, und wer besetzt die Teilfelder?",
         note: "Großer Trenner fuer Block 2. Kurz stehen lassen, damit der Blockwechsel klar wird."
       },
@@ -3597,6 +3655,7 @@
         block: "03",
         kicker: "Block 3",
         headline: "Die Antwort. KStA.Connect.",
+        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
         lead: "Der eine Satz. Was ist das?",
         note: "Ab hier wird aus Diagnose Lösung. Diese Folien müssen knapp und sehr präzise werden."
       },
@@ -3767,6 +3826,7 @@
         block: "04",
         kicker: "Block 4",
         headline: "Wie aus Haltung Methode wird.",
+        photoDivider: "assets/editorial/trenner-lokal-redaktionell.webp",
         lead: "Die Latte hängt hoch. Jetzt geben wir dem Ganzen Struktur.",
         note: "Neuer konkreter Block 4. Ab hier wird die strategische Haltung in Methode uebersetzt."
       },
@@ -4077,7 +4137,39 @@
           ["03", "Was wir weiterentwickeln müssen", "Die ehrliche Lücke."]
         ],
         outro: "Jetzt geht es um das, was noch fehlt.",
-        note: "Wiederholung des Navigationscharts am Ende. Schritt 03 ist aktiv markiert und macht klar: Der naechste Blick gilt dem, was weiterentwickelt werden muss."
+        note: "Navigationschart, Schritt 03 aktiv. Markiert den Einstieg in den letzten Teil von Block 4."
+      },
+      {
+        kind: "statement",
+        theme: "dark",
+        title: "Verkabelung statt Neubau",
+        kicker: "Teil 3 · Was wir weiterentwickeln müssen",
+        headline: "Wir bauen nichts Neues. Wir verbinden, was schon da ist.",
+        lead: "Die vier C sind vorhanden. Was fehlt, ist die Schicht darunter, die sie zusammenführt. Keine neue Redaktion, keine neue Marke. Eine Verbindungsschicht.",
+        note: "Einstieg Teil 3. Wichtig im Ton: Das ist kein IT-Großprojekt und kein Neubau, sondern Verkabelung von Vorhandenem. Das senkt die gefühlte Hürde und beruhigt die Kostenangst."
+      },
+      {
+        kind: "principleChain",
+        theme: "light",
+        title: "Drei Bausteine",
+        kicker: "Teil 3 · Die Architektur",
+        headline: "Drei Bausteine machen aus vier Schichten ein System.",
+        items: [
+          ["Baustein 1", "Aus Login-Daten werden Profile", "Heute weiß KStA, wer eingeloggt ist. Künftig, in welcher Lebenssituation jemand steht. Erst das macht den sozialen Navigator möglich."],
+          ["Baustein 2", "Aus Tags wird ein Knowledge Graph", "iMatrics erkennt heute Orte, Themen, Personen. Künftig werden sie verknüpft: Dieser Ort, dieses Event, diese Person, dieser Stadtteil gehören zusammen."],
+          ["Baustein 3", "Aus getrennten Systemen wird eine Beziehung", "Heute laufen B2C und B2B getrennt. Künftig laufen Nutzer, Anbieter und Angebote in einer Beziehung zusammen. Das ist die CRM-Schicht."]
+        ],
+        outro: "Keiner dieser Bausteine ist ein Neubau. Jeder verbindet etwas, das bereits existiert.",
+        note: "Herzstück von Teil 3. Die drei Bausteine sind die Antwort auf die Lücke-Folie: Profile, Knowledge Graph, CRM. Bewusst als Verbindung vorhandener Teile formuliert, nicht als Neuentwicklung. CRM hier nur prinzipiell, die operative Tiefe (Appolon) kommt später."
+      },
+      {
+        kind: "statement",
+        theme: "warm",
+        title: "Reihenfolge",
+        kicker: "Teil 3 · Priorisierung",
+        headline: "Nicht alles auf einmal. Eines zuerst.",
+        lead: "Die Verbindungsschicht muss nicht in voller Tiefe stehen, bevor der erste Nutzen entsteht. Ein fokussierter Pilot beweist den Mechanismus, bevor die große Maschine gebaut wird. Genau dort gehen wir als Nächstes hin.",
+        note: "Abschluss von Teil 3 und Brücke zur Entscheidung. Kernbotschaft: Die Architektur wird nicht in einem Zug gebaut, sondern am Piloten erprobt. Das entlastet und führt direkt zum nächsten Block, Werttreppe, Erlöslogik, 90-Tage-Pilot."
       }
 
     ];
@@ -4157,7 +4249,7 @@
           <div class="content">
             <div class="divider-layout">
               <div class="block-number">${escapeHtml(slide.block)}</div>
-              <div>
+              <div class="divider-copy">
                 <span class="kicker">${escapeHtml(slide.kicker)}</span>
                 <h2>${escapeHtml(slide.headline)}</h2>
                 <p class="lead">${escapeHtml(slide.lead)}</p>
@@ -4714,7 +4806,10 @@
 
     slides.forEach((slide, i) => {
       const section = document.createElement("section");
-      section.className = `slide ${slide.theme || "light"} ${i === 0 ? "is-active" : ""}`;
+      const slideClasses = ["slide", slide.theme || "light", i === 0 ? "is-active" : ""];
+      if (slide.photoDivider) slideClasses.push("photo-divider");
+      section.className = slideClasses.filter(Boolean).join(" ");
+      if (slide.photoDivider) section.style.setProperty("--divider-photo", `url('${escapeHtml(slide.photoDivider)}')`);
       section.dataset.title = slide.title;
       section.innerHTML = `${renderTopline(slide, i)}${renderSlideInner(slide)}${renderFootline(i)}<aside hidden>${escapeHtml(slide.note || "")}</aside>`;
       deck.appendChild(section);
