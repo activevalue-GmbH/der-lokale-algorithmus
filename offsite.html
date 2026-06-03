@@ -1770,7 +1770,22 @@
       min-height: clamp(220px, 24vw, 320px);
       padding: clamp(24px, 3vw, 42px);
       border: 1px solid var(--line);
+      border-radius: 28px;
       background: rgba(250, 250, 248, 0.52);
+    }
+
+    .mission-panel--mission {
+      border-color: rgba(180, 28, 32, 0.34);
+      background: linear-gradient(135deg, rgba(180, 28, 32, 0.12), rgba(250, 250, 248, 0.76));
+    }
+
+    .mission-panel--narrative {
+      border-color: rgba(19, 19, 17, 0.16);
+      background: linear-gradient(135deg, rgba(19, 19, 17, 0.055), rgba(250, 250, 248, 0.8));
+    }
+
+    .mission-panel.mission-panel--narrative small {
+      color: var(--ink);
     }
 
     .mission-panel small {
@@ -3693,16 +3708,16 @@
       {
         kind: "narrativeMission",
         theme: "warm",
-        title: "Narrativ und Mission",
+        title: "Mission und Narrativ",
         kicker: "Block 3 · Strategische Antwort",
-        headline: "Das Wirkungsspiel von Narrativ und Mission.",
+        headline: "Das Wirkungsspiel von Mission und Narrativ.",
         narrativeLabel: "Narrativ",
         narrativeQuote: "„Ich liebe es, hier zu leben.“",
         narrativeText: "Was beim Menschen entstehen soll.",
         missionLabel: "Mission",
         missionQuote: "„Solange Menschen neugierig auf das Leben sind, öffnen wir, was unsere Region lebenswert macht.“",
         missionText: "Was KStA.Connect dafür leisten muss.",
-        note: "Zusammenspiel von Narrativ und Mission direkt nach der Rollenfolie. Links das Zielgefuehl beim Menschen, rechts die Aufgabe von KStA.Connect."
+        note: "Zusammenspiel von Mission und Narrativ direkt nach der Rollenfolie. Links die Aufgabe von KStA.Connect, rechts das Zielgefuehl beim Menschen."
       },
       {
         kind: "openQuestions",
@@ -4501,16 +4516,16 @@
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <div class="mission-map">
-              <div class="mission-panel">
-                <small>${escapeHtml(slide.narrativeLabel)}</small>
-                <strong>${escapeHtml(slide.narrativeQuote)}</strong>
-                <span>${escapeHtml(slide.narrativeText)}</span>
-              </div>
-              <div class="mission-arrow">←</div>
-              <div class="mission-panel">
+              <div class="mission-panel mission-panel--mission">
                 <small>${escapeHtml(slide.missionLabel)}</small>
                 <strong>${escapeHtml(slide.missionQuote)}</strong>
                 <span>${escapeHtml(slide.missionText)}</span>
+              </div>
+              <div class="mission-arrow">→</div>
+              <div class="mission-panel mission-panel--narrative">
+                <small>${escapeHtml(slide.narrativeLabel)}</small>
+                <strong>${escapeHtml(slide.narrativeQuote)}</strong>
+                <span>${escapeHtml(slide.narrativeText)}</span>
               </div>
             </div>
           </div>`;
