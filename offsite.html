@@ -930,38 +930,60 @@
     }
 
     .media-cycle.compact .cycle-flow {
-      gap: clamp(12px, 1.35vw, 20px);
-      margin-top: clamp(30px, 3.4vw, 48px);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 1.6vw, 22px);
+      margin-top: clamp(26px, 3vw, 40px);
       max-width: 1120px;
     }
 
     .media-cycle.compact .cycle-row {
-      grid-template-columns: minmax(118px, 158px) minmax(0, 1fr);
-      gap: clamp(24px, 3.2vw, 48px);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(12px, 1.2vw, 16px);
+      min-height: clamp(132px, 15vw, 168px);
+      padding: clamp(20px, 2.2vw, 30px);
+      border: 1px solid rgba(28, 25, 23, 0.12);
+      border-radius: 30px;
+      background: rgba(242, 240, 237, 0.82);
+      box-shadow: 0 18px 42px rgba(28, 25, 23, 0.05);
     }
 
     .media-cycle.compact .cycle-value {
-      font-size: clamp(34px, 3.4vw, 50px);
+      color: var(--ink);
+      font-size: clamp(34px, 3.6vw, 52px);
+      line-height: 0.96;
       text-align: left;
+      letter-spacing: -0.035em;
     }
 
-    .cycle-value .red {
+    .red {
       color: var(--red);
     }
 
+    .cycle-value .red {
+      color: inherit;
+    }
+
+    .media-cycle.compact .cycle-copy {
+      gap: clamp(5px, 0.7vw, 8px);
+    }
+
     .media-cycle.compact .cycle-copy h3 {
-      font-size: clamp(18px, 1.7vw, 24px);
+      font-size: clamp(18px, 1.55vw, 23px);
+      line-height: 1.14;
     }
 
     .media-cycle.compact .cycle-copy p {
-      max-width: 900px;
-      font-size: clamp(15px, 1.18vw, 18px);
-      line-height: 1.28;
+      max-width: 500px;
+      font-size: clamp(14px, 1.05vw, 17px);
+      font-weight: 650;
+      line-height: 1.34;
     }
 
     .media-cycle.compact .cycle-conclusion {
-      margin-top: clamp(24px, 2.6vw, 36px);
-      max-width: 1040px;
+      margin-top: clamp(24px, 2.8vw, 38px);
+      max-width: 1080px;
       font-size: clamp(18px, 1.55vw, 23px);
       line-height: 1.36;
     }
@@ -3886,15 +3908,6 @@
         note: "Abschluss von Teil 1. Vier Karten: drei methodische Prinzipien plus oekonomische Klammer."
       },
       {
-        kind: "statement",
-        theme: "dark",
-        title: "Das Betriebssystem",
-        kicker: "Das Betriebssystem",
-        headline: "Hinter all dem liegt ein System.",
-        lead: "Vier Prinzipien beschreiben die Haltung. Damit daraus ein Betrieb wird, braucht es eine Maschine, die jeden Tag läuft. Das ist das 4C-Modell von KStA.Connect.",
-        note: "Dies ist der Hoehepunkt von Teil 1. Bewusst dunkel, damit der Moment Gewicht bekommt. Uebergang von Haltung zu Mechanik. Die Prinzipien waren das Warum und Wie im Denken, das 4C-Modell ist das Wie im Betrieb. Kurz halten, wirken lassen, dann umblaettern zur Erklaerung."
-      },
-      {
         kind: "mediaCycle",
         theme: "light",
         title: "Das 4C-Modell",
@@ -3908,9 +3921,9 @@
             body: "Wir berichten, erzählen, ordnen ein. Der Anfang jeder Beziehung."
           },
           {
-            value: "<span class=\"red\">C</span>ontext",
+            value: "Context",
             title: "erzeugt Verständnis",
-            body: "Wir reichern an: Lebenssituation, Ort, Bedeutung. Aus Information wird Relevanz. Bewusst mit C, weil hier das Herzstück liegt."
+            body: "Wir reichern an: Lebenssituation, Ort, Bedeutung. Aus Information wird Relevanz."
           },
           {
             value: "Connect",
@@ -3925,7 +3938,7 @@
         ],
         arrows: ["", "", "", ""],
         conclusion: "Entlang dieser vier Schritte führen wir Menschen. Und an genau dieser Kette prüfen wir, was wir heute schon haben.",
-        note: "Bewusst hell, ruhig, als Arbeitsraster. Das Kontext mit C offensiv besitzen, nicht verstecken: ja, hier schreiben wir Kontext bewusst mit C, weil es das Herzstueck ist. Wichtig: Die Schlusszeile leitet direkt zu Teil 2 ueber. Das 4C-Modell ist ab hier das Ordnungsraster fuer die Bestandsaufnahme. Jeder vorhandene Baustein bekommt seinen Platz in einem der vier C."
+        note: "Bewusst hell, ruhig, als Arbeitsraster. Die vier C stehen gleichwertig nebeneinander; Context wird nicht farblich herausgehoben, sondern ueber die Bestandsseiten erklaert. Wichtig: Die Schlusszeile leitet direkt zu Teil 2 ueber. Das 4C-Modell ist ab hier das Ordnungsraster fuer die Bestandsaufnahme. Jeder vorhandene Baustein bekommt seinen Platz in einem der vier C."
       },
       {
         kind: "methodAgenda",
@@ -3943,46 +3956,56 @@
         note: "Wiederholung des Navigationscharts nach abgeschlossenem Teil 1. Schritt 02 ist aktiv markiert."
       },
 
+
+      {
+        kind: "statement",
+        theme: "dark",
+        title: "Das Betriebssystem",
+        kicker: "Teil 2 · Was wir haben",
+        headline: "Hinter all dem liegt ein System.",
+        lead: "Das 4C-Modell ist ab jetzt das Betriebssystem der Bestandsaufnahme. Wir prüfen nicht abstrakt, sondern entlang derselben Kette: Content, Context, Connect, Checkout.",
+        note: "Startfolie fuer Teil 2. Nach dem 4C-Modell wird klar: Die Bestandsaufnahme folgt keinem Bauchgefuehl, sondern dem Betriebssystem Content, Context, Connect, Checkout. Kurz halten, dann in die vorhandenen Bausteine einsteigen."
+      },
       {
         kind: "assetGrid",
         theme: "dark",
         title: "Bestand · Content",
         kicker: "Teil 2 · Was wir haben · Content",
-        headline: "Content. Niemand beobachtet die Region dichter.",
+        headline: "<span class=\"red\">C</span>ontent. Niemand beobachtet die Region dichter.",
         cards: [
           ["Redaktionelle Substanz", "Über 300 Webartikel pro Tag über alle Marken. KStA, Rundschau, Express, Duda."],
           ["Reichweite der Marken", "Knapp 160.000 verkaufte Print-Exemplare täglich. 77% Wochenreichweite mit den digitalen Angeboten."],
           ["Lokale Tiefe", "Sieben Lokalradios in der Region. Submarken bis auf Veedel- und Kreisebene."],
           ["Livingdocs", "Modernes Multichannel-CMS seit 2022. Eine Produktion, viele Kanäle."],
-          ["iMatrics", "Automatisches Verschlagworten beim Publizieren. Orte, Themen, Personen, Entitäten."],
           ["Klara, der KI-Redakteur", "Autonome Kuratierung für definierte Quellen, SEO-Import und Redaktionsassistenz."]
         ],
         conclusion: "Das ist die Rohstoffschicht. Sie ist vorhanden, dicht und technisch modern aufgestellt.",
-        note: "Erstes C. Content ist die stärkste vorhandene Schicht. Wichtig im Vortrag: iMatrics taggt heute nur für SEO, nicht für Personalisierung. Das ist schon hier der leise Vorbote der späteren Datenlücke, aber noch nicht aussprechen."
+        note: "Erstes C. Content ist die stärkste vorhandene Schicht. Wichtig im Vortrag: Hier geht es um redaktionelle Substanz, Reichweite und Produktion. Die Verschlagwortung wird bewusst bei Context verortet."
       },
       {
         kind: "assetGrid",
         theme: "dark",
         title: "Bestand · Context",
         kicker: "Teil 2 · Was wir haben · Context",
-        headline: "Context. Die Einordnung, die nur ein Medienhaus leisten kann.",
+        headline: "<span class=\"red\">C</span>ontext. Die Einordnung, die nur ein Medienhaus leisten kann.",
         cards: [
           ["Redaktionelles Urteil", "Journalistinnen mit Namen, Gesicht und Verantwortung. Einordnung statt Algorithmus."],
           ["Themenverticals", "yourJOB, yourIMMO, wirtrauern.de, kleinanzeigen-rheinland. Lebensbereiche, schon besetzt."],
+          ["iMatrics-Verschlagwortung", "Automatisches Erkennen von Orten, Themen, Personen und Entitäten. Ein vorhandener Kontext-Baustein, heute noch vor allem für SEO genutzt."],
           ["Newsletter-Familie", "145.000 dedupliziert Opt-in. Stadt mit K allein 59.000. Kontextkanäle nach Thema."],
           ["DuMont Buchverlag", "Erfolgreiche gemeinsame Formate. Tiefe und Autorenschaft im Konzern verfügbar."],
           ["Personengeführte Orientierung", "Kommentar, Einordnung, Haltung. Vertrauen entsteht an Personen, nicht an Kanälen."],
           ["150 Jahre Marke", "Vertrauensvorsprung, der nicht replizierbar ist. 500 Menschen kommen zu einem Themenabend."]
         ],
         conclusion: "Context ist die Schicht, die KStA von jeder Plattform unterscheidet. Sie ist da, aber sie wird noch nicht systematisch mit dem Content verknüpft.",
-        note: "Zweites C, das Herzstück. Hier sitzt die journalistische Antwort auf die Stadtmarketing-Frage. Context ist redaktionelle Arbeit, kein Datenfeld. Die Verticals zeigen, dass Lebensbereiche schon besetzt sind, nur unverbunden."
+        note: "Zweites C, das Herzstück. Hier sitzt die journalistische Antwort auf die Stadtmarketing-Frage. Context ist redaktionelle Arbeit und semantische Einordnung. iMatrics ist deshalb hier richtig: Es erkennt Orte, Themen, Personen und Entitaeten, wird heute aber noch nicht als Personalisierungs- oder Knowledge-Graph-Schicht genutzt."
       },
       {
         kind: "assetGrid",
         theme: "dark",
         title: "Bestand · Connect",
         kicker: "Teil 2 · Was wir haben · Connect",
-        headline: "Connect. Die Brücke zwischen Mensch und Angebot existiert bereits.",
+        headline: "<span class=\"red\">C</span>onnect. Die Brücke zwischen Mensch und Angebot existiert bereits.",
         cards: [
           ["Rausgegangen", "Event-Discovery und Ticketing. 360.000 Nutzer, 80 Städte. Mehrheitlich DuMont, mit Veranstalter-Self-Service."],
           ["KStA Medien Events", "Eigene Veranstaltungsgesellschaft. Talks, Lesungen, Medizintalks, KStA trifft."],
@@ -3999,17 +4022,17 @@
         theme: "dark",
         title: "Bestand · Checkout",
         kicker: "Teil 2 · Was wir haben · Checkout",
-        headline: "Checkout. Die Brücke von Content zu Transaktion gibt es längst.",
+        headline: "<span class=\"red\">C</span>heckout. Einzelne Transaktionen gibt es — ein gemeinsames System noch nicht.",
         cards: [
-          ["Adenauer-Wein", "Über 11.000 Flaschen verkauft. Geschichte und Relevanz haben die Transaktion vorbereitet."],
-          ["Ticketing", "Eventim-Anbindung und Rausgegangen-Ticketing. Bezahlte Teilnahme ist eingespielt."],
-          ["Leserreisen", "Redaktionell kuratierte Reiseangebote. Content führt direkt in die Buchung."],
-          ["Abo und Zahlungsbeziehung", "13.000 zahlende Digital-Abos. Eine bestehende, wiederkehrende Kundenbeziehung."],
-          ["Affiliate und Vergleich", "Vergleichsrechner, Prospekte, Reiseportal. Lead- und Provisionslogik aktiv."],
-          ["Newsletter-Monetarisierung", "Sponsoring und Affiliate ab 6.000 Abonnenten. Reichweite ist schon heute transaktional."]
+          ["Adenauer-Wein", "Über 11.000 Flaschen verkauft. Geschichte, Anlass und Relevanz haben den Kauf vorbereitet."],
+          ["Ticketing", "Eventim-Anbindung und Rausgegangen-Ticketing. Bezahlte Teilnahme ist technisch und operativ eingespielt."],
+          ["Leserreisen", "Redaktionell kuratierte Reiseangebote. Content kann direkt in eine Buchung führen."],
+          ["Abo und Zahlungsbeziehung", "13.000 zahlende Digital-Abos. Eine bestehende, wiederkehrende Kunden- und Zahlungsbeziehung."],
+          ["Lead- und Provisionsstrecken", "Vergleichsrechner, Prospekte, Reiseportal. Erlöslogik ist da, aber meist als Weiterleitung, nicht als eigener Checkout."],
+          ["Kein zentraler Shop", "Noch fehlt ein gemeinsames Portal, in dem regionale Angebote, Produkte, Buchungen und Events zusammenlaufen."]
         ],
-        conclusion: "Auch Checkout ist keine Zukunftsmusik. KStA verkauft längst. Bisher nur punktuell, nicht als durchgängige Logik.",
-        note: "Viertes C. Checkout beweist, dass die Transaktionskompetenz da ist. Adenauer-Wein ist der sympathische Anker. Damit ist das vierte Prinzip aus Teil 1 real belegt, nicht behauptet."
+        conclusion: "Checkout-Kompetenz ist punktuell belegt. Was fehlt, ist kein weiterer Einzelcase, sondern ein gemeinsames Transaktionssystem.",
+        note: "Viertes C. Nicht ueberbehaupten: KStA hat reale Transaktionen, aber keinen zentralen Shop und kein durchgaengiges Portal. Adenauer-Wein, Ticketing, Leserreisen und Abo belegen die Kompetenz; Lead- und Provisionsstrecken sind angrenzende Erloeslogiken, noch kein eigener Checkout."
       },
       {
         kind: "transitionPlain",
@@ -4404,7 +4427,7 @@
         return `
           <div class="content asset-slide">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
-            <h2>${escapeHtml(slide.headline)}</h2>
+            <h2>${allowInline(slide.headline)}</h2>
             <div class="asset-grid">
               ${slide.cards.map(([title, body]) => `
                 <article class="asset-card">
