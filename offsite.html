@@ -1234,11 +1234,21 @@
     .slide.photo-divider {
       background-color: #0d0d0c;
       background-image:
-        linear-gradient(90deg, rgba(11, 11, 10, 0.86) 0%, rgba(11, 11, 10, 0.64) 47%, rgba(11, 11, 10, 0.32) 100%),
-        var(--divider-photo);
+        linear-gradient(90deg, rgba(11, 11, 10, 0.94) 0%, rgba(11, 11, 10, 0.82) 48%, rgba(11, 11, 10, 0.64) 100%);
+      overflow: hidden;
+    }
+
+    .slide.photo-divider::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--divider-photo);
       background-size: cover;
       background-position: center;
-      overflow: hidden;
+      filter: grayscale(1) saturate(0) contrast(0.86) brightness(0.62);
+      opacity: 0.72;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .slide.photo-divider::after {
@@ -1246,8 +1256,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 18% 28%, rgba(196, 24, 31, 0.24), transparent 30%),
-        linear-gradient(0deg, rgba(11, 11, 10, 0.58), rgba(11, 11, 10, 0.08) 46%, rgba(11, 11, 10, 0.62));
+        radial-gradient(circle at 18% 28%, rgba(196, 24, 31, 0.14), transparent 30%),
+        linear-gradient(0deg, rgba(11, 11, 10, 0.78), rgba(11, 11, 10, 0.34) 46%, rgba(11, 11, 10, 0.8));
       pointer-events: none;
       z-index: 0;
     }
@@ -1261,7 +1271,13 @@
 
     .slide.photo-divider .divider-layout {
       max-width: 1180px;
-      grid-template-columns: minmax(0, 760px);
+      grid-template-columns: minmax(150px, 260px) minmax(0, 760px);
+      column-gap: clamp(26px, 4vw, 58px);
+    }
+
+    .slide.photo-divider .block-number {
+      color: rgba(250, 250, 248, 0.2);
+      text-shadow: 0 22px 70px rgba(0, 0, 0, 0.72);
     }
 
     .slide.photo-divider .divider-copy {
@@ -4241,11 +4257,10 @@
       }
 
       if (slide.kind === "divider") {
-        const blockNumberMarkup = slide.photoDivider ? "" : `<div class="block-number">${escapeHtml(slide.block)}</div>`;
         return `
           <div class="content">
             <div class="divider-layout">
-              ${blockNumberMarkup}
+              <div class="block-number">${escapeHtml(slide.block)}</div>
               <div class="divider-copy">
                 <span class="kicker">${escapeHtml(slide.kicker)}</span>
                 <h2>${escapeHtml(slide.headline)}</h2>
