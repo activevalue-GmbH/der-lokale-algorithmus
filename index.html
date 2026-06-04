@@ -1256,6 +1256,40 @@
       line-height: 1.28;
     }
 
+    .asset-slide.text-compact h2 {
+      max-width: 1080px;
+      font-size: clamp(30px, 3.3vw, 46px);
+      line-height: 1.08;
+    }
+
+    .asset-slide.text-compact .asset-grid {
+      gap: clamp(18px, 2vw, 28px);
+      margin-top: clamp(42px, 4.6vw, 64px);
+    }
+
+    .asset-slide.text-compact .asset-card {
+      gap: 12px;
+      min-height: clamp(148px, 15vw, 200px);
+      padding: clamp(22px, 2.2vw, 30px);
+    }
+
+    .asset-slide.text-compact .asset-card h3 {
+      font-size: clamp(18px, 1.55vw, 23px);
+      line-height: 1.1;
+    }
+
+    .asset-slide.text-compact .asset-card p {
+      font-size: clamp(15px, 1.25vw, 19px);
+      line-height: 1.2;
+    }
+
+    .asset-slide.text-compact .cycle-conclusion {
+      max-width: 980px;
+      margin-top: clamp(28px, 3.1vw, 44px);
+      font-size: clamp(18px, 1.65vw, 25px);
+      line-height: 1.34;
+    }
+
     .divider-layout {
       display: grid;
       grid-template-columns: minmax(180px, 0.38fr) minmax(0, 1fr);
@@ -4143,6 +4177,7 @@
         title: "Bestand · Checkout",
         kicker: "Teil 2 · Was wir haben · Checkout",
         headline: "<span class=\"red\">C</span>heckout. Einzelne Transaktionen gibt es — ein gemeinsames System noch nicht.",
+        textCompact: true,
         cards: [
           ["Adenauer-Wein", "Über 11.000 Flaschen verkauft. Geschichte, Anlass und Relevanz haben den Kauf vorbereitet."],
           ["Ticketing", "Eventim-Anbindung und Rausgegangen-Ticketing. Bezahlte Teilnahme ist technisch und operativ eingespielt."],
@@ -4593,7 +4628,7 @@
 
       if (slide.kind === "assetGrid") {
         return `
-          <div class="content asset-slide ${slide.cards.length > 6 ? "compact" : ""}">
+          <div class="content asset-slide ${slide.cards.length > 6 ? "compact" : ""} ${slide.textCompact ? "text-compact" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowInline(slide.headline)}</h2>
             <div class="asset-grid">
