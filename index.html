@@ -2991,6 +2991,115 @@
         display: none !important;
       }
     }
+
+    .value-stairs {
+      align-content: center;
+    }
+
+    .value-stairs h2 {
+      max-width: 1040px;
+      font-size: clamp(32px, 3.9vw, 54px);
+      line-height: 1.1;
+    }
+
+    .stairs-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: clamp(10px, 1.4vw, 18px);
+      margin-top: clamp(40px, 5vw, 72px);
+      width: 100%;
+    }
+
+    .stair {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex: 1;
+      padding: clamp(16px, 1.6vw, 22px);
+      border: 1px solid var(--line);
+      border-bottom: 3px solid var(--muted);
+      background: rgba(250, 250, 248, 0.5);
+    }
+
+    .dark .stair {
+      border-color: rgba(250, 250, 248, 0.14);
+      border-bottom-color: rgba(250, 250, 248, 0.4);
+      background: rgba(250, 250, 248, 0.04);
+    }
+
+    .stair:nth-child(1) { height: clamp(120px, 16vh, 150px); }
+    .stair:nth-child(2) { height: clamp(160px, 22vh, 210px); }
+    .stair:nth-child(3) { height: clamp(200px, 28vh, 270px); }
+    .stair:nth-child(4) { height: clamp(240px, 34vh, 330px); }
+    .stair:nth-child(5) { height: clamp(280px, 40vh, 390px); }
+
+    .stair.is-peak {
+      border-bottom-color: var(--red);
+      background: rgba(200, 0, 14, 0.06);
+    }
+
+    .dark .stair.is-peak {
+      background: rgba(200, 0, 14, 0.16);
+    }
+
+    .stair-step {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .stair-title {
+      margin-top: 8px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(18px, 1.7vw, 26px);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .dark .stair-title {
+      color: var(--paper);
+    }
+
+    .stair-body {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: clamp(13px, 1.05vw, 16px);
+      font-weight: 600;
+      line-height: 1.32;
+    }
+
+    .dark .stair-body {
+      color: rgba(250, 250, 248, 0.58);
+    }
+
+    .stairs-conclusion {
+      margin-top: clamp(34px, 4vw, 56px);
+      max-width: 1040px;
+      color: var(--body);
+      font-size: clamp(19px, 1.7vw, 26px);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .dark .stairs-conclusion {
+      color: rgba(250, 250, 248, 0.62);
+    }
+
+    @media (max-width: 640px) {
+      .stairs-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .stair,
+      .stair:nth-child(n) {
+        height: auto;
+        min-height: 96px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -4263,7 +4372,134 @@
         headline: "„Alles, was ich hier tue, läuft an einem Ort zusammen.“",
         lead: "Der lokale Marktplatz. Ticket, Anmeldung, Reise, der Wein aus der Region, alles an einem Ort, alles in meinem Dashboard. Und lokale Anbieter stellen ihre Angebote selbst ein, sichtbar nach den Kriterien, die zu mir passen. Aus Lesen wird Handeln, ohne die Plattform zu verlassen.",
         note: "Vierter Spezialstein, bewusst zuletzt, damit die Transaktion nicht als eigentliche Absicht erscheint, sondern als Konsequenz. Wichtig für die Redaktion: erst Mensch, Anschluss, Relevanz, dann Marktplatz. Hier schließt sich Checkout aus dem 4C-Modell."
-      }
+      },
+      {
+              kind: "avatarPlaceholder",
+              theme: "warm",
+              title: "Nina Schluss",
+              name: "Nina, 39, Sülz",
+              sub: "Was sich für sie verändert",
+              quote: "",
+              note: "Emotionale Klammer nach den vier Spezialsteinen. Dieselbe Nina wie in Block 1, die durch Instagram scrollte. Frame bewusst leer, Zitat wird spaeter ergaenzt. Sie schliesst den Produktteil, bevor es in Werttreppe und Entscheidung geht."
+            },
+            {
+              kind: "divider",
+              theme: "dark",
+              title: "Block 5",
+              block: "05",
+              kicker: "Block 5",
+              headline: "Die Richtungsentscheidung.",
+              lead: "Das Zielbild steht. Jetzt klären wir, wie daraus schrittweise Wert entsteht, was der erste Schritt ist und welche Entscheidung heute ansteht.",
+              note: "Grosser Trenner fuer den Schlussblock. Klare Zaesur: weg vom Produktbild, hin zu Wertlogik und Entscheidung."
+            },
+            {
+              kind: "valueStairs",
+              theme: "dark",
+              title: "Werttreppe",
+              kicker: "Block 5 · Werttreppe",
+              headline: "Wert entsteht nicht auf einen Schlag. Er entsteht in Stufen.",
+              stairs: [
+                ["Stufe 1", "Reichweite", "Menschen kommen über Content und vertraute Marke."],
+                ["Stufe 2", "Registrierung & Profil", "Aus Reichweite wird eine bekannte Person mit Lebenssituation."],
+                ["Stufe 3", "Bindung", "Personalisierung und Anschluss machen aus Besuch Gewohnheit."],
+                ["Stufe 4", "Transaktion", "Aus Relevanz und Vertrauen wird Handlung: Ticket, Anmeldung, Kauf."],
+                ["Stufe 5", "Wiederkehrender Erlös", "Abos, Container, qualifizierte Reichweite. Der Wert wird tragfähig."]
+              ],
+              conclusion: "Jede Stufe macht die nächste möglich. Wer Stufe 1 überspringt, erreicht Stufe 5 nie. Genau deshalb beginnt alles mit Relevanz, nicht mit Verkauf.",
+              note: "Herzstueck des oekonomischen Teils. Klassische ansteigende Treppe. Wichtig im Vortrag: Die Reihenfolge ist zwingend, Relevanz zuerst. Das ist die Bruecke zum vierten Prinzip aus Block 4. Die oberste Stufe ist rot, weil dort der tragfaehige Erloes sitzt."
+            },
+            {
+              kind: "cards",
+              theme: "dark",
+              title: "Erlöslogik",
+              kicker: "Block 5 · Erlöslogik",
+              headline: "Drei Quellen, aus denen Wert zurückfließt.",
+              columns: 3,
+              cards: [
+                ["Nutzer", "Zahlen für Zugang", "Premium-Welten, Container im Abo, werbefreie oder erweiterte Nutzung. Wer mehr will, zahlt dafür."],
+                ["Anbieter", "Zahlen für Reichweite", "Lokale Anbieter erreichen Menschen kontextualisiert und qualifiziert, nicht gestreut. Das ist mehr wert als klassische Anzeige."],
+                ["Institutionen", "Zahlen für Infrastruktur", "Stadt, Kultur, Engagement. Wer soziale Teilhabe stärken will, finanziert die Brücke mit, die sie ermöglicht."]
+              ],
+              outro: "Kein Erlösmodell trägt allein. Zusammen ergeben sie eine Logik, die nicht von einer einzigen Quelle abhängt.",
+              note: "Erloeslogik bewusst getrennt von der Werttreppe. Drei Saeulen: Nutzer, Anbieter, Institutionen. Das ist die Antwort auf die stille CFO-Frage, ob das wirtschaftlich traegt. Container-Monetarisierung sitzt in der Nutzer-Saeule."
+            },
+            {
+              kind: "statement",
+              theme: "warm",
+              title: "Der erste Schritt",
+              kicker: "Block 5 · Der erste Schritt",
+              marker: "→",
+              headline: "Nicht alles auf einmal. Ein fokussierter Pilot beweist den Mechanismus.",
+              lead: "Bevor die große Maschine gebaut wird, beweisen wir an einem Feld, dass die Logik trägt. Die Frage ist nicht, ob wir alles können. Die Frage ist, wo wir den Beweis am schnellsten und glaubwürdigsten führen.",
+              note: "Einstieg in den Piloten. Bewusst noch ohne Festlegung auf ein Feld. Erst die Kriterien, dann der Kandidat. Das haelt die Souveraenitaet: wir fuehren ueber Kriterien, nicht ueber Bauchgefuehl."
+            },
+            {
+              kind: "cards",
+              theme: "light",
+              title: "Pilotkriterien",
+              kicker: "Block 5 · Kriterien für den ersten Schritt",
+              headline: "Woran sich ein guter erster Pilot erkennt.",
+              columns: 4,
+              cards: [
+                ["Kriterium 1", "Kanal vorhanden", "Es gibt bereits Inhalte und einen Zugang zu Menschen. Kein Start bei null."],
+                ["Kriterium 2", "Bedürfnis belegt", "Die JTBD-Forschung hat den Bedarf in diesem Feld bereits nachgewiesen."],
+                ["Kriterium 3", "Sozial und transaktional", "Das Feld trägt beide Logiken: Anschluss zwischen Menschen und einen Abschluss."],
+                ["Kriterium 4", "Offen und einladend", "Breit zugänglich, nicht auf eine Szene oder ein Milieu verengt."]
+              ],
+              outro: "An diesen vier Kriterien zeigt sich, welches Feld sich für den ersten Beweis anbietet.",
+              note: "Die Kriterien ergeben sich direkt aus der gesamten Argumentation. Kriterium 4 ist bewusst gesetzt, um vorgepraegte oder einseitige Felder wie den FC als Erstpilot auszuschliessen. Der FC ist stark, aber als erster Beweis zu maennerlastig und zu vorgepraegt."
+            },
+            {
+              kind: "statement",
+              theme: "light",
+              title: "Pilotkandidat",
+              kicker: "Block 5 · Wohin die Kriterien weisen",
+              headline: "Gastronomie und Genuss erfüllt alle vier Kriterien.",
+              lead: "Die Gastro-JTBD-Studie hat die Produktfrage selbst gestellt. Mit dem Genuss-Newsletter und der Genuss-Community im Aufbau existiert der Kanal. Das Feld ist sozial wie transaktional stark und breit einladend. Andere Welten, etwa der FC oder Kultur, können als nächste Themencontainer folgen.",
+              note: "Kein hartes Festnageln, sondern die Kriterien weisen klar auf Gastro und Genuss. FC bewusst als spaeterer Container genannt, nicht als Erstpilot. So bleibt Raum fuer eine gemeinsame Entscheidung im Anschluss, ohne unkonkret zu sein."
+            },
+            {
+              kind: "cards",
+              theme: "dark",
+              title: "Was der Pilot beweist",
+              kicker: "Block 5 · Der Pilot konkret",
+              headline: "Was der Pilot beweisen soll.",
+              columns: 3,
+              cards: [
+                ["Beweisfrage", "Zündet der Anschluss?", "Nutzen Menschen die Möglichkeit, zu sehen, wer aus ihrem Umfeld dabei ist, und senkt das die Schwelle?"],
+                ["Beweisfrage", "Trägt die Transaktion?", "Führt Relevanz tatsächlich zu Handlung: Reservierung, Anmeldung, Kauf?"],
+                ["Beweisfrage", "Hält die Bindung?", "Kommen Menschen wieder, ohne dass man sie neu gewinnen muss?"]
+              ],
+              outro: "Wenige klare Kennzahlen, nicht ein vollständiger Businessplan. Der Pilot ist klein genug, um schnell zu lernen, und groß genug, um den Mechanismus zu zeigen.",
+              note: "Bewusst als Beweisfragen formuliert, nicht als Projektplan. Drei Kennzahlen-Felder: Anschluss, Transaktion, Bindung. Das spiegelt direkt die Werttreppe. Klein halten, schnell lernen."
+            },
+            {
+              kind: "statement",
+              theme: "dark",
+              title: "Die Wette",
+              kicker: "Block 5 · Die Wette",
+              headline: "Das ist eine Wette. Aber eine kalkulierte.",
+              lead: "Die Diagnose ist belastbar, dreifach abgesichert durch externe Forschung, eigene Nutzerforschung und internationale Benchmarks. Die Assets sind vorhanden. Der erste Schritt ist klein. Was wir riskieren, ist überschaubar. Was wir gewinnen können, ist eine neue Rolle im regionalen Alltag.",
+              note: "Dramaturgischer Hoehepunkt. Das Wort Wette bewusst nutzen, aber sofort erden: kalkuliert, weil Diagnose belastbar, Assets da, Pilot klein. Das nimmt die Angst und gibt Wuerde. Direkt vor der eigentlichen Entscheidung."
+            },
+            {
+              kind: "statement",
+              theme: "dark",
+              title: "Die Entscheidung",
+              kicker: "Block 5 · Die Entscheidung",
+              headline: "Die Entscheidung heute ist nicht das ganze System. Es ist der erste Schritt.",
+              lead: "Nicht: Bauen wir die ganze Maschine? Sondern: Gehen wir den Weg, und starten wir den ersten Piloten, der den Mechanismus beweist? Alles Weitere entscheidet sich daran, was der Pilot zeigt.",
+              note: "Der nuechterne Schluss. Eine klare Weiche, keine zehn Fragen. Bewusst entlastend: nicht das ganze System steht zur Abstimmung, nur der erste Schritt. Das macht ein Ja leichter und ehrlicher."
+            },
+            {
+              kind: "statement",
+              theme: "warm",
+              title: "Ausblick",
+              kicker: "Block 5 · Ausblick",
+              headline: "Wenn der Mechanismus hier trägt, trägt er auch anderswo.",
+              lead: "Was in Köln funktioniert, ist nicht auf Köln begrenzt. Dieselbe Logik steht jedem regionalen Medienhaus offen, das vor demselben Wandel steht. Aber das ist der übernächste Schritt. Zuerst beweisen wir es hier.",
+              note: "Leiser Schlussakkord, der den nationalen Skalierungsgedanken aus Block 1 aufnimmt. Bewusst zurueckhaltend: kein Versprechen, sondern ein Horizont. Endet wieder beim ersten Schritt, damit der Fokus nicht verlorengeht."
+            },
     
 
     ];
@@ -4892,6 +5128,25 @@
                 </div>
               `).join("")}
             </div>
+          </div>`;
+      }
+
+
+      if (slide.kind === "valueStairs") {
+        return `
+          <div class="content value-stairs">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <h2>${escapeHtml(slide.headline)}</h2>
+            <div class="stairs-wrap">
+              ${slide.stairs.map((stair, stairIndex) => `
+                <div class="stair ${stairIndex === slide.stairs.length - 1 ? "is-peak" : ""}">
+                  <div class="stair-step">${escapeHtml(stair[0])}</div>
+                  <div class="stair-title">${escapeHtml(stair[1])}</div>
+                  <div class="stair-body">${escapeHtml(stair[2])}</div>
+                </div>
+              `).join("")}
+            </div>
+            ${slide.conclusion ? `<p class="stairs-conclusion">${escapeHtml(slide.conclusion)}</p>` : ""}
           </div>`;
       }
 
