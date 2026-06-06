@@ -5660,7 +5660,17 @@
     };
 
     const fromHash = () => {
-      const match = window.location.hash.match(/^#(\d+)/);
+      const hash = window.location.hash || "";
+      const slugMatch = hash.match(/^#(?:\d+)-(.+)$/);
+      if (slugMatch) {
+        const targetSlug = slugMatch[1];
+        const slugIndex = sections.findIndex((section) => slug(section.dataset.title || "") === targetSlug);
+        if (slugIndex >= 0) {
+          update(slugIndex, false);
+          return;
+        }
+      }
+      const match = hash.match(/^#(\d+)/);
       update(match ? Number(match[1]) - 1 : 0, false);
     };
 
