@@ -3164,7 +3164,434 @@
       }
     }
 
-  </style>
+  
+
+    /* Layout audit fit patch v1: START */
+    /*
+      Ziel: Alle wiederkehrenden Folientemplates auf die harte 16:9-/PDF-Seite
+      von 1600 × 900 px einpassen, ohne Folien einzeln zu verschieben.
+    */
+    .slide {
+      gap: clamp(10px, 1.35vw, 18px);
+      padding: clamp(22px, 3.2vw, 46px);
+    }
+
+    .content {
+      padding-top: clamp(10px, 1.8vw, 24px);
+      padding-bottom: clamp(10px, 1.8vw, 24px);
+    }
+
+    .kicker {
+      margin-bottom: clamp(10px, 1.2vw, 16px);
+      font-size: clamp(12px, 1.05vw, 14px);
+      line-height: 1.22;
+    }
+
+    .lead,
+    .benchmark-subline {
+      margin-top: clamp(14px, 1.6vw, 22px);
+      font-size: clamp(17px, 1.38vw, 21px);
+      line-height: 1.24;
+    }
+
+    .diagnosis-table {
+      margin-top: clamp(18px, 2.2vw, 30px);
+    }
+
+    .diagnosis-row {
+      grid-template-columns: 132px minmax(0, 1fr) 160px;
+      gap: clamp(16px, 2vw, 28px);
+      padding: clamp(10px, 1.18vw, 15px) 0;
+    }
+
+    .diagnosis-signal {
+      font-size: clamp(16px, 1.32vw, 21px);
+      line-height: 1.18;
+    }
+
+    .diagnosis-period,
+    .diagnosis-source {
+      font-size: clamp(12px, 0.95vw, 15px);
+      line-height: 1.22;
+    }
+
+    .model-compare {
+      gap: clamp(18px, 2.4vw, 36px);
+      margin-top: clamp(22px, 2.6vw, 36px);
+    }
+
+    .model-box {
+      gap: clamp(12px, 1.3vw, 18px);
+      min-height: clamp(190px, 20vw, 258px);
+      padding: clamp(20px, 2.2vw, 30px);
+    }
+
+    .model-box li {
+      font-size: clamp(15px, 1.32vw, 20px);
+      line-height: 1.14;
+    }
+
+    .model-conclusion {
+      margin-top: clamp(22px, 2.8vw, 38px);
+      font-size: clamp(17px, 1.46vw, 22px);
+      line-height: 1.3;
+    }
+
+    .media-cycle h2,
+    .benchmark-overview h2,
+    .benchmark-table-slide h2,
+    .local-players-slide h2,
+    .asset-slide h2,
+    .content.compact h2 {
+      font-size: clamp(29px, 3.35vw, 48px);
+      line-height: 1.06;
+    }
+
+    .cycle-flow {
+      gap: clamp(12px, 1.5vw, 20px);
+      margin-top: clamp(22px, 2.8vw, 38px);
+    }
+
+    .cycle-row {
+      gap: clamp(18px, 2.5vw, 36px);
+    }
+
+    .cycle-value {
+      font-size: clamp(38px, 4.2vw, 62px);
+    }
+
+    .cycle-copy h3 {
+      font-size: clamp(17px, 1.45vw, 22px);
+      line-height: 1.12;
+    }
+
+    .cycle-copy p {
+      font-size: clamp(14px, 1.12vw, 17px);
+      line-height: 1.24;
+    }
+
+    .cycle-source {
+      font-size: clamp(12px, 0.92vw, 14px);
+      line-height: 1.18;
+    }
+
+    .media-cycle.compact .cycle-flow {
+      gap: clamp(10px, 1.15vw, 16px);
+      margin-top: clamp(18px, 2.1vw, 28px);
+    }
+
+    .media-cycle.compact .cycle-row {
+      min-height: clamp(108px, 11vw, 132px);
+      padding: clamp(14px, 1.55vw, 20px);
+      border-radius: 24px;
+    }
+
+    .media-cycle.compact .cycle-conclusion,
+    .cycle-conclusion {
+      margin-top: clamp(18px, 2.1vw, 30px);
+      font-size: clamp(16px, 1.32vw, 20px);
+      line-height: 1.28;
+    }
+
+    .benchmark-grid {
+      gap: clamp(14px, 1.6vw, 22px);
+      margin-top: clamp(22px, 2.5vw, 34px);
+    }
+
+    .benchmark-card {
+      gap: clamp(8px, 1vw, 13px);
+      min-height: clamp(150px, 16vw, 205px);
+      padding: clamp(16px, 1.75vw, 24px);
+      border-radius: 22px;
+    }
+
+    .benchmark-card.is-wide {
+      min-height: clamp(128px, 13.5vw, 170px);
+    }
+
+    .logo-mark {
+      width: clamp(60px, 5.2vw, 76px);
+      height: clamp(44px, 4.1vw, 58px);
+      border-radius: 16px;
+    }
+
+    .benchmark-name {
+      font-size: clamp(17px, 1.55vw, 23px);
+      line-height: 1.08;
+    }
+
+    .benchmark-meta {
+      font-size: clamp(13px, 1.12vw, 16px);
+      line-height: 1.14;
+    }
+
+    .benchmark-approach {
+      font-size: clamp(12px, 1vw, 15px);
+      line-height: 1.22;
+    }
+
+    .comparison-table {
+      gap: clamp(12px, 1.35vw, 20px);
+      margin-top: clamp(22px, 2.5vw, 34px);
+    }
+
+    .comparison-row {
+      gap: clamp(18px, 2.5vw, 36px);
+      font-size: clamp(14px, 1.22vw, 18px);
+      line-height: 1.14;
+    }
+
+    .insight-box {
+      margin-top: clamp(20px, 2.4vw, 34px);
+      padding: clamp(18px, 1.9vw, 26px) clamp(20px, 2.1vw, 30px);
+      font-size: clamp(15px, 1.28vw, 19px);
+      line-height: 1.3;
+      border-radius: 0 24px 24px 0;
+    }
+
+    .asset-grid {
+      gap: clamp(12px, 1.35vw, 18px);
+      margin-top: clamp(22px, 2.6vw, 34px);
+    }
+
+    .asset-card {
+      gap: clamp(7px, 0.8vw, 10px);
+      min-height: clamp(118px, 11vw, 146px);
+      padding: clamp(14px, 1.45vw, 20px);
+      border-radius: 24px;
+    }
+
+    .asset-card h3 {
+      font-size: clamp(15px, 1.28vw, 19px);
+      line-height: 1.08;
+    }
+
+    .asset-card p {
+      font-size: clamp(12px, 0.96vw, 14px);
+      line-height: 1.18;
+    }
+
+    .asset-slide.compact .asset-grid,
+    .asset-slide.text-compact .asset-grid {
+      gap: clamp(10px, 1.1vw, 15px);
+      margin-top: clamp(18px, 2.1vw, 28px);
+    }
+
+    .asset-slide.compact .asset-card,
+    .asset-slide.text-compact .asset-card {
+      min-height: clamp(104px, 9.5vw, 126px);
+      padding: clamp(12px, 1.25vw, 17px);
+    }
+
+    .asset-slide.compact .asset-card h3,
+    .asset-slide.text-compact .asset-card h3 {
+      font-size: clamp(14px, 1.12vw, 17px);
+    }
+
+    .asset-slide.compact .asset-card p,
+    .asset-slide.text-compact .asset-card p {
+      font-size: clamp(11px, 0.88vw, 13px);
+      line-height: 1.16;
+    }
+
+    .asset-slide.compact .cycle-conclusion,
+    .asset-slide.text-compact .cycle-conclusion {
+      margin-top: clamp(14px, 1.6vw, 22px);
+      font-size: clamp(14px, 1.12vw, 17px);
+      line-height: 1.2;
+    }
+
+    .phenomenon-title h2 {
+      font-size: clamp(40px, 5vw, 70px);
+    }
+
+    .phenomenon-detail {
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.52fr);
+      gap: clamp(22px, 3vw, 42px);
+      margin-top: clamp(16px, 1.9vw, 26px);
+    }
+
+    .phenomenon-copy {
+      gap: clamp(10px, 1.2vw, 16px);
+      font-size: clamp(14px, 1.12vw, 17px);
+      line-height: 1.27;
+    }
+
+    .content.compact .phenomenon-detail {
+      gap: clamp(18px, 2.5vw, 34px);
+      margin-top: clamp(12px, 1.5vw, 22px);
+    }
+
+    .content.compact .phenomenon-copy {
+      gap: clamp(8px, 1vw, 13px);
+      font-size: clamp(13px, 1vw, 15px);
+      line-height: 1.22;
+    }
+
+    .function-box,
+    .bridge-box,
+    .positive-box {
+      gap: 8px;
+      margin: 2px 0 4px;
+      padding: clamp(12px, 1.3vw, 18px) 0 clamp(12px, 1.3vw, 18px) clamp(16px, 1.8vw, 24px);
+    }
+
+    .function-box div,
+    .bridge-box div,
+    .positive-box div {
+      font-size: clamp(13px, 1.08vw, 16px);
+      line-height: 1.22;
+    }
+
+    .data-stack {
+      gap: clamp(12px, 1.5vw, 20px);
+      padding-top: 0;
+    }
+
+    .data-point {
+      gap: 5px;
+    }
+
+    .data-value {
+      font-size: clamp(34px, 3.2vw, 48px);
+      line-height: 0.9;
+    }
+
+    .data-label {
+      font-size: clamp(12px, 0.95vw, 15px);
+      line-height: 1.18;
+    }
+
+    .data-source {
+      font-size: clamp(11px, 0.82vw, 13px);
+      line-height: 1.16;
+    }
+
+    .sources-line {
+      margin-top: clamp(12px, 1.45vw, 22px);
+      padding-top: 10px;
+      font-size: clamp(10px, 0.78vw, 12px);
+      line-height: 1.22;
+    }
+
+    .content.compact .sources-line {
+      margin-top: clamp(10px, 1.2vw, 18px);
+    }
+
+    .avatar-frame {
+      width: min(100%, 920px);
+      max-height: 500px;
+      aspect-ratio: 16 / 8.7;
+      border-radius: 28px;
+    }
+
+    .avatar-center {
+      gap: 12px;
+    }
+
+    .play-button {
+      width: 64px;
+      height: 64px;
+    }
+
+    .avatar-name {
+      font-size: clamp(20px, 1.8vw, 28px);
+    }
+
+    .avatar-sub {
+      font-size: clamp(13px, 1.1vw, 17px);
+    }
+
+    .avatar-quote {
+      max-width: 980px;
+      margin-top: clamp(18px, 2vw, 28px);
+      font-size: clamp(17px, 1.45vw, 22px);
+      line-height: 1.34;
+    }
+    /* Layout audit fit patch v1: END */
+
+
+    /* Layout audit fit patch v2: START */
+    /* Feinjustierung nach Re-Check: verbleibende Phänomen- und Transition-Folien. */
+    .content.top:has(.phenomenon-detail) h2 {
+      font-size: clamp(30px, 3.35vw, 48px);
+      line-height: 1.04;
+    }
+
+    .phenomenon-detail {
+      gap: clamp(18px, 2.4vw, 34px);
+      margin-top: clamp(10px, 1.35vw, 18px);
+    }
+
+    .phenomenon-copy {
+      gap: clamp(7px, 0.9vw, 12px);
+      font-size: clamp(13px, 0.98vw, 15px);
+      line-height: 1.2;
+    }
+
+    .function-box,
+    .bridge-box,
+    .positive-box {
+      gap: 6px;
+      margin: 0;
+      padding: clamp(9px, 1vw, 14px) 0 clamp(9px, 1vw, 14px) clamp(14px, 1.45vw, 20px);
+    }
+
+    .function-box div,
+    .bridge-box div,
+    .positive-box div {
+      font-size: clamp(12px, 0.92vw, 14px);
+      line-height: 1.18;
+    }
+
+    .data-stack {
+      gap: clamp(8px, 1vw, 14px);
+    }
+
+    .data-point {
+      gap: 3px;
+    }
+
+    .data-value {
+      font-size: clamp(28px, 2.7vw, 40px);
+    }
+
+    .data-label {
+      font-size: clamp(10px, 0.82vw, 12px);
+      line-height: 1.12;
+    }
+
+    .data-source {
+      font-size: clamp(9px, 0.72vw, 11px);
+      line-height: 1.1;
+    }
+
+    .sources-line {
+      margin-top: clamp(6px, 0.75vw, 11px);
+      padding-top: 5px;
+      font-size: clamp(9px, 0.68vw, 10px);
+      line-height: 1.12;
+    }
+
+    .transition-plain h2 {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.05;
+    }
+
+    .transition-copy {
+      gap: clamp(10px, 1.2vw, 16px);
+      margin-top: clamp(20px, 2.3vw, 32px);
+      font-size: clamp(15px, 1.22vw, 19px);
+      line-height: 1.28;
+    }
+
+    .transition-question {
+      margin-top: clamp(18px, 2vw, 28px);
+      font-size: clamp(16px, 1.28vw, 20px);
+      line-height: 1.22;
+    }
+    /* Layout audit fit patch v2: END */
+</style>
 </head>
 <body>
   <main class="deck" id="deck" aria-label="KStA.Connect Offsite-Präsentation"></main>
@@ -3371,58 +3798,6 @@
         note: "Uebersicht fuer den Diagnosepfad. Sie zeigt nicht nur Phaenomene, sondern die Bewegung vom Alltag zur strategischen Aufgabe."
       },
       {
-        kind: "jtbdMirror",
-        theme: "warm",
-        title: "JTBD-Spiegel",
-        kicker: "JTBD-Spiegel",
-        headline: "Die KStA.Connect-eigene Nutzerforschung bestätigt die Diagnose.",
-        lead: "Alles, was wir eben gesehen haben, ist nicht nur unsere These. Sechs eigene JTBD-Studien mit rund 70 Interviews, unabhängig entstanden, bestätigen dieselbe Diagnose.",
-        rows: [
-          {
-            phenomenon: "01 Leben wird nichtlinearer.",
-            sub: "Neuanfänge löschen lokale Routinen",
-            status: "Bestätigt",
-            statusType: "confirmed",
-            evidence: "Leverkusen: Job 1 „Orientierung & Sicherheit im direkten Lebensumfeld“ — besonders stark bei Neuzugezogenen. Zeitung: „Verwurzelung in der Stadt“ als Kernfunktion.",
-            consequence: "Keine Änderung. Phänomen steht."
-          },
-          {
-            phenomenon: "02 Lokale Ordnung trägt weniger.",
-            sub: "Knotenpunkte verschwinden, Neues bleibt unsichtbar",
-            status: "Bestätigt",
-            statusType: "confirmed",
-            evidence: "Gastro: Bestehende Quellen „funktionieren grundsätzlich, sind aber fragmentiert.“ FC: „Ein gezielter Ort dafür fehlt bisher.“ Leverkusen: Trigger „Events verpasst.“",
-            consequence: "Keine Änderung. Gastro-Studie ist stärkster Einzelbeleg."
-          },
-          {
-            phenomenon: "Kerndiagnose: Empfehlungskompetenz bricht weg.",
-            sub: "Filterproblem, nicht Informationsproblem",
-            status: "Geschärft",
-            statusType: "nuanced",
-            evidence: "Gastro: Bewertungen wirken manipuliert, Quellen fragmentiert. Zeitung: Mitreden-Job bestätigt, aber als Informations-, nicht als Empfehlungsfunktion.",
-            consequence: "<strong>Formulierung präzisiert:</strong> KStA.Connect hat das Vertrauen, die Empfehlungsfunktion zu übernehmen, übt sie aber noch nicht aus. Das ist die Lücke."
-          },
-          {
-            phenomenon: "03 Nahraum wird wichtiger, aber schwerer lesbar.",
-            sub: "Rückkehr in die Region ohne Orientierung",
-            status: "Bestätigt",
-            statusType: "confirmed",
-            evidence: "Leverkusen: Jobs „Freizeit sinnvoll gestalten“ und „Mitreden & Anschluss finden.“ Zeitung: Lokale Berichterstattung emotional weit relevanter als nationale.",
-            consequence: "Keine Änderung. Leverkusen-Studie direkt deckungsgleich."
-          },
-          {
-            phenomenon: "04–07 Lücke, neue Formen, Vertrauen.",
-            sub: "Digitale Überflutung, Filterproblem, Qualitätsbedürfnis",
-            status: "Bestätigt",
-            statusType: "confirmed",
-            evidence: "express.de: „Schnelle Orientierung ohne Belastung“ — Filterung schlägt Information. FC: Qualitätsgefilterte Community mit Türsteherfunktion, nicht Social Media. Gastro: ChatGPT und Google fragmentiert und unzuverlässig.",
-            consequence: "Stärkste Bestätigung im Datensatz. Alle 6 Studien belegen das Filterproblem unabhängig voneinander."
-          }
-        ],
-        sources: "JTBD-Primärforschung KStA.Connect Medien 2025/26 · 6 Studien · Zeitung · E-Paper · express.de · FC-Community · Gastro-Community · Leverkusen goes Connect",
-        note: "Neue Mafo-Folie: Sie zeigt, dass die externe Diagnose mit der KStA.Connect-eigenen Nutzerforschung gespiegelt wurde. Nicht im Detail lesen, sondern als methodischen Abgleich nutzen."
-      },
-      {
         kind: "phenomenonTitle",
         theme: "dark",
         title: "Phänomen 01",
@@ -3582,6 +3957,59 @@
         note: "Platzhalter fuer HeyGen-Video. Spaeter lokale MP4 oder Embed einsetzen."
       },
       {
+        kind: "jtbdMirror",
+        theme: "warm",
+        title: "JTBD-Spiegel",
+        kicker: "JTBD-Spiegel",
+        headline: "Die KStA.Connect-eigene Nutzerforschung bestätigt die Diagnose.",
+        lead: "Alles, was wir eben gesehen haben, ist nicht nur unsere These. Sechs eigene JTBD-Studien mit rund 70 Interviews, unabhängig entstanden, bestätigen dieselbe Diagnose.",
+        rows: [
+          {
+            phenomenon: "01 Leben wird nichtlinearer.",
+            sub: "Neuanfänge löschen lokale Routinen",
+            status: "Bestätigt",
+            statusType: "confirmed",
+            evidence: "Leverkusen: Job 1 „Orientierung & Sicherheit im direkten Lebensumfeld“ — besonders stark bei Neuzugezogenen. Zeitung: „Verwurzelung in der Stadt“ als Kernfunktion.",
+            consequence: "Keine Änderung. Phänomen steht."
+          },
+          {
+            phenomenon: "02 Lokale Ordnung trägt weniger.",
+            sub: "Knotenpunkte verschwinden, Neues bleibt unsichtbar",
+            status: "Bestätigt",
+            statusType: "confirmed",
+            evidence: "Gastro: Bestehende Quellen „funktionieren grundsätzlich, sind aber fragmentiert.“ FC: „Ein gezielter Ort dafür fehlt bisher.“ Leverkusen: Trigger „Events verpasst.“",
+            consequence: "Keine Änderung. Gastro-Studie ist stärkster Einzelbeleg."
+          },
+          {
+            phenomenon: "Kerndiagnose: Empfehlungskompetenz bricht weg.",
+            sub: "Filterproblem, nicht Informationsproblem",
+            status: "Geschärft",
+            statusType: "nuanced",
+            evidence: "Gastro: Bewertungen wirken manipuliert, Quellen fragmentiert. Zeitung: Mitreden-Job bestätigt, aber als Informations-, nicht als Empfehlungsfunktion.",
+            consequence: "<strong>Formulierung präzisiert:</strong> KStA.Connect hat das Vertrauen, die Empfehlungsfunktion zu übernehmen, übt sie aber noch nicht aus. Das ist die Lücke."
+          },
+          {
+            phenomenon: "03 Nahraum wird wichtiger, aber schwerer lesbar.",
+            sub: "Rückkehr in die Region ohne Orientierung",
+            status: "Bestätigt",
+            statusType: "confirmed",
+            evidence: "Leverkusen: Jobs „Freizeit sinnvoll gestalten“ und „Mitreden & Anschluss finden.“ Zeitung: Lokale Berichterstattung emotional weit relevanter als nationale.",
+            consequence: "Keine Änderung. Leverkusen-Studie direkt deckungsgleich."
+          },
+          {
+            phenomenon: "04–07 Lücke, neue Formen, Vertrauen.",
+            sub: "Digitale Überflutung, Filterproblem, Qualitätsbedürfnis",
+            status: "Bestätigt",
+            statusType: "confirmed",
+            evidence: "express.de: „Schnelle Orientierung ohne Belastung“ — Filterung schlägt Information. FC: Qualitätsgefilterte Community mit Türsteherfunktion, nicht Social Media. Gastro: ChatGPT und Google fragmentiert und unzuverlässig.",
+            consequence: "Stärkste Bestätigung im Datensatz. Alle 6 Studien belegen das Filterproblem unabhängig voneinander."
+          }
+        ],
+        sources: "JTBD-Primärforschung KStA.Connect Medien 2025/26 · 6 Studien · Zeitung · E-Paper · express.de · FC-Community · Gastro-Community · Leverkusen goes Connect",
+        note: "Neue Mafo-Folie: Sie zeigt, dass die externe Diagnose mit der KStA.Connect-eigenen Nutzerforschung gespiegelt wurde. Nicht im Detail lesen, sondern als methodischen Abgleich nutzen."
+      },
+      
+{
         kind: "divider",
         theme: "dark",
         title: "Zwischenfazit",
@@ -4345,7 +4773,7 @@
         theme: "dark",
         title: "Bestand · Checkout",
         kicker: "Teil 2 · Was wir haben · Checkout",
-        headline: "<span class=\"red\">C</span>heckout. Einzelne Transaktionen gibt es — ein gemeinsames System noch nicht.",
+        headline: "<span class=\"red\">C</span>heckout. Einzelne Transaktionen funktionieren. Ein gemeinsames System fehlt noch.",
         textCompact: true,
         cards: [
           ["Adenauer-Wein", "Über 11.000 Flaschen verkauft. Geschichte, Anlass und Relevanz haben den Kauf vorbereitet."],
