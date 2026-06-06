@@ -5021,7 +5021,16 @@
       .replaceAll("&lt;span class=&quot;red&quot;&gt;", "<span class=\"red\">")
       .replaceAll("&lt;/span&gt;", "</span>");
 
-    const slug = (value) => value
+    const transliterateGerman = (value) => String(value)
+      .replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
+      .replace(/Ä/g, "Ae")
+      .replace(/Ö/g, "Oe")
+      .replace(/Ü/g, "Ue")
+      .replace(/ß/g, "ss");
+
+    const slug = (value) => transliterateGerman(value)
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
