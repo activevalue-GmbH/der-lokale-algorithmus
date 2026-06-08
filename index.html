@@ -3579,6 +3579,7 @@
 
     .phenomena-overview.no-personas .phenomena-row {
       grid-template-columns: 150px minmax(0, 1fr);
+      padding-right: 0;
     }
 
     .phenomena-overview.no-personas .phenomena-persona {
@@ -3592,19 +3593,89 @@
     }
 
     .phenomenon-proportional .phenomenon-detail {
-      grid-template-columns: minmax(0, 0.95fr) minmax(350px, 0.7fr);
-      gap: clamp(30px, 4vw, 58px);
-      margin-top: clamp(20px, 2.55vw, 36px);
+      grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.66fr);
+      gap: clamp(30px, 3.6vw, 52px);
+      margin-top: clamp(18px, 2.25vw, 30px);
     }
 
     .phenomenon-proportional .phenomenon-copy {
-      gap: clamp(11px, 1.25vw, 18px);
-      font-size: clamp(16px, 1.24vw, 20px);
-      line-height: 1.32;
+      gap: clamp(10px, 1.1vw, 16px);
+      font-size: clamp(17px, 1.34vw, 21px);
+      font-weight: 500;
+      line-height: 1.34;
     }
 
     .phenomenon-proportional .phenomenon-copy p {
       max-width: 760px;
+    }
+
+    .phenomenon-bullets {
+      display: grid;
+      gap: clamp(7px, 0.8vw, 12px);
+      margin: 0;
+      padding: 0 0 0 clamp(18px, 1.7vw, 25px);
+      max-width: 790px;
+      color: var(--body);
+      font-weight: 500;
+    }
+
+    .phenomenon-bullets li {
+      padding-left: clamp(4px, 0.45vw, 8px);
+    }
+
+    .phenomenon-bullets li::marker {
+      color: var(--red);
+      font-size: 0.85em;
+    }
+
+    .need-box {
+      display: grid;
+      gap: clamp(5px, 0.55vw, 8px);
+      max-width: 810px;
+      padding: clamp(12px, 1.15vw, 17px) clamp(15px, 1.55vw, 23px);
+      border-left: 4px solid var(--red);
+      background: rgba(180, 28, 32, 0.06);
+      color: var(--body);
+      font-weight: 500;
+      line-height: 1.28;
+    }
+
+    .need-box strong {
+      color: var(--red);
+      font-size: 0.82em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .need-box span {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .jtbd-mirror.expanded h2 {
+      max-width: 1120px;
+      font-size: clamp(40px, 4.9vw, 72px);
+      line-height: 1.02;
+    }
+
+    .jtbd-mirror.expanded .lead {
+      max-width: 980px;
+      font-size: clamp(17px, 1.45vw, 22px);
+      line-height: 1.32;
+    }
+
+    .jtbd-mirror.expanded .mirror-grid {
+      margin-top: clamp(20px, 2.4vw, 34px);
+    }
+
+    .jtbd-mirror.expanded .mirror-row {
+      font-size: clamp(12px, 1.06vw, 15px);
+      line-height: 1.28;
+    }
+
+    .phenomenon-proportional.airy h2 {
+      max-width: 1240px;
+      font-size: clamp(42px, 4.75vw, 70px);
     }
 
     .phenomenon-proportional .function-box,
@@ -3621,11 +3692,11 @@
     }
 
     .phenomenon-proportional .data-stack {
-      gap: clamp(14px, 1.65vw, 24px);
+      gap: clamp(14px, 1.55vw, 22px);
     }
 
     .phenomenon-proportional .data-value {
-      font-size: clamp(42px, 3.9vw, 60px);
+      font-size: clamp(44px, 4.15vw, 64px);
       line-height: 0.92;
     }
 
@@ -3640,14 +3711,15 @@
     }
 
     .insight-line {
-      margin-top: clamp(10px, 1.3vw, 18px);
-      padding-top: clamp(9px, 1.1vw, 14px);
-      border-top: 1px solid rgba(180, 28, 32, 0.28);
+      margin-top: clamp(10px, 1.25vw, 16px);
+      padding: clamp(10px, 1.05vw, 15px) clamp(14px, 1.45vw, 22px);
+      border-left: 4px solid var(--red);
+      background: rgba(180, 28, 32, 0.055);
       color: var(--ink);
-      font-size: clamp(14px, 1.08vw, 16px);
-      font-weight: 700;
-      line-height: 1.28;
-      max-width: 1080px;
+      font-size: clamp(14px, 1.05vw, 16px);
+      font-weight: 600;
+      line-height: 1.26;
+      max-width: 1160px;
     }
 
     .insight-line strong {
@@ -3918,9 +3990,18 @@
         kicker: "PHÄNOMEN 01",
         headline: "Viele lokale Routinen waren früher durch wiederkehrende Strukturen gestützt. Heute verändern Lebensphasen häufiger die Art, wie Menschen ihre Region nutzen.",
         paragraphs: [
-          "<strong>Umzug, Jobwechsel, Trennung, Elternschaft, Pflege, Ruhestand:</strong> Jeder dieser Brüche löscht lokale Routinen und soziale Netze.",
-          "Auch wenn man am selben Ort bleibt, kann ein Lebenswechsel die gesamte lokale Landkarte verändern. Nach einer Trennung ist derselbe Stadtteil plötzlich ein anderer Ort.",
-          "<strong>Entstehendes Bedürfnis:</strong><br>Menschen brauchen Orientierung, die zu ihrer aktuellen Lebensphase passt. Nicht: Was gibt es? Sondern: Was passt zu mir, jetzt?"
+          {
+            type: "bulletList",
+            lines: [
+              "Umzug, Jobwechsel, Trennung, Elternschaft, Pflege, Ruhestand: Jeder dieser Brüche löscht lokale Routinen und soziale Netze.",
+              "Auch wenn man am selben Ort bleibt, kann ein Lebenswechsel die gesamte lokale Landkarte verändern. Nach einer Trennung ist derselbe Stadtteil plötzlich ein anderer Ort."
+            ]
+          },
+          {
+            type: "needBox",
+            label: "Entstehendes Bedürfnis:",
+            text: "Menschen brauchen Orientierung, die zu ihrer aktuellen Lebensphase passt. Nicht: Was gibt es? Sondern: Was passt zu mir, jetzt?"
+          }
         ],
         data: [
           ["~5x", "zieht ein Deutscher heute im Leben um. Früher war das ein, maximal zwei Mal. Jeder Umzug bedeutet: lokale Routinen von null.", "BBSR / EnBW-Studie"],
@@ -3956,17 +4037,26 @@
         kicker: "Phänomen 02",
         headline: "Nicht nur die Menschen verändern sich. Auch die lokale Angebots- und Begegnungsstruktur verändert sich.",
         paragraphs: [
-          "Der Bäcker, die Kneipe, der Schuster, der inhabergeführte Laden: Das waren nicht nur Angebote. Das waren soziale Knotenpunkte. Man wurde erkannt. Man bekam Empfehlungen. Man konnte beiläufig dazugehören.",
-          "Das Kontinuum bricht doppelt: Der Ort verschwindet, und selbst wo er bleibt, verschwindet die Person, die ihn sozial aufgeladen hat.",
-          "Gleichzeitig wächst Neues: Urban Gardening, Repair Cafés, Pop-ups, Laufgruppen. Aber dieses Neue hat kein Schaufenster. Der Übergang ist unbegleitet.",
-          "<strong>Entstehendes Bedürfnis:</strong><br>Die neue Frage lautet nicht mehr: \"Was findet statt?\" Sondern: \"Ist das mein Ort, meine Gruppe, mein Einstieg?\""
+          {
+            type: "bulletList",
+            lines: [
+              "Der Bäcker, die Kneipe, der Schuster, der inhabergeführte Laden: Das waren nicht nur Angebote. Das waren soziale Knotenpunkte. Man wurde erkannt. Man bekam Empfehlungen. Man konnte beiläufig dazugehören.",
+              "Das Kontinuum bricht doppelt: Der Ort verschwindet, und selbst wo er bleibt, verschwindet die Person, die ihn sozial aufgeladen hat.",
+              "Gleichzeitig wächst Neues: Urban Gardening, Repair Cafés, Pop-ups, Laufgruppen. Aber dieses Neue hat kein Schaufenster. Der Übergang ist unbegleitet."
+            ]
+          },
+          {
+            type: "needBox",
+            label: "Entstehendes Bedürfnis:",
+            text: "Die neue Frage lautet nicht mehr: \"Was findet statt?\" Sondern: \"Ist das mein Ort, meine Gruppe, mein Einstieg?\""
+          }
         ],
         data: [
           ["71.000", "Einzelhandelsgeschäfte verschwunden seit 2015", "IFH Köln 2025"],
           ["< 300.000", "Geschäfte erstmals seit der Wiedervereinigung", "IFH Köln 2026"],
-          ["40%", "der Innenstadtbesucher kommen wegen Gastronomie, nicht wegen Einkauf", "IFH Vitale Innenstädte 2024"]
+          ["42%", "Leerstandsquote bei Lokalen, die früher soziale Knotenpunkte waren, höher als im Durchschnitt", "BBE-Analyse 2024"]
         ],
-        sources: "Quellen: IFH Köln 2025 · IFH Vitale Innenstädte 2024 · IÖW 2024",
+        sources: "Quellen: IFH Köln 2025 · IFH Köln 2026 · BBE-Analyse 2024 · IÖW 2024",
         note: "Sachchart fuer Phaenomen 02. Zahlen vor finaler Fassung quellenfest pruefen, insbesondere < 300.000 / IFH Köln 2026."
       },
       {
@@ -3994,7 +4084,14 @@
         kicker: "Kerndiagnose",
         headline: "Früher hat das lokale Umfeld eine Filterfunktion übernommen, die den meisten Menschen nicht bewusst war.",
         paragraphs: [
-          "Der Nachbar, die Kollegin, die Bäckerin: Diese Menschen sagten nicht \"Da ist eine Veranstaltung\", sondern \"Das wäre was für dich.\" Diese Empfehlungsschicht hat drei Dinge gleichzeitig geleistet:",
+          {
+            type: "bulletList",
+            lines: [
+              "Der Nachbar, die Kollegin, die Bäckerin sagten nicht: \"Da ist eine Veranstaltung\", sondern: \"Das wäre was für dich.\"",
+              "Diese Empfehlungsschicht hat drei Dinge gleichzeitig geleistet: gefiltert, die Schwelle gesenkt und Kontext gegeben.",
+              "Die digitale Welt hat das Informationsproblem gelöst, aber das Filterproblem verschärft. Heute weiß man alles, aber nichts davon ist eingeordnet."
+            ]
+          },
           {
             type: "functionBox",
             lines: [
@@ -4003,8 +4100,11 @@
               "<strong>Kontext gegeben:</strong> Das würde dir gefallen, weil ..."
             ]
           },
-          "Die digitale Welt hat das Informationsproblem gelöst, aber das Filterproblem verschärft. Früher wusste man wenig, aber das Wenige war relevant. Heute weiß man alles, aber nichts davon ist eingeordnet.",
-          "<strong>Entstehendes Bedürfnis:</strong><br>Menschen wollen nicht nur wissen, dass es etwas gibt. Sie wollen verstehen, ob sie dort hineinpassen."
+          {
+            type: "needBox",
+            label: "Entstehendes Bedürfnis:",
+            text: "Menschen wollen nicht nur wissen, dass es etwas gibt. Sie wollen verstehen, ob sie dort hineinpassen."
+          }
         ],
         data: [
           ["8,5 Mio.", "Ehrenamtliche in NRW. Problem ist nicht Bereitschaft. Es ist Sichtbarkeit.", "EhrenamtAtlas NRW 2024"],
@@ -4039,15 +4139,19 @@
         kicker: "Phänomen 03",
         headline: "Die Menschen werden in ihre Region zurückgetrieben. Das ist eine Chance. Aber die Orientierung fehlt.",
         paragraphs: [
-          "Durch Homeoffice und hybride Arbeit verbringen viele Menschen wieder mehr Alltag in ihrer direkten Umgebung. Das Veedel wird vom Schlafplatz zum Lebensraum. Arbeiten, Kinder, Einkauf, Bewegung, Freizeit: alles im Radius von wenigen hundert Metern.",
           {
-            type: "positiveBox",
+            type: "bulletList",
             lines: [
-              "Es gibt eine gesellschaftliche Bewegung zurück in die Region. Die Menschen brauchen ihren Nahraum mehr als je zuvor."
+              "Durch Homeoffice und hybride Arbeit verbringen viele Menschen wieder mehr Alltag in ihrer direkten Umgebung. Das Veedel wird vom Schlafplatz zum Lebensraum.",
+              "Es gibt eine gesellschaftliche Bewegung zurück in die Region. Die Menschen brauchen ihren Nahraum mehr als je zuvor.",
+              "Aber genau in dem Moment, in dem der Nahraum an Bedeutung gewinnt, wird die Infrastruktur, die ihn lesbar gemacht hat, schwächer. Menschen wissen nicht, was 500 Meter entfernt passiert."
             ]
           },
-          "Aber genau in dem Moment, in dem der Nahraum an Bedeutung gewinnt, wird die Infrastruktur, die ihn lesbar gemacht hat, schwächer. Menschen wissen nicht, was 500 Meter entfernt passiert. Was früher beiläufig auf dem Weg zur Arbeit entstand, fällt ersatzlos weg.",
-          "<strong>Entstehendes Bedürfnis:</strong><br>Einen Alltag mit mehr Kontaktflächen. Orte, die leicht erreichbar sind, wenig Planung brauchen und ein Gefühl von Leben erzeugen."
+          {
+            type: "needBox",
+            label: "Entstehendes Bedürfnis:",
+            text: "Einen Alltag mit mehr Kontaktflächen. Orte, die leicht erreichbar sind, wenig Planung brauchen und ein Gefühl von Leben erzeugen."
+          }
         ],
         data: [
           ["75% vs. 60%", "Zufriedenheit mit dem eigenen Wohngebiet vs. mit Köln insgesamt", "Stadt Köln 2023"],
@@ -4072,6 +4176,7 @@
         title: "JTBD-Spiegel",
         kicker: "JTBD-Spiegel",
         headline: "Die KStA.Connect-eigene Nutzerforschung bestätigt die Diagnose.",
+        expanded: true,
         lead: "Alles, was wir eben gesehen haben, ist nicht nur unsere These. Sechs eigene JTBD-Studien mit rund 70 Interviews, unabhängig entstanden, bestätigen dieselbe Diagnose.",
         rows: [
           {
@@ -4158,20 +4263,30 @@
         theme: "warm",
         title: "Neue Brücken",
         compact: true,
+        proportional: true,
         kicker: "Neue Brücken",
         headline: "Die Bereitschaft ist da. Die Sehnsucht ist messbar. Die neuen Formen existieren. Aber sie finden nicht zu den Menschen.",
         paragraphs: [
-          "Vereine bleiben wichtig. Aber daneben wachsen neue Formen: Laufgruppen, Pop-up-Formate, offene Tische, Urban Gardening, Repair Cafés, Coworking-Communities, Nachbarschaftsaktionen.",
-          "Gemeinschaft entsteht nicht mehr zuerst durch Beitritt, sondern durch Kontakt. Die Frage lautet nicht \"Wo kann ich Mitglied werden?\", sondern \"Wo kann ich einfach mal mitmachen?\"",
-          "Für diese neuen Formen gibt es keine eingebaute Empfehlungsstruktur. Kein Nachbar sagt \"Komm mal mit zum Run Club.\" Das passiert nur, wenn jemand diese Brücke baut.",
-          "<strong>Entstehendes Bedürfnis:</strong><br>Zugehörigkeit ohne Verpflichtungsdruck. Echte Begegnung, aber nicht sofort Verein, Mitgliedschaft oder Amt."
+          {
+            type: "bulletList",
+            lines: [
+              "Klassische Vereinsstrukturen binden weniger automatisch. Gleichzeitig entstehen neue, offene Formen von Zugehörigkeit: Laufgruppen, Pop-ups, offene Tische, Urban Gardening, Repair Cafés, Nachbarschaftsaktionen.",
+              "Diese Formen funktionieren niederschwelliger. Man muss nicht sofort Mitglied werden. Man kann erst einmal teilnehmen, ausprobieren, wiederkommen.",
+              "Das macht sie attraktiv für eine Gesellschaft, in der Bindung situativer, vorsichtiger und lebensphasenabhängiger geworden ist."
+            ]
+          },
+          {
+            type: "needBox",
+            label: "Entstehendes Bedürfnis:",
+            text: "Auch hier geht es im Kern um soziale Einbindung: Menschen suchen Gemeinschaft, aber in einer Form, die weniger dauerhaft, weniger verpflichtend und stärker passend zur eigenen Situation ist."
+          }
         ],
         data: [
-          ["95%", "wünschen sich mehr Zusammenhalt", "rheingold 2025"],
-          ["79%", "der 18-35-Jährigen wollen mehr Events. 58% bevorzugen \"Soft Socializing\".", "Eventbrite 2026"],
-          ["21% → 30%", "Engagierte ohne formale Mitgliedschaft seit 2012", "ZiviZ 2023"]
+          ["77%", "finden neue Bekanntschaften wichtig, aber schwierig zu beginnen", "Nextdoor 2025"],
+          ["69%", "wollen Menschen in ihrer Nähe kennenlernen", "Nextdoor 2025"],
+          ["81%", "vertrauen Empfehlungen von Menschen aus ihrem Umfeld stärker als Werbung", "Nielsen 2025"]
         ],
-        sources: "Quellen: Identity Foundation/rheingold 2025 · Freiwilligensurvey 2024 · EhrenamtAtlas NRW 2024 · ZiviZ 2023 · Eventbrite 2026 (Trendindikator)",
+        sources: "Quellen: Nextdoor 2025 · Nielsen 2025 · Identity Foundation/rheingold 2025",
         note: "Sachchart zu neuen Gemeinschaftsformen und der Frage, wer Bruecken baut. Eventbrite bewusst als Trendindikator markieren."
       },
       {
@@ -4184,11 +4299,12 @@
       },
       {
         kind: "phenomenonDetail",
-        theme: "dark",
+        theme: "warm",
         title: "Vertrauen Daten",
         compact: true,
+        proportional: true,
         kicker: "Vertrauen",
-        headline: "Information ist überall. Einordnung nirgends. In dieser Fragmentierung wird Vertrauen zum knappsten Gut.",
+        headline: "Information ist überall. Aber Orientierung und Vertrauen entstehen nicht automatisch.",
         paragraphs: [
           "Google zeigt alles, ordnet nichts ein. Instagram zeigt das Schönste, nicht das Relevanteste. Bewertungsportale messen Zufriedenheit, aber nicht lokale Passung.",
           "Die Kanäle sind nach Generation komplett unterschiedlich. Boomer lesen Zeitung, Gen Z lebt auf TikTok, Millennials hören Podcasts. Alle suchen Lokales, aber auf komplett verschiedenen Wegen.",
@@ -4201,11 +4317,11 @@
           }
         ],
         data: [
-          ["77,3%", "Wochenreichweite von Zeitungen und ihren digitalen Angeboten", "ZMG/BDZV 2025"],
-          ["18%", "der Kölner nutzen digitale Nachbarschaftsplattformen. Keine davon gehört einem Medium.", "Urban Studies 2024"],
-          ["25%", "meiden manchmal bewusst Nachrichten. Nicht weil sie desinteressiert sind, sondern überfordert.", "Info-Monitor 2025"]
+          ["76%", "sagen: Vertrauenswürdigkeit ist die wichtigste Rolle lokaler Medien", "Reuters Institute Digital News Report 2025"],
+          ["57%", "empfinden es als hohen Aufwand, verlässliche lokale Informationen zu finden", "Media Activity Guide 2024"],
+          ["46%", "sehen hohen Nutzwert in KI-gestützten lokalen Angeboten. 28% trauen regionalen Medien diese Rolle zu.", "BDZV 2024"]
         ],
-        sources: "Quellen: Mainzer Medienvertrauensstudie 2024 · ZMG/BDZV 2025 · Urban Studies 2024 · Info-Monitor 2025 · ARD/ZDF 2025",
+        sources: "Quellen: Reuters Institute Digital News Report 2025 · Media Activity Guide 2024 · BDZV 2024",
         note: "Letztes Element von Block 1. Diese Folie schliesst die Diagnose und oeffnet die Frage nach der Rolle regionaler Medien."
       },
       {
@@ -4219,7 +4335,7 @@
       },
       {
         kind: "transitionPlain",
-        theme: "dark",
+        theme: "warm",
         title: "Kein Kölner Problem",
         kicker: "Überleitung",
         headline: "Das ist kein Kölner Problem.",
@@ -5288,7 +5404,7 @@
 
       if (slide.kind === "jtbdMirror") {
         return `
-          <div class="content jtbd-mirror">
+          <div class="content jtbd-mirror ${slide.expanded ? "expanded" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <p class="lead">${escapeHtml(slide.lead)}</p>
@@ -5514,7 +5630,7 @@
                 <div class="phenomena-row ${rowIndex === 4 ? "is-break" : ""}">
                   <div><span class="phenomena-tag">${escapeHtml(tag)}</span></div>
                   <div class="phenomena-title">${escapeHtml(title)}</div>
-                  <div class="phenomena-persona">${persona ? `▸ ${escapeHtml(persona)}` : ""}</div>
+                  ${slide.hidePersonas ? "" : `<div class="phenomena-persona">${persona ? `▸ ${escapeHtml(persona)}` : ""}</div>`}
                 </div>
               `).join("")}
             </div>
@@ -5594,6 +5710,12 @@
                   }
                   if (typeof paragraph === "object" && paragraph.type === "positiveBox") {
                     return `<div class="positive-box">${paragraph.lines.map((line) => `<div>${allowEm(line).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</div>`).join("")}</div>`;
+                  }
+                  if (typeof paragraph === "object" && paragraph.type === "bulletList") {
+                    return `<ul class="phenomenon-bullets">${paragraph.lines.map((line) => `<li>${allowEm(line).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</li>`).join("")}</ul>`;
+                  }
+                  if (typeof paragraph === "object" && paragraph.type === "needBox") {
+                    return `<div class="need-box"><strong>${escapeHtml(paragraph.label || "Entstehendes Bedürfnis:")}</strong><span>${allowEm(paragraph.text).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</span></div>`;
                   }
                   return `<p>${allowEm(paragraph).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>`;
                 }).join("")}
