@@ -840,7 +840,8 @@
     .model-box ul {
       display: grid;
       gap: clamp(12px, 1.25vw, 18px);
-      list-style: none;
+      padding-left: clamp(18px, 1.8vw, 26px);
+      list-style: disc;
     }
 
     .model-box li {
@@ -848,6 +849,11 @@
       font-size: clamp(18px, 1.7vw, 25px);
       font-weight: 700;
       line-height: 1.18;
+    }
+
+    .model-box li::marker {
+      color: var(--red);
+      font-size: 0.82em;
     }
 
     .dark .model-box li {
@@ -4404,6 +4410,15 @@
         ],
         conclusion: "Dieser Kreislauf lässt sich nicht durch Optimierung des Bestehenden durchbrechen. Er braucht eine neue Wertschöpfungslogik.",
         note: "Kreislauf-Folie jetzt als Schlussfolgerung in Block 1: Vertrauen bleibt vorhanden, aber Nutzung und Erlöse wandern. Daraus entsteht Druck auf Produktbreite und Relevanz."
+      },
+      {
+        kind: "statement",
+        theme: "dark",
+        title: "Analoges Ritual",
+        kicker: "Block 1 · Schlussfolgerung",
+        headline: "Der alte lokale Algorithmus war kein Code. Er war ein analoges Ritual.",
+        lead: "Zustellung. Frühstück. Abo. Gewohnheit. Lokale Institutionen. Nachbarschaft. Bekannte Gesichter. Diese Kombination hat jeden Tag dieselbe Nutzungssituation hergestellt. Genau das war das Asset der Tageszeitung. Nicht nur der Inhalt. Nicht nur die Marke. Sondern die Selbstverständlichkeit: Sie liegt da. Ich nehme sie. Ich starte mit ihr in den Tag.",
+        note: "Neue Abschlussseite fuer Block 1. Schlussfolgerung aus Modell-Druck und Abwärtsspirale vor dem Wechsel in Block 2."
       },
       {
         kind: "divider",
