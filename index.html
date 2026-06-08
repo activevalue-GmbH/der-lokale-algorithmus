@@ -2004,6 +2004,162 @@
       font-family: var(--serif);
     }
 
+    .strategy-lines,
+    .strategy-algorithm {
+      align-content: center;
+    }
+
+    .strategy-line-stack {
+      display: grid;
+      gap: clamp(18px, 2.2vw, 34px);
+      max-width: 1180px;
+    }
+
+    .strategy-line {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(46px, 5.6vw, 82px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .dark .strategy-line {
+      color: rgba(250, 250, 248, 0.92);
+    }
+
+    .strategy-line.is-muted {
+      color: var(--muted);
+    }
+
+    .dark .strategy-line.is-muted {
+      color: rgba(250, 250, 248, 0.5);
+    }
+
+    .strategy-market-shift {
+      align-content: center;
+    }
+
+    .strategy-market-shift h2 {
+      max-width: 1040px;
+      margin-bottom: clamp(28px, 3.8vw, 54px);
+      font-size: clamp(36px, 4.4vw, 62px);
+      line-height: 1.08;
+    }
+
+    .market-shift-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(22px, 3vw, 46px);
+      max-width: 1160px;
+    }
+
+    .market-shift-column {
+      display: grid;
+      gap: clamp(12px, 1.4vw, 18px);
+      padding: clamp(24px, 2.7vw, 38px);
+      border: 1px solid rgba(250, 250, 248, 0.14);
+      border-radius: 30px;
+      background: rgba(250, 250, 248, 0.035);
+    }
+
+    .market-shift-column.is-new {
+      border-color: rgba(180, 28, 32, 0.48);
+      background: linear-gradient(135deg, rgba(180, 28, 32, 0.14), rgba(250, 250, 248, 0.035));
+    }
+
+    .market-shift-column h3 {
+      color: rgba(250, 250, 248, 0.88);
+      font-size: clamp(23px, 2.3vw, 34px);
+      line-height: 1.1;
+    }
+
+    .market-shift-row {
+      display: grid;
+      grid-template-columns: minmax(96px, 0.38fr) minmax(0, 1fr);
+      gap: clamp(12px, 1.5vw, 22px);
+      align-items: baseline;
+      padding-top: clamp(10px, 1.1vw, 15px);
+      border-top: 1px solid rgba(250, 250, 248, 0.1);
+    }
+
+    .market-shift-label {
+      color: var(--red);
+      font-size: clamp(11px, 0.95vw, 14px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .market-shift-value {
+      color: rgba(250, 250, 248, 0.72);
+      font-size: clamp(16px, 1.45vw, 21px);
+      font-weight: 700;
+      line-height: 1.22;
+    }
+
+    .strategy-algorithm h2 {
+      max-width: 980px;
+      margin-bottom: clamp(28px, 3.4vw, 46px);
+      font-size: clamp(50px, 6.2vw, 88px);
+      line-height: 1;
+    }
+
+    .algorithm-grid {
+      display: grid;
+      grid-template-columns: minmax(330px, 0.82fr) minmax(0, 1fr);
+      gap: clamp(36px, 5vw, 78px);
+      align-items: start;
+      max-width: 1220px;
+    }
+
+    .algorithm-questions {
+      display: grid;
+      gap: clamp(12px, 1.4vw, 18px);
+    }
+
+    .algorithm-question {
+      display: grid;
+      gap: 4px;
+      padding: clamp(14px, 1.5vw, 20px) 0;
+      border-top: 1px solid rgba(250, 250, 248, 0.12);
+    }
+
+    .algorithm-question:last-child {
+      border-bottom: 1px solid rgba(250, 250, 248, 0.12);
+    }
+
+    .algorithm-question strong {
+      color: rgba(250, 250, 248, 0.88);
+      font-family: var(--serif);
+      font-size: clamp(25px, 2.8vw, 42px);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .algorithm-question span {
+      color: rgba(250, 250, 248, 0.48);
+      font-size: clamp(14px, 1.2vw, 18px);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .algorithm-body {
+      display: grid;
+      gap: clamp(18px, 2vw, 28px);
+      color: rgba(250, 250, 248, 0.66);
+      font-size: clamp(21px, 2.05vw, 30px);
+      font-weight: 700;
+      line-height: 1.36;
+    }
+
+    .algorithm-body strong {
+      color: rgba(250, 250, 248, 0.92);
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.4vw, 50px);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
     .phenomenon-detail {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.62fr);
@@ -4602,10 +4758,84 @@
         title: "Block 3",
         block: "03",
         kicker: "Block 3",
-        headline: "Die Antwort. KStA.Connect.",
+        headline: "Die Antwort. Die eine Strategie.",
         photoDivider: "assets/editorial/local-divider-block-3.webp",
-        lead: "Der eine Satz. Was ist das?",
+        lead: "Der eine Satz. Wie kann der lauten?",
         note: "Ab hier wird aus Diagnose Lösung. Diese Folien müssen knapp und sehr präzise werden."
+      },
+      {
+        kind: "strategyLines",
+        theme: "dark",
+        title: "Vom Nachrichtenmarkt zum Möglichkeitsmarkt",
+        kicker: "Block 3 · Strategische Antwort",
+        lines: [
+          "Wir kommen aus dem Markt lokaler Nachrichten.",
+          "Wir gehen in den Markt lokaler Möglichkeiten."
+        ],
+        note: "Neue plakative Erweiterung direkt nach dem Block-3-Trenner. Der Satz markiert den Marktwechsel, nicht nur eine Produktidee."
+      },
+      {
+        kind: "strategyLines",
+        theme: "warm",
+        title: "Von morgens zu jederzeit",
+        kicker: "Block 3 · Strategische Antwort",
+        lines: [
+          "Früher haben wir Menschen morgens gesagt, was in der Stadt passiert ist.",
+          "Künftig zeigen wir ihnen jederzeit, was hier für sie möglich ist, wer dabei ist und wie sie reinkommen."
+        ],
+        mutedIndex: 0,
+        note: "Erklärt den Wechsel von Zeitungssituation zu Möglichkeitslogik. Der zweite Satz trägt die Zukunftsrichtung."
+      },
+      {
+        kind: "strategyLines",
+        theme: "dark",
+        title: "Login ins lokale Leben",
+        kicker: "Block 3 · Strategische Antwort",
+        lines: ["KStA.Connect wird der Login ins lokale Leben."],
+        note: "Der kurze strategische Leitsatz. Groß, allein, stehen lassen."
+      },
+      {
+        kind: "strategyLines",
+        theme: "dark",
+        title: "Region wird Heimat",
+        kicker: "Block 3 · Strategische Antwort",
+        lines: [
+          "KStA.Connect wird der Login ins lokale Leben,",
+          "damit aus Region wieder Heimat werden kann."
+        ],
+        note: "Emotionalisierte Erweiterung des Leitsatzes. Heimat als strategischer Endzustand, nicht als nostalgischer Claim."
+      },
+      {
+        kind: "marketShift",
+        theme: "dark",
+        title: "Marktwechsel",
+        kicker: "Block 3 · Strategische Antwort",
+        headline: "Damit wechseln wir nicht den Kanal. Wir wechseln den Markt.",
+        columns: [
+          {
+            title: "Alter Markt: lokale Nachrichten",
+            tone: "old",
+            rows: [
+              ["Produkt", "Ausgabe"],
+              ["Logik", "bündeln, senden, monetarisieren"],
+              ["Beziehung", "Abo und Gewohnheit"],
+              ["Filter", "Redaktion, Routine, soziales Umfeld"],
+              ["Erlös", "Abo, Anzeige, Reichweite"]
+            ]
+          },
+          {
+            title: "Neuer Markt: lokale Möglichkeiten",
+            tone: "new",
+            rows: [
+              ["Produkt", "Zugang"],
+              ["Logik", "orientieren, verbinden, aktivieren"],
+              ["Beziehung", "Login, Profil, Teilnahme, Wiederkehr"],
+              ["Filter", "Lebenssituation, Vertrauen, Anschluss"],
+              ["Erlös", "Nutzer, Anbieter, Institutionen, Transaktionen"]
+            ]
+          }
+        ],
+        note: "Vergleichsfolie zum Marktwechsel. Wichtig: Nicht Kanalwechsel, sondern Marktwechsel. Links altes Modell, rechts Zielmarkt."
       },
       {
         kind: "statement",
@@ -4713,18 +4943,16 @@
         note: "Grosse Mission-Folie nach dem Mission-Trenner. Bewusst in Anfuehrungszeichen als strategischer Leitsatz."
       },
       {
-        kind: "narrativeMission",
-        theme: "warm",
-        title: "Mission und Narrativ",
+        kind: "strategyLines",
+        theme: "dark",
+        title: "Interface zum lokalen Leben",
         kicker: "Block 3 · Strategische Antwort",
-        headline: "Das Wirkungsspiel von Mission und Narrativ.",
-        narrativeLabel: "Narrativ",
-        narrativeQuote: "„Ich liebe es, hier zu leben.“",
-        narrativeText: "Was beim Menschen entstehen soll.",
-        missionLabel: "Mission",
-        missionQuote: "„Solange Menschen neugierig auf das Leben sind, öffnen wir, was unsere Region lebenswert macht.“",
-        missionText: "Was KStA.Connect dafür leisten muss.",
-        note: "Zusammenspiel von Mission und Narrativ direkt nach der Rollenfolie. Links die Aufgabe von KStA.Connect, rechts das Zielgefuehl beim Menschen."
+        lines: [
+          "KStA.Connect ist nicht das Portal der Region.",
+          "KStA.Connect ist das Interface zum lokalen Leben."
+        ],
+        mutedIndex: 0,
+        note: "Neue Folie statt Mission-/Narrativ-Chart. Portal klingt nach Zielort, Interface nach Funktion im Alltag."
       },
       {
         kind: "openQuestions",
@@ -4936,7 +5164,7 @@
         title: "Das 4C-Modell",
         compact: true,
         kicker: "Das 4C-Modell · Regionale Wertschöpfungslogik",
-        headline: "Content. Context. Connect. Checkout.",
+        headline: "Wir kreieren das 4C-Modell: Content. Context. Connect. Checkout.",
         steps: [
           {
             value: "Content",
@@ -5133,6 +5361,22 @@
         headline: "„Alles, was ich hier tue, läuft an einem Ort zusammen.“",
         lead: "Der lokale Marktplatz. Ticket, Anmeldung, Reise, der Wein aus der Region, alles an einem Ort, alles in meinem Dashboard. Und lokale Anbieter stellen ihre Angebote selbst ein, sichtbar nach den Kriterien, die zu mir passen. Aus Lesen wird Handeln, ohne die Plattform zu verlassen.",
         note: "Vierter Spezialstein, bewusst zuletzt, damit die Transaktion nicht als eigentliche Absicht erscheint, sondern als Konsequenz. Wichtig für die Redaktion: erst Mensch, Anschluss, Relevanz, dann Marktplatz. Hier schließt sich Checkout aus dem 4C-Modell."
+      },
+      {
+        kind: "strategyAlgorithm",
+        theme: "dark",
+        title: "Der lokale Algorithmus",
+        kicker: "Block 4 · Produktlogik",
+        headline: "Der lokale Algorithmus",
+        questions: [
+          ["Google", "Was suchst du?"],
+          ["Amazon", "Was kaufst du?"],
+          ["Tinder", "Wen willst du treffen?"],
+          ["KStA.Connect", "Was passt zu deinem Leben hier?"]
+        ],
+        bodyLead: "Der lokale Algorithmus von KStA.Connect sortiert die Region nicht nach Kategorie, sondern nach Lebenssituation.",
+        body: "Er verbindet Orte, Themen, Menschen, Anlässe und nächste Schritte. Nicht als anonymer Feed, sondern mit lokalem Vertrauen und redaktioneller Verantwortung.",
+        note: "Plakative Folie nach den vier Spezialsteinen. Sie verbindet die großen Systemanalogien aus dem Vorspann mit der konkreten lokalen Produktlogik."
       },
       {
               kind: "avatarPlaceholder",
@@ -5563,7 +5807,7 @@
         return `
           <div class="content media-cycle ${slide.compact ? "compact" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
-            <h2>${escapeHtml(slide.headline)}</h2>
+            <h2>${allowInline(slide.headline)}</h2>
             <div class="cycle-flow">
               ${slide.steps.map((step, stepIndex) => `
                 <div class="cycle-row">
@@ -5686,6 +5930,59 @@
           <div class="content phenomenon-title">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
+          </div>`;
+      }
+
+      if (slide.kind === "strategyLines") {
+        return `
+          <div class="content strategy-lines">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <div class="strategy-line-stack">
+              ${slide.lines.map((line, lineIndex) => `<div class="strategy-line ${slide.mutedIndex === lineIndex ? "is-muted" : ""}">${escapeHtml(line)}</div>`).join("")}
+            </div>
+          </div>`;
+      }
+
+      if (slide.kind === "marketShift") {
+        return `
+          <div class="content strategy-market-shift">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <h2>${escapeHtml(slide.headline)}</h2>
+            <div class="market-shift-grid">
+              ${slide.columns.map((column) => `
+                <article class="market-shift-column ${column.tone === "new" ? "is-new" : "is-old"}">
+                  <h3>${escapeHtml(column.title)}</h3>
+                  ${column.rows.map(([label, value]) => `
+                    <div class="market-shift-row">
+                      <span class="market-shift-label">${escapeHtml(label)}</span>
+                      <span class="market-shift-value">${escapeHtml(value)}</span>
+                    </div>
+                  `).join("")}
+                </article>
+              `).join("")}
+            </div>
+          </div>`;
+      }
+
+      if (slide.kind === "strategyAlgorithm") {
+        return `
+          <div class="content strategy-algorithm">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <h2>${escapeHtml(slide.headline)}</h2>
+            <div class="algorithm-grid">
+              <div class="algorithm-questions">
+                ${slide.questions.map(([brand, question]) => `
+                  <div class="algorithm-question">
+                    <span>${escapeHtml(brand)} fragt:</span>
+                    <strong>${escapeHtml(question)}</strong>
+                  </div>
+                `).join("")}
+              </div>
+              <div class="algorithm-body">
+                <strong>${escapeHtml(slide.bodyLead)}</strong>
+                <p>${escapeHtml(slide.body)}</p>
+              </div>
+            </div>
           </div>`;
       }
 
