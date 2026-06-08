@@ -139,6 +139,12 @@
       align-items: center;
     }
 
+    .split.split-headline-compact h2 {
+      max-width: 960px;
+      font-size: clamp(34px, 4.55vw, 64px);
+      line-height: 1.02;
+    }
+
     .kicker {
       display: block;
       margin-bottom: clamp(16px, 2vw, 26px);
@@ -375,6 +381,46 @@
       gap: 1px;
       border: 1px solid var(--line);
       background: var(--line);
+    }
+
+    .evidence-card.wide-red {
+      grid-column: 1 / -1;
+      min-height: 170px;
+      background: var(--red);
+    }
+
+    .evidence-card.wide-red span,
+    .evidence-card.wide-red strong,
+    .evidence-card.wide-red em,
+    .evidence-card.wide-red small {
+      color: var(--paper);
+    }
+
+    .evidence-card.wide-red strong {
+      max-width: 720px;
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1.04;
+    }
+
+    .evidence-card.soft-red {
+      background: rgba(200, 0, 14, 0.08);
+    }
+
+    .evidence-card.dark {
+      background: var(--ink);
+    }
+
+    .evidence-card.dark span {
+      color: rgba(250, 250, 248, 0.74);
+    }
+
+    .evidence-card.dark strong {
+      color: var(--paper);
+    }
+
+    .evidence-card.dark em,
+    .evidence-card.dark small {
+      color: rgba(250, 250, 248, 0.72);
     }
 
     .evidence-card {
@@ -3640,7 +3686,8 @@
         theme: "warm",
         title: "Ausgangssituation",
         kicker: "Warum jetzt?",
-        headline: "Das alte Geschäft verliert seine Selbstverständlichkeit.<br>Aber KStA.Connect verliert nicht seinen Wert.",
+        headline: "Das alte Geschäft verliert seine<br>Selbstverständlichkeit.<br>Aber KStA.Connect verliert nicht seinen Wert.",
+        compactHeadline: true,
         copy: [
           "Regionale Medien konnten lange von einem stabilen Tausch leben: Information gegen Aufmerksamkeit, Reichweite gegen Anzeigenumsatz. Dieser Tausch wird schwächer.",
           "Was nicht verschwindet, ist der eigentliche Vorsprung: Vertrauen, lokale Kompetenz, tägliche Nähe und eine Beziehung zu Menschen in der Region.",
@@ -3664,7 +3711,7 @@
         kind: "statement",
         theme: "dark",
         title: "Referenzrahmen",
-        kicker: "Lasst uns sehr groß denken.",
+        kicker: "Wir müssen groß denken.",
         headline: "Google baute kein Suchfeld.<br>Amazon keinen Shop.<br>Tinder keine Dating-App.",
         lead: "Sie haben Systeme gebaut, die Verhalten verstehen, Erwartung erzeugen und den nächsten Impuls organisieren.",
         note: "Neu eingefügte Referenzrahmen-Folie aus dem Konzeptangebot. Kicker gemäß Rehearsal geändert."
@@ -3688,7 +3735,7 @@
         kind: "statement",
         theme: "dark",
         title: "Einordnung",
-        kicker: "Das Suchfeld muss dahin",
+        kicker: "Das Zielbild",
         headline: "Welcher lokale Algorithmus kann aus der Kompetenz von KStA.Connect entstehen?",
         lead: "Nicht als fertige technische Antwort. Sondern als strategisches Prinzip, das regionale Kompetenz, Vertrauen, Bedürfnisse und nächste Schritte neu verbindet.",
         note: "Das ist jetzt die erste Folie von Block 1. Sie rahmt die Diagnose: Wir fragen nicht abstrakt nach Gesellschaft, sondern danach, welche neue regionale Logik aus der Kompetenz von KStA.Connect entstehen kann."
@@ -3712,12 +3759,11 @@
         headline: "Externe Forschung und eigene Nutzerforschung stützen dieselbe Diagnose.",
         lead: "Beide wurden separat erarbeitet. Die Übereinstimmung macht die strategische Ableitung belastbarer.",
         cards: [
-          ["01", "Externe Quellen", "Studien · Statistik · Befragungen", "Gesellschaftliche Muster, Mediennutzung, Vertrauen, Stadtentwicklung, regionale Orientierung. Ca. 25 externe Studien und Erhebungen."],
-          ["02", "KStA.Connect / DuMont-Assets", "Reichweite · Inhalte · Marken · Partner", "Vorhandene Stärken, Plattformen und Anschlussstellen. Grundlage für die Einschätzung von Startvorteilen."],
-          ["03", "JTBD-Primärforschung KStA.Connect", "6 Studien · ~70 qualitative Interviews · 2025/26", "Zeitung, E-Paper, express.de, FC-Community, Gastro-Community, Leverkusen/Connect. Eigene Nutzerforschung des Hauses, unabhängig von dieser Analyse entstanden.", "highlight"],
-          ["04", "Strategische Hypothesen", "noch zu prüfen", "Welche neuen Rollen, Angebote und Erlöslogiken entstehen können. Diese Annahmen werden im weiteren Prozess belastbar gemacht."]
+          ["01", "Externe Quellen mit 29 Studien und Erhebungen", "Studien · Statistik · Befragungen", "Gesellschaftliche Muster, Mediennutzung, Vertrauen, Stadtentwicklung und regionale Orientierung.", "wide-red"],
+          ["02", "JTBD-Primärforschung KStA.Connect", "6 Studien · ~70 qualitative Interviews · 2025/26", "Zeitung, E-Paper, express.de, FC-Community, Gastro-Community, Leverkusen/Connect. Eigene Nutzerforschung des Hauses, unabhängig von dieser Analyse entstanden.", "soft-red"],
+          ["03", "KStA.Connect / DuMont-Assets", "Reichweite · Inhalte · Marken · Partner", "Vorhandene Stärken, Plattformen und Anschlussstellen. Grundlage für die Einschätzung von Startvorteilen.", "dark"]
         ],
-        sources: "Die folgenden Folien verdichten die Erkenntnisse aus allen drei Quellschichten. Wo Zahlen und Quellen entscheidungsrelevant werden, liegen sie im Detail vor.",
+        sources: "Die folgenden Folien verdichten die Erkenntnisse aus externen Quellen, eigener Primärforschung und DuMont-Assets. Wo Zahlen und Quellen entscheidungsrelevant werden, liegen sie im Detail vor.",
         note: "Mafo-Update: Die KStA.Connect-eigene JTBD-Forschung wird als unabhaengig entstandene Quellschicht aufgenommen. Wichtig: Nicht alle Studien im Detail durchgehen, sondern die methodische Absicherung markieren."
       },
       {
@@ -3734,8 +3780,17 @@
           ["Seit 2012", "Engagement ohne Mitgliedschaft: 21% → 30%", "ZiviZ 2023"],
           ["Pro Jahr", "Köln verliert netto 2.700 Menschen zwischen 30 und 45", "KStA.Connect / Kommunaldaten"]
         ],
-        footer: "Wir verdichten die Diagnose in sieben Schritten: vom Alltag der Menschen zur strategischen Aufgabe.",
         note: "Diese Folie ist stark, aber die konkreten Zahlen müssen vor Finalisierung noch belastbar verlinkt werden. Besonders KStA.Connect / Kommunaldaten und IFH Köln brauchen eine genaue Quellenzeile im Appendix."
+      },
+      {
+        kind: "divider",
+        theme: "dark",
+        title: "Diagnosepfad",
+        block: "→",
+        kicker: "Block 1 · Diagnose",
+        headline: "Wir analysieren und verdichten die Diagnosen in sieben Schritten:<br>vom Alltag der Menschen zur strategischen Aufgabe.",
+        lead: "",
+        note: "Neues Trennchart fuer den Praesentationsfluss. Es trennt die harte Datenfolie vom folgenden Diagnosepfad."
       },
       {
         kind: "phenomenaOverview",
@@ -5038,8 +5093,8 @@
               <div class="block-number">${escapeHtml(slide.block)}</div>
               <div class="divider-copy">
                 <span class="kicker">${escapeHtml(slide.kicker)}</span>
-                <h2>${escapeHtml(slide.headline)}</h2>
-                <p class="lead">${escapeHtml(slide.lead)}</p>
+                <h2>${allowEm(slide.headline)}</h2>
+                ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
               </div>
             </div>
           </div>`;
@@ -5120,7 +5175,7 @@
               <div>
                 <div class="evidence-grid">
                   ${slide.cards.map(([label, title, examples, body, tone]) => `
-                    <article class="evidence-card ${tone === "highlight" ? "highlight" : ""}">
+                    <article class="evidence-card ${tone ? escapeHtml(tone) : ""}">
                       <span>${escapeHtml(label)}</span>
                       <strong>${escapeHtml(title)}</strong>
                       <em>${escapeHtml(examples)}</em>
@@ -5178,7 +5233,7 @@
                 </div>
               `).join("")}
             </div>
-            <div class="diagnosis-footer">${escapeHtml(slide.footer)}</div>
+            ${slide.footer ? `<div class="diagnosis-footer">${escapeHtml(slide.footer)}</div>` : ""}
           </div>`;
       }
 
@@ -5478,7 +5533,7 @@
 
       if (slide.kind === "split") {
         return `
-          <div class="content split">
+          <div class="content split ${slide.compactHeadline ? "split-headline-compact" : ""}">
             <div>
               <span class="kicker">${escapeHtml(slide.kicker)}</span>
               <h2>${allowEm(slide.headline)}</h2>
