@@ -3572,6 +3572,97 @@
       font-size: clamp(16px, 1.28vw, 20px);
       line-height: 1.22;
     }
+    /* Rehearsal block 3: START */
+    .phenomena-overview.no-personas .phenomena-map {
+      width: min(100%, 1040px);
+    }
+
+    .phenomena-overview.no-personas .phenomena-row {
+      grid-template-columns: 150px minmax(0, 1fr);
+    }
+
+    .phenomena-overview.no-personas .phenomena-persona {
+      display: none;
+    }
+
+    .content.top.phenomenon-proportional:has(.phenomenon-detail) h2 {
+      max-width: 1200px;
+      font-size: clamp(38px, 4.25vw, 62px);
+      line-height: 1.055;
+    }
+
+    .phenomenon-proportional .phenomenon-detail {
+      grid-template-columns: minmax(0, 0.95fr) minmax(350px, 0.7fr);
+      gap: clamp(30px, 4vw, 58px);
+      margin-top: clamp(20px, 2.55vw, 36px);
+    }
+
+    .phenomenon-proportional .phenomenon-copy {
+      gap: clamp(11px, 1.25vw, 18px);
+      font-size: clamp(16px, 1.24vw, 20px);
+      line-height: 1.32;
+    }
+
+    .phenomenon-proportional .phenomenon-copy p {
+      max-width: 760px;
+    }
+
+    .phenomenon-proportional .function-box,
+    .phenomenon-proportional .bridge-box,
+    .phenomenon-proportional .positive-box {
+      padding: clamp(10px, 1.05vw, 15px) 0 clamp(10px, 1.05vw, 15px) clamp(16px, 1.55vw, 22px);
+    }
+
+    .phenomenon-proportional .function-box div,
+    .phenomenon-proportional .bridge-box div,
+    .phenomenon-proportional .positive-box div {
+      font-size: clamp(15px, 1.16vw, 18px);
+      line-height: 1.24;
+    }
+
+    .phenomenon-proportional .data-stack {
+      gap: clamp(14px, 1.65vw, 24px);
+    }
+
+    .phenomenon-proportional .data-value {
+      font-size: clamp(42px, 3.9vw, 60px);
+      line-height: 0.92;
+    }
+
+    .phenomenon-proportional .data-label {
+      font-size: clamp(12px, 0.98vw, 15px);
+      line-height: 1.2;
+    }
+
+    .phenomenon-proportional .data-source {
+      font-size: clamp(10px, 0.78vw, 12px);
+      line-height: 1.14;
+    }
+
+    .insight-line {
+      margin-top: clamp(10px, 1.3vw, 18px);
+      padding-top: clamp(9px, 1.1vw, 14px);
+      border-top: 1px solid rgba(180, 28, 32, 0.28);
+      color: var(--ink);
+      font-size: clamp(14px, 1.08vw, 16px);
+      font-weight: 700;
+      line-height: 1.28;
+      max-width: 1080px;
+    }
+
+    .insight-line strong {
+      color: var(--red);
+    }
+
+    .phenomenon-proportional .sources-line {
+      margin-top: clamp(6px, 0.8vw, 10px);
+      padding-top: 0;
+      border-top: 0;
+      font-size: clamp(9px, 0.72vw, 11px);
+      line-height: 1.14;
+    }
+    /* Rehearsal block 3: END */
+
     /* Layout audit fit patch v2: END */
 </style>
 </head>
@@ -3799,16 +3890,17 @@
         kicker: "Block 1 · Diagnose",
         headline: "Vom Alltag der Menschen zur strategischen Aufgabe.",
         lead: "Der Weg durch die Diagnose.",
+        hidePersonas: true,
         rows: [
-          ["01", "Leben wird nichtlinearer.", "Thomas, 52"],
-          ["02", "Lokale Ordnung trägt weniger.", "Helga, 71"],
-          ["03", "Empfehlungskompetenz bricht weg.", "Nina, 39"],
-          ["04", "Nahraum wird wichtiger, aber schwerer lesbar.", "Markus, 34"],
+          ["01", "Leben wird nichtlinearer.", ""],
+          ["02", "Lokale Ordnung trägt weniger.", ""],
+          ["03", "Empfehlungskompetenz bricht weg.", ""],
+          ["04", "Nahraum wird wichtiger, aber schwerer lesbar.", ""],
           ["05", "Die Lücke: Stadtgefühl ohne gelebte Verbindung.", ""],
           ["06", "Neue Gemeinschaftsformen brauchen neue Brücken.", ""],
           ["07", "Vertrauen wird zur knappen Ressource.", ""]
         ],
-        note: "Uebersicht fuer den Diagnosepfad. Sie zeigt nicht nur Phaenomene, sondern die Bewegung vom Alltag zur strategischen Aufgabe."
+        note: "Uebersicht fuer den Diagnosepfad ohne Vorab-Nennung der Avatare; die Personen werden im Vortrag als Überraschungsmoment eingeführt."
       },
       {
         kind: "phenomenonTitle",
@@ -3822,7 +3914,8 @@
         kind: "phenomenonDetail",
         theme: "warm",
         title: "Phänomen 01 Daten",
-        kicker: "Phänomen 01",
+        proportional: true,
+        kicker: "PHÄNOMEN 01",
         headline: "Viele lokale Routinen waren früher durch wiederkehrende Strukturen gestützt. Heute verändern Lebensphasen häufiger die Art, wie Menschen ihre Region nutzen.",
         paragraphs: [
           "<strong>Umzug, Jobwechsel, Trennung, Elternschaft, Pflege, Ruhestand:</strong> Jeder dieser Brüche löscht lokale Routinen und soziale Netze.",
@@ -3830,12 +3923,13 @@
           "<strong>Entstehendes Bedürfnis:</strong><br>Menschen brauchen Orientierung, die zu ihrer aktuellen Lebensphase passt. Nicht: Was gibt es? Sondern: Was passt zu mir, jetzt?"
         ],
         data: [
-          ["35,7%", "aller Umzüge aus familiären Gründen", "BiB/SOEP 2024"],
-          ["2.700", "Nettoverlust pro Jahr in Köln, 30-45 Jahre", "KStA.Connect / Kommunaldaten"],
-          ["50%", "der Studierenden bleiben unter 50 km vom Heimatort", "CHE 2024"]
+          ["~5x", "zieht ein Deutscher heute im Leben um. Früher war das ein, maximal zwei Mal. Jeder Umzug bedeutet: lokale Routinen von null.", "BBSR / EnBW-Studie"],
+          ["52%", "aller Kölner Haushalte sind Einpersonenhaushalte. 2017 waren es klar unter 50%. Soziale Einbindung entsteht nicht mehr automatisch über Haushalt und Familie. Sie muss aktiv aufgebaut werden, immer wieder.", "Stadt Köln 2025"],
+          ["2.700", "Nettoverlust pro Jahr in Köln, 30-45 Jahre. Genau die Kohorte, die lokale Infrastruktur aufbaut und nutzt, verlässt die Stadt. Wer bleibt, verliert seine Peers. Wer neu kommt, findet keine verwurzelten Netzwerke vor.", "Kommunaldaten"]
         ],
-        sources: "Quellen: BiB/SOEP 2024 · Destatis/BBSR · bpb Sozialbericht 2024 · CHE 2024 · KStA.Connect/Kommunaldaten 2026",
-        note: "Sachchart fuer Phaenomen 01. Zahlen vor finaler Fassung quellenfest pruefen, insbesondere KStA.Connect/Kommunaldaten."
+        insight: "<strong>Was sich geändert hat:</strong> Die drei Zahlen zusammen erzählen denselben Rhythmus: Das Leben ist mobiler, die Haushaltsstrukturen individueller, und die Kohorte, die lokale Gemeinschaft trägt, rotiert. Der KStA begleitet Menschen beim Lesen. Aber nicht beim Neustarten.",
+        sources: "Quellen: BBSR / EnBW-Studie · Stadt Köln 2025 · Kommunaldaten",
+        note: "Sachchart fuer Phaenomen 01 mit aktualisiertem Rehearsal-Text. Fokus: Neustart-Orientierung statt reine Angebotsübersicht."
       },
       {
         kind: "avatarPlaceholder",
@@ -3858,6 +3952,7 @@
         kind: "phenomenonDetail",
         theme: "warm",
         title: "Phänomen 02 Daten",
+        proportional: true,
         kicker: "Phänomen 02",
         headline: "Nicht nur die Menschen verändern sich. Auch die lokale Angebots- und Begegnungsstruktur verändert sich.",
         paragraphs: [
@@ -3895,6 +3990,7 @@
         kind: "phenomenonDetail",
         theme: "warm",
         title: "Kerndiagnose Daten",
+        proportional: true,
         kicker: "Kerndiagnose",
         headline: "Früher hat das lokale Umfeld eine Filterfunktion übernommen, die den meisten Menschen nicht bewusst war.",
         paragraphs: [
@@ -3939,6 +4035,7 @@
         kind: "phenomenonDetail",
         theme: "warm",
         title: "Phänomen 03 Daten",
+        proportional: true,
         kicker: "Phänomen 03",
         headline: "Die Menschen werden in ihre Region zurückgetrieben. Das ist eine Chance. Aber die Orientierung fehlt.",
         paragraphs: [
@@ -5408,7 +5505,7 @@
 
       if (slide.kind === "phenomenaOverview") {
         return `
-          <div class="content top phenomena-overview">
+          <div class="content top phenomena-overview ${slide.hidePersonas ? "no-personas" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <p class="lead">${escapeHtml(slide.lead)}</p>
@@ -5483,7 +5580,7 @@
 
       if (slide.kind === "phenomenonDetail") {
         return `
-          <div class="content top ${slide.compact ? "compact" : ""}">
+          <div class="content top ${slide.compact ? "compact" : ""} ${slide.proportional ? "phenomenon-proportional" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <div class="phenomenon-detail">
@@ -5511,6 +5608,7 @@
                 `).join("")}
               </div>
             </div>
+            ${slide.insight ? `<div class="insight-line">${allowEm(slide.insight).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</div>` : ""}
             <div class="sources-line">${escapeHtml(slide.sources)}</div>
           </div>`;
       }
