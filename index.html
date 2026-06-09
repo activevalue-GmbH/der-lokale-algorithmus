@@ -1048,7 +1048,7 @@
     }
 
     .media-cycle.compact h2 {
-      font-size: clamp(32px, 3.7vw, 52px);
+      font-size: clamp(40px, 4.45vw, 64px);
     }
 
     .media-cycle.compact .cycle-flow {
@@ -1073,10 +1073,10 @@
 
     .media-cycle.compact .cycle-value {
       color: var(--ink);
-      font-size: clamp(34px, 3.6vw, 52px);
-      line-height: 0.96;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 0.98;
       text-align: left;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.032em;
     }
 
     .red {
@@ -1806,7 +1806,7 @@
 
     .transition-bullets {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: clamp(10px, 1.2vw, 16px);
       margin: 0;
       padding: 0;
@@ -2173,9 +2173,9 @@
     }
 
     .strategy-lines.is-compact .strategy-line {
-      font-size: clamp(38px, 4.45vw, 66px);
-      line-height: 1.1;
-      letter-spacing: -0.045em;
+      font-size: clamp(34px, 3.85vw, 56px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
     }
 
     .forward-perspective {
@@ -3771,6 +3771,22 @@
       color: rgba(28, 25, 23, 0.58);
     }
 
+    .light .asset-card {
+      border-color: rgba(28, 25, 23, 0.12);
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: 0 18px 42px rgba(28, 25, 23, 0.05);
+    }
+
+    .light .asset-card h3,
+    .light .asset-slide.wide-cards .asset-card h3 {
+      color: rgba(28, 25, 23, 0.82);
+    }
+
+    .light .asset-card p,
+    .light .asset-slide.wide-cards .asset-card p {
+      color: rgba(28, 25, 23, 0.6);
+    }
+
     .phenomenon-title h2 {
       font-size: clamp(40px, 5vw, 70px);
     }
@@ -4660,12 +4676,12 @@
         kicker: "Block 2 · Strategische Ableitung",
         headline: "Was bedeutet das für KStA.Connect?",
         photoDivider: "assets/editorial/local-divider-block-2.webp",
-        lead: "Aus der Diagnose wird keine fertige Antwort. Es beginnt die Suche nach einer neuen Rolle: Welche Nutzungssituation macht regionale Relevanz wieder zur Gewohnheit?",
+        lead: "Welche Nutzungssituation macht regionale Relevanz wieder zur Gewohnheit?",
         note: "Neuer Block-2-Auftakt: Nach der Diagnose wird nicht direkt Strategie behauptet, sondern die Suchfrage sauber geöffnet."
       },
       {
         kind: "transitionPlain",
-        theme: "dark",
+        theme: "light",
         title: "Das Ritual bleibt",
         kicker: "Die bestehende Stärke",
         headline: "Die Zeitung hat über Jahrzehnte einen Markt konsequent erobert. Dieser Markt existiert weiter.",
@@ -4728,7 +4744,7 @@
         title: "Die Lücke",
         kicker: "Das Defizit",
         headline: "Google hat Daten. Instagram hat Bilder. WhatsApp hat Gruppen. Portale haben Sterne.",
-        paragraphs: [
+        bullets: [
           "Aber das alles ist nicht dasselbe wie lokale Einordnung mit Verantwortung.",
           "Was fehlt, ist der Filter mit menschlichem Gesicht: Was passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich."
         ],
@@ -4942,6 +4958,7 @@
           "KStA.Connect wird das Interface zum lokalen Leben."
         ],
         mutedIndex: 0,
+        compact: true,
         note: "Neue Folie statt Mission-/Narrativ-Chart. Portal klingt nach Zielort, Interface nach Funktion im Alltag."
       },
       {
@@ -5331,12 +5348,13 @@
         theme: "dark",
         title: "Die fehlende Schicht",
         kicker: "Die fehlende Schicht",
-        headline: "Der lokale Algorithmus braucht keine perfekte Datenbasis. Aber eine gemeinsame Relevanzlogik.",
+        headline: "Der lokale Algorithmus braucht gute Daten. Aber erst eine gemeinsame Relevanzlogik macht sie wirksam.",
         compactHeadline: true,
+        copyAsBullets: true,
         copy: [
-          "Heute liegen viele Signale bereits vor: Inhalte, Orte, Themen, Tags, Newsletter, Events, Ticketing, Login, Push, Community, Abo und Transaktionen. Aber sie arbeiten noch nicht gemeinsam auf eine Frage hin: Was passt zu welchem Menschen in welcher Lebenssituation?",
-          "Genau diese Verbindung macht aus Einzelbausteinen ein System. Nicht die Menge der Daten entscheidet, sondern ihre Struktur: Personen, Orte, Themen, Angebote, Anlässe und nächste Schritte müssen miteinander verknüpft werden.",
-          "Ohne Relevanzschicht bleibt Personalisierung Oberfläche. Mit ihr wird KStA.Connect lernfähig."
+          "Top-Daten sind wichtig: Profile, Orte, Themen, Tags, Events, Login, Push, Community, Abo und Transaktionen müssen verlässlich verfügbar sein.",
+          "Viele dieser Signale liegen bereits vor. Sie arbeiten nur noch nicht gemeinsam auf eine Frage hin: Was passt zu welchem Menschen in welcher Lebenssituation?",
+          "Die Relevanzschicht verbindet Personen, Orte, Themen, Angebote, Anlässe und nächste Schritte. So wird aus Daten ein lernfähiges System."
         ],
         note: "Strategische Sicherung vor den Spezialsteinen. Daten nicht als fünfter Spezialbaustein erklären, sondern als Verbindungsschicht unter Anschluss, Personalisierung, Themenwelten und Marktplatz. Tonalität wichtig: kein IT-Monsterprojekt. Der Algorithmus kann redaktionell kuratiert beginnen und datengetrieben lernen. Merksatz: Wir bauen den Algorithmus nicht aus abstrakter KI, sondern aus redaktioneller Intelligenz, lokalen Daten und beobachtbarem Verhalten."
       },
@@ -5441,10 +5459,11 @@
               headline: "GZH stand vor derselben Frage: Wie wird aus regionalem Vertrauen ein System?",
               compactHeadline: true,
               copy: [
-                "Kein Tech-Konzern. Eine Regionalzeitung mit Radio, Abo, Vorteilsprogramm und lokalen Partnern.",
-                "Die Ausgangslage war ähnlich: sinkende Printauflagen, fragmentierte Digitalnutzung, Werbedruck, Vertrauen vorhanden, aber noch nicht ausreichend in neuen Alltag übersetzt."
+                "GZH von Grupo RBS in Porto Alegre / Rio Grande do Sul, Brasilien: kein Tech-Konzern, sondern ein regionales Medienhaus mit Zeitung, Radio, Abo, Vorteilsprogramm und lokalen Partnern.",
+                "Die Ausgangslage war ähnlich: sinkende Printauflagen, fragmentierte Digitalnutzung, Werbedruck, Vertrauen vorhanden, aber noch nicht ausreichend in neuen Alltag übersetzt.",
+                "Die öffentliche Oberfläche zeigt die Richtung: gauchazh.clicrbs.com.br verbindet Content, Login, Mitgliedschaft und Alltag in einer gemeinsamen digitalen Architektur."
               ],
-              footnote: "Kernsatz: Die Antwort war nicht ein weiteres Produkt. Die Antwort war eine neue Architektur.",
+              footnote: "Kernsatz: GZH ist keine Blaupause. Es zeigt, dass die Antwort nicht ein weiteres Produkt ist, sondern eine neue Architektur.",
               note: "Später Realitätscheck vor der Richtungsentscheidung. GZH nicht als Blaupause erzählen und nicht behaupten, dort sei alles gelöst. Funktion: zeigen, dass die hier entwickelte Logik als Umbau der Wertschöpfungsarchitektur materialisierbar wird."
             },
             {
