@@ -2101,6 +2101,12 @@
       color: rgba(250, 250, 248, 0.5);
     }
 
+    .strategy-lines.is-compact .strategy-line {
+      font-size: clamp(38px, 4.45vw, 66px);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+    }
+
     .forward-perspective {
       align-content: center;
       max-width: 1180px;
@@ -4947,6 +4953,8 @@
           "KStA.Connect wird der Login ins lokale Leben,",
           "damit aus Region wieder Heimat werden kann."
         ],
+        mutedIndex: 0,
+        compact: true,
         note: "Emotionalisierte Erweiterung des Leitsatzes. Heimat als strategischer Endzustand, nicht als nostalgischer Claim."
       },
       {
@@ -4954,7 +4962,7 @@
         theme: "dark",
         title: "Marktwechsel",
         kicker: "Der Marktwechsel",
-        headline: "Wir kommen aus dem Markt lokaler Nachrichten.<br>Wir gehen in den Markt lokaler Möglichkeiten.",
+        headline: "Wir kommen aus dem Markt lokaler Nachrichten und gehen in den Markt lokaler Möglichkeiten.",
         columns: [
           {
             title: "Alter Markt: lokale Nachrichten",
@@ -6001,7 +6009,7 @@
 
       if (slide.kind === "strategyLines") {
         return `
-          <div class="content strategy-lines">
+          <div class="content strategy-lines ${slide.compact ? "is-compact" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <div class="strategy-line-stack">
               ${slide.lines.map((line, lineIndex) => `<div class="strategy-line ${slide.mutedIndex === lineIndex ? "is-muted" : ""}">${escapeHtml(line)}</div>`).join("")}
