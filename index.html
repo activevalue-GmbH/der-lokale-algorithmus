@@ -2625,6 +2625,99 @@
       color: rgba(250, 250, 248, 0.58);
     }
 
+    .slide.avatar-video-slide {
+      padding: 0;
+      gap: 0;
+      overflow: hidden;
+      background: #0b0b0a;
+    }
+
+    .slide.avatar-video-slide .topline,
+    .slide.avatar-video-slide .footline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: clamp(22px, 3.2vw, 46px);
+      color: rgba(250, 250, 248, 0.78);
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.62);
+      pointer-events: none;
+    }
+
+    .slide.avatar-video-slide .topline {
+      top: 0;
+    }
+
+    .slide.avatar-video-slide .footline {
+      bottom: 0;
+    }
+
+    .avatar-video-content {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      align-content: stretch;
+    }
+
+    .avatar-video-shell {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #0b0b0a;
+    }
+
+    .avatar-video-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.08) 25%, rgba(0, 0, 0, 0.06) 62%, rgba(0, 0, 0, 0.42) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.08) 42%, rgba(0, 0, 0, 0.0) 100%);
+    }
+
+    .avatar-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .avatar-video-caption {
+      position: absolute;
+      left: clamp(24px, 4.1vw, 58px);
+      bottom: clamp(72px, 7vw, 106px);
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      max-width: min(620px, 70vw);
+      color: rgba(250, 250, 248, 0.96);
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    .avatar-video-caption strong {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5.2vw, 76px);
+      font-weight: 400;
+      line-height: 0.98;
+    }
+
+    .avatar-video-caption span {
+      color: rgba(250, 250, 248, 0.72);
+      font-size: clamp(13px, 1.15vw, 17px);
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
     .notes-panel {
       position: fixed;
       right: clamp(14px, 2vw, 28px);
@@ -4528,7 +4621,9 @@
         name: "Helga, 71, Mülheim",
         sub: "Phänomen 02 — Avatar-Video",
         quote: "\"Die Kneipe ist jetzt ein ... wie heißt dat ... so ein Herrenfriseur, aber modern, mit Bart und so. Barbershop, genau. Früher hätt dä Schneider jesagt: Geh da hin, Frau Köster, die sin nett. Aber wer soll mir dat heute sagen?\"",
-        note: "Platzhalter fuer HeyGen-Video. Spaeter lokale MP4 oder Embed einsetzen."
+        video: "assets/videos/helga-bin-ich-gemeint-1080p.mp4",
+        videoFullBleed: true,
+        note: "HeyGen-Video ist lokal als MP4 eingebunden und bewusst möglichst vollflächig gesetzt."
       },
       {
         kind: "divider",
@@ -6249,6 +6344,19 @@
       }
 
       if (slide.kind === "avatarPlaceholder") {
+        if (slide.video) {
+          return `
+            <div class="content avatar-video-content">
+              <figure class="avatar-video-shell">
+                <video class="avatar-video" src="${escapeHtml(slide.video)}" controls playsinline preload="metadata"></video>
+                <figcaption class="avatar-video-caption">
+                  <strong>${escapeHtml(slide.name)}</strong>
+                  <span>${escapeHtml(slide.sub)}</span>
+                </figcaption>
+              </figure>
+            </div>`;
+        }
+
         return `
           <div class="content top">
             <div class="avatar-frame">
@@ -6406,6 +6514,7 @@
       const section = document.createElement("section");
       const slideClasses = ["slide", slide.theme || "light", i === 0 ? "is-active" : ""];
       if (slide.photoDivider) slideClasses.push("photo-divider");
+      if (slide.videoFullBleed) slideClasses.push("avatar-video-slide");
       section.className = slideClasses.filter(Boolean).join(" ");
       if (slide.photoDivider) section.style.setProperty("--divider-photo", `url('${escapeHtml(slide.photoDivider)}')`);
       section.dataset.title = slide.title;
