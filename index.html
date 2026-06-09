@@ -1649,6 +1649,20 @@
       line-height: 1.04;
     }
 
+    .interim-summary.compact-headline h2 {
+      max-width: 1120px;
+      font-size: clamp(38px, 4.7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .interim-summary.compact-headline .interim-body {
+      max-width: 880px;
+      margin-top: clamp(34px, 4vw, 56px);
+      font-size: clamp(19px, 1.65vw, 26px);
+      line-height: 1.44;
+    }
+
     .interim-body {
       max-width: 820px;
       margin-top: clamp(48px, 5.4vw, 78px);
@@ -1772,12 +1786,51 @@
       font-weight: 700;
     }
 
+    .transition-bullets {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(10px, 1.2vw, 16px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .transition-bullets li {
+      border: 1px solid rgba(28, 25, 23, 0.1);
+      border-radius: 999px;
+      padding: clamp(10px, 1.1vw, 14px) clamp(16px, 1.8vw, 24px);
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.6);
+      font-family: var(--sans);
+      font-size: clamp(17px, 1.35vw, 22px);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .transition-bullets:has(li:nth-child(4):last-child) li:last-child {
+      grid-column: 1 / -1;
+      border-radius: 28px;
+      padding-top: clamp(14px, 1.4vw, 20px);
+      padding-bottom: clamp(14px, 1.4vw, 20px);
+      line-height: 1.24;
+    }
+
+    .transition-after-bullets {
+      margin: clamp(18px, 2vw, 28px) 0 0;
+    }
+
     .dark .transition-copy {
       color: rgba(250, 250, 248, 0.62);
     }
 
     .dark .transition-copy strong {
       color: rgba(250, 250, 248, 0.78);
+    }
+
+    .dark .transition-bullets li {
+      border-color: rgba(250, 250, 248, 0.13);
+      color: rgba(250, 250, 248, 0.82);
+      background: rgba(250, 250, 248, 0.06);
     }
 
     .transition-callout {
@@ -3880,6 +3933,15 @@
       line-height: 1.28;
     }
 
+    .transition-bullets {
+      gap: clamp(8px, 0.9vw, 12px);
+    }
+
+    .transition-bullets li {
+      padding: clamp(8px, 0.85vw, 12px) clamp(12px, 1.25vw, 18px);
+      font-size: clamp(13px, 1.06vw, 16px);
+    }
+
     .transition-question {
       margin-top: clamp(18px, 2vw, 28px);
       font-size: clamp(16px, 1.28vw, 20px);
@@ -4554,6 +4616,7 @@
         title: "80 / 60",
         kicker: "Zwischenfazit",
         headline: "80% der Kölner leben gerne hier. Aber nur 60% sind zufrieden.",
+        compactHeadline: true,
         body: "Das ist kein Widerspruch. Das ist die Summe der drei Phänomene und der Kerndiagnose.",
         rows: [
           ["Nachbarschaft", "59% → 43%", "in drei Jahren"],
@@ -4572,7 +4635,7 @@
         kicker: "Block 2 · Strategische Ableitung",
         headline: "Was bedeutet das für KStA.Connect?",
         photoDivider: "assets/editorial/local-divider-block-2.webp",
-        lead: "Aus der Diagnose wird jetzt keine fertige Antwort, sondern eine Suchfrage: Welche neue Nutzungssituation kann regionale Relevanz wieder zur Gewohnheit machen?",
+        lead: "Aus der Diagnose wird keine fertige Antwort. Es beginnt die Suche nach einer neuen Rolle: Welche Nutzungssituation macht regionale Relevanz wieder zur Gewohnheit?",
         note: "Neuer Block-2-Auftakt: Nach der Diagnose wird nicht direkt Strategie behauptet, sondern die Suchfrage sauber geöffnet."
       },
       {
@@ -4581,11 +4644,10 @@
         title: "Das Ritual bleibt",
         kicker: "Die bestehende Stärke",
         headline: "Die Zeitung hat über Jahrzehnte einen Markt konsequent erobert. Dieser Markt existiert weiter.",
-        paragraphs: [
-          "Morgenritual. Einordnung. Haltung. Lokalität. Wiederkehr. Vertrauen. Diese Nutzungssituation hat lokale Relevanz jeden Tag selbstverständlich gemacht.",
-          "Das bedient KStA.Connect gut, und das bleibt wertvoll. Es geht nicht um Untergang und nicht um Mitleid. Es geht um die nüchterne Frage, wo dieses Ritual heute noch trägt und wo neue Nutzungssituationen entstehen."
-        ],
-        question: "Das alte Ritual ist nicht falsch. Es wird nur kleiner.",
+        bullets: ["Morgenritual", "Einordnung", "Haltung", "Lokalität", "Wiederkehr", "Vertrauen"],
+        afterBullets: "Diese Nutzungssituation hat lokale Relevanz jeden Tag selbstverständlich gemacht. Das bedient KStA.Connect gut, und das bleibt wertvoll.",
+        paragraphs: [],
+        question: "Es geht nicht um Untergang und nicht um Mitleid. Das alte Ritual ist nicht falsch. Es wird nur kleiner.",
         note: "Würdigt das Bestehende und nimmt den Raum tonal mit: kein Beerdigen der Zeitung, sondern strategisches Reframing."
       },
       {
@@ -4611,10 +4673,14 @@
         title: "Das fehlende Ritual",
         kicker: "Die strategische Lücke",
         headline: "Was fehlt, ist nicht Content. Was fehlt, ist die neue Wiederkehr.",
-        paragraphs: [
-          "Die Zeitung hat es geschafft, Teil eines Alltagsrituals zu werden. Genau diese Kraft muss für die neue Nutzungssituation wieder entstehen.",
-          "Nicht als Zeitungskopie. Nicht als reiner Eventkalender. Sondern als Moment, in dem Menschen regelmäßig prüfen: Was passiert hier, was betrifft mich, wo sollte ich dabei sein?"
+        bullets: [
+          "Teil eines Alltagsrituals werden.",
+          "Nicht als Zeitungskopie.",
+          "Nicht als reiner Eventkalender.",
+          "Als Moment, in dem Menschen regelmäßig prüfen: Was passiert hier? Was betrifft mich? Wo sollte ich dabei sein?"
         ],
+        afterBullets: "Genau diese Kraft muss für die neue Nutzungssituation wieder entstehen.",
+        paragraphs: [],
         question: "Menschen sollen reinschauen wollen, weil sie sonst etwas Relevantes verpassen.",
         note: "FOMO nicht als Buzzword, sondern als Nutzungsspannung: regelmäßige Rückkehr durch Relevanz und Timing."
       },
@@ -4636,12 +4702,12 @@
         theme: "dark",
         title: "Die Lücke",
         kicker: "Das Defizit",
-        headline: "Informationen gibt es überall. Was fehlt, ist der Filter mit lokalem Vertrauen.",
+        headline: "Google hat Daten. Instagram hat Bilder. WhatsApp hat Gruppen. Portale haben Sterne.",
         paragraphs: [
-          "Google hat Daten. Instagram hat Bilder. WhatsApp hat geschlossene Gruppen. Bewertungsportale haben Sterne.",
-          "Aber wer sagt mir verlässlich: Das passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich?"
+          "Aber das alles ist nicht dasselbe wie lokale Einordnung mit Verantwortung.",
+          "Was fehlt, ist der Filter mit menschlichem Gesicht: Was passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich."
         ],
-        question: "KStA.Connect hat ein Gesicht. Aber dieses Gesicht muss künftig nicht nur berichten, sondern auch den nächsten Schritt öffnen.",
+        question: "KStA.Connect kann genau diese Rolle besetzen: nicht nur berichten, sondern den nächsten Schritt öffnen.",
         note: "Schärft das Defizit im Markt: Nicht Informationsmenge, sondern verlässliche lokale Passung und Verantwortbarkeit."
       },
       {
@@ -4649,7 +4715,7 @@
         theme: "dark",
         title: "Die eigene Stärke",
         kicker: "Das Asset",
-        headline: "KStA.Connect hat etwas aufgebaut, das sich nicht kaufen lässt.",
+        headline: "Der Markt der alten Rituale sinkt. Aber die entscheidenden Stärken sind da.",
         wideCards: true,
         cards: [
           ["150 Jahre Vertrauen", "Gewachsene Glaubwürdigkeit, lokale Bekanntheit und ein Absender, der Verantwortung übernimmt."],
@@ -4685,7 +4751,7 @@
         theme: "warm",
         title: "Die heutige Realität bei KStA.Connect",
         kicker: "Der Status quo",
-        headline: "Die Bausteine sind da. Die Architektur fehlt.",
+        headline: "Auch wesentliche Bausteine sind da. Die Architektur fehlt.",
         textCompact: true,
         wideCards: true,
         cards: [
@@ -4696,17 +4762,8 @@
           ["Newsletter / Push / Events", "Bestehende Kontaktpunkte für Wiederkehr und Aktivierung."],
           ["Communities", "Erste Räume für Zugehörigkeit, Austausch und Interessenlogik."]
         ],
-        conclusion: "Jeder Baustein kann etwas. Zusammen sind sie noch kein System.",
+        conclusion: "Wenn die Bausteine da sind, aber die Architektur fehlt: Nach welchem Prinzip verbinden wir sie?",
         note: "Status-quo-Folie als unmittelbares Scharnier zu Block 3: Die Stärken sind da, aber noch nicht architektonisch verbunden."
-      },
-      {
-        kind: "statement",
-        theme: "dark",
-        title: "Die Suchfrage",
-        kicker: "Von der Ableitung zur Antwort",
-        headline: "Wenn die Bausteine da sind, aber die Architektur fehlt: Nach welchem Prinzip verbinden wir sie?",
-        lead: "Damit endet Block 2. Ab hier geht es nicht mehr um Diagnose oder Einzelstärken, sondern um die strategische Logik, die daraus ein geschlossenes System macht.",
-        note: "Finales Scharnier in Block 3. Die Suchfrage öffnet die Strategie, ohne sie in Block 2 vorwegzunehmen."
       },
       {
         kind: "divider",
@@ -4716,7 +4773,7 @@
         kicker: "Block 3 · Die Antwort",
         headline: "Der lokale Algorithmus.",
         photoDivider: "assets/editorial/local-divider-block-3.webp",
-        lead: "Wenn die Bausteine da sind, aber die Architektur fehlt, lautet die nächste Frage: Nach welchem Prinzip verbinden wir sie?",
+        lead: "Ab hier geht es nicht mehr um Diagnose oder Einzelstärken, sondern um die strategische Logik, die daraus ein geschlossenes System macht.",
         note: "Neuer Block-3-Auftakt: Jetzt erst werden die zentralen strategischen Begriffe stark gemacht."
       },
       {
@@ -5697,7 +5754,7 @@
 
       if (slide.kind === "interimSummary") {
         return `
-          <div class="content interim-summary">
+          <div class="content interim-summary ${slide.compactHeadline ? "compact-headline" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <p class="interim-body">${escapeHtml(slide.body)}</p>
@@ -5728,12 +5785,15 @@
       }
 
       if (slide.kind === "transitionPlain") {
+        const transitionBody = slide.bullets
+          ? `<ul class="transition-bullets">${slide.bullets.map((item) => `<li>${allowEm(item).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</li>`).join("")}</ul>${slide.afterBullets ? `<p class="transition-after-bullets">${allowEm(slide.afterBullets).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>` : ""}`
+          : slide.paragraphs.map((paragraph) => `<p>${allowEm(paragraph).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>`).join("");
         return `
-          <div class="content transition-plain">
+          <div class="content transition-plain ${slide.bullets ? "has-bullets" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <div class="transition-copy">
-              ${slide.paragraphs.map((paragraph) => `<p>${allowEm(paragraph).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>`).join("")}
+              ${transitionBody}
             </div>
             ${slide.question ? `<div class="transition-question">${escapeHtml(slide.question)}</div>` : ""}
           </div>`;
