@@ -676,6 +676,38 @@
       color: rgba(250, 250, 248, 0.62);
     }
 
+    .cards.is-reveal .card.is-hidden,
+    .cards-outro.is-hidden {
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+    }
+
+    .cards.is-reveal .card,
+    .cards-outro {
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .statement-bullets {
+      display: grid;
+      gap: clamp(13px, 1.35vw, 18px);
+      max-width: 850px;
+      margin-top: clamp(24px, 2.8vw, 38px);
+      padding-left: 1.1em;
+      color: var(--body);
+      font-size: clamp(20px, 1.55vw, 27px);
+      font-weight: 300;
+      line-height: 1.36;
+    }
+
+    .dark .statement-bullets {
+      color: rgba(250, 250, 248, 0.68);
+    }
+
+    .statement-bullets li::marker {
+      color: var(--red);
+    }
+
     .method-agenda-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4797,6 +4829,7 @@
         headline: "Diese Sehnsucht hat das Potenzial für eine Strategie.",
         lead: "Wenn Menschen erleben, sich entfalten, entdecken und dazugehören wollen, reicht Information nicht. Dann braucht es Zugänge, die aus Wissen Möglichkeiten machen.",
         columns: 4,
+        revealCards: true,
         cards: [
           ["Rational", "Ich finde schneller, was für mich passt.", "Auffindbar, verständlich, bewertbar und erreichbar."],
           ["Emotional", "Ich fühle mich verbundener mit meinem Leben hier.", "Nicht nur wissen, was es gibt. Sondern spüren, was möglich ist."],
@@ -4869,6 +4902,17 @@
       },
       {
         kind: "strategyLines",
+        theme: "dark",
+        title: "Region wird Heimat",
+        kicker: "Block 3 · Strategische Antwort",
+        lines: [
+          "KStA.Connect wird der Login ins lokale Leben,",
+          "damit aus Region wieder Heimat werden kann."
+        ],
+        note: "Emotionalisierte Erweiterung des Leitsatzes. Heimat als strategischer Endzustand, nicht als nostalgischer Claim."
+      },
+      {
+        kind: "strategyLines",
         theme: "warm",
         title: "Vom Nachrichtenmarkt zum Möglichkeitsmarkt",
         kicker: "Block 3 · Strategische Antwort",
@@ -4878,29 +4922,6 @@
         ],
         mutedIndex: 0,
         note: "Plakative Marktwechsel-Folie im Look der Folgeseite. Der Satz markiert den Marktwechsel, nicht nur eine Produktidee."
-      },
-      {
-        kind: "strategyLines",
-        theme: "warm",
-        title: "Von morgens zu jederzeit",
-        kicker: "Block 3 · Strategische Antwort",
-        lines: [
-          "Früher haben wir Menschen morgens gesagt, was in der Stadt passiert ist.",
-          "Künftig zeigen wir ihnen jederzeit, was hier für sie möglich ist, wer dabei ist und wie sie reinkommen."
-        ],
-        mutedIndex: 0,
-        note: "Erklärt den Wechsel von Zeitungssituation zu Möglichkeitslogik. Der zweite Satz trägt die Zukunftsrichtung."
-      },
-      {
-        kind: "strategyLines",
-        theme: "dark",
-        title: "Region wird Heimat",
-        kicker: "Block 3 · Strategische Antwort",
-        lines: [
-          "KStA.Connect wird der Login ins lokale Leben,",
-          "damit aus Region wieder Heimat werden kann."
-        ],
-        note: "Emotionalisierte Erweiterung des Leitsatzes. Heimat als strategischer Endzustand, nicht als nostalgischer Claim."
       },
       {
         kind: "marketShift",
@@ -4936,6 +4957,18 @@
       },
       {
         kind: "strategyLines",
+        theme: "warm",
+        title: "Von morgens zu jederzeit",
+        kicker: "Block 3 · Strategische Antwort",
+        lines: [
+          "Früher haben wir Menschen morgens gesagt, was in der Stadt passiert ist.",
+          "Künftig zeigen wir ihnen jederzeit, was hier für sie möglich ist, wer dabei ist und wie sie reinkommen."
+        ],
+        mutedIndex: 0,
+        note: "Erklärt den Wechsel von Zeitungssituation zu Möglichkeitslogik. Der zweite Satz trägt die Zukunftsrichtung."
+      },
+      {
+        kind: "strategyLines",
         theme: "dark",
         title: "Interface zum lokalen Leben",
         kicker: "Block 3 · Strategische Antwort",
@@ -4966,7 +4999,11 @@
         title: "Antwort 01",
         kicker: "Antwort 01 · Journalismus",
         headline: "Journalismus bleibt der Ursprung der Einordnung.",
-        lead: "Die Investigativrecherche über einen Bauskandal führt nirgendwohin, sie steht für sich. Nicht jeder Artikel mündet in eine Transaktion, und kritische Berichterstattung schon gar nicht. Aber wo Journalismus lokale Relevanz sichtbar macht, etwa ein Porträt über eine Initiative, darf der nächste Schritt nicht automatisch außerhalb des KStA.Connect-Systems passieren.",
+        bullets: [
+          "Die Investigativrecherche über einen Bauskandal führt nirgendwohin. Sie steht für sich.",
+          "Nicht jeder Artikel mündet in eine Transaktion. Kritische Berichterstattung schon gar nicht.",
+          "Aber wo Journalismus lokale Relevanz sichtbar macht, etwa ein Porträt über eine Initiative, darf der nächste Schritt nicht automatisch außerhalb des KStA.Connect-Systems passieren."
+        ],
         note: "Antwort auf die Chefredakteursfrage. Journalismus wird nicht degradiert, sondern bekommt eine Anschlusslogik dort, wo sie sinnvoll ist. Wichtig: Das Nein-Beispiel bewusst ruhig setzen. Kritische Recherche fuehrt nicht in Checkout. Anschlusslogik gilt nur dort, wo sie aus Relevanz legitim folgt."
       },
       {
@@ -4975,7 +5012,11 @@
         title: "Antwort 02",
         kicker: "Antwort 02 · Stadtmarketing",
         headline: "Das ist kein Stadtmarketing. Stadtmarketing bewirbt. KStA.Connect ordnet ein.",
-        lead: "Die Vertrauensposition entsteht gerade daraus, dass KStA.Connect nicht alles gut finden muss. Er kann empfehlen, erklären, warnen, vergleichen und Kontext geben.",
+        bullets: [
+          "Die Vertrauensposition entsteht gerade daraus, dass KStA.Connect nicht alles gut finden muss.",
+          "KStA.Connect kann empfehlen, erklären, warnen und vergleichen.",
+          "Der Unterschied liegt nicht in Werbung, sondern in unabhängiger Einordnung und Kontext."
+        ],
         note: "Antwort auf Stadtmarketing-Einwand. Wichtig: Unabhaengigkeit und Urteilskraft als Unterschied markieren."
       },
       {
@@ -4984,7 +5025,11 @@
         title: "Antwort 03",
         kicker: "Antwort 03 · Mehr als Events",
         headline: "Events sind ein Beweisfeld. Nicht die ganze Idee.",
-        lead: "Die Logik gilt überall dort, wo Menschen Orientierung brauchen: Kultur, Gastronomie, Wohnen, Engagement, Begegnung, Verstehen. KStA.Connect verbindet Erlebnis und Einordnung.",
+        bullets: [
+          "Die Logik gilt überall dort, wo Menschen Orientierung brauchen.",
+          "Kultur, Gastronomie, Wohnen, Engagement, Begegnung und Verstehen sind mögliche Anwendungsfelder.",
+          "KStA.Connect verbindet Erlebnis und Einordnung. Events können Pilot sein, aber nicht die strategische Begrenzung."
+        ],
         note: "Antwort auf Event-Verengung. Events koennen Pilot sein, aber nicht die strategische Begrenzung."
       },
       {
@@ -5522,6 +5567,7 @@
     let index = 0;
     let notesVisible = false;
     let agendaReveal = -1;
+    let cardReveal = 0;
 
     const escapeHtml = (value = "") => String(value)
       .replaceAll("&", "&amp;")
@@ -5566,10 +5612,10 @@
         <span>${String(i + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}</span>
       </div>`;
 
-    const cards = (items, columns = 3) => `
-      <div class="cards ${columns === 2 ? "two" : ""} ${columns === 4 ? "four" : ""}">
-        ${items.map(([eyebrow, title, body]) => `
-          <article class="card">
+    const cards = (items, columns = 3, revealCount = null) => `
+      <div class="cards ${columns === 2 ? "two" : ""} ${columns === 4 ? "four" : ""} ${revealCount !== null ? "is-reveal" : ""}">
+        ${items.map(([eyebrow, title, body], cardIndex) => `
+          <article class="card ${revealCount !== null && cardIndex >= revealCount ? "is-hidden" : ""}" data-reveal-card="${cardIndex}">
             <small>${escapeHtml(eyebrow)}</small>
             <strong>${escapeHtml(title)}</strong>
             <span>${escapeHtml(body)}</span>
@@ -5613,6 +5659,7 @@
             ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
             <h2>${allowEm(slide.headline)}</h2>
             ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
+            ${slide.bullets ? `<ul class="statement-bullets">${slide.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
           </div>`;
       }
 
@@ -6121,13 +6168,14 @@
       }
 
       if (slide.kind === "cards") {
+        const revealCount = slide.revealCards ? Math.max(0, slide.revealIndex ?? 0) : null;
         return `
           <div class="content top">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowEm(slide.headline)}</h2>
             ${slide.lead ? `<p class="lead cards-lead">${escapeHtml(slide.lead)}</p>` : ""}
-            <div style="margin-top: clamp(26px, 3vw, 40px);">${cards(slide.cards, slide.columns)}</div>
-            ${slide.outro ? `<p class="cards-outro">${escapeHtml(slide.outro)}</p>` : ""}
+            <div style="margin-top: clamp(26px, 3vw, 40px);">${cards(slide.cards, slide.columns, revealCount)}</div>
+            ${slide.outro ? `<p class="cards-outro ${slide.revealCards && revealCount < slide.cards.length ? "is-hidden" : ""}">${escapeHtml(slide.outro)}</p>` : ""}
           </div>`;
       }
 
@@ -6286,13 +6334,26 @@
       });
     };
 
+    const updateCardReveal = () => {
+      const slide = slides[index];
+      if (!slide || !slide.revealCards) return;
+      const activeSection = sections[index];
+      activeSection.querySelectorAll("[data-reveal-card]").forEach((card) => {
+        const cardIndex = Number(card.dataset.revealCard);
+        card.classList.toggle("is-hidden", cardIndex >= cardReveal);
+      });
+      activeSection.querySelector(".cards-outro")?.classList.toggle("is-hidden", cardReveal < slide.cards.length);
+    };
+
     const update = (nextIndex, pushHash = true) => {
       index = Math.max(0, Math.min(sections.length - 1, nextIndex));
       agendaReveal = slides[index]?.kind === "agenda" ? (slides[index].revealIndex ?? -1) : -1;
+      cardReveal = slides[index]?.revealCards ? (slides[index].revealIndex ?? 0) : 0;
       sections.forEach((section, sectionIndex) => {
         section.classList.toggle("is-active", sectionIndex === index);
       });
       updateAgendaReveal();
+      updateCardReveal();
       progress.style.width = `${((index + 1) / sections.length) * 100}%`;
       const title = sections[index].dataset.title || `Folie ${index + 1}`;
       document.title = `${String(index + 1).padStart(2, "0")} · ${title} · KStA.Connect Offsite`;
@@ -6309,6 +6370,11 @@
         updateAgendaReveal();
         return;
       }
+      if (slide?.revealCards && cardReveal < slide.cards.length) {
+        cardReveal += 1;
+        updateCardReveal();
+        return;
+      }
       update(index + 1);
     };
 
@@ -6317,6 +6383,11 @@
       if (slide?.kind === "agenda" && agendaReveal >= 0) {
         agendaReveal -= 1;
         updateAgendaReveal();
+        return;
+      }
+      if (slide?.revealCards && cardReveal > 0) {
+        cardReveal -= 1;
+        updateCardReveal();
         return;
       }
       update(index - 1);
