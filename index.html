@@ -728,6 +728,24 @@
       color: var(--red);
     }
 
+    .statement-footnote {
+      max-width: 840px;
+      margin-top: clamp(18px, 2vw, 28px);
+      color: rgba(28, 25, 23, 0.52);
+      font-size: clamp(12px, 0.9vw, 15px);
+      font-weight: 400;
+      line-height: 1.38;
+    }
+
+    .dark .statement-footnote {
+      color: rgba(250, 250, 248, 0.52);
+    }
+
+    .split-footnote {
+      grid-column: 2;
+      margin-top: clamp(16px, 1.8vw, 24px);
+    }
+
     .method-agenda-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3260,6 +3278,10 @@
         grid-template-columns: 1fr;
       }
 
+      .split-footnote {
+        grid-column: 1;
+      }
+
       .evidence-layout,
       .evidence-grid {
         grid-template-columns: 1fr;
@@ -4357,6 +4379,7 @@
         theme: "dark",
         title: "Phänomen 01",
         kicker: "Phänomen 01",
+        marker: "→",
         headline: "Das Leben verläuft nicht mehr linear. Es ist eine Abfolge von Neuanfängen.",
         note: "Titelchart fuer Phaenomen 01. Satz stehen lassen und wirken lassen."
       },
@@ -4403,6 +4426,7 @@
         theme: "dark",
         title: "Phänomen 02",
         kicker: "Phänomen 02",
+        marker: "→",
         headline: "Die alte lokale Ordnung trägt weniger. Neue Gemeinschaften entstehen kleinteiliger.",
         note: "Titelchart fuer Phaenomen 02. Satz stehen lassen und wirken lassen."
       },
@@ -4506,6 +4530,7 @@
         theme: "dark",
         title: "Phänomen 03",
         kicker: "Phänomen 03",
+        marker: "→",
         headline: "Der Nahraum wird wichtiger, aber nicht automatisch verständlicher.",
         note: "Titelchart fuer Phaenomen 03. Satz stehen lassen und wirken lassen."
       },
@@ -4762,7 +4787,7 @@
           ["Newsletter / Push / Events", "Bestehende Kontaktpunkte für Wiederkehr und Aktivierung."],
           ["Communities", "Erste Räume für Zugehörigkeit, Austausch und Interessenlogik."]
         ],
-        conclusion: "Wenn die Bausteine da sind, aber die Architektur fehlt: Nach welchem Prinzip verbinden wir sie?",
+        conclusion: "Nach welchem Prinzip verbinden wir sie?",
         note: "Status-quo-Folie als unmittelbares Scharnier zu Block 3: Die Stärken sind da, aber noch nicht architektonisch verbunden."
       },
       {
@@ -4826,8 +4851,8 @@
         theme: "dark",
         title: "Finaler Benefit",
         kicker: "Der gemeinsame Nenner",
-        headline: "Was ist der gemeinsame Nenner dieser Sehnsucht?",
-        lead: "Am Ende geht es nicht um mehr Information. Es geht um ein besseres Verhältnis zum eigenen Leben in dieser Region.",
+        headline: "Ein besseres Verhältnis zum eigenen Leben in dieser Region.",
+        lead: "",
         note: "Neue Fragefolie vor dem emotionalen Zielbild. Sie macht die Bruecke: Wenn KStA.Connect diesen Job leistet, welches Gefuehl entsteht daraus?"
       },
       {
@@ -4845,7 +4870,12 @@
         title: "Zustand",
         kicker: "Der Zustand, den wir ermöglichen",
         headline: "Das ist kein Claim. Es ist ein erstrebenswerter Zustand für alle Menschen, die hier leben.",
-        lead: "Die Summe der Dinge, die funktionieren. Wenn Menschen sich orientieren können, dazugehören, Neues entdecken und den Übergang vom Wissen zum Erleben schaffen. Daran messen wir alles, was wir tun.",
+        bullets: [
+          "Menschen können sich orientieren.",
+          "Menschen können dazugehören.",
+          "Menschen können Neues entdecken.",
+          "Menschen schaffen den Übergang vom Wissen zum Erleben."
+        ],
         note: "Neue Erklaerfolie nach dem emotionalen Zielbild. Sie macht klar, dass der Satz kein Werbeclaim ist, sondern eine strategische Messgroesse."
       },
       {
@@ -4853,18 +4883,9 @@
         theme: "dark",
         title: "Rollenfrage",
         kicker: "Die Rolle von KStA.Connect",
-        headline: "Welche Rolle kann KStA.Connect dabei spielen?",
+        headline: "Welche Rolle spielt nun KStA.Connect?",
         lead: "",
         note: "Scharnier nach der Zustandslogik. Die Folie stellt die Rollenfrage, bevor die Antwort folgt."
-      },
-      {
-        kind: "statement",
-        theme: "light",
-        title: "Die Rolle",
-        kicker: "Vorhandene Fähigkeiten, neuer Zweck",
-        headline: "KStA.Connect hat heute schon viele Fähigkeiten, um Menschen ihren Sehnsüchten näherzubringen.",
-        lead: "Nicht als Versprechen, dass Menschen Köln lieben. Sondern als System, das sichtbar, erreichbar und nutzbar macht, was die Region lebenswert macht.",
-        note: "Erst das Gefühl. Jetzt die Rolle. Leistungsorientiert und konkreter: KStA.Connect hat bereits Fähigkeiten, die Sehnsüchte praktisch anschlussfähig machen."
       },
       {
         kind: "statement",
@@ -5049,7 +5070,11 @@
         title: "Prinzip 1 Erklärung",
         kicker: "Prinzip 1 · Erklärung",
         headline: "Daten sagen, was es gibt. Kontext sagt, was es für dich bedeutet.",
-        lead: "Andere Portale liefern den Datensatz: Adresse, Preis, Öffnungszeit. KStA.Connect liefert die Einordnung: Passt das zu mir, jetzt, in meiner Lebenssituation? Genau diese Einordnung ist journalistische Arbeit. Geprüft, kuratiert, lokal verankert.",
+        bullets: [
+          "Andere Portale liefern den Datensatz: Adresse, Preis, Öffnungszeit.",
+          "KStA.Connect liefert die Einordnung: Passt das zu mir, jetzt, in meiner Lebenssituation?",
+          "Genau diese Einordnung ist journalistische Arbeit: geprüft, kuratiert, lokal verankert."
+        ],
         note: "Erklaerfolie Prinzip 1. Wichtig ist die Bruecke: Kontext ist keine technische Zusatzinformation, sondern journalistische Arbeit."
       },
       {
@@ -5080,7 +5105,12 @@
         title: "Prinzip 2 Erklärung",
         kicker: "Prinzip 2 · Erklärung",
         headline: "Vom Publikum zum Menschen.",
-        lead: "KStA.Connect kennt heute seine Leser als Zielgruppe: Alter, Abo, Region. Künftig zählt die Lebenssituation: neu zugezogen, frisch Eltern, allein in einer großen Stadt, im Ruhestand. Derselbe Ort bedeutet für jede Situation etwas anderes. Erst diese Sicht macht aus Kontext persönliche Relevanz.",
+        bullets: [
+          "Heute kennt KStA.Connect seine Leser als Zielgruppe: Alter, Abo, Region.",
+          "Künftig zählt die Lebenssituation: neu zugezogen, frisch Eltern, allein in einer großen Stadt, im Ruhestand.",
+          "Derselbe Ort bedeutet für jede Situation etwas anderes.",
+          "Erst diese Sicht macht aus Kontext persönliche Relevanz."
+        ],
         note: "Erklaerfolie Prinzip 2. Verschiebt die Logik von Zielgruppe zu Lebenssituation."
       },
       {
@@ -5117,7 +5147,12 @@
         title: "Prinzip 3 Erklärung",
         kicker: "Prinzip 3 · Erklärung",
         headline: "Heute endet der Text. Künftig beginnt der nächste Schritt.",
-        lead: "Ein Artikel informiert und ist zu Ende. KStA.Connect baut die Brücke weiter: zur Anmeldung, zum Termin, zu den Menschen, die schon dabei sind. Genau hier zahlt sich Journalismus aus. Nur geprüfte, glaubwürdige Berichterstattung trägt das Vertrauen, das den nächsten Schritt überhaupt möglich macht.",
+        bullets: [
+          "Ein Artikel informiert und ist zu Ende.",
+          "KStA.Connect baut die Brücke weiter: zur Anmeldung, zum Termin, zu den Menschen, die schon dabei sind.",
+          "Genau hier zahlt sich Journalismus aus.",
+          "Nur geprüfte, glaubwürdige Berichterstattung trägt das Vertrauen, das den nächsten Schritt überhaupt möglich macht."
+        ],
         note: "Erklaerfolie Prinzip 3. Journalismus wird nicht ersetzt, sondern zur Voraussetzung fuer Anschluss."
       },
       {
@@ -5127,9 +5162,15 @@
         kicker: "Prinzip 3 · Beispiel",
         headline: "Über eine Initiative zu schreiben ist gut. Den Weg zu ihr zu bauen ist die Leistung.",
         copy: [
-          "Heute endet ein Porträt über eine Stadtteilinitiative mit dem letzten Absatz. Künftig kommt die Initiative selbst zu Wort: mit Aufruf, nächstem Termin, Kontaktperson und Anmeldung in einem Klick. Wer noch unsicher ist, findet über wenige Fragen das Engagement, das zu ihm passt.",
-          "Der Mitwirk-O-Mat aus Lüneburg zeigt, dass diese Mechanik funktioniert. Was einer ehrenamtlichen Initiative im Kleinen gelingt, könnte ein Medienhaus mit Reichweite und Vertrauen in größerem Maßstab tragen. Genau das würde der Pilot zeigen. Aus Recherche wird Zugang, aus Lesen wird Mitmachen."
+          "Heute endet ein Porträt über eine Stadtteilinitiative mit dem letzten Absatz.",
+          "Künftig kommt die Initiative selbst zu Wort: mit Aufruf, nächstem Termin, Kontaktperson und Anmeldung in einem Klick.",
+          "Wer noch unsicher ist, findet über wenige Fragen das Engagement, das zu ihm passt.",
+          "Der Mitwirk-O-Mat* aus Lüneburg zeigt, dass diese Mechanik funktioniert.",
+          "Was einer ehrenamtlichen Initiative im Kleinen gelingt, könnte ein Medienhaus mit Reichweite und Vertrauen in größerem Maßstab tragen.",
+          "Aus Recherche wird Zugang, aus Lesen wird Mitmachen."
         ],
+        copyAsBullets: true,
+        footnote: "* Der Mitwirk-O-Mat ist ein digitales Matching-Tool aus Lüneburg, das Menschen über wenige Fragen mit passenden Engagementangeboten verbindet.",
         note: "Finales Beispiel fuer Anschlussfaehigkeit. Mitwirk-O-Mat als Belegmechanik, KStA.Connect als skalierender Vertrauens- und Reichweitenhebel."
       },
       {
@@ -5138,7 +5179,12 @@
         title: "Prinzip 4",
         kicker: "Teil 1 · Was sich ändert · Prinzip 4",
         headline: "Die ökonomische Klammer: Alles, was wir tun, denken wir bis zur Transaktion.",
-        lead: "Nicht alles mündet in einen Abschluss. Aber alles wird darauf geprüft. Der Adenauer-Wein zeigt es: über 11.000 Flaschen verkauft, nicht durch Werbung, sondern weil eine Geschichte Relevanz schuf und die Transaktion vorbereitet hat. Relevanz ist kein Selbstzweck, sie ist die Vorstufe. Das ist keine versteckte Agenda, sondern offengelegte Logik: Relevanz zuerst, Transaktion als mögliche Folge.",
+        bullets: [
+          "Nicht alles mündet in einen Abschluss. Aber alles wird darauf geprüft.",
+          "Der Adenauer-Wein zeigt es: über 11.000 Flaschen verkauft, nicht durch Werbung, sondern weil eine Geschichte Relevanz schuf und die Transaktion vorbereitet hat.",
+          "Relevanz ist kein Selbstzweck. Sie ist die Vorstufe.",
+          "Das ist keine versteckte Agenda, sondern offengelegte Logik: Relevanz zuerst, Transaktion als mögliche Folge."
+        ],
         note: "Bewusst nach den drei methodischen Prinzipien platziert, als wirtschaftliche Erdung. Keine Angst vor Transaktion ist die interne Haltung, aber die eigentliche Aussage ist: Relevanz zuerst, Transaktion als vorbereitete Konsequenz. Beispiel parat: Adenauer-Wein, ueber 11.000 Flaschen verkauft, weil Geschichte und Relevanz die Transaktion vorbereitet haben. Wichtig fuers Gremium: Das ist nicht das Gegenteil von Journalismus, sondern die Konsequenz aus geschaffener Relevanz."
       },
       {
@@ -5216,7 +5262,7 @@
       },
       {
         kind: "assetGrid",
-        theme: "dark",
+        theme: "light",
         title: "Bestand · Content",
         kicker: "Teil 2 · Was wir haben · Content",
         headline: "<span class=\"red\">C</span>ontent. Niemand beobachtet die Region dichter.",
@@ -5232,7 +5278,7 @@
       },
       {
         kind: "assetGrid",
-        theme: "dark",
+        theme: "light",
         title: "Bestand · Context",
         kicker: "Teil 2 · Was wir haben · Context",
         headline: "<span class=\"red\">C</span>ontext. Die Einordnung, die nur ein Medienhaus leisten kann.",
@@ -5250,7 +5296,7 @@
       },
       {
         kind: "assetGrid",
-        theme: "dark",
+        theme: "light",
         title: "Bestand · Connect",
         kicker: "Teil 2 · Was wir haben · Connect",
         headline: "<span class=\"red\">C</span>onnect. Die Brücke zwischen Mensch und Angebot existiert bereits.",
@@ -5267,7 +5313,7 @@
       },
       {
         kind: "assetGrid",
-        theme: "dark",
+        theme: "light",
         title: "Bestand · Checkout",
         kicker: "Teil 2 · Was wir haben · Checkout",
         headline: "<span class=\"red\">C</span>heckout. Einzelne Transaktionen funktionieren. Ein gemeinsames System fehlt noch.",
@@ -5282,20 +5328,6 @@
         ],
         conclusion: "Urteil: nur punktuell. Einzelne Transaktionen funktionieren, ein gemeinsames System fehlt.",
         note: "Viertes C. Nicht ueberbehaupten: KStA.Connect hat reale Transaktionen, aber keinen zentralen Shop und kein durchgaengiges Portal. Adenauer-Wein, Ticketing, Leserreisen und Abo belegen die Kompetenz; Lead- und Provisionsstrecken sind angrenzende Erloeslogiken, noch kein eigener Checkout."
-      },
-      {
-        kind: "transitionPlain",
-        theme: "dark",
-        title: "Die Lücke",
-        kicker: "Teil 2 · Der ehrliche Cut",
-        headline: "Alle vier C sind vorhanden. Was fehlt, ist die Verbindung zwischen ihnen.",
-        paragraphs: [
-          "Der Rohstoff ist da, in überwältigender Fülle. Content, Context, Connect, Checkout, jede Schicht ist besetzt. Aber sie stehen nebeneinander, nicht miteinander.",
-          "<strong>Es gibt keine Profile, nur Login-Daten. Keinen Knowledge Graph, der Orte, Menschen und Themen verknüpft. Kein CRM, in dem die Beziehungen zusammenlaufen.</strong> iMatrics taggt für SEO, nicht für Relevanz. Der Recommender wurde eingestellt.",
-          "Das ist keine Schwäche, die wir verstecken. Es ist die präzise Stelle, an der die Arbeit beginnt. Das Betriebssystem ist nicht zu bauen, weil Teile fehlen. Es ist zu bauen, weil die Teile noch nicht verbunden sind."
-        ],
-        question: "Was wir weiterentwickeln müssen, ist deshalb keine Frage des Materials. Es ist eine Frage der Architektur.",
-        note: "Der ehrliche Cut und die Brücke zu Teil 3. Bewusst offen, weil Schumacher als CFO und die Technikseite die Lücke ohnehin sehen. Selbst benennen wirkt souverän. Datenlücke wörtlich aus dem Asset-Sheet: keine Profile, kein Graph, kein CRM, Recommender eingestellt, iMatrics nur SEO. Das ist zugleich die stärkste Begründung für den Piloten."
       },
       {
         kind: "methodAgenda",
@@ -5318,7 +5350,11 @@
         title: "Spezialsteine",
         kicker: "Teil 3 · Was wir weiterentwickeln müssen",
         headline: "Die Basissteine gibt es. Jetzt kommen die Spezialsteine.",
-        lead: "Es geht nicht darum, Vorhandenes nur zusammenzustecken. Vier neue Fähigkeiten machen aus den Bausteinen ein Erlebnis. Alle vier dienen einem Gefühl: Die machen es mir leicht, hier zu leben.",
+        bullets: [
+          "Es geht nicht darum, Vorhandenes nur zusammenzustecken.",
+          "Vier neue Fähigkeiten machen aus den Bausteinen ein Erlebnis.",
+          "Alle vier dienen einem Gefühl: Die machen es mir leicht, hier zu leben."
+        ],
         note: "Eröffnung von Teil 3 mit der Lego-Metapher. Wichtig: Korrigiert den Eindruck, alles sei nur Verkabelung. Die Spezialsteine sind echte neue Fähigkeiten. Das Dach über allem ist Leichtigkeit und Personalisierung, nicht Technik. Die folgenden vier Folien sind bewusst aus Ninas Bedürfnis formuliert, nicht technologisch."
       },
       {
@@ -5328,7 +5364,12 @@
         kicker: "Spezialstein 1 · Anschluss",
         marker: "→",
         headline: "„Ich sehe, wer von meinen Leuten auch da ist.“",
-        lead: "Das Modul, das die weggebrochene Empfehlungsschicht digital zurückbringt. Menschen, denen ich vertraue, machen aus einem Angebot eine Einladung. Ich folge ihnen, baue meinen eigenen Kreis auf und entscheide selbst, wer mich sieht. Anschluss entsteht, weil ich nicht allein losgehen muss.",
+        bullets: [
+          "Das Modul bringt die weggebrochene Empfehlungsschicht digital zurück.",
+          "Menschen, denen ich vertraue, machen aus einem Angebot eine Einladung.",
+          "Ich folge ihnen, baue meinen eigenen Kreis auf und entscheide selbst, wer mich sieht.",
+          "Anschluss entsteht, weil ich nicht allein losgehen muss."
+        ],
         note: "Erster und wichtigster Spezialstein, das Herzstück. Aus Ninas Perspektive formuliert. Hier steckt auch die Vertrauensdimension: Ich entscheide selbst, wer mich sieht. Das ist der Unterschied zu WhatsApp (geschlossen) und nebenan.de (ohne Inhalt). Abgrenzung im Vortrag betonen."
       },
       {
@@ -5338,7 +5379,12 @@
         kicker: "Spezialstein 2 · Personalisierung",
         marker: "→",
         headline: "„Mir wird gezeigt, was zu mir passt. Nicht, was alle sehen.“",
-        lead: "Der Kalender, der meine Lebenssituation kennt. Er zeigt nicht die tausend Dinge der Stadt, sondern die wenigen, die für mich zählen. Das große Konzert genauso wie das kleine Laufevent zwei Straßen weiter, bei dem sich gerade zwei Bekannte angemeldet haben.",
+        bullets: [
+          "Der Kalender kennt meine Lebenssituation.",
+          "Er zeigt nicht die tausend Dinge der Stadt, sondern die wenigen, die für mich zählen.",
+          "Das große Konzert zählt genauso wie das kleine Laufevent zwei Straßen weiter.",
+          "Relevanz entsteht auch dadurch, dass sich gerade zwei Bekannte angemeldet haben."
+        ],
         note: "Zweiter Spezialstein, Personalisierung. Verschmilzt mit dem Anschluss: der Kalender zeigt auch, wo Bekannte hingehen. Wichtig: auch das Kleine, nicht nur Großveranstaltungen. Das ist der soziale Navigator aus Block 4, jetzt als erlebbares Produkt."
       },
       {
@@ -5348,7 +5394,12 @@
         kicker: "Spezialstein 3 · Themenwelten",
         marker: "→",
         headline: "„Ich wähle die Welten, die zu mir gehören.“",
-        lead: "Damit aus Fülle Übersicht wird, bündelt sich Relevantes in andockbaren Welten: mein Veedel, Genuss, Kultur, der FC. Sie sind nicht das Gegenteil der Lebenssituation, sondern ihre Bedienoberfläche, der Ort, an dem persönliche Relevanz dauerhaft zusammenläuft. Manche bleiben frei, manche tragen ein eigenes Modell. Aus dieser Ordnung kann später wirtschaftlicher Wert entstehen.",
+        bullets: [
+          "Damit aus Fülle Übersicht wird, bündelt sich Relevantes in andockbaren Welten: mein Veedel, Genuss, Kultur, der FC.",
+          "Diese Welten sind nicht das Gegenteil der Lebenssituation, sondern ihre Bedienoberfläche.",
+          "Sie sind der Ort, an dem persönliche Relevanz dauerhaft zusammenläuft.",
+          "Manche bleiben frei, manche tragen ein eigenes Modell. Aus dieser Ordnung kann später wirtschaftlicher Wert entstehen."
+        ],
         note: "Dritter Spezialstein, Container-Logik. Streaming-Analogie bewusst nutzen. FC als Beispiel-Container, nicht zwingend kostenpflichtig, aber die Logik erlaubt eigene Erlösmodelle. Die Monetarisierung selbst kommt erst im Entscheidungsblock, hier nur das Strukturprinzip."
       },
       {
@@ -5358,7 +5409,12 @@
         kicker: "Spezialstein 4 · Marktplatz",
         marker: "→",
         headline: "„Alles, was ich hier tue, läuft an einem Ort zusammen.“",
-        lead: "Der lokale Marktplatz. Ticket, Anmeldung, Reise, der Wein aus der Region, alles an einem Ort, alles in meinem Dashboard. Und lokale Anbieter stellen ihre Angebote selbst ein, sichtbar nach den Kriterien, die zu mir passen. Aus Lesen wird Handeln, ohne die Plattform zu verlassen.",
+        bullets: [
+          "Ticket, Anmeldung, Reise und der Wein aus der Region laufen an einem Ort zusammen.",
+          "Alles liegt in meinem Dashboard.",
+          "Lokale Anbieter stellen ihre Angebote selbst ein, sichtbar nach den Kriterien, die zu mir passen.",
+          "Aus Lesen wird Handeln, ohne die Plattform zu verlassen."
+        ],
         note: "Vierter Spezialstein, bewusst zuletzt, damit die Transaktion nicht als eigentliche Absicht erscheint, sondern als Konsequenz. Wichtig für die Redaktion: erst Mensch, Anschluss, Relevanz, dann Marktplatz. Hier schließt sich Checkout aus dem 4C-Modell."
       },
       {
@@ -5622,6 +5678,7 @@
             <h2>${allowEm(slide.headline)}</h2>
             ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
             ${slide.bullets ? `<ul class="statement-bullets">${slide.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
+            ${slide.footnote ? `<p class="statement-footnote">${escapeHtml(slide.footnote)}</p>` : ""}
           </div>`;
       }
 
@@ -5946,6 +6003,7 @@
         return `
           <div class="content phenomenon-title ${slide.centered ? "is-centered" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
             <h2>${escapeHtml(slide.headline)}</h2>
           </div>`;
       }
@@ -6131,6 +6189,7 @@
             ${slide.copyAsBullets
               ? `<ul class="split-bullets">${slide.copy.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>`
               : `<div class="copy">${slide.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>`}
+              ${slide.footnote ? `<p class="statement-footnote split-footnote">${escapeHtml(slide.footnote)}</p>` : ""}
           </div>`;
       }
 
