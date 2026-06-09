@@ -298,6 +298,26 @@
       color: rgba(250, 250, 248, 0.64);
     }
 
+    .split-bullets {
+      display: grid;
+      gap: clamp(16px, 1.7vw, 24px);
+      max-width: 760px;
+      margin: 0;
+      padding-left: 1.08em;
+      color: var(--body);
+      font-size: clamp(19px, 1.45vw, 24px);
+      font-weight: 300;
+      line-height: 1.43;
+    }
+
+    .dark .split-bullets {
+      color: rgba(250, 250, 248, 0.66);
+    }
+
+    .split-bullets li::marker {
+      color: var(--red);
+    }
+
     .agenda-stack {
       display: grid;
       gap: clamp(16px, 1.9vw, 24px);
@@ -1889,6 +1909,20 @@
       max-width: 1120px;
       font-size: clamp(44px, 5.5vw, 80px);
       line-height: 1.08;
+    }
+
+    .phenomenon-title.is-centered {
+      justify-items: center;
+      text-align: center;
+    }
+
+    .phenomenon-title.is-centered .kicker {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .phenomenon-title.is-centered h2 {
+      max-width: 1180px;
     }
 
     .sehnsucht-layout {
@@ -4109,10 +4143,11 @@
         kicker: "Warum jetzt?",
         headline: "Das alte Geschäft verliert seine<br>Selbstverständlichkeit.<br>Aber KStA.Connect verliert nicht seinen Wert.",
         compactHeadline: true,
+        copyAsBullets: true,
         copy: [
-          "Regionale Medien konnten lange von einem stabilen Tausch leben: Information gegen Aufmerksamkeit, Reichweite gegen Anzeigenumsatz. Dieser Tausch wird schwächer.",
-          "Was nicht verschwindet, ist der eigentliche Vorsprung: Vertrauen, lokale Kompetenz, tägliche Nähe und eine Beziehung zu Menschen in der Region.",
-          "Die Aufgabe ist deshalb nicht, das alte Modell zu retten. Die Aufgabe ist, aus diesem Vorsprung eine neue Wertschöpfungslogik für den Alltag zu bauen."
+          "Der alte Tausch wird schwächer: Information gegen Aufmerksamkeit, Reichweite gegen Anzeigenumsatz.",
+          "Der eigentliche Vorsprung bleibt: Vertrauen, lokale Kompetenz, tägliche Nähe und Beziehung zu Menschen in der Region.",
+          "Die Aufgabe ist nicht, das alte Modell zu retten, sondern aus diesem Vorsprung eine neue Wertschöpfungslogik für den Alltag zu bauen."
         ],
         note: "Kurzer Vorspann vor der Diagnose. Mündlich ruhig führen: Das Problem ist nicht, dass KStA.Connect keinen Wert mehr hat. Das Problem ist, dass der alte Mechanismus diesen Wert nicht mehr ausreichend monetarisiert."
       },
@@ -4122,9 +4157,11 @@
         title: "Zielbild",
         kicker: "Auftrag aus KStA.Connect",
         headline: "Das Zielbild ist gesetzt. Die strategische Logik dahinter ist noch zu klären.",
+        copyAsBullets: true,
         copy: [
-          "Die Aufsichtsratspräsentation formuliert den Anspruch, dass KStA.Connect nicht nur gelesen und gehört, sondern erlebt wird.",
-          "Die offene Aufgabe ist die Motivation und Wertschöpfungslogik dahinter zu finden: Was ist der zentrale Treiber? Warum nehmen Menschen dieses Angebot wahr? Warum kommen sie wieder? Wo entsteht wirtschaftlicher Wert?"
+          "KStA.Connect soll nicht nur gelesen und gehört, sondern erlebt werden.",
+          "Offen ist die Logik dahinter: Was ist der zentrale Treiber? Warum nehmen Menschen dieses Angebot wahr? Warum kommen sie wieder?",
+          "Die strategische Frage lautet: Wo entsteht daraus wirtschaftlicher Wert?"
         ],
         note: "Sachliche Einbettung der AR-Praesentation im Vorspann. Nicht als spaete Pointe, sondern als Aufgabenstellung: Zielbild ist da, Logik und Motivation muessen entwickelt werden."
       },
@@ -4191,7 +4228,7 @@
         kind: "diagnosisTable",
         theme: "warm",
         title: "Verdichtung",
-        kicker: "Block 1 · Diagnose",
+        kicker: "Die Lage verdichtet sich",
         headline: "Was sich in wenigen Jahren verändert hat, war so kaum zu prognostizieren.",
         lead: "Das ist kein schleichender Wandel. Das ist eine Verdichtung von Umbrüchen, die Menschen, Handel, Vereine und Nachbarschaften gleichzeitig betrifft.",
         rows: [
@@ -4208,7 +4245,7 @@
         theme: "dark",
         title: "Diagnosepfad",
         block: "→",
-        kicker: "Block 1 · Diagnose",
+        kicker: "Vom Alltag zur Aufgabe",
         headline: "Wir analysieren und verdichten die Diagnosen in sieben Schritten:<br>vom Alltag der Menschen zur strategischen Aufgabe.",
         lead: "",
         note: "Neues Trennchart fuer den Praesentationsfluss. Es trennt die harte Datenfolie vom folgenden Diagnosepfad."
@@ -4217,7 +4254,7 @@
         kind: "phenomenaOverview",
         theme: "warm",
         title: "Diagnosepfad",
-        kicker: "Block 1 · Diagnose",
+        kicker: "Sieben Signale",
         headline: "Vom Alltag der Menschen zur strategischen Aufgabe.",
         lead: "Der Weg durch die Diagnose.",
         hidePersonas: true,
@@ -4641,7 +4678,7 @@
         theme: "dark",
         title: "Block 2",
         block: "02",
-        kicker: "Block 2 · Einordnung",
+        kicker: "Was die Diagnose bedeutet",
         headline: "Was bedeutet diese Diagnose für regionale Medien?",
         photoDivider: "assets/editorial/local-divider-block-2.webp",
         lead: "Bevor wir für KStA.Connect eine Antwort formulieren, prüfen wir, was andere Medien international entwickelt haben, wo die Grenzen liegen, und wer welche Teilfelder besetzt.",
@@ -4651,7 +4688,7 @@
         kind: "benchmarkOverview",
         theme: "dark",
         title: "Benchmarks",
-        kicker: "Block 2 · Einordnung",
+        kicker: "Andere lösen Teilprobleme",
         headline: "Fünf Medienhäuser, die Teile des Problems bereits adressieren.",
         lead: "Unterschiedliche Märkte, unterschiedliche Ansätze. Aber alle stehen vor derselben Grundfrage.",
         benchmarks: [
@@ -4707,7 +4744,7 @@
         kind: "benchmarkTable",
         theme: "dark",
         title: "Benchmark Details",
-        kicker: "Block 2 · Einordnung",
+        kicker: "Keiner verbindet alles",
         headline: "Hat das schon jemand gelöst?",
         lead: "Internationale Medienhäuser haben Teilantworten gefunden. Aber das Gesamtproblem ist offen.",
         rows: [
@@ -4727,7 +4764,7 @@
         kind: "localPlayers",
         theme: "dark",
         title: "Teilfelder",
-        kicker: "Block 2 · Einordnung",
+        kicker: "Der Markt formiert sich lokal",
         headline: "Wer partizipiert in unserer Region bereits?",
         lead: "Die Veränderungen aus Block 1 erzeugen neue Bedürfnisse. Andere bedienen sie bereits. In Teilen.",
         rows: [
@@ -4747,7 +4784,7 @@
         kind: "transitionPlain",
         theme: "dark",
         title: "Physische Präsenz",
-        kicker: "Block 2 · Einordnung",
+        kicker: "Der Vorsprung von KStA.Connect",
         headline: "Google hat Daten. Instagram hat Bilder. KStA.Connect hat ein Gesicht.",
         paragraphs: [
           "Die Redaktion existiert physisch. Ihre Journalisten haben Namen, Gesichter und eine Adresse in dieser Stadt. Wenn KStA.Connect sagt \"Das ist ein guter Ort\", steht jemand mit seiner Reputation dafür ein.",
@@ -4761,7 +4798,7 @@
         kind: "assetGrid",
         theme: "dark",
         title: "KStA.Connect Assets",
-        kicker: "Block 2 · Einordnung",
+        kicker: "Vertrauen als Startvorteil",
         headline: "Was hat KStA.Connect, das keiner dieser Spieler hat?",
         wideCards: true,
         cards: [
@@ -4778,7 +4815,7 @@
         kind: "statement",
         theme: "dark",
         title: "Was machen wir daraus?",
-        kicker: "Block 2 · Schlusssatz",
+        kicker: "Aus Vertrauen wird Aufgabe",
         headline: "Die Frage ist nicht, ob wir Vertrauen haben. Die Frage ist, was wir daraus machen.",
         lead: "Damit endet die Einordnung. Ab hier wird aus Diagnose und Assetlage eine strategische Antwort.",
         note: "Schlusssatz von Block 2 und Uebergang zur strategischen Antwort."
@@ -4798,7 +4835,7 @@
         kind: "statement",
         theme: "dark",
         title: "Die Frage",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Der strategische Ausgangspunkt",
         headline: "Zurück zum Anfang: Was wollen Menschen eigentlich?",
         lead: "Wir müssen uns diese eine zentrale Frage stellen. Nicht für ein Segment. Nicht für einen Moment. Sondern als Grundlage für alles, was folgt.",
         note: "Einstieg Block 3. Die Frage bekommt einen kurzen Lead, damit sie nicht nur rhetorisch wirkt, sondern als Grundlage fuer alles Folgende gesetzt wird."
@@ -4807,7 +4844,7 @@
         kind: "statement",
         theme: "light",
         title: "Eine Sehnsucht",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Aus Forschung wird Motiv",
         headline: "Viele Studien. Sechs JTBD-Analysen. Eine Sehnsucht. Was verbindet sie?",
         lead: "Information, Transparenz und Zugang sind Mittel. Entscheidend ist, was Menschen damit erreichen wollen.",
         note: "Brücke von der JTBD-Forschung zur Vision. Keine Studiendetails, nur die Verdichtung."
@@ -4816,7 +4853,7 @@
         kind: "sehnsuchtsTriple",
         theme: "warm",
         title: "Was Menschen wirklich wollen",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Der eigentliche Job",
         lines: ["Menschen wollen erleben.", "Menschen wollen sich entfalten.", "Menschen wollen Neues entdecken.", "Menschen wollen dazugehören."],
         sub: "Suche und KI finden Treffer. Lokale Passung, sozialen Anschluss und verlässliche Einordnung leisten sie nicht.",
         note: "Vier kurze Zeilen, die sich aufbauen. Dann der stille Satz darunter. Kein Bullet-Point, keine Erklärung. Sensibler Punkt wegen KI-Klima im Haus. Nicht triumphierend gegen KI sprechen, sondern souveraen abgrenzen: KI ist ein Werkzeug, das Treffer liefert. Den Unterschied macht, was nur Menschen und eine verantwortliche Redaktion leisten, lokale Passung, Anschluss, Einordnung."
@@ -4825,7 +4862,7 @@
         kind: "cards",
         theme: "dark",
         title: "Aus Sehnsucht wird Strategie",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Aus Bedürfnis wird Strategie",
         headline: "Diese Sehnsucht hat das Potenzial für eine Strategie.",
         lead: "Wenn Menschen erleben, sich entfalten, entdecken und dazugehören wollen, reicht Information nicht. Dann braucht es Zugänge, die aus Wissen Möglichkeiten machen.",
         columns: 4,
@@ -4843,7 +4880,7 @@
         kind: "statement",
         theme: "dark",
         title: "Finaler Benefit",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Der gemeinsame Nenner",
         headline: "Was ist der gemeinsame Nenner dieser Sehnsucht?",
         lead: "Am Ende geht es nicht um mehr Information. Es geht um ein besseres Verhältnis zum eigenen Leben in dieser Region.",
         note: "Neue Fragefolie vor dem emotionalen Zielbild. Sie macht die Bruecke: Wenn KStA.Connect diesen Job leistet, welches Gefuehl entsteht daraus?"
@@ -4852,15 +4889,16 @@
         kind: "phenomenonTitle",
         theme: "dark",
         title: "Ich liebe es hier zu leben",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Das emotionale Zielbild",
         headline: "„Ich liebe es, hier zu leben.“",
+        centered: true,
         note: "Allein. Groß. Nichts daneben. Das ist die emotionale Zielgrösse, an der wir alles messen. Stehen lassen."
       },
       {
         kind: "statement",
         theme: "warm",
         title: "Zustand",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Der Zustand, den wir ermöglichen",
         headline: "Das ist kein Claim. Es ist ein erstrebenswerter Zustand für alle Menschen, die hier leben.",
         lead: "Die Summe der Dinge, die funktionieren. Wenn Menschen sich orientieren können, dazugehören, Neues entdecken und den Übergang vom Wissen zum Erleben schaffen. Daran messen wir alles, was wir tun.",
         note: "Neue Erklaerfolie nach dem emotionalen Zielbild. Sie macht klar, dass der Satz kein Werbeclaim ist, sondern eine strategische Messgroesse."
@@ -4869,16 +4907,16 @@
         kind: "statement",
         theme: "dark",
         title: "Rollenfrage",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Die Rolle von KStA.Connect",
         headline: "Welche Rolle kann KStA.Connect dabei spielen?",
-        lead: "Wenn das Ziel kein Claim ist, sondern ein Zustand, braucht es keine weitere Oberfläche. Es braucht eine Funktion, die Orientierung, Zugang und Begegnung wahrscheinlicher macht.",
+        lead: "",
         note: "Scharnier nach der Zustandslogik. Die Folie stellt die Rollenfrage, bevor die Antwort folgt."
       },
       {
         kind: "statement",
         theme: "light",
         title: "Die Rolle",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Vorhandene Fähigkeiten, neuer Zweck",
         headline: "KStA.Connect hat heute schon viele Fähigkeiten, um Menschen ihren Sehnsüchten näherzubringen.",
         lead: "Nicht als Versprechen, dass Menschen Köln lieben. Sondern als System, das sichtbar, erreichbar und nutzbar macht, was die Region lebenswert macht.",
         note: "Erst das Gefühl. Jetzt die Rolle. Leistungsorientiert und konkreter: KStA.Connect hat bereits Fähigkeiten, die Sehnsüchte praktisch anschlussfähig machen."
@@ -4887,7 +4925,7 @@
         kind: "statement",
         theme: "dark",
         title: "Die Mission von KStA.Connect",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Der strategische Auftrag",
         headline: "Die Mission von KStA.Connect.",
         lead: "Wozu wir uns verpflichten.",
         note: "Kurzer Trommelwirbel vor der eigentlichen Mission. Der Trenner setzt einen bewussten Schnitt, ohne den Missionssatz zu erklären."
@@ -4896,15 +4934,16 @@
         kind: "phenomenonTitle",
         theme: "dark",
         title: "Mission",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Die Mission",
         headline: "„Solange Menschen neugierig auf das Leben sind, öffnen wir, was unsere Region lebenswert macht.“",
+        centered: true,
         note: "Grosse Mission-Folie nach dem Mission-Trenner. Bewusst in Anfuehrungszeichen als strategischer Leitsatz."
       },
       {
         kind: "strategyLines",
         theme: "dark",
         title: "Region wird Heimat",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Aus Region wird Heimat",
         lines: [
           "KStA.Connect wird der Login ins lokale Leben,",
           "damit aus Region wieder Heimat werden kann."
@@ -4912,23 +4951,11 @@
         note: "Emotionalisierte Erweiterung des Leitsatzes. Heimat als strategischer Endzustand, nicht als nostalgischer Claim."
       },
       {
-        kind: "strategyLines",
-        theme: "warm",
-        title: "Vom Nachrichtenmarkt zum Möglichkeitsmarkt",
-        kicker: "Block 3 · Strategische Antwort",
-        lines: [
-          "Wir kommen aus dem Markt lokaler Nachrichten.",
-          "Wir gehen in den Markt lokaler Möglichkeiten."
-        ],
-        mutedIndex: 0,
-        note: "Plakative Marktwechsel-Folie im Look der Folgeseite. Der Satz markiert den Marktwechsel, nicht nur eine Produktidee."
-      },
-      {
         kind: "marketShift",
         theme: "dark",
         title: "Marktwechsel",
-        kicker: "Block 3 · Strategische Antwort",
-        headline: "Damit wechseln wir nicht den Kanal. Wir wechseln den Markt.",
+        kicker: "Der Marktwechsel",
+        headline: "Wir kommen aus dem Markt lokaler Nachrichten.<br>Wir gehen in den Markt lokaler Möglichkeiten.",
         columns: [
           {
             title: "Alter Markt: lokale Nachrichten",
@@ -4957,24 +4984,12 @@
       },
       {
         kind: "strategyLines",
-        theme: "warm",
-        title: "Von morgens zu jederzeit",
-        kicker: "Block 3 · Strategische Antwort",
-        lines: [
-          "Früher haben wir Menschen morgens gesagt, was in der Stadt passiert ist.",
-          "Künftig zeigen wir ihnen jederzeit, was hier für sie möglich ist, wer dabei ist und wie sie reinkommen."
-        ],
-        mutedIndex: 0,
-        note: "Erklärt den Wechsel von Zeitungssituation zu Möglichkeitslogik. Der zweite Satz trägt die Zukunftsrichtung."
-      },
-      {
-        kind: "strategyLines",
         theme: "dark",
         title: "Interface zum lokalen Leben",
-        kicker: "Block 3 · Strategische Antwort",
+        kicker: "Vom Portal zum Interface",
         lines: [
           "KStA.Connect ist nicht das Portal der Region.",
-          "KStA.Connect ist das Interface zum lokalen Leben."
+          "KStA.Connect wird das Interface zum lokalen Leben."
         ],
         mutedIndex: 0,
         note: "Neue Folie statt Mission-/Narrativ-Chart. Portal klingt nach Zielort, Interface nach Funktion im Alltag."
@@ -5979,7 +5994,7 @@
 
       if (slide.kind === "phenomenonTitle") {
         return `
-          <div class="content phenomenon-title">
+          <div class="content phenomenon-title ${slide.centered ? "is-centered" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
           </div>`;
@@ -6011,7 +6026,7 @@
         return `
           <div class="content strategy-market-shift">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
-            <h2>${escapeHtml(slide.headline)}</h2>
+            <h2>${allowInline(slide.headline)}</h2>
             <div class="market-shift-grid">
               ${slide.columns.map((column) => `
                 <article class="market-shift-column ${column.tone === "new" ? "is-new" : "is-old"}">
@@ -6163,7 +6178,9 @@
               <span class="kicker">${escapeHtml(slide.kicker)}</span>
               <h2>${allowEm(slide.headline)}</h2>
             </div>
-            <div class="copy">${slide.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
+            ${slide.copyAsBullets
+              ? `<ul class="split-bullets">${slide.copy.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>`
+              : `<div class="copy">${slide.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>`}
           </div>`;
       }
 
