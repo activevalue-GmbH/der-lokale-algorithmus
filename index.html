@@ -3925,6 +3925,21 @@
       line-height: 1.22;
     }
 
+    .asset-slide.inventory-grid.checkout-inventory {
+      align-content: start;
+      padding-top: clamp(2px, 0.6vw, 10px);
+      padding-bottom: clamp(4px, 0.8vw, 12px);
+      transform: translateY(clamp(-34px, -2.4vw, -18px));
+    }
+
+    .asset-slide.inventory-grid.checkout-inventory .asset-grid {
+      margin-top: clamp(20px, 2.35vw, 34px);
+    }
+
+    .asset-slide.inventory-grid.checkout-inventory .cycle-conclusion {
+      margin-top: clamp(16px, 1.85vw, 26px);
+    }
+
     .phenomenon-title h2 {
       font-size: clamp(40px, 5vw, 70px);
     }
@@ -6148,7 +6163,7 @@
 
       if (slide.kind === "assetGrid") {
         return `
-          <div class="content asset-slide ${slide.cards.length > 6 ? "compact" : ""} ${slide.textCompact ? "text-compact" : ""} ${slide.wideCards ? "wide-cards" : ""} ${slide.title?.startsWith("Bestand ·") ? "inventory-grid" : ""}">
+          <div class="content asset-slide ${slide.cards.length > 6 ? "compact" : ""} ${slide.textCompact ? "text-compact" : ""} ${slide.wideCards ? "wide-cards" : ""} ${slide.title?.startsWith("Bestand ·") ? "inventory-grid" : ""} ${slide.title === "Bestand · Checkout" ? "checkout-inventory" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowInline(slide.headline)}</h2>
             <div class="asset-grid">
