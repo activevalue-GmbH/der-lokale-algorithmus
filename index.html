@@ -744,6 +744,110 @@
       }
     }
 
+    .region-voices {
+      width: min(100%, 1160px);
+      gap: clamp(24px, 3vw, 42px);
+      align-content: center;
+    }
+
+    .region-voices h2 {
+      max-width: 1060px;
+      font-size: clamp(42px, 5.2vw, 76px);
+      line-height: 1.02;
+    }
+
+    .region-voices-sub {
+      max-width: 1010px;
+      color: var(--body);
+      font-size: clamp(20px, 1.7vw, 27px);
+      font-weight: 300;
+      line-height: 1.32;
+    }
+
+    .region-voices-chart {
+      display: grid;
+      gap: clamp(18px, 2.2vw, 30px);
+      padding: clamp(24px, 3vw, 42px);
+      border: 1px solid rgba(28, 25, 23, 0.14);
+      background: rgba(250, 250, 248, 0.76);
+      box-shadow: 0 24px 80px rgba(28, 25, 23, 0.08);
+    }
+
+    .region-voices-core {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: clamp(18px, 2vw, 28px);
+      align-items: center;
+      padding-bottom: clamp(18px, 2vw, 26px);
+      border-bottom: 1px solid rgba(28, 25, 23, 0.12);
+    }
+
+    .region-voices-arrow {
+      display: grid;
+      place-items: center;
+      width: clamp(48px, 4.4vw, 66px);
+      height: clamp(48px, 4.4vw, 66px);
+      border: 1px solid rgba(200, 0, 14, 0.32);
+      border-radius: 999px;
+      color: var(--red);
+      font-size: clamp(26px, 2.3vw, 36px);
+      font-weight: 300;
+    }
+
+    .region-voices-core strong {
+      display: block;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(29px, 3.1vw, 48px);
+      font-weight: 400;
+      line-height: 1.06;
+    }
+
+    .region-voices-core span {
+      display: block;
+      max-width: 760px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.15vw, 19px);
+      line-height: 1.42;
+    }
+
+    .region-voices-specs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(14px, 1.7vw, 24px);
+    }
+
+    .region-voices-spec {
+      display: grid;
+      gap: 12px;
+      min-height: 180px;
+      padding: clamp(20px, 2.2vw, 30px);
+      border: 1px solid rgba(28, 25, 23, 0.12);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .region-voices-symbol {
+      color: var(--red);
+      font-size: clamp(24px, 2.2vw, 34px);
+      line-height: 1;
+    }
+
+    .region-voices-spec strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(24px, 2vw, 32px);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .region-voices-spec p {
+      color: var(--body);
+      font-size: clamp(15px, 1.05vw, 18px);
+      font-weight: 300;
+      line-height: 1.42;
+    }
+
     .frank-dashboard {
       width: min(100%, 1190px);
       gap: clamp(22px, 2.6vw, 34px);
@@ -761,6 +865,29 @@
       grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.42fr);
       gap: clamp(18px, 2.6vw, 36px);
       align-items: stretch;
+    }
+
+    .frank-dashboard--single {
+      width: min(100%, 1120px);
+    }
+
+    .frank-dashboard--single h2 {
+      max-width: 1080px;
+      font-size: clamp(39px, 4.9vw, 72px);
+    }
+
+    .frank-stage--single {
+      grid-template-columns: 1fr;
+    }
+
+    .frank-stage--single .frank-product-card {
+      width: min(100%, 1060px);
+      justify-self: center;
+    }
+
+    .frank-stage--single .frank-product-header,
+    .frank-stage--single .frank-product-module {
+      padding: clamp(22px, 2.4vw, 34px);
     }
 
     .frank-persona-card,
@@ -892,6 +1019,8 @@
     }
 
     @media (max-width: 900px) {
+      .region-voices-core,
+      .region-voices-specs,
       .frank-stage,
       .frank-product-module {
         grid-template-columns: 1fr;
@@ -5784,31 +5913,30 @@
           ["Tinder", "Wen willst du treffen?"],
           ["KStA.Connect", "Was passt zu deinem Leben hier?"]
         ],
-        bodyLead: "Der lokale Algorithmus von KStA.Connect sortiert die Region nicht nach Kategorie, sondern nach Lebenssituation.",
-        body: "Er verbindet Orte, Themen, Menschen, Anlässe und nächste Schritte. Nicht als anonymer Feed, sondern mit lokalem Vertrauen und redaktioneller Verantwortung.",
-        note: "Plakative Folie nach den vier Spezialsteinen. Sie verbindet die großen Systemanalogien aus dem Vorspann mit der konkreten lokalen Produktlogik."
+        bodyLead: "Der lokale Algorithmus von KStA.Connect sortiert die Region nicht nach Kategorie, sondern nach individuellen Interessen und Bedürfnissen.",
+        body: "",
+        note: "Plakative Folie nach den vier Spezialsteinen. Die redundante Verbindungszeile wurde entfernt; im Fokus steht die Sortierung nach individuellen Interessen und Bedürfnissen."
       },
       {
         kind: "statement",
         theme: "dark",
         title: "Challenge anspruchsvoller Content",
         kicker: "Challenge · Stimmen der Region",
-        marker: "?",
+        marker: "",
         headline: "Jetzt wird es anspruchsvoller.",
         bullets: [
-          "KStA.Connect darf nicht nur Erlebnisse, Termine und Aktivitäten verbinden.",
+          "KStA.Connect sollte nicht nur Erlebnisse, Termine und Aktivitäten verbinden.",
           "Die härtere Frage lautet: Kann das System auch anspruchsvollen, seriösen Content anschlussfähig machen?",
-          "Also nicht nur: Wohin kann ich gehen? Sondern: Womit will ich mich auseinandersetzen — und wer hilft mir, es einzuordnen?"
+          "Also nicht nur: Wohin kann ich gehen? Sondern: Womit will ich mich auseinandersetzen und wer hilft mir, es einzuordnen?"
         ],
-        footnote: "Der Testfall: Joachim Frank. Kein Event-Asset, sondern journalistische Orientierungsautorität.",
-        note: "Neue Challenge-Folie vor Block 5. Funktion: Der Abschnitt prüft bewusst die schwerere Variante von KStA.Connect — nicht nur lokale Aktivierung, sondern anspruchsvollen, seriösen Content als wiederkehrenden Orientierungsraum."
+        note: "Challenge-Folie vor Block 5. Funktion: Der Abschnitt prüft bewusst die schwerere Variante von KStA.Connect — nicht nur lokale Aktivierung, sondern anspruchsvollen, seriösen Content als wiederkehrenden Orientierungsraum."
       },
       {
         kind: "split",
         theme: "warm",
         title: "Joachim Frank",
         kicker: "Beispielfall",
-        headline: "Joachim Frank ist keine Rubrik. Er ist eine Stimme mit Autorität.",
+        headline: "Der Testfall: Joachim Frank. Kein Event-Asset, sondern journalistische Orientierungsautorität.",
         copyAsBullets: true,
         compactHeadline: true,
         copy: [
@@ -5820,34 +5948,43 @@
         note: "Kurzprofil statt ausführlicher Vorstellung, weil Joachim Frank im Raum bekannt ist. Der Punkt ist nicht Biografie, sondern Asset-Klasse: personengebundene Orientierungsautorität."
       },
       {
+        kind: "regionVoicesConcept",
+        theme: "warm",
+        title: "Stimmen der Region",
+        kicker: "Neue Produktkategorie",
+        headline: "Wir erfinden das Format Stimmen der Region.",
+        sub: "Personengeführte Orientierungsräume. Keine Rubriken, keine Ressorts. Persönlichkeiten mit Themenautorität, regionaler Verankerung und der Fähigkeit, wiederkehrend Impulse zu setzen.",
+        coreTitle: "Stimmen der Region",
+        coreText: "Ein Format, das Personen nicht als Autor:innenprofil zeigt, sondern als wiederkehrenden Zugang zu Themen, Gesprächen und nächsten Schritten.",
+        specs: [
+          ["◎", "Journalistische Substanz", "Themenautorität, die über den Einzelartikel hinausgeht und wiederkehrend wirkt."],
+          ["◉", "Regionale Verankerung", "Persönlichkeiten, die für Köln stehen und in der Region Vertrauen genießen."],
+          ["○", "Beziehungslogik", "Nicht Artikel konsumieren. In einen wiederkehrenden Dialog mit einer Stimme eintreten."]
+        ],
+        note: "Neue Konzeptfolie zwischen Beispielfall und Dashboard. Sie erfindet das Format Stimmen der Region, bevor Joachim Frank im Dashboard eingeordnet wird."
+      },
+      {
         kind: "frankDashboard",
         theme: "warm",
         title: "Dashboard Joachim Frank",
         kicker: "Nutzerperspektive",
-        headline: "Auf Markus’ Dashboard wird daraus kein Artikelhinweis. Es wird ein Einstieg.",
-        personaLabel: "Markus · Ehrenfeld",
-        personaTitle: "Gesellschaftlich interessiert. Wenig Zeit. Hoher Anspruch.",
-        personaBody: "KStA.Connect muss Markus nicht fragen, ob er Joachim Frank kennt. Es erkennt seine Themenwelt und baut daraus eine kleine Nutzungsstrecke.",
-        signals: [
-          "war einmal bei einem KStA-Abend über Pflege",
-          "liest häufiger zu Kirche, Macht und Verantwortung",
-          "reagiert auf Formate mit Einordnung statt auf schnelle Meinungen"
-        ],
-        productLabel: "Dein Dashboard · Stimmen der Region",
-        productTitle: "Neu diese Woche",
+        singleProduct: true,
+        headline: "Für Markus aus Ehrenfeld ist Stimmen der Region nicht nur Impuls. Es ist der Einstieg in Beziehung und Transaktion.",
+        productLabel: "Dein Dashboard",
+        productTitle: "Stimmen der Region",
         productMeta: "KStA.Connect",
         modules: [
           ["Impuls", "Warum schweigen Institutionen, wenn es darauf ankommt?", "Sonntägliche Einordnung zu Kirche, Macht und gesellschaftlicher Verantwortung.", "Jetzt lesen"],
           ["Salon", "Moral und Macht · Do. 19 Uhr", "Literaturhaus Köln · Gespräch mit Joachim Frank · 12 Plätze frei.", "Platz reservieren"],
           ["Dossier", "Missbrauch und Aufarbeitung", "6 Texte, ein Thema, Franks Einordnung. Kuratiert, nicht nur verlinkt.", "Dossier öffnen"]
         ],
-        note: "Produktfolie: Sie zeigt das Beispiel konkret als Dashboard-Strecke. Aus einem Autorenprofil wird ein Einstieg aus Impuls, Live-Gespräch und Dossier."
+        note: "Produktfolie als reines Dashboard-Bild ohne Persona-Kasten. Sie zeigt die Nutzungsstrecke als Impuls, Salon und Dossier und macht die Transaktionslogik sichtbar."
       },
       {
         kind: "statement",
         theme: "dark",
-        title: "Pointe anspruchsvoller Content",
-        kicker: "Pointe",
+        title: "Fazit anspruchsvoller Content",
+        kicker: "Fazit",
         marker: "→",
         headline: "Aus Recherche wird Orientierung. Aus Autorität wird Beziehung. Aus Content wird ein wiederkehrender Zugang.",
         bullets: [
@@ -5855,7 +5992,7 @@
           "Was andere Plattformen schwer kopieren können, ist die personengebundene Glaubwürdigkeit, die im Haus bereits vorhanden ist.",
           "Damit endet Block 4 nicht bei Aktivierung, sondern bei einer größeren These: KStA.Connect kann die Region auch intellektuell erschließen."
         ],
-        note: "Schlussfolie des neuen Abschnitts. Sie ersetzt die GZH/Brasilien-Lektion und führt stärker in Block 5: KStA.Connect als regionale Vertrauens- und Orientierungsinfrastruktur."
+        note: "Fazitfolie des neuen Abschnitts. Sie ersetzt die GZH/Brasilien-Lektion und führt stärker in Block 5: KStA.Connect als regionale Vertrauens- und Orientierungsinfrastruktur."
       },
             {
               kind: "divider",
@@ -6482,7 +6619,7 @@
               </div>
               <div class="algorithm-body">
                 <strong>${escapeHtml(slide.bodyLead)}</strong>
-                <p>${escapeHtml(slide.body)}</p>
+                ${slide.body ? `<p>${escapeHtml(slide.body)}</p>` : ""}
               </div>
             </div>
           </div>`;
@@ -6607,14 +6744,38 @@
           </div>`;
       }
 
-      if (slide.kind === "frankDashboard") {
+      if (slide.kind === "regionVoicesConcept") {
         return `
-          <div class="content frank-dashboard">
+          <div class="content region-voices">
             <div>
               <span class="kicker">${escapeHtml(slide.kicker)}</span>
               <h2>${allowEm(slide.headline)}</h2>
             </div>
-            <div class="frank-stage">
+            <p class="region-voices-sub">${escapeHtml(slide.sub)}</p>
+            <div class="region-voices-chart">
+              <div class="region-voices-core">
+                <div class="region-voices-arrow">→</div>
+                <div>
+                  <strong>${escapeHtml(slide.coreTitle)}</strong>
+                  <span>${escapeHtml(slide.coreText)}</span>
+                </div>
+              </div>
+              <div class="region-voices-specs">
+                ${slide.specs.map(([symbol, title, body]) => `
+                  <article class="region-voices-spec">
+                    <div class="region-voices-symbol">${escapeHtml(symbol)}</div>
+                    <strong>${escapeHtml(title)}</strong>
+                    <p>${escapeHtml(body)}</p>
+                  </article>
+                `).join("")}
+              </div>
+            </div>
+          </div>`;
+      }
+
+      if (slide.kind === "frankDashboard") {
+        const singleClass = slide.singleProduct ? " frank-dashboard--single" : "";
+        const persona = slide.singleProduct ? "" : `
               <aside class="frank-persona-card">
                 <small>${escapeHtml(slide.personaLabel)}</small>
                 <strong>${escapeHtml(slide.personaTitle)}</strong>
@@ -6622,7 +6783,15 @@
                 <ul class="frank-signal-list">
                   ${slide.signals.map((signal) => `<li>${escapeHtml(signal)}</li>`).join("")}
                 </ul>
-              </aside>
+              </aside>`;
+        return `
+          <div class="content frank-dashboard${singleClass}">
+            <div>
+              <span class="kicker">${escapeHtml(slide.kicker)}</span>
+              <h2>${allowEm(slide.headline)}</h2>
+            </div>
+            <div class="frank-stage${slide.singleProduct ? " frank-stage--single" : ""}">
+              ${persona}
               <div class="frank-product-card">
                 <div class="frank-product-header">
                   <div>
