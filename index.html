@@ -744,6 +744,164 @@
       }
     }
 
+    .frank-dashboard {
+      width: min(100%, 1190px);
+      gap: clamp(22px, 2.6vw, 34px);
+      align-content: center;
+    }
+
+    .frank-dashboard h2 {
+      max-width: 1030px;
+      font-size: clamp(35px, 4.45vw, 64px);
+      line-height: 1.03;
+    }
+
+    .frank-stage {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.42fr);
+      gap: clamp(18px, 2.6vw, 36px);
+      align-items: stretch;
+    }
+
+    .frank-persona-card,
+    .frank-product-card {
+      border: 1px solid rgba(28, 25, 23, 0.14);
+      background: rgba(250, 250, 248, 0.78);
+      box-shadow: 0 22px 70px rgba(28, 25, 23, 0.08);
+    }
+
+    .frank-persona-card {
+      display: grid;
+      gap: clamp(18px, 2vw, 26px);
+      align-content: start;
+      padding: clamp(24px, 2.8vw, 38px);
+    }
+
+    .frank-persona-card small,
+    .frank-product-card small {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .frank-persona-card strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(27px, 2.5vw, 39px);
+      font-weight: 400;
+      line-height: 1.06;
+    }
+
+    .frank-persona-card p {
+      color: var(--body);
+      font-size: clamp(16px, 1.16vw, 18px);
+      font-weight: 300;
+      line-height: 1.48;
+    }
+
+    .frank-signal-list {
+      display: grid;
+      gap: 10px;
+      color: var(--body);
+      font-size: clamp(15px, 1.05vw, 17px);
+      line-height: 1.38;
+      list-style: none;
+    }
+
+    .frank-signal-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .frank-signal-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      background: var(--red);
+    }
+
+    .frank-product-card {
+      display: grid;
+      gap: 2px;
+      padding: 2px;
+      background: rgba(28, 25, 23, 0.13);
+    }
+
+    .frank-product-header,
+    .frank-product-module {
+      background: rgba(250, 250, 248, 0.94);
+      padding: clamp(18px, 2vw, 28px);
+    }
+
+    .frank-product-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .frank-product-header strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.2vw, 34px);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .frank-product-module {
+      display: grid;
+      grid-template-columns: minmax(92px, 0.24fr) minmax(0, 1fr) auto;
+      gap: clamp(14px, 1.8vw, 24px);
+      align-items: center;
+    }
+
+    .frank-product-module strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(21px, 1.7vw, 28px);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .frank-product-module p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: clamp(14px, 1vw, 16px);
+      line-height: 1.42;
+    }
+
+    .frank-product-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: clamp(126px, 11vw, 158px);
+      padding: 11px 14px;
+      border: 1px solid rgba(200, 0, 14, 0.32);
+      border-radius: 999px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .frank-stage,
+      .frank-product-module {
+        grid-template-columns: 1fr;
+      }
+
+      .frank-product-action {
+        width: max-content;
+      }
+    }
+
     .statement-bullets {
       display: grid;
       gap: clamp(13px, 1.35vw, 18px);
@@ -5631,37 +5789,74 @@
         note: "Plakative Folie nach den vier Spezialsteinen. Sie verbindet die großen Systemanalogien aus dem Vorspann mit der konkreten lokalen Produktlogik."
       },
       {
-              kind: "split",
-              theme: "dark",
-              title: "Realitätscheck GZH",
-              kicker: "Realitätscheck",
-              headline: "Ein Beispiel:<br>GZH stand vor derselben Frage: Wie wird aus regionalem Vertrauen ein System?",
-              compactHeadline: true,
-              copyAsBullets: true,
-              copy: [
-                "GZH gehört zur Grupo RBS in Porto Alegre / Rio Grande do Sul, Brasilien.",
-                "Es ist kein Tech-Konzern, sondern ein regionales Medienhaus mit Zeitung, Radio, Abo, Vorteilsprogramm und lokalen Partnern.",
-                "Die Ausgangslage war ähnlich: Vertrauen war vorhanden, aber noch nicht ausreichend in einen digitalen Alltag übersetzt.",
-                "Wir zeigen jetzt, was dort passiert ist."
-              ],
-              note: "Später Realitätscheck vor der Richtungsentscheidung. GZH nicht als Blaupause erzählen und nicht behaupten, dort sei alles gelöst. Funktion: zeigen, dass die hier entwickelte Logik als Umbau der Wertschöpfungsarchitektur materialisierbar wird."
-            },
-            {
-              kind: "cards",
-              theme: "warm",
-              title: "Die Lektion",
-              kicker: "Die Lektion",
-              headline: "Mitgliedschaft entsteht, wenn Content, Login, Vorteile, Partner und Daten zusammenarbeiten.",
-              lead: "GZH zeigt nicht die fertige Antwort für KStA.Connect, sondern eine Richtung: Aus regionalem Vertrauen kann ein Zugangssystem für den Alltag werden.",
-              columns: 3,
-              cards: [
-                ["Was vorhanden war", "Zeitung, Radio, Clube do Assinante, lokale Partner und Vertrauen."],
-                ["Was verändert wurde", "Gemeinsame digitale Oberfläche, Login, Plattformlogik, Nutzerverständnis und Alltagsvorteile."],
-                ["Was daraus entsteht", "Abo wird nicht nur journalistischer Zugang, sondern lokaler Alltagswert."]
-              ],
-              outro: "Das ist der eigentliche Datenjob: Nicht mehr nur Inhalte, Angebote und Nutzer nebeneinander verwalten, sondern ihre Beziehungen verstehen.",
-              note: "Tonalität: keine reine Rabatt- oder Gutscheinlogik. Die strategische Pointe ist größer: Das Medienhaus wird vom Informationsanbieter zum Zugangspartner im regionalen Alltag. Übergang: Damit ist die Frage für KStA.Connect nicht mehr, ob die Idee attraktiv klingt, sondern ob wir den ersten Schritt in diese Architektur gehen."
-            },
+        kind: "statement",
+        theme: "dark",
+        title: "Challenge anspruchsvoller Content",
+        kicker: "Challenge · Stimmen der Region",
+        marker: "?",
+        headline: "Jetzt wird es anspruchsvoller.",
+        bullets: [
+          "KStA.Connect darf nicht nur Erlebnisse, Termine und Aktivitäten verbinden.",
+          "Die härtere Frage lautet: Kann das System auch anspruchsvollen, seriösen Content anschlussfähig machen?",
+          "Also nicht nur: Wohin kann ich gehen? Sondern: Womit will ich mich auseinandersetzen — und wer hilft mir, es einzuordnen?"
+        ],
+        footnote: "Der Testfall: Joachim Frank. Kein Event-Asset, sondern journalistische Orientierungsautorität.",
+        note: "Neue Challenge-Folie vor Block 5. Funktion: Der Abschnitt prüft bewusst die schwerere Variante von KStA.Connect — nicht nur lokale Aktivierung, sondern anspruchsvollen, seriösen Content als wiederkehrenden Orientierungsraum."
+      },
+      {
+        kind: "split",
+        theme: "warm",
+        title: "Joachim Frank",
+        kicker: "Beispielfall",
+        headline: "Joachim Frank ist keine Rubrik. Er ist eine Stimme mit Autorität.",
+        copyAsBullets: true,
+        compactHeadline: true,
+        copy: [
+          "Journalist, Autor, Moderator und Chefkorrespondent des Kölner Stadt-Anzeiger.",
+          "Vertraute Stimme für Kirche, Gesellschaft, Moral, Institutionen und Macht.",
+          "Glaubwürdigkeit entsteht hier nicht aus Popularität, sondern aus Einordnung, Haltung und Wiederkehr.",
+          "Das macht ihn zum anspruchsvollen Testfall: Kann KStA.Connect aus Content einen Orientierungsraum bauen?"
+        ],
+        note: "Kurzprofil statt ausführlicher Vorstellung, weil Joachim Frank im Raum bekannt ist. Der Punkt ist nicht Biografie, sondern Asset-Klasse: personengebundene Orientierungsautorität."
+      },
+      {
+        kind: "frankDashboard",
+        theme: "warm",
+        title: "Dashboard Joachim Frank",
+        kicker: "Nutzerperspektive",
+        headline: "Auf Markus’ Dashboard wird daraus kein Artikelhinweis. Es wird ein Einstieg.",
+        personaLabel: "Markus · Ehrenfeld",
+        personaTitle: "Gesellschaftlich interessiert. Wenig Zeit. Hoher Anspruch.",
+        personaBody: "KStA.Connect muss Markus nicht fragen, ob er Joachim Frank kennt. Es erkennt seine Themenwelt und baut daraus eine kleine Nutzungsstrecke.",
+        signals: [
+          "war einmal bei einem KStA-Abend über Pflege",
+          "liest häufiger zu Kirche, Macht und Verantwortung",
+          "reagiert auf Formate mit Einordnung statt auf schnelle Meinungen"
+        ],
+        productLabel: "Dein Dashboard · Stimmen der Region",
+        productTitle: "Neu diese Woche",
+        productMeta: "KStA.Connect",
+        modules: [
+          ["Impuls", "Warum schweigen Institutionen, wenn es darauf ankommt?", "Sonntägliche Einordnung zu Kirche, Macht und gesellschaftlicher Verantwortung.", "Jetzt lesen"],
+          ["Salon", "Moral und Macht · Do. 19 Uhr", "Literaturhaus Köln · Gespräch mit Joachim Frank · 12 Plätze frei.", "Platz reservieren"],
+          ["Dossier", "Missbrauch und Aufarbeitung", "6 Texte, ein Thema, Franks Einordnung. Kuratiert, nicht nur verlinkt.", "Dossier öffnen"]
+        ],
+        note: "Produktfolie: Sie zeigt das Beispiel konkret als Dashboard-Strecke. Aus einem Autorenprofil wird ein Einstieg aus Impuls, Live-Gespräch und Dossier."
+      },
+      {
+        kind: "statement",
+        theme: "dark",
+        title: "Pointe anspruchsvoller Content",
+        kicker: "Pointe",
+        marker: "→",
+        headline: "Aus Recherche wird Orientierung. Aus Autorität wird Beziehung. Aus Content wird ein wiederkehrender Zugang.",
+        bullets: [
+          "Frank ist ein Beispiel. Das Prinzip ist replizierbar.",
+          "Was andere Plattformen schwer kopieren können, ist die personengebundene Glaubwürdigkeit, die im Haus bereits vorhanden ist.",
+          "Damit endet Block 4 nicht bei Aktivierung, sondern bei einer größeren These: KStA.Connect kann die Region auch intellektuell erschließen."
+        ],
+        note: "Schlussfolie des neuen Abschnitts. Sie ersetzt die GZH/Brasilien-Lektion und führt stärker in Block 5: KStA.Connect als regionale Vertrauens- und Orientierungsinfrastruktur."
+      },
             {
               kind: "divider",
               theme: "dark",
@@ -6409,6 +6604,45 @@
               </div>
             </div>
             <div class="avatar-quote">${escapeHtml(slide.quote)}</div>
+          </div>`;
+      }
+
+      if (slide.kind === "frankDashboard") {
+        return `
+          <div class="content frank-dashboard">
+            <div>
+              <span class="kicker">${escapeHtml(slide.kicker)}</span>
+              <h2>${allowEm(slide.headline)}</h2>
+            </div>
+            <div class="frank-stage">
+              <aside class="frank-persona-card">
+                <small>${escapeHtml(slide.personaLabel)}</small>
+                <strong>${escapeHtml(slide.personaTitle)}</strong>
+                <p>${escapeHtml(slide.personaBody)}</p>
+                <ul class="frank-signal-list">
+                  ${slide.signals.map((signal) => `<li>${escapeHtml(signal)}</li>`).join("")}
+                </ul>
+              </aside>
+              <div class="frank-product-card">
+                <div class="frank-product-header">
+                  <div>
+                    <small>${escapeHtml(slide.productLabel)}</small>
+                    <strong>${escapeHtml(slide.productTitle)}</strong>
+                  </div>
+                  <small>${escapeHtml(slide.productMeta)}</small>
+                </div>
+                ${slide.modules.map(([label, title, body, action]) => `
+                  <article class="frank-product-module">
+                    <small>${escapeHtml(label)}</small>
+                    <div>
+                      <strong>${escapeHtml(title)}</strong>
+                      <p>${escapeHtml(body)}</p>
+                    </div>
+                    <span class="frank-product-action">${escapeHtml(action)}</span>
+                  </article>
+                `).join("")}
+              </div>
+            </div>
           </div>`;
       }
 
