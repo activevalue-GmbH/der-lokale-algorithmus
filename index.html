@@ -708,6 +708,42 @@
       transition: opacity 220ms ease, transform 220ms ease;
     }
 
+    .cards.is-auto-reveal .card,
+    .cards-outro.is-auto-reveal {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .slide.is-active .cards.is-auto-reveal .card {
+      animation: autoCardReveal 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: calc(260ms + (var(--card-index, 0) * 560ms));
+    }
+
+    .slide.is-active .cards-outro.is-auto-reveal {
+      animation: autoCardReveal 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--outro-delay, 3900ms);
+    }
+
+    @keyframes autoCardReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cards.is-auto-reveal .card,
+      .cards-outro.is-auto-reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .slide.is-active .cards.is-auto-reveal .card,
+      .slide.is-active .cards-outro.is-auto-reveal {
+        animation: none;
+      }
+    }
+
     .statement-bullets {
       display: grid;
       gap: clamp(13px, 1.35vw, 18px);
@@ -5263,6 +5299,7 @@
         kicker: "Prinzip 2 · Beispiel",
         headline: "So fühlt sich Filtern nach Lebenssituation an.",
         columns: 3,
+        autoRevealCards: true,
         cards: [
           ["Filter", "alleine hingehen möglich", "Ein Angebot ohne soziale Schwelle."],
           ["Filter", "familienfreundlich", "Nicht nur erlaubt, sondern wirklich passend."],
@@ -5814,10 +5851,10 @@
         <span>${String(i + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}</span>
       </div>`;
 
-    const cards = (items, columns = 3, revealCount = null) => `
-      <div class="cards ${columns === 2 ? "two" : ""} ${columns === 4 ? "four" : ""} ${revealCount !== null ? "is-reveal" : ""}">
+    const cards = (items, columns = 3, revealCount = null, autoReveal = false) => `
+      <div class="cards ${columns === 2 ? "two" : ""} ${columns === 4 ? "four" : ""} ${revealCount !== null ? "is-reveal" : ""} ${autoReveal ? "is-auto-reveal" : ""}">
         ${items.map(([eyebrow, title, body], cardIndex) => `
-          <article class="card ${revealCount !== null && cardIndex >= revealCount ? "is-hidden" : ""}" data-reveal-card="${cardIndex}">
+          <article class="card ${revealCount !== null && cardIndex >= revealCount ? "is-hidden" : ""}" data-reveal-card="${cardIndex}" ${autoReveal ? `style="--card-index: ${cardIndex};"` : ""}>
             <small>${escapeHtml(eyebrow)}</small>
             <strong>${escapeHtml(title)}</strong>
             <span>${escapeHtml(body)}</span>
@@ -6392,13 +6429,14 @@
 
       if (slide.kind === "cards") {
         const revealCount = slide.revealCards ? Math.max(0, slide.revealIndex ?? 0) : null;
+        const outroDelayMs = slide.autoRevealCards ? 260 + (slide.cards.length * 560) : 0;
         return `
           <div class="content top">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowEm(slide.headline)}</h2>
             ${slide.lead ? `<p class="lead cards-lead">${escapeHtml(slide.lead)}</p>` : ""}
-            <div style="margin-top: clamp(26px, 3vw, 40px);">${cards(slide.cards, slide.columns, revealCount)}</div>
-            ${slide.outro ? `<p class="cards-outro ${slide.revealCards && revealCount < slide.cards.length ? "is-hidden" : ""}">${escapeHtml(slide.outro)}</p>` : ""}
+            <div style="margin-top: clamp(26px, 3vw, 40px);">${cards(slide.cards, slide.columns, revealCount, Boolean(slide.autoRevealCards))}</div>
+            ${slide.outro ? `<p class="cards-outro ${slide.revealCards && revealCount < slide.cards.length ? "is-hidden" : ""} ${slide.autoRevealCards ? "is-auto-reveal" : ""}" ${slide.autoRevealCards ? `style="--outro-delay: ${outroDelayMs}ms;"` : ""}>${escapeHtml(slide.outro)}</p>` : ""}
           </div>`;
       }
 
