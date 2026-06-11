@@ -2752,6 +2752,31 @@
       background: rgba(250, 250, 248, 0.06);
     }
 
+    .transition-plain.plain-bullets .transition-bullets {
+      grid-template-columns: 1fr;
+      max-width: 1040px;
+      gap: clamp(14px, 1.55vw, 22px);
+      padding-left: 1.25em;
+      list-style: disc;
+    }
+
+    .transition-plain.plain-bullets .transition-bullets li,
+    .transition-plain.plain-bullets .transition-bullets:has(li:nth-child(4):last-child) li:last-child {
+      grid-column: auto;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+      font-size: clamp(22px, 2.05vw, 32px);
+      line-height: 1.26;
+      font-weight: 800;
+    }
+
+    .dark .transition-plain.plain-bullets .transition-bullets li {
+      color: rgba(250, 250, 248, 0.78);
+      background: transparent;
+    }
+
     .transition-callout {
       display: grid;
       gap: clamp(18px, 2vw, 28px);
@@ -5746,29 +5771,10 @@
         theme: "dark",
         title: "Diagnosepfad",
         block: "→",
-        kicker: "Vom Alltag zur Aufgabe",
-        headline: "Wir analysieren und verdichten die Diagnosen in sieben Schritten:<br>vom Alltag der Menschen zur strategischen Aufgabe.",
+        kicker: "Diagnose",
+        headline: "Vom Alltag der Menschen zur strategischen Aufgabe.<br>Die Diagnose in sieben Schritten.",
         lead: "",
         note: "Neues Trennchart fuer den Praesentationsfluss. Es trennt die harte Datenfolie vom folgenden Diagnosepfad."
-      },
-      {
-        kind: "phenomenaOverview",
-        theme: "warm",
-        title: "Diagnosepfad",
-        kicker: "Sieben Signale",
-        headline: "Vom Alltag der Menschen zur strategischen Aufgabe.",
-        lead: "Der Weg durch die Diagnose.",
-        hidePersonas: true,
-        rows: [
-          ["01", "Leben wird nichtlinearer.", ""],
-          ["02", "Lokale Ordnung trägt weniger.", ""],
-          ["03", "Empfehlungskompetenz bricht weg.", ""],
-          ["04", "Nahraum wird wichtiger, aber schwerer lesbar.", ""],
-          ["05", "Die Lücke: Stadtgefühl ohne gelebte Verbindung.", ""],
-          ["06", "Neue Gemeinschaftsformen brauchen neue Brücken.", ""],
-          ["07", "Vertrauen wird zur knappen Ressource.", ""]
-        ],
-        note: "Uebersicht fuer den Diagnosepfad ohne Vorab-Nennung der Avatare; die Personen werden im Vortrag als Überraschungsmoment eingeführt."
       },
       {
         kind: "phenomenonTitle",
@@ -5879,44 +5885,6 @@
         note: "Bruch-Folie vor der Kerndiagnose. Der Pfeil macht den Übergang von den Phänomenen zur eigentlichen Diagnose sichtbar."
       },
       {
-        kind: "phenomenonDetail",
-        theme: "warm",
-        title: "Kerndiagnose Daten",
-        proportional: true,
-        kicker: "Kerndiagnose",
-        headline: "Früher hat das lokale Umfeld eine Filterfunktion übernommen, die den meisten Menschen nicht bewusst war.",
-        paragraphs: [
-          {
-            type: "bulletList",
-            lines: [
-              "Der Nachbar, die Kollegin, die Bäckerin sagten nicht: \"Da ist eine Veranstaltung\", sondern: \"Das wäre was für dich.\"",
-              "Diese Empfehlungsschicht hat drei Dinge gleichzeitig geleistet: gefiltert, die Schwelle gesenkt und Kontext gegeben.",
-              "Die digitale Welt hat das Informationsproblem gelöst, aber das Filterproblem verschärft. Heute weiß man alles, aber nichts davon ist eingeordnet."
-            ]
-          },
-          {
-            type: "functionBox",
-            lines: [
-              "<strong>Gefiltert:</strong> Das ist relevant für dich.",
-              "<strong>Schwelle gesenkt:</strong> Komm mit, ich bin auch da.",
-              "<strong>Kontext gegeben:</strong> Das würde dir gefallen, weil ..."
-            ]
-          },
-          {
-            type: "needBox",
-            label: "Entstehendes Bedürfnis:",
-            text: "Menschen wollen nicht nur wissen, dass es etwas gibt. Sie wollen verstehen, ob sie dort hineinpassen."
-          }
-        ],
-        data: [
-          ["8,5 Mio.", "Ehrenamtliche in NRW. Problem ist nicht Bereitschaft. Die Angebote werden nur sehr schlecht gefunden.", "EhrenamtAtlas NRW 2024"],
-          ["600+", "Engagementangebote allein in Köln. Die meisten davon erreichen die Menschen nicht, die perfekt passen würden.", "Kölner Freiwilligen Agentur"],
-          ["34%", "fühlen sich trotzdem von Kulturangeboten nicht angesprochen. Nicht weil das Angebot fehlt. Weil der Filter fehlt.", "Relevanzmonitor Kultur 2025"]
-        ],
-        sources: "Ableitung aus: EhrenamtAtlas NRW/forsa 2024 · Freiwilligensurvey 2024 · Relevanzmonitor Kultur/forsa 2025 · Kölner Freiwilligen Agentur · Stadt Köln 2023",
-        note: "Kerndiagnose. Wichtig: bewusst 'Ableitung aus' statt 'Quellen', weil dies unsere Synthese ist. Diese Folie ist zentral fuer den spaeteren lokalen Algorithmus."
-      },
-      {
         kind: "phenomenonTitle",
         theme: "dark",
         title: "Phänomen 03",
@@ -5948,11 +5916,11 @@
           }
         ],
         data: [
-          ["75% vs. 60%", "Zufriedenheit mit dem eigenen Wohngebiet vs. mit Köln insgesamt", "Stadt Köln 2023"],
-          ["2.111", "Coworking Spaces in Deutschland. Neue \"Dritte Orte\" zwischen Arbeit und Zuhause.", "IW Köln 2023"],
-          ["218.000", "befragte Haushalte in der größten deutschen Mobilitätserhebung", "Mobilität in Deutschland 2025"]
+          ["24,4%", "aller Beschäftigten arbeiten zumindest teilweise von zu Hause. Stabil seit 2022, keine Trendumkehr erkennbar.", "ifo Konjunkturumfrage 2025"],
+          ["75% vs. 60%", "Die Bindung ans eigene Wohngebiet ist stärker als an die Stadt insgesamt. Der Nahraum ist der emotionale Anker.", "Stadt Köln 2023"],
+          ["nur 48%", "sagen, dass Orte für Freizeit und Sport in ihrer Nachbarschaft leicht erreichbar sind. Drei Viertel sind zufrieden mit der Nachbarschaft, aber der Zugang fehlt.", "Universität Duisburg-Essen 2024"]
         ],
-        sources: "Quellen: HCU Hamburg 2024 · IW Köln 2023 · BMAS/IZA 2022 · Mobilität in Deutschland 2025 · Stadt Köln 2023",
+        sources: "Quellen: ifo Konjunkturumfrage 2025 · Stadt Köln 2023 · Universität Duisburg-Essen 2024",
         note: "Sachchart fuer Phaenomen 03. Der grüne Kasten ist bewusst die positive Grundbewegung: Rueckkehr in den Nahraum. Zahlen vor finaler Fassung quellenfest pruefen."
       },
       {
@@ -6126,11 +6094,12 @@
         title: "Die Lücke",
         kicker: "Das Defizit",
         headline: "Google hat Daten. Instagram hat Bilder. WhatsApp hat Gruppen. Portale haben Sterne.",
+        bulletStyle: "plain",
         bullets: [
           "Aber das alles ist nicht dasselbe wie lokale Einordnung mit Verantwortung.",
-          "Was fehlt, ist der Filter mit menschlichem Gesicht: Was passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich."
+          "Was fehlt, ist der Filter mit menschlichem Gesicht: Was passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich.",
+          "KStA.Connect kann genau diese Rolle besetzen: nicht nur berichten, sondern den nächsten Schritt öffnen."
         ],
-        question: "KStA.Connect kann genau diese Rolle besetzen: nicht nur berichten, sondern den nächsten Schritt öffnen.",
         note: "Schärft das Defizit im Markt: Nicht Informationsmenge, sondern verlässliche lokale Passung und Verantwortbarkeit."
       },
       {
@@ -6138,7 +6107,7 @@
         theme: "warm",
         title: "Die heutige Realität bei KStA.Connect",
         kicker: "Der Status quo",
-        headline: "Auch wesentliche Bausteine sind da. Die Architektur fehlt.",
+        headline: "Auch wesentliche Bausteine sind da.",
         textCompact: true,
         wideCards: true,
         cards: [
@@ -6151,6 +6120,14 @@
         ],
         conclusion: "Nach welchem Prinzip verbinden wir sie?",
         note: "Status-quo-Folie als unmittelbares Scharnier zu Block 3: Die Stärken sind da, aber noch nicht architektonisch verbunden."
+      },
+      {
+        kind: "statement",
+        theme: "dark",
+        title: "Die offene Stelle",
+        kicker: "Die offene Stelle",
+        headline: "Die Architektur ist nicht da. Und das Narrativ, um das Ganze zusammenzuhalten, auch nicht.",
+        note: "Dramatische Zwischenfolie vor der Antwort. Kurz halten, damit Block 3 als Auflösung wirkt."
       },
       {
         kind: "divider",
@@ -7426,7 +7403,7 @@
           ? `<ul class="transition-bullets">${slide.bullets.map((item) => `<li>${allowEm(item).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</li>`).join("")}</ul>${slide.afterBullets ? `<p class="transition-after-bullets">${allowEm(slide.afterBullets).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>` : ""}`
           : slide.paragraphs.map((paragraph) => `<p>${allowEm(paragraph).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>`).join("");
         return `
-          <div class="content transition-plain ${slide.bullets ? "has-bullets" : ""}">
+          <div class="content transition-plain ${slide.bullets ? "has-bullets" : ""} ${slide.bulletStyle === "plain" ? "plain-bullets" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <div class="transition-copy">
