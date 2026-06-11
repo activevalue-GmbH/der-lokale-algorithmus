@@ -5263,6 +5263,102 @@
     }
     /* Rehearsal block 3: END */
 
+    /* Presentation-room visual stage patch v1: START */
+    /*
+      Risikoarmer Raum-Modus: keine globale Neuskalierung, sondern nur
+      zusätzliche Bühnenlogik für kuratierte, kompakte Chart-/Grid-Folien.
+      Wave 1 bleibt bewusst eng, damit volle Analyse- und Diagnosefolien
+      nicht versehentlich vertikal beschnitten werden.
+    */
+    :root {
+      --room-safe-x: clamp(54px, 6.2vw, 112px);
+      --room-safe-y: clamp(40px, 5.8vh, 86px);
+      --room-stage-w: min(1180px, 78vw);
+      --room-grid-w: min(1160px, 76vw);
+      --room-chart-w: min(1120px, 74vw);
+      --room-stage-gap: clamp(22px, 2.7vh, 38px);
+      --room-card-gap: clamp(16px, 1.65vw, 24px);
+    }
+
+    .slide.room-grid-centered,
+    .slide.room-chart-with-headline {
+      padding-left: max(var(--room-safe-x), clamp(22px, 3.2vw, 46px));
+      padding-right: max(var(--room-safe-x), clamp(22px, 3.2vw, 46px));
+      padding-top: max(var(--room-safe-y), clamp(22px, 3.2vw, 46px));
+      padding-bottom: max(var(--room-safe-y), clamp(22px, 3.2vw, 46px));
+    }
+
+    .slide.room-grid-centered .content,
+    .slide.room-chart-with-headline .content {
+      width: min(100%, var(--room-stage-w));
+      align-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .slide.room-grid-centered .content.top,
+    .slide.room-chart-with-headline .content.top {
+      align-content: center;
+    }
+
+    .slide.room-grid-centered .cards,
+    .slide.room-grid-centered .evidence-grid,
+    .slide.room-grid-centered .asset-grid,
+    .slide.room-grid-centered .mirror-grid,
+    .slide.room-grid-centered .interim-grid,
+    .slide.room-grid-centered .phenomena-map,
+    .slide.room-grid-centered .market-shift-grid {
+      width: min(100%, var(--room-grid-w));
+      margin-top: var(--room-stage-gap);
+      margin-left: auto;
+      margin-right: auto;
+      gap: var(--room-card-gap);
+    }
+
+    .slide.room-grid-centered .asset-slide.inventory-grid .asset-grid,
+    .slide.room-grid-centered .asset-slide.inventory-grid.text-compact .asset-grid,
+    .slide.room-grid-centered .asset-slide.inventory-grid.compact .asset-grid {
+      margin-top: clamp(26px, 3vh, 42px);
+    }
+
+    .slide.room-grid-centered .content h2,
+    .slide.room-chart-with-headline .content h2 {
+      max-width: min(1120px, 74vw);
+    }
+
+    .slide.room-chart-with-headline .diagnosis-table,
+    .slide.room-chart-with-headline .phenomenon-detail {
+      width: min(100%, var(--room-chart-w));
+      margin-top: var(--room-stage-gap);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .slide.room-chart-with-headline .phenomenon-detail {
+      align-items: center;
+    }
+
+    .slide.room-chart-with-headline .sources-line,
+    .slide.room-chart-with-headline .diagnosis-footer,
+    .slide.room-grid-centered .source-strip,
+    .slide.room-grid-centered .cycle-conclusion,
+    .slide.room-grid-centered .interim-outro,
+    .slide.room-grid-centered .interim-sources {
+      max-width: min(100%, var(--room-grid-w));
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-aspect-ratio: 18 / 9) {
+      :root {
+        --room-safe-x: clamp(70px, 7.6vw, 142px);
+        --room-stage-w: min(1180px, 70vw);
+        --room-grid-w: min(1140px, 70vw);
+        --room-chart-w: min(1100px, 68vw);
+      }
+    }
+    /* Presentation-room visual stage patch v1: END */
+
     /* Layout audit fit patch v2: END */
 </style>
 </head>
@@ -7828,9 +7924,23 @@
       return "";
     };
 
+    // Presentation-room wave 1 is deliberately narrow: only compact card/grid slides
+    // with enough vertical room. Full analysis, diagnosis and source-heavy slides stay
+    // unchanged until individually reviewed, because broad centering can crop headlines.
+    const roomChartWithHeadlineSlides = new Set([]);
+    const roomGridCenteredSlides = new Set([61, 66]);
+
+    const getRoomLayoutClass = (slideNumber) => {
+      if (roomChartWithHeadlineSlides.has(slideNumber)) return "room-chart-with-headline";
+      if (roomGridCenteredSlides.has(slideNumber)) return "room-grid-centered";
+      return "";
+    };
+
     slides.forEach((slide, i) => {
       const section = document.createElement("section");
       const slideClasses = ["slide", slide.theme || "light", i === 0 ? "is-active" : ""];
+      const roomLayoutClass = getRoomLayoutClass(i + 1);
+      if (roomLayoutClass) slideClasses.push(roomLayoutClass);
       if (slide.photoDivider) slideClasses.push("photo-divider");
       if (slide.videoFullBleed) slideClasses.push("avatar-video-slide");
       section.className = slideClasses.filter(Boolean).join(" ");
