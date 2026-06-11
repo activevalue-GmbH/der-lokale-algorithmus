@@ -6125,12 +6125,26 @@
               note: "Der nuechterne Schluss. Eine klare Weiche, keine zehn Fragen. Bewusst entlastend: nicht das ganze System steht zur Abstimmung, nur der erste Schritt. Das macht ein Ja leichter und ehrlicher."
             },
             {
+              kind: "statement",
+              theme: "dark",
+              title: "Köln 2029",
+              kicker: "Zeitsprung",
+              headline: "Köln, ein Sonntag im Jahr 2029.",
+              bullets: [
+                "Thomas hat über sein Profil den Stammtisch in Rodenkirchen gefunden, zu dem er allein nie gegangen wäre.",
+                "Helga sitzt donnerstags im Repair Café in Mülheim, weil eine Stimme ihr den Weg gezeigt hat.",
+                "Markus weiß, wer aus Ehrenfeld am Samstag auch dort ist.",
+                "Aus ungelösten Jobs sind gelebte Beziehungen geworden."
+              ],
+              note: "Emotionaler Hoehepunkt vor dem Schlusssatz. Die Folie loest die Figuren aus Block 1 im Jahr 2029 ein: kein neues Argument, sondern die Konsequenz aus den Geschichten, die der Raum bereits kennt. Danach kann der Schlusssatz als Ergebnis fallen."
+            },
+            {
               kind: "phenomenonTitle",
               theme: "dark",
               title: "Schluss",
               kicker: "",
               headline: "Damit Menschen sagen: Ich liebe es, hier zu leben.",
-              note: "Letzte Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, gross, allein. Schliesst den Kreis: Die ganze Strategie, der Pilot, die Werttreppe, alles dient diesem einen Satz. Im Vortrag: nach der Entscheidung kurz innehalten, dann diesen Satz. Nicht erklaeren, stehen lassen, Ende."
+              note: "Letzte Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, gross, allein. Schliesst den Kreis: Die ganze Strategie, der Pilot, die Werttreppe, alles dient diesem einen Satz. Im Vortrag: nach der Zeitsprung-Folie kurz innehalten, dann diesen Satz. Nicht erklaeren, stehen lassen, Ende."
             },
     
 
@@ -6727,7 +6741,7 @@
           return `
             <div class="content avatar-video-content">
               <figure class="avatar-video-shell">
-                <video class="avatar-video" src="${escapeHtml(slide.video)}" controls playsinline preload="metadata"></video>
+                <video class="avatar-video" src="${escapeHtml(slide.video)}" controls playsinline preload="auto" data-slide-autoplay></video>
                 <figcaption class="avatar-video-caption">
                   <strong>${escapeHtml(slide.name)}</strong>
                   <span>${escapeHtml(slide.sub)}</span>
@@ -6984,6 +6998,35 @@
 
     const sections = Array.from(document.querySelectorAll(".slide"));
 
+    const stopVideo = (video, reset = true) => {
+      if (!video) return;
+      video.pause();
+      if (reset && Number.isFinite(video.duration)) {
+        try { video.currentTime = 0; } catch (error) { /* ignore seek errors while metadata loads */ }
+      }
+    };
+
+    const syncSlideMedia = ({ resetActive = true } = {}) => {
+      sections.forEach((section, sectionIndex) => {
+        section.querySelectorAll("video[data-slide-autoplay]").forEach((video) => {
+          const isActiveVideo = sectionIndex === index && document.visibilityState !== "hidden";
+          if (!isActiveVideo) {
+            stopVideo(video);
+            return;
+          }
+          if (resetActive) {
+            try { video.currentTime = 0; } catch (error) { /* ignore seek errors while metadata loads */ }
+          }
+          const playAttempt = video.play();
+          if (playAttempt && typeof playAttempt.catch === "function") {
+            playAttempt.catch(() => {
+              video.dataset.autoplayBlocked = "true";
+            });
+          }
+        });
+      });
+    };
+
     const updateNotes = () => {
       const note = sections[index].querySelector("aside")?.textContent || "Keine Notiz hinterlegt.";
       notesPanel.innerHTML = `<strong>Sprechernotiz</strong>${escapeHtml(note)}`;
@@ -7031,6 +7074,7 @@
       if (pushHash) {
         window.history.replaceState(null, "", `#${index + 1}-${slug(title)}`);
       }
+      syncSlideMedia();
       updateNotes();
     };
 
@@ -7085,6 +7129,14 @@
     document.querySelector("[data-notes]").addEventListener("click", () => {
       notesVisible = !notesVisible;
       updateNotes();
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") {
+        sections.forEach((section) => section.querySelectorAll("video[data-slide-autoplay]").forEach((video) => stopVideo(video, false)));
+        return;
+      }
+      syncSlideMedia({ resetActive: false });
     });
 
     document.addEventListener("keydown", (event) => {
