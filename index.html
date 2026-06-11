@@ -965,6 +965,34 @@
       line-height: 1.42;
     }
 
+    .campaign-action-bullets {
+      display: grid;
+      gap: clamp(10px, 1vw, 14px);
+      max-width: 760px;
+      margin: clamp(18px, 2vw, 28px) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .campaign-action-bullets li {
+      position: relative;
+      padding-left: 22px;
+      color: rgba(250, 250, 248, 0.78);
+      font-size: clamp(17px, 1.32vw, 21px);
+      line-height: 1.38;
+    }
+
+    .campaign-action-bullets li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--red);
+    }
+
     .campaign-action-core {
       display: inline-block;
       max-width: 720px;
@@ -6698,8 +6726,12 @@
               ],
               question: "Was macht diese Stadt für dich lebenswert?",
               headline: "Was macht diese Stadt für dich lebenswert?",
-              lead: "Eine kuratierte Gruppe aus unterschiedlichen Veedeln und Lebenssituationen baut den POC mit. Sie gibt freiwillig ein Basisprofil, erhält jede Woche eine persönliche Wochenendauswahl, nutzt Angebote und gibt Feedback. So entsteht die erste echte Relevanzschicht des lokalen Algorithmus.",
-              note: "Trendchart-Folie beruhigt: schwarz statt rot, Zahlen links kleiner und mit mehr Spaltenabstand, kein zusätzlicher Core-Block unter der Copy. Inhaltlich bleibt die Köln-Aktion der öffentliche Mechanismus-Beweis."
+              bullets: [
+                "Eine kuratierte Gruppe aus unterschiedlichen Veedeln und Lebenssituationen baut den POC mit.",
+                "Sie gibt freiwillig ein Basisprofil und erhält jede Woche eine persönliche Wochenendauswahl.",
+                "Sie nutzt Angebote, gibt Feedback und baut so die erste echte Relevanzschicht des lokalen Algorithmus mit."
+              ],
+              note: "Trendchart-Folie beruhigt: schwarz statt rot, Zahlen links kleiner und mit mehr Spaltenabstand, kein zusätzlicher Core-Block unter der Copy. Der Untertext ist in drei Bullet Points überführt: Gruppe, freiwilliges Basisprofil mit Wochenendauswahl, Nutzung und Feedback als erste echte Relevanzschicht."
             },
             {
               kind: "pocScope",
@@ -7118,6 +7150,7 @@
               <div>
                 <h2 class="campaign-action-question">${escapeHtml(slide.question || slide.headline)}</h2>
                 ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
+                ${slide.bullets ? `<ul class="campaign-action-bullets">${slide.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
                 ${slide.core ? `<p class="campaign-action-core">${escapeHtml(slide.core)}</p>` : ""}
               </div>
             </div>
