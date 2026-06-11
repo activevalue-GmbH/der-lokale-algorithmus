@@ -3013,11 +3013,39 @@
     }
 
     .forward-perspective-subline {
-      max-width: 860px;
+      max-width: 900px;
       color: var(--muted);
-      font-size: clamp(19px, 1.85vw, 27px);
+      font-size: clamp(18px, 1.55vw, 23px);
       font-weight: 700;
-      line-height: 1.34;
+      line-height: 1.36;
+    }
+
+    .forward-perspective-bullets {
+      display: grid;
+      gap: clamp(10px, 1.1vw, 14px);
+      max-width: 940px;
+      margin: 0 0 clamp(22px, 2.6vw, 34px);
+      padding: 0;
+      list-style: none;
+    }
+
+    .forward-perspective-bullets li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--ink);
+      font-size: clamp(18px, 1.45vw, 23px);
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .forward-perspective-bullets li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      background: var(--red);
     }
 
     .forward-perspective-proof {
@@ -6533,7 +6561,7 @@
             },
             {
               kind: "cards",
-              theme: "dark",
+              theme: "warm",
               title: "Scharnier · Kaufmännische Perspektive",
               kicker: "Block 5 · Scharnier",
               headline: "Block 5 hat zwei Aufgaben.",
@@ -6548,7 +6576,7 @@
             },
             {
               kind: "valueStairs",
-              theme: "dark",
+              theme: "warm",
               title: "Werttreppe",
               kicker: "Block 5A · Kaufmännische Perspektive",
               headline: "Wert entsteht nicht auf einen Schlag. Er entsteht in Stufen.",
@@ -6564,7 +6592,7 @@
             },
             {
               kind: "cards",
-              theme: "dark",
+              theme: "warm",
               title: "Erlöslogik",
               kicker: "Block 5A · Kaufmännische Perspektive",
               headline: "Drei Quellen, aus denen Wert zurückfließt.",
@@ -6583,18 +6611,20 @@
               theme: "warm",
               title: "Blick nach vorne",
               kicker: "Block 5A · Perspektive",
-              headline: "Eine spannende Perspektive für KStA.Connect.",
-              lines: [
-                "Der Login in deine Heimat.",
-                "Die Mitgliedschaft für dein Leben hier."
+              headline: "Der Login in deine Heimat. Die Mitgliedschaft für dein Leben hier.",
+              bullets: [
+                "Ein Login macht aus anonymer Reichweite eine bekannte Beziehung.",
+                "Mitgliedschaft heißt: wiederkehrender Nutzen für Alltag, Stadt und Entscheidungen vor Ort.",
+                "Wenn der Nutzen wiederkehrt, kann das Abo wieder als Erlösmodell greifen – nicht als Zeitungsschutz, sondern als Zugang zu einem lokalen System.",
+                "Der erste Beweis muss zeigen, dass Menschen nicht nur einmal kommen, sondern sich anmelden, Interessen hinterlegen und wiederkommen."
               ],
-              subline: "Das ist der Horizont. Heute entscheiden wir nicht den Vollausbau, sondern den ersten belastbaren Beweis.",
+              subline: "Die Perspektive ist groß. Die heutige Entscheidung bleibt klein: Wir beweisen zuerst, ob aus Relevanz Profil, aus Profil Beziehung und aus Beziehung Erlös werden kann.",
               proof: [
                 ["1", "Reichweite wird Profil", "Menschen werden nicht nur erreicht, sondern freiwillig bekannt."],
                 ["2", "Profil wird Beziehung", "Aus Relevanz entsteht Wiederkehr, Erwartung und Vertrauen."],
                 ["3", "Beziehung wird Erlös", "Mitgliedschaft wird erst plausibel, wenn der Nutzen wiederkehrt."]
               ],
-              note: "Umgestaltete Perspektivfolie am Ende des kaufmännischen Teils. Die Folie hält den großen Horizont, macht aber klarer, dass die heutige Entscheidung kleiner ist: erst beweisen, dann ausbauen."
+              note: "Neu hierarchisierte Perspektivfolie am Ende des kaufmännischen Teils. Die Headline bündelt Login und Mitgliedschaft, die Bullet Points erklären die Abo-/Erlöslogik, die drei unteren Beweisblöcke bleiben als Stufenlogik erhalten."
             },
             {
               kind: "cards",
@@ -7239,9 +7269,16 @@
           <div class="content forward-perspective">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
-            <div class="forward-perspective-lines">
-              ${slide.lines.map((line) => `<div class="forward-perspective-line">${escapeHtml(line)}</div>`).join("")}
-            </div>
+            ${slide.lines?.length ? `
+              <div class="forward-perspective-lines">
+                ${slide.lines.map((line) => `<div class="forward-perspective-line">${escapeHtml(line)}</div>`).join("")}
+              </div>
+            ` : ""}
+            ${slide.bullets?.length ? `
+              <ul class="forward-perspective-bullets">
+                ${slide.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
+              </ul>
+            ` : ""}
             <p class="forward-perspective-subline">${escapeHtml(slide.subline)}</p>
             ${slide.proof ? `
               <div class="forward-perspective-proof">
