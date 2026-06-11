@@ -5338,6 +5338,108 @@
       align-items: center;
     }
 
+    /* Vertical reference patch v1: keep reviewed slides on the same top baseline as slide 38. */
+    .slide.vertical-reference .content {
+      align-content: start;
+    }
+
+    .slide.vertical-reference .media-cycle.compact h2 {
+      font-size: clamp(38px, 4vw, 58px);
+      line-height: 1.03;
+    }
+
+    .slide.vertical-reference .media-cycle.compact .cycle-flow {
+      gap: clamp(10px, 1.15vw, 16px);
+      margin-top: clamp(18px, 2.1vw, 28px);
+    }
+
+    .slide.vertical-reference .media-cycle.compact .cycle-row {
+      gap: clamp(8px, 0.85vw, 12px);
+      min-height: clamp(104px, 9.4vw, 124px);
+      padding: clamp(14px, 1.35vw, 19px);
+      border-radius: 22px;
+    }
+
+    .slide.vertical-reference .media-cycle.compact .cycle-value {
+      font-size: clamp(26px, 2.55vw, 38px);
+    }
+
+    .slide.vertical-reference .media-cycle.compact .cycle-copy h3 {
+      font-size: clamp(16px, 1.32vw, 20px);
+      line-height: 1.08;
+    }
+
+    .slide.vertical-reference .media-cycle.compact .cycle-copy p {
+      font-size: clamp(12px, 0.92vw, 14px);
+      line-height: 1.18;
+    }
+
+    .slide.vertical-reference .media-cycle.compact .cycle-conclusion {
+      margin-top: clamp(12px, 1.25vw, 18px);
+      font-size: clamp(15px, 1.22vw, 18px);
+      line-height: 1.22;
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.checkout-inventory {
+      align-content: start;
+      padding-top: 0;
+      padding-bottom: 0;
+      transform: none;
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid h2 {
+      max-width: min(1240px, 80vw);
+      font-size: clamp(36px, 3.78vw, 54px);
+      line-height: 1.04;
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid .asset-grid,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.text-compact .asset-grid,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.compact .asset-grid,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.checkout-inventory .asset-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 236px), 1fr));
+      gap: clamp(9px, 0.95vw, 14px);
+      margin-top: clamp(14px, 1.45vw, 22px);
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid .asset-card,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.text-compact .asset-card,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.compact .asset-card,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.checkout-inventory .asset-card {
+      gap: clamp(6px, 0.62vw, 9px);
+      min-height: clamp(96px, 8.1vw, 116px);
+      padding: clamp(12px, 1.12vw, 16px);
+      border-radius: 18px;
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid .asset-card h3,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.text-compact .asset-card h3,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.compact .asset-card h3,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.checkout-inventory .asset-card h3 {
+      font-size: clamp(15px, 1.18vw, 18px);
+      line-height: 1.04;
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid .asset-card p,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.text-compact .asset-card p,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.compact .asset-card p,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.checkout-inventory .asset-card p {
+      font-size: clamp(11px, 0.83vw, 13px);
+      line-height: 1.13;
+    }
+
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid .cycle-conclusion,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.text-compact .cycle-conclusion,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.compact .cycle-conclusion,
+    .slide.asset-inventory-balanced .asset-slide.inventory-grid.checkout-inventory .cycle-conclusion {
+      max-width: min(1180px, 78vw);
+      margin-top: clamp(10px, 1.05vw, 16px);
+      margin-bottom: 0;
+      font-size: clamp(14px, 1.05vw, 16px);
+      line-height: 1.16;
+    }
+
     .slide.room-chart-with-headline .sources-line,
     .slide.room-chart-with-headline .diagnosis-footer,
     .slide.room-grid-centered .source-strip,
@@ -7928,12 +8030,20 @@
     // with enough vertical room. Full analysis, diagnosis and source-heavy slides stay
     // unchanged until individually reviewed, because broad centering can crop headlines.
     const roomChartWithHeadlineSlides = new Set([]);
-    const roomGridCenteredSlides = new Set([61, 66]);
+    const roomGridCenteredSlides = new Set([61]);
+
+    // Vertical reference wave: align the reviewed transition and inventory slides to
+    // the slide-38 top baseline without changing the already approved slide range 55-65.
+    const verticalReferenceSlides = new Set([66, 67, 69, 70, 71, 72, 73]);
+    const assetInventoryBalancedSlides = new Set([70, 71, 72, 73]);
 
     const getRoomLayoutClass = (slideNumber) => {
-      if (roomChartWithHeadlineSlides.has(slideNumber)) return "room-chart-with-headline";
-      if (roomGridCenteredSlides.has(slideNumber)) return "room-grid-centered";
-      return "";
+      const classes = [];
+      if (roomChartWithHeadlineSlides.has(slideNumber)) classes.push("room-chart-with-headline");
+      if (roomGridCenteredSlides.has(slideNumber)) classes.push("room-grid-centered");
+      if (verticalReferenceSlides.has(slideNumber)) classes.push("vertical-reference");
+      if (assetInventoryBalancedSlides.has(slideNumber)) classes.push("asset-inventory-balanced");
+      return classes.join(" ");
     };
 
     slides.forEach((slide, i) => {
