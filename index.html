@@ -3294,7 +3294,7 @@
 
     .algorithm-grid {
       display: grid;
-      grid-template-columns: minmax(330px, 0.82fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(330px, 0.82fr);
       gap: clamp(36px, 5vw, 78px);
       align-items: start;
       max-width: 1220px;
@@ -7084,21 +7084,6 @@
               note: "Dramaturgischer Höhepunkt vor der Entscheidung. Das Wort Wette bewusst nutzen, aber sofort erden: Wir wetten auf einen Mechanismus, nicht auf ein Portal, und wir wetten gemeinsam mit den Menschen, die mitbauen. Der Ritual-Satz ist der Anker des gesamten POC, Callback auf Block 2: Das Ritual bleibt / Das fehlende Ritual."
             },
             {
-              kind: "personaCallback",
-              theme: "dark",
-              title: "Persona-Rückbindung",
-              kicker: "Der Kreis schließt sich",
-              headline: "Vier Menschen aus Block 1. Ein Wochenende mit KStA.Connect.",
-              personas: [
-                ["Thomas", "Schrauberabend", "Findet einen Schrauberabend, bei dem man einfach dazukommen kann."],
-                ["Helga", "Gemeinschaftsgarten", "Sieht, dass der Gemeinschaftsgarten offen für sie ist."],
-                ["Nina", "Drei passende Optionen", "Bekommt drei passende Optionen statt tausend Eindrücke."],
-                ["Markus", "Offene Werkstatt", "Sieht, wer bei der offenen Werkstatt dabei ist."]
-              ],
-              core: "Der POC ist klein. Aber er testet genau die Lücke, die wir am Anfang gesehen haben.",
-              note: "Schnelle Rückbindung, kein neues Argument. Die vier Personas aus der Diagnose erscheinen im gelösten Zustand, als vier von tausend, die mitgebaut haben. Zügig vortragen, nicht ausmalen. Die Folie emotionalisiert nach der Wette und bereitet die Entscheidung vor, sie darf die Entscheidung nicht verwässern."
-            },
-            {
               kind: "statement",
               theme: "dark",
               title: "Die Entscheidung",
@@ -7653,6 +7638,10 @@
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <div class="algorithm-grid">
+              <div class="algorithm-body">
+                <strong>${escapeHtml(slide.bodyLead)}</strong>
+                ${slide.body ? `<p>${escapeHtml(slide.body)}</p>` : ""}
+              </div>
               <div class="algorithm-questions">
                 ${slide.questions.map(([brand, question]) => `
                   <div class="algorithm-question">
@@ -7660,10 +7649,6 @@
                     <strong>${escapeHtml(question)}</strong>
                   </div>
                 `).join("")}
-              </div>
-              <div class="algorithm-body">
-                <strong>${escapeHtml(slide.bodyLead)}</strong>
-                ${slide.body ? `<p>${escapeHtml(slide.body)}</p>` : ""}
               </div>
             </div>
           </div>`;
