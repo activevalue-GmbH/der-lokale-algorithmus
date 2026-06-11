@@ -696,6 +696,151 @@
       color: rgba(250, 250, 248, 0.62);
     }
 
+    .poc-scope {
+      align-content: center;
+      gap: clamp(22px, 2.6vw, 34px);
+    }
+
+    .poc-scope h2 {
+      max-width: 1040px;
+      font-size: clamp(40px, 5.1vw, 74px);
+      line-height: 1.02;
+    }
+
+    .poc-scope-subline {
+      max-width: 820px;
+      color: var(--body);
+      font-size: clamp(20px, 1.65vw, 26px);
+      font-weight: 300;
+      line-height: 1.38;
+    }
+
+    .poc-scope-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.9fr 1.2fr;
+      gap: 2px;
+      max-width: 1120px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .poc-scope-card {
+      display: grid;
+      align-content: start;
+      gap: clamp(12px, 1.4vw, 18px);
+      min-height: clamp(154px, 17vw, 218px);
+      padding: clamp(22px, 2.6vw, 36px);
+      background: rgba(250, 250, 248, 0.8);
+    }
+
+    .poc-scope-card small {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .poc-scope-card strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .poc-scope-card span {
+      color: var(--muted);
+      font-size: clamp(15px, 1.15vw, 18px);
+      line-height: 1.45;
+    }
+
+    .poc-scope-core {
+      max-width: 940px;
+      color: var(--body);
+      font-size: clamp(20px, 1.75vw, 28px);
+      font-weight: 700;
+      line-height: 1.34;
+    }
+
+    .poc-proof-grid {
+      align-content: start;
+    }
+
+    .poc-proof-grid h2 {
+      max-width: 1040px;
+      font-size: clamp(36px, 4.5vw, 64px);
+      line-height: 1.08;
+    }
+
+    .poc-proof-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(16px, 2vw, 26px);
+      max-width: 1080px;
+      margin-top: clamp(30px, 3.6vw, 48px);
+    }
+
+    .poc-proof-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: clamp(16px, 2vw, 26px);
+      align-items: start;
+      padding: clamp(20px, 2.4vw, 34px);
+      border: 1px solid var(--line-dark);
+      border-radius: 10px;
+      background: rgba(250, 250, 248, 0.055);
+    }
+
+    .poc-proof-index {
+      display: inline-grid;
+      place-items: center;
+      width: clamp(38px, 4vw, 54px);
+      height: clamp(38px, 4vw, 54px);
+      border: 1px solid rgba(250, 250, 248, 0.2);
+      border-radius: 999px;
+      color: var(--paper);
+      font-family: var(--serif);
+      font-size: clamp(20px, 2vw, 30px);
+      line-height: 1;
+    }
+
+    .poc-proof-copy {
+      display: grid;
+      gap: 9px;
+    }
+
+    .poc-proof-copy small {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .poc-proof-copy strong {
+      color: var(--paper);
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.45vw, 36px);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .poc-proof-copy span {
+      color: rgba(250, 250, 248, 0.62);
+      font-size: clamp(15px, 1.18vw, 18px);
+      line-height: 1.45;
+    }
+
+    .poc-proof-outro {
+      max-width: 900px;
+      margin-top: clamp(24px, 2.8vw, 38px);
+      color: rgba(250, 250, 248, 0.76);
+      font-size: clamp(20px, 1.85vw, 28px);
+      font-weight: 700;
+      line-height: 1.34;
+    }
+
     .cards.is-reveal .card.is-hidden,
     .cards-outro.is-hidden {
       opacity: 0;
@@ -6053,8 +6198,8 @@
                 "Der Login in deine Heimat.",
                 "Die Mitgliedschaft für dein Leben hier."
               ],
-              subline: "Steigern wir den Wert und bauen eine neue Routine, wächst das Potenzial auf ein Abomodell.",
-              note: "Neue Perspektivfolie nach der Erloeslogik. Sie oeffnet den Blick vom dreiteiligen Wertfluss auf eine moegliche Abo- und Mitgliedschaftslogik."
+              subline: "Der Blick nach vorne ist die Mitgliedschaft. Der nächste Schritt ist nicht der Vollausbau, sondern der Beweis, dass der Weg dorthin trägt.",
+              note: "Perspektivfolie nach der Erlöslogik. Aufgabe: Zielhorizont öffnen, dann sofort erden. Die Mitgliedschaft ist das Ziel, der POC ist der Beweis, dass der Weg dorthin trägt. Nicht als Produktversprechen vortragen."
             },
             {
               kind: "statement",
@@ -6062,67 +6207,118 @@
               title: "Der erste Schritt",
               kicker: "Block 5 · Der erste Schritt",
               marker: "→",
-              headline: "Nicht alles auf einmal. Ein fokussierter Pilot baut die kleinste Version, die den Mechanismus beweist.",
-              lead: "Der Pilot löst nicht die ganze Architektur. Er baut an einem Feld die minimale Verbindung aus Profil, Kontext und Anschluss, gerade genug, um eine Frage zu beantworten: Trägt der Mechanismus? Erst wenn das bewiesen ist, lohnt die große Maschine.",
-              note: "Einstieg in den Piloten, jetzt als ehrlicher Minimalbau gerahmt. Wichtig im Vortrag: Der Pilot ist nicht nur ein Nachfragetest, er baut die kleinste echte Version der fehlenden Architektur. Das loest den Logikbruch zwischen Luecke (keine Profile, kein Graph) und Beweisfrage (wer ist auch da). CFO-Reflex abfangen: kleinste noetige Version, nicht das ganze System."
+              headline: "Nicht die ganze Maschine bauen. Den Mechanismus beweisen.",
+              lead: "Der erste Schritt löst nicht die gesamte Architektur. Er baut die kleinste Version, die zeigt, ob die neue Wertschöpfungslogik trägt: Relevanz, Profil, Anschluss, Handlung und Wiederkehr.",
+              footnote: "Nicht Vorschuss auf eine Vision. Sondern Beweis vor Investition.",
+              note: "Einstieg in den POC. Wichtig im Vortrag: Der POC ist kein Nachfragetest, er baut die kleinste echte Version der fehlenden Architektur. CFO-Reflex abfangen: kleinste nötige Version, klar begrenztes Investment, nicht das ganze System."
             },
             {
               kind: "cards",
               theme: "light",
-              title: "Pilotkriterien",
-              kicker: "Block 5 · Kriterien für den ersten Schritt",
-              headline: "Woran sich ein guter erster Pilot erkennt.",
+              title: "POC-Kriterien entlang 4C",
+              kicker: "Block 5 · Kriterien",
+              headline: "Der POC muss nicht ein Thema testen. Er muss die Wertschöpfungskette testen.",
               columns: 4,
               cards: [
-                ["Kriterium 1", "Kanal vorhanden", "Es gibt bereits Inhalte und einen Zugang zu Menschen. Kein Start bei null."],
-                ["Kriterium 2", "Bedürfnis belegt", "Die JTBD-Forschung hat den Bedarf in diesem Feld bereits nachgewiesen."],
-                ["Kriterium 3", "Sozial und transaktional", "Das Feld trägt beide Logiken: Anschluss zwischen Menschen und einen Abschluss."],
-                ["Kriterium 4", "Offen und einladend", "Breit zugänglich, nicht auf eine Szene oder ein Milieu verengt."]
+                ["Content", "Relevante Anlässe", "Gibt es genug relevante Anlässe und Geschichten?"],
+                ["Context", "Persönliche Relevanz", "Können wir daraus persönliche Relevanz ableiten?"],
+                ["Connect", "Soziale Schwellen", "Senken wir soziale Schwellen und schaffen Anschluss?"],
+                ["Checkout", "Handlung und Wiederkehr", "Entsteht Handlung, Profil, Transaktion oder Wiederkehr?"]
               ],
-              outro: "An diesen vier Kriterien zeigt sich, welches Feld sich für den ersten Beweis anbietet.",
-              note: "Die Kriterien ergeben sich direkt aus der gesamten Argumentation. Kriterium 4 ist bewusst gesetzt, um vorgepraegte oder einseitige Felder wie den FC als Erstpilot auszuschliessen. Der FC ist stark, aber als erster Beweis zu maennerlastig und zu vorgepraegt."
+              outro: "Ein guter POC testet nicht ein Thema. Er testet die Kette.",
+              note: "Anforderungsfolie, bewusst entlang der 4C aus Block 4. Damit prüft der POC exakt die Logik, die vorher als Wertschöpfungsmodell eingeführt wurde. Noch kein konkretes Feld nennen, das folgt auf der nächsten Folie."
             },
             {
-              kind: "statement",
+              kind: "pocScope",
               theme: "light",
-              title: "Pilotkandidat",
-              kicker: "Block 5 · Wohin die Kriterien weisen",
-              headline: "Gastronomie und Genuss erfüllt alle vier Kriterien.",
-              lead: "Die Gastro-JTBD-Studie hat die Produktfrage selbst gestellt. Mit dem Genuss-Newsletter und der Genuss-Community im Aufbau existiert der Kanal. Das Feld ist sozial wie transaktional stark und breit einladend. Andere Welten, etwa der FC oder Kultur, können als nächste Themencontainer folgen.",
-              note: "Kein hartes Festnageln, sondern die Kriterien weisen klar auf Gastro und Genuss. FC bewusst als spaeterer Container genannt, nicht als Erstpilot. So bleibt Raum fuer eine gemeinsame Entscheidung im Anschluss, ohne unkonkret zu sein."
+              title: "POC: Dein Wochenende in Köln",
+              kicker: "Proof of Concept",
+              headline: "POC: Dein Wochenende in Köln.",
+              subline: "Die kleinste Version eines neuen Wochenendrituals.",
+              scope: [
+                ["2 Container", "Genuss + Kultur/Events", "Genuss als starker Startcontainer. Kultur und Events über Rausgegangen als zweite Angebotsschicht."],
+                ["1 Moment", "Donnerstag/Freitag", "Der wiederkehrende Nutzungsmoment vor dem Wochenende, nicht ein dauerhaftes Portal."],
+                ["3 Beweise", "Relevanz, Anschluss, Handlung", "Der POC misst, ob Menschen öffnen, reagieren und zurückkehren, weil sie sonst etwas verpassen."]
+              ],
+              core: "Nicht alles zeigen. Sondern beweisen, ob Menschen wiederkommen, weil sie sonst etwas verpassen.",
+              note: "Der POC wird nicht als Themenfeld gerahmt, sondern als wiederkehrender lokaler Nutzungsmoment. Genuss bleibt starker Startcontainer (Gastro-JTBD, Genuss-Newsletter, Genuss-Community), aber der POC heißt nicht Genuss, sonst wirkt er zu eng. Die Minimalität (2 Container, 1 Moment, 3 Beweise) explizit vortragen, sie ist die Antwort auf die stille CFO-Frage nach dem Investment."
             },
             {
-              kind: "cards",
-              theme: "dark",
-              title: "Was der Pilot beweist",
-              kicker: "Block 5 · Der Pilot konkret",
-              headline: "Was der Pilot baut und beweist.",
-              columns: 3,
-              cards: [
-                ["Minimal gebaut", "Profil und Verknüpfung", "Eine schlanke erste Version: einfache Profile, eine erste Verbindung von Menschen, Orten und Anlässen im Pilotfeld. Nicht das ganze System, nur das Nötigste."],
-                ["Beweisfrage", "Zündet der Anschluss?", "Nutzen Menschen die Möglichkeit, zu sehen, wer aus ihrem Umfeld dabei ist, und senkt das die Schwelle?"],
-                ["Beweisfrage", "Trägt die Transaktion?", "Führt Relevanz zu Handlung: Reservierung, Anmeldung, Kauf? Und kommen Menschen wieder?"]
+              kind: "modelPressure",
+              theme: "warm",
+              title: "Rausgegangen-Abgrenzung",
+              kicker: "Die Abgrenzung",
+              headline: "Rausgegangen zeigt, was stattfindet. KStA.Connect zeigt, was zu mir passt.",
+              leftTitle: "Rausgegangen",
+              leftItems: [
+                "Eventdaten",
+                "Discovery",
+                "Ticketing",
+                "Anbieterzugang"
               ],
-              outro: "Der Pilot ist bewusst klein, das Investment überschaubar und klar begrenzt. Er liefert genau die Kennzahlen zu Anschluss, Transaktion und Bindung, auf deren Basis die größere Investitionsentscheidung später belastbar getroffen wird. Nicht Vorschuss auf Vertrauen, sondern Beweis vor Investition.",
-              note: "Geaenderte Beweisfolie. Erste Karte macht jetzt explizit, dass der Pilot die minimale Architektur baut, damit die Beweisfrage nach dem Anschluss ueberhaupt testbar ist. Das schliesst den Logikbruch. Zwei statt drei Beweisfragen, Bindung in die Transaktionskarte gezogen, damit die erste Karte Platz fuer den Minimalbau hat."
+              rightTitle: "KStA.Connect POC",
+              rightItems: [
+                "Redaktionelle Einordnung",
+                "Persönliche Relevanz",
+                "Lebenssituation",
+                "Soziale Anschlussfähigkeit",
+                "Profil- und Beziehungssignale"
+              ],
+              conclusion: [
+                "Der POC baut nicht Rausgegangen nach. Er nutzt Rausgegangen als Angebots- und Checkout-Schicht und ergänzt Context und Connect."
+              ],
+              note: "Diese Folie schützt den POC. Ohne sie klingt \"Dein Wochenende in Köln\" wie Rausgegangen mit Personalisierung. Das Delta ist Context und Connect, also exakt die fehlende Schicht aus Block 4. Rausgegangen wird nicht ersetzt, sondern als Schicht im System eingeordnet."
+            },
+            {
+              kind: "pocProofGrid",
+              theme: "dark",
+              title: "Was der POC beweist",
+              kicker: "Der Mechanismus",
+              headline: "Der POC beweist die Architektur im Kleinen.",
+              items: [
+                ["Content", "Wochenende öffnen", "Welche Empfehlungen und Inhalte öffnen das Wochenende?"],
+                ["Context", "Passt zu mir", "Welche Signale machen daraus \"passt zu mir\"?"],
+                ["Connect", "Schwelle senken", "Welche Community- oder Freundessignale senken die Schwelle?"],
+                ["Checkout", "Nächster Schritt", "Welche Handlung entsteht: merken, teilen, buchen, teilnehmen, wiederkommen?"]
+              ],
+              outro: "Hier zeigt sich, ob aus Content ein nächster Schritt wird.",
+              note: "Konkretisierungsfolie zu den Kriterien. Unterschied zur Kriterienfolie klar halten: Dort die Anforderung an jeden POC, hier die konkrete Einlösung durch diesen POC. Der Hinweis auf begrenztes Investment und belastbare Kennzahlen für die spätere Investitionsentscheidung wandert in den Vortrag."
             },
             {
               kind: "statement",
               theme: "dark",
               title: "Die Wette",
               kicker: "Block 5 · Die Wette",
-              headline: "Das ist eine Wette. Aber eine kalkulierte.",
-              lead: "Die Diagnose ist belastbar, abgesichert durch externe Forschung, eigene Nutzerforschung und kompakte Marktbeispiele. Die Assets sind vorhanden. Der erste Schritt ist klein. Was wir riskieren, ist überschaubar. Was wir gewinnen können, ist eine neue Rolle im regionalen Alltag.",
-              note: "Dramaturgischer Hoehepunkt. Das Wort Wette bewusst nutzen, aber sofort erden: kalkuliert, weil Diagnose belastbar, Assets da, Pilot klein. Das nimmt die Angst und gibt Wuerde. Direkt vor der eigentlichen Entscheidung."
+              headline: "Das ist eine Wette. Aber die richtige.",
+              lead: "Wir wetten nicht auf ein großes Portal. Wir wetten auf einen Mechanismus: Wenn regionale Marke, Content, Daten, Rausgegangen-Angebote und soziale Anschlussfähigkeit zusammenkommen, kann KStA.Connect vor dem Wochenende zu einer neuen Gewohnheit werden.",
+              footnote: "Früher war die Zeitung das Ritual am Morgen. Jetzt testen wir, ob KStA.Connect das Ritual vor dem Wochenende werden kann.",
+              note: "Dramaturgischer Höhepunkt vor der Entscheidung. Das Wort Wette bewusst nutzen, aber sofort erden: Wir wetten auf einen Mechanismus, nicht auf ein Portal. Der Ritual-Satz ist der Anker des gesamten POC, hier hat er seine größte Wirkung. Callback auf Block 2 (Das Ritual bleibt / Das fehlende Ritual)."
+            },
+            {
+              kind: "cards",
+              theme: "light",
+              title: "Persona-Rückbindung",
+              kicker: "Der Kreis schließt sich",
+              headline: "Vier Menschen aus Block 1. Ein Wochenende mit KStA.Connect.",
+              columns: 4,
+              cards: [
+                ["Thomas", "Schrauberabend", "Thomas findet wieder einen Schrauberabend."],
+                ["Helga", "Gemeinschaftsgarten", "Helga sieht, dass der Gemeinschaftsgarten offen für sie ist."],
+                ["Nina", "Drei passende Optionen", "Nina bekommt drei passende Optionen statt tausend Eindrücke."],
+                ["Markus", "Offene Werkstatt", "Markus sieht, wer bei der offenen Werkstatt dabei ist."]
+              ],
+              outro: "Der POC ist klein. Aber er testet genau die Lücke, die wir am Anfang gesehen haben.",
+              note: "Schnelle Rückbindung, kein neues Argument. Die vier Personas aus der Diagnose erscheinen im gelösten Zustand. Zügig vortragen, nicht ausmalen. Die Folie emotionalisiert nach der Wette und bereitet die Entscheidung vor, sie darf die Entscheidung nicht verwässern."
             },
             {
               kind: "statement",
               theme: "dark",
               title: "Die Entscheidung",
               kicker: "Block 5 · Die Entscheidung",
-              headline: "Die Entscheidung heute ist nicht das ganze System. Es ist der erste Schritt.",
-              lead: "Nicht: Bauen wir die ganze Maschine? Sondern: Gehen wir den Weg, und starten wir den ersten Piloten, der den Mechanismus beweist? Alles Weitere entscheidet sich daran, was der Pilot zeigt.",
-              note: "Der nuechterne Schluss. Eine klare Weiche, keine zehn Fragen. Bewusst entlastend: nicht das ganze System steht zur Abstimmung, nur der erste Schritt. Das macht ein Ja leichter und ehrlicher."
+              headline: "Die Entscheidung heute ist nicht der Vollausbau. Es ist der Start des Beweises.",
+              lead: "Die Frage ist nicht: Bauen wir alles? Die Frage ist: Starten wir den Beweis? Alles Weitere entscheidet sich daran, was der POC zeigt.",
+              footnote: "Bevor Köln ins Wochenende geht, öffnet KStA.Connect, was dieses Wochenende lebenswert macht.",
+              note: "Der nüchterne Schluss vor dem emotionalen Callback. Eine klare Weiche, bewusst entlastend: Nicht das System steht zur Abstimmung, nur der Start des Beweises. Der Wochenend-Satz ist das konkrete Versprechen, \"lebenswert\" führt sprachlich direkt in die Schlussfolie."
             },
             {
               kind: "statement",
@@ -6833,6 +7029,46 @@
                 `).join("")}
               </div>
             </div>
+          </div>`;
+      }
+
+      if (slide.kind === "pocScope") {
+        return `
+          <div class="content poc-scope">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <h2>${allowEm(slide.headline)}</h2>
+            <p class="poc-scope-subline">${escapeHtml(slide.subline)}</p>
+            <div class="poc-scope-grid">
+              ${slide.scope.map(([label, title, body]) => `
+                <article class="poc-scope-card">
+                  <small>${escapeHtml(label)}</small>
+                  <strong>${escapeHtml(title)}</strong>
+                  <span>${escapeHtml(body)}</span>
+                </article>
+              `).join("")}
+            </div>
+            <p class="poc-scope-core">${escapeHtml(slide.core)}</p>
+          </div>`;
+      }
+
+      if (slide.kind === "pocProofGrid") {
+        return `
+          <div class="content poc-proof-grid">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <h2>${allowEm(slide.headline)}</h2>
+            <div class="poc-proof-matrix">
+              ${slide.items.map(([label, title, body], itemIndex) => `
+                <article class="poc-proof-item">
+                  <div class="poc-proof-index">${itemIndex + 1}</div>
+                  <div class="poc-proof-copy">
+                    <small>${escapeHtml(label)}</small>
+                    <strong>${escapeHtml(title)}</strong>
+                    <span>${escapeHtml(body)}</span>
+                  </div>
+                </article>
+              `).join("")}
+            </div>
+            <p class="poc-proof-outro">${escapeHtml(slide.outro)}</p>
           </div>`;
       }
 
