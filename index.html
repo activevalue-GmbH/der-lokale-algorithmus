@@ -696,6 +696,36 @@
       color: rgba(250, 250, 248, 0.62);
     }
 
+    .card-bullets {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card-bullets li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.05vw, 16px);
+      line-height: 1.42;
+    }
+
+    .card-bullets li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+    }
+
+    .dark .card-bullets li {
+      color: rgba(250, 250, 248, 0.66);
+    }
+
     .poc-scope {
       align-content: center;
       gap: clamp(22px, 2.6vw, 34px);
@@ -761,6 +791,96 @@
       font-size: clamp(20px, 1.75vw, 28px);
       font-weight: 700;
       line-height: 1.34;
+    }
+
+    .poc-scope-dual {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 2px;
+      max-width: 1120px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .poc-scope-zone {
+      display: grid;
+      align-content: start;
+      gap: clamp(16px, 1.8vw, 24px);
+      padding: clamp(24px, 3vw, 42px);
+      background: rgba(250, 250, 248, 0.82);
+    }
+
+    .poc-scope-zone small {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .poc-scope-zone strong {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(27px, 2.7vw, 42px);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .poc-scope-list {
+      display: grid;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .poc-scope-list li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--body);
+      font-size: clamp(15px, 1.18vw, 18px);
+      line-height: 1.38;
+    }
+
+    .poc-scope-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      background: var(--red);
+    }
+
+    .campaign-action {
+      align-content: center;
+      gap: clamp(24px, 3vw, 42px);
+    }
+
+    .campaign-action h2 {
+      max-width: 1120px;
+      color: var(--paper);
+      font-size: clamp(46px, 6.2vw, 92px);
+      line-height: 0.98;
+    }
+
+    .campaign-action .lead {
+      max-width: 980px;
+      color: rgba(250, 250, 248, 0.74);
+      font-size: clamp(19px, 1.55vw, 25px);
+      line-height: 1.36;
+    }
+
+    .campaign-action-footnote {
+      display: inline-block;
+      max-width: 760px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--red);
+      color: var(--paper);
+      background: rgba(250, 250, 248, 0.07);
+      font-size: clamp(18px, 1.55vw, 24px);
+      font-weight: 700;
+      line-height: 1.32;
     }
 
     .poc-proof-grid {
@@ -6152,9 +6272,9 @@
               title: "Block 5",
               block: "05",
               kicker: "Block 5",
-              headline: "Die Richtungsentscheidung.",
-              lead: "Damit ist die Frage für KStA.Connect nicht mehr, ob die Idee attraktiv klingt. Die Frage ist, ob wir den ersten Schritt in diese Architektur gehen.",
-              note: "Grosser Trenner fuer den Schlussblock. Klare Zaesur: weg vom Produktbild, hin zu Wertlogik und Entscheidung."
+              headline: "Der Beweis.",
+              lead: "Wir bauen den lokalen Algorithmus nicht im Labor. Wir bauen ihn mit Köln.",
+              note: "Großer Trenner für den Schlussblock. Klare Zäsur: weg vom Produktbild, hin zu Wertlogik, öffentlichem Beweis und Entscheidung. Der Satz \"mit Köln\" kündigt die Aktion an, ohne sie zu erklären. Spannung halten."
             },
             {
               kind: "valueStairs",
@@ -6170,7 +6290,7 @@
                 ["Stufe 5", "Wiederkehrender Erlös", "Abos, Container, qualifizierte Reichweite. Der Wert wird tragfähig."]
               ],
               conclusion: "Jede Stufe macht die nächste möglich. Wer Stufe 1 überspringt, erreicht Stufe 5 nie. Genau deshalb beginnt alles mit Relevanz, nicht mit Verkauf.",
-              note: "Herzstueck des oekonomischen Teils. Klassische ansteigende Treppe. Wichtig im Vortrag: Die Reihenfolge ist zwingend, Relevanz zuerst. Das ist die Bruecke zum vierten Prinzip aus Block 4. Die oberste Stufe ist rot, weil dort der tragfaehige Erloes sitzt."
+              note: "Herzstück des ökonomischen Teils. Klassische ansteigende Treppe. Wichtig im Vortrag: Die Reihenfolge ist zwingend, Relevanz zuerst. Das ist die Brücke zum vierten Prinzip aus Block 4. Die oberste Stufe ist rot, weil dort der tragfähige Erlös sitzt."
             },
             {
               kind: "cards",
@@ -6181,12 +6301,12 @@
               lead: "Was für den Einzelnen Bindung ist, wird in der Summe regionale Teilhabe. Aus diesem doppelten Wert, individuell und gesellschaftlich, speisen sich drei Quellen.",
               columns: 3,
               cards: [
-                ["Nutzer", "Zahlen für Zugang", "Premium-Welten, Container im Abo, werbefreie oder erweiterte Nutzung. Wer mehr will, zahlt dafür."],
-                ["Anbieter", "Zahlen für Reichweite", "Lokale Anbieter erreichen Menschen kontextualisiert und qualifiziert, nicht gestreut. Das ist mehr wert als klassische Anzeige."],
-                ["Institutionen", "Zahlen für Teilhabe", "Wenn aus individueller Bindung messbare regionale Teilhabe wird, entsteht ein Wert, den Stadt, Kultur und Engagement bisher nirgends einkaufen konnten. Genau diese soziale Wirkung wird finanzierungswürdig."]
+                ["Nutzer", "Zahlen für Zugang", ["Premium-Welten und Container im Abo.", "Werbefreie oder erweiterte Nutzung.", "Wer mehr will, zahlt für echten Zugang."]],
+                ["Anbieter", "Zahlen für Reichweite", ["Kontextualisierte, qualifizierte Reichweite.", "Anschluss an konkrete Bedürfnisse und Momente.", "Mehr Wert als eine gestreute klassische Anzeige."]],
+                ["Institutionen", "Zahlen für Teilhabe", ["Messbare regionale Teilhabe.", "Wert für Stadt, Kultur und Engagement.", "Soziale Wirkung wird finanzierungswürdig."]]
               ],
               outro: "Kein Erlösmodell trägt allein. Zusammen ergeben sie eine Logik, die nicht von einer einzigen Quelle abhängt.",
-              note: "Erloeslogik bewusst getrennt von der Werttreppe. Drei Saeulen: Nutzer, Anbieter, Institutionen. Das ist die Antwort auf die stille CFO-Frage, ob das wirtschaftlich traegt. Container-Monetarisierung sitzt in der Nutzer-Saeule."
+              note: "Erlöslogik bewusst getrennt von der Werttreppe. Drei Säulen: Nutzer, Anbieter, Institutionen. Das ist die Antwort auf die stille CFO-Frage, ob das wirtschaftlich trägt. Container-Monetarisierung sitzt in der Nutzer-Säule."
             },
             {
               kind: "forwardPerspective",
@@ -6198,8 +6318,8 @@
                 "Der Login in deine Heimat.",
                 "Die Mitgliedschaft für dein Leben hier."
               ],
-              subline: "Der Blick nach vorne ist die Mitgliedschaft. Der nächste Schritt ist nicht der Vollausbau, sondern der Beweis, dass der Weg dorthin trägt.",
-              note: "Perspektivfolie nach der Erlöslogik. Aufgabe: Zielhorizont öffnen, dann sofort erden. Die Mitgliedschaft ist das Ziel, der POC ist der Beweis, dass der Weg dorthin trägt. Nicht als Produktversprechen vortragen."
+              subline: "Das ist die spannende Perspektive. Aber der konkrete Schritt davor ist kleiner: ein POC, der beweist, dass Menschen diesen Weg mitgehen.",
+              note: "Perspektivfolie nach der Erlöslogik. Aufgabe: Zielhorizont öffnen: Login, Mitgliedschaft, wiederkehrende Beziehung. Dann sofort erden: Der konkrete nächste Schritt ist nicht der Vollausbau, sondern ein POC, der beweist, dass Menschen diesen Weg mitgehen. Nicht als fertiges Produktversprechen vortragen."
             },
             {
               kind: "statement",
@@ -6207,26 +6327,31 @@
               title: "Der erste Schritt",
               kicker: "Block 5 · Der erste Schritt",
               marker: "→",
-              headline: "Nicht die ganze Maschine bauen. Den Mechanismus beweisen.",
-              lead: "Der erste Schritt löst nicht die gesamte Architektur. Er baut die kleinste Version, die zeigt, ob die neue Wertschöpfungslogik trägt: Relevanz, Profil, Anschluss, Handlung und Wiederkehr.",
+              headline: "Der erste Schritt ist kein Produktlaunch. Es ist ein öffentlicher Lernprozess.",
+              lead: "Der erste Schritt löst nicht die gesamte Architektur. Er testet, ob KStA.Connect gemeinsam mit Menschen lokale Relevanz lernen kann: Profil, Passung, Anschluss, Handlung und Wiederkehr.",
               footnote: "Nicht Vorschuss auf eine Vision. Sondern Beweis vor Investition.",
-              note: "Einstieg in den POC. Wichtig im Vortrag: Der POC ist kein Nachfragetest, er baut die kleinste echte Version der fehlenden Architektur. CFO-Reflex abfangen: kleinste nötige Version, klar begrenztes Investment, nicht das ganze System."
+              note: "Einstieg in den POC mit neuer Rahmung: öffentlicher Lernprozess statt interner Produktpilot. Das bereitet Datenfrage und Aktion vor. CFO-Reflex weiterhin abfangen: kleinste nötige Version, klar begrenztes Investment."
             },
             {
-              kind: "cards",
-              theme: "light",
-              title: "POC-Kriterien entlang 4C",
-              kicker: "Block 5 · Kriterien",
-              headline: "Der POC muss nicht ein Thema testen. Er muss die Wertschöpfungskette testen.",
-              columns: 4,
-              cards: [
-                ["Content", "Relevante Anlässe", "Gibt es genug relevante Anlässe und Geschichten?"],
-                ["Context", "Persönliche Relevanz", "Können wir daraus persönliche Relevanz ableiten?"],
-                ["Connect", "Soziale Schwellen", "Senken wir soziale Schwellen und schaffen Anschluss?"],
-                ["Checkout", "Handlung und Wiederkehr", "Entsteht Handlung, Profil, Transaktion oder Wiederkehr?"]
-              ],
-              outro: "Ein guter POC testet nicht ein Thema. Er testet die Kette.",
-              note: "Anforderungsfolie, bewusst entlang der 4C aus Block 4. Damit prüft der POC exakt die Logik, die vorher als Wertschöpfungsmodell eingeführt wurde. Noch kein konkretes Feld nennen, das folgt auf der nächsten Folie."
+              kind: "statement",
+              theme: "dark",
+              title: "Die Datenfrage",
+              kicker: "Block 5 · Die Datenfrage",
+              marker: "→",
+              headline: "Personalisierung braucht Daten. Vertrauen entscheidet, ob Menschen sie geben.",
+              lead: "Der lokale Algorithmus entsteht nicht aus Bauchgefühl. Er braucht freiwillige Signale zu Interessen, Lebenssituationen, Orten, Zeitfenstern und sozialen Schwellen. Diese Signale bekommt KStA.Connect nicht durch Technik allein, sondern durch eine klare Einladung: Hilf uns, Köln besser lesbar zu machen.",
+              footnote: "Die Datenbasis entsteht nicht heimlich. Sie entsteht als freiwilliger Beitrag zu einer besseren regionalen Orientierung.",
+              note: "Diese Folie nimmt die stärkste Einwandfrage des POC vorweg: Woher kommen die Daten für Individualität? Antwort: nicht durch Tracking, sondern durch Einladung. Das ist zugleich die Differenz zu Big Tech: Plattformen sammeln Daten als Abfallprodukt, ein regionales Medium kann öffentlich fragen. Genau diese Fähigkeit, also Aufruf, Aktion und Kampagne, ist ein historisches Asset des Mediums."
+            },
+            {
+              kind: "campaignAction",
+              theme: "dark",
+              title: "Die Köln-Aktion",
+              kicker: "Die Köln-Aktion",
+              headline: "1.000 Kölnerinnen und Kölner. 10 Wochenenden. Eine Frage: Was macht diese Stadt für dich lebenswert?",
+              lead: "Eine kuratierte Gruppe aus unterschiedlichen Veedeln und Lebenssituationen baut den POC mit. Sie gibt freiwillig ein Basisprofil, erhält jede Woche eine persönliche Wochenendauswahl, nutzt Angebote und gibt Feedback. So entsteht die erste echte Relevanzschicht des lokalen Algorithmus.",
+              footnote: "Gebaut mit Menschen, nicht nur für Menschen.",
+              note: "Wichtiger Callback im Vortrag: Die Frage der Aktion operationalisiert exakt die 20-Punkte-Lücke aus dem Zwischenfazit von Block 1: 80 Prozent leben gern in Köln, nur 60 Prozent sind zufrieden. Die Aktion ist damit kein Kampagnen-Gimmick, sondern die methodische Fortsetzung der Diagnose, mit den Bürgern als Forschungspartner. Die Teilnehmer sind keine Testnutzer, sondern Gründungsmitglieder. Nebenwirkungen mitnennen: Die Aktion erzeugt eigene Berichterstattung, und die definierte Kohorte über den definierten Zeitraum liefert saubere Kennzahlen für die spätere Investitionsentscheidung. Ehrlich benennen, falls gefragt: Wer sich meldet, ist engagierter als der Durchschnitt. Für einen Mechanismus-Beweis ist das vertretbar, Rekrutierung bewusst breit streuen. Der sprechbare Name der Aktion wird bewusst nicht im Offsite entschieden."
             },
             {
               kind: "pocScope",
@@ -6234,46 +6359,58 @@
               title: "POC: Dein Wochenende in Köln",
               kicker: "Proof of Concept",
               headline: "POC: Dein Wochenende in Köln.",
-              subline: "Die kleinste Version eines neuen Wochenendrituals.",
-              scope: [
-                ["2 Container", "Genuss + Kultur/Events", "Genuss als starker Startcontainer. Kultur und Events über Rausgegangen als zweite Angebotsschicht."],
-                ["1 Moment", "Donnerstag/Freitag", "Der wiederkehrende Nutzungsmoment vor dem Wochenende, nicht ein dauerhaftes Portal."],
-                ["3 Beweise", "Relevanz, Anschluss, Handlung", "Der POC misst, ob Menschen öffnen, reagieren und zurückkehren, weil sie sonst etwas verpassen."]
+              subline: "Die kleinste Version eines neuen Wochenendrituals. Klein genug für den Beweis. Groß genug für echte Relevanz.",
+              weeklyPackageLabel: "Das Wochenpaket",
+              weeklyPackageTitle: "Was jede Woche ankommt",
+              weeklyPackage: [
+                "3 Dinge, die zu mir passen.",
+                "1 Sache in meinem Veedel.",
+                "1 Empfehlung, die mich überrascht.",
+                "1 Möglichkeit, bei der ich nicht allein reingehen muss.",
+                "1 direkter nächster Schritt: merken, teilen, buchen, hingehen."
+              ],
+              startScopeLabel: "Der Startscope",
+              startScopeTitle: "Was bewusst begrenzt bleibt",
+              startScope: [
+                "2 Container: Genuss + Kultur/Events über Rausgegangen.",
+                "1 Moment: Donnerstag/Freitag, vor dem Wochenende.",
+                "1 Gruppe: 1.000 freiwillige Teilnehmer.",
+                "3 Beweise: Relevanz, Anschluss, Handlung."
               ],
               core: "Nicht alles zeigen. Sondern beweisen, ob Menschen wiederkommen, weil sie sonst etwas verpassen.",
-              note: "Der POC wird nicht als Themenfeld gerahmt, sondern als wiederkehrender lokaler Nutzungsmoment. Genuss bleibt starker Startcontainer (Gastro-JTBD, Genuss-Newsletter, Genuss-Community), aber der POC heißt nicht Genuss, sonst wirkt er zu eng. Die Minimalität (2 Container, 1 Moment, 3 Beweise) explizit vortragen, sie ist die Antwort auf die stille CFO-Frage nach dem Investment."
+              note: "Das konkreteste Produktbild des Blocks. Die vierte Zeile des Wochenpakets, die Möglichkeit, bei der ich nicht allein reingehen muss, ist der Soziale Navigator in einer einzigen Empfehlungszeile, im Vortrag kurz hervorheben. Genuss bleibt starker Startcontainer, aber der POC heißt nicht Genuss, sonst wirkt er zu eng. Der Startscope ist die Antwort auf die stille CFO-Frage nach dem Investment: zwei Container, ein Moment, eine begrenzte Gruppe, zehn Wochenenden. In der Headline bewusst die scharfe Zahl 1.000, auch wenn intern 1.000 bis 2.000 rekrutiert werden können."
             },
             {
               kind: "modelPressure",
               theme: "warm",
               title: "Rausgegangen-Abgrenzung",
               kicker: "Die Abgrenzung",
-              headline: "Rausgegangen zeigt, was stattfindet. KStA.Connect zeigt, was zu mir passt.",
+              headline: "Rausgegangen hat Angebotsdaten. KStA.Connect sammelt Relevanzsignale.",
               leftTitle: "Rausgegangen",
               leftItems: [
-                "Eventdaten",
-                "Discovery",
-                "Ticketing",
-                "Anbieterzugang"
+                "Was findet statt?",
+                "Was kostet es?",
+                "Wo und wann ist es?",
+                "Eventdaten, Discovery, Ticketing, Veranstalterzugang"
               ],
               rightTitle: "KStA.Connect POC",
               rightItems: [
-                "Redaktionelle Einordnung",
-                "Persönliche Relevanz",
-                "Lebenssituation",
-                "Soziale Anschlussfähigkeit",
-                "Profil- und Beziehungssignale"
+                "Für wen passt es?",
+                "Warum passt es?",
+                "Was senkt die Schwelle?",
+                "Was löst Handlung aus?",
+                "Profil, redaktionelle Einordnung, Lebenssituation, soziale Anschlussfähigkeit, Feedbackdaten"
               ],
               conclusion: [
-                "Der POC baut nicht Rausgegangen nach. Er nutzt Rausgegangen als Angebots- und Checkout-Schicht und ergänzt Context und Connect."
+                "Der POC baut Rausgegangen nicht nach. Er macht Rausgegangen intelligenter anschlussfähig."
               ],
-              note: "Diese Folie schützt den POC. Ohne sie klingt \"Dein Wochenende in Köln\" wie Rausgegangen mit Personalisierung. Das Delta ist Context und Connect, also exakt die fehlende Schicht aus Block 4. Rausgegangen wird nicht ersetzt, sondern als Schicht im System eingeordnet."
+              note: "Diese Folie schützt den POC. Ohne sie klingt \"Dein Wochenende in Köln\" wie Rausgegangen mit Personalisierung. Das Delta ist Context und Connect, also exakt die fehlende Schicht aus Block 4. Rausgegangen wird als Angebots- und Checkout-Schicht des Systems eingeordnet und damit aufgewertet, nicht ersetzt."
             },
             {
               kind: "pocProofGrid",
               theme: "dark",
               title: "Was der POC beweist",
-              kicker: "Der Mechanismus",
+              kicker: "Block 5 · Der Mechanismus",
               headline: "Der POC beweist die Architektur im Kleinen.",
               items: [
                 ["Content", "Wochenende öffnen", "Welche Empfehlungen und Inhalte öffnen das Wochenende?"],
@@ -6282,7 +6419,7 @@
                 ["Checkout", "Nächster Schritt", "Welche Handlung entsteht: merken, teilen, buchen, teilnehmen, wiederkommen?"]
               ],
               outro: "Hier zeigt sich, ob aus Content ein nächster Schritt wird.",
-              note: "Konkretisierungsfolie zu den Kriterien. Unterschied zur Kriterienfolie klar halten: Dort die Anforderung an jeden POC, hier die konkrete Einlösung durch diesen POC. Der Hinweis auf begrenztes Investment und belastbare Kennzahlen für die spätere Investitionsentscheidung wandert in den Vortrag."
+              note: "Einzige 4C-Folie des Blocks, sie verbindet Anforderung und Einlösung. Damit prüft der POC exakt die Wertschöpfungslogik, die in Block 4 eingeführt wurde. Der Hinweis auf begrenztes Investment und belastbare Kennzahlen für die spätere Investitionsentscheidung gehört in den Vortrag."
             },
             {
               kind: "statement",
@@ -6290,9 +6427,9 @@
               title: "Die Wette",
               kicker: "Block 5 · Die Wette",
               headline: "Das ist eine Wette. Aber die richtige.",
-              lead: "Wir wetten nicht auf ein großes Portal. Wir wetten auf einen Mechanismus: Wenn regionale Marke, Content, Daten, Rausgegangen-Angebote und soziale Anschlussfähigkeit zusammenkommen, kann KStA.Connect vor dem Wochenende zu einer neuen Gewohnheit werden.",
+              lead: "Wir wetten nicht auf ein großes Portal. Wir wetten auf einen Mechanismus: Wenn regionale Marke, Content, Daten, Rausgegangen-Angebote und soziale Anschlussfähigkeit zusammenkommen, kann KStA.Connect vor dem Wochenende zu einer neuen Gewohnheit werden. Nicht, weil wir schon alles wissen. Sondern weil Menschen bereit sind, uns dabei zu helfen, wenn sie verstehen, wofür.",
               footnote: "Früher war die Zeitung das Ritual am Morgen. Jetzt testen wir, ob KStA.Connect das Ritual vor dem Wochenende werden kann.",
-              note: "Dramaturgischer Höhepunkt vor der Entscheidung. Das Wort Wette bewusst nutzen, aber sofort erden: Wir wetten auf einen Mechanismus, nicht auf ein Portal. Der Ritual-Satz ist der Anker des gesamten POC, hier hat er seine größte Wirkung. Callback auf Block 2 (Das Ritual bleibt / Das fehlende Ritual)."
+              note: "Dramaturgischer Höhepunkt vor der Entscheidung. Das Wort Wette bewusst nutzen, aber sofort erden: Wir wetten auf einen Mechanismus, nicht auf ein Portal, und wir wetten gemeinsam mit den Menschen, die mitbauen. Der Ritual-Satz ist der Anker des gesamten POC, Callback auf Block 2: Das Ritual bleibt / Das fehlende Ritual."
             },
             {
               kind: "cards",
@@ -6302,13 +6439,13 @@
               headline: "Vier Menschen aus Block 1. Ein Wochenende mit KStA.Connect.",
               columns: 4,
               cards: [
-                ["Thomas", "Schrauberabend", "Thomas findet wieder einen Schrauberabend."],
+                ["Thomas", "Schrauberabend", "Thomas findet einen Schrauberabend, bei dem man einfach dazukommen kann."],
                 ["Helga", "Gemeinschaftsgarten", "Helga sieht, dass der Gemeinschaftsgarten offen für sie ist."],
                 ["Nina", "Drei passende Optionen", "Nina bekommt drei passende Optionen statt tausend Eindrücke."],
                 ["Markus", "Offene Werkstatt", "Markus sieht, wer bei der offenen Werkstatt dabei ist."]
               ],
               outro: "Der POC ist klein. Aber er testet genau die Lücke, die wir am Anfang gesehen haben.",
-              note: "Schnelle Rückbindung, kein neues Argument. Die vier Personas aus der Diagnose erscheinen im gelösten Zustand. Zügig vortragen, nicht ausmalen. Die Folie emotionalisiert nach der Wette und bereitet die Entscheidung vor, sie darf die Entscheidung nicht verwässern."
+              note: "Schnelle Rückbindung, kein neues Argument. Die vier Personas aus der Diagnose erscheinen im gelösten Zustand, als vier von tausend, die mitgebaut haben. Zügig vortragen, nicht ausmalen. Die Folie emotionalisiert nach der Wette und bereitet die Entscheidung vor, sie darf die Entscheidung nicht verwässern."
             },
             {
               kind: "statement",
@@ -6316,23 +6453,9 @@
               title: "Die Entscheidung",
               kicker: "Block 5 · Die Entscheidung",
               headline: "Die Entscheidung heute ist nicht der Vollausbau. Es ist der Start des Beweises.",
-              lead: "Die Frage ist nicht: Bauen wir alles? Die Frage ist: Starten wir den Beweis? Alles Weitere entscheidet sich daran, was der POC zeigt.",
+              lead: "Die Frage ist nicht: Bauen wir alles? Die Frage ist: Starten wir den Beweis, gemeinsam mit Köln? Alles Weitere entscheidet sich daran, was der POC zeigt.",
               footnote: "Bevor Köln ins Wochenende geht, öffnet KStA.Connect, was dieses Wochenende lebenswert macht.",
-              note: "Der nüchterne Schluss vor dem emotionalen Callback. Eine klare Weiche, bewusst entlastend: Nicht das System steht zur Abstimmung, nur der Start des Beweises. Der Wochenend-Satz ist das konkrete Versprechen, \"lebenswert\" führt sprachlich direkt in die Schlussfolie."
-            },
-            {
-              kind: "statement",
-              theme: "dark",
-              title: "Köln 2029",
-              kicker: "Zeitsprung",
-              headline: "Köln, ein Sonntag im Jahr 2029.",
-              bullets: [
-                "Thomas hat über sein Profil den Stammtisch in Rodenkirchen gefunden, zu dem er allein nie gegangen wäre.",
-                "Helga sitzt donnerstags im Repair Café in Mülheim, weil eine Stimme ihr den Weg gezeigt hat.",
-                "Markus weiß, wer aus Ehrenfeld am Samstag auch dort ist.",
-                "Aus ungelösten Jobs sind gelebte Beziehungen geworden."
-              ],
-              note: "Emotionaler Hoehepunkt vor dem Schlusssatz. Die Folie loest die Figuren aus Block 1 im Jahr 2029 ein: kein neues Argument, sondern die Konsequenz aus den Geschichten, die der Raum bereits kennt. Danach kann der Schlusssatz als Ergebnis fallen."
+              note: "Der nüchterne Schluss vor dem emotionalen Callback. Eine klare Weiche, bewusst entlastend: Nicht das System steht zur Abstimmung, nur der Start des Beweises. Der Wochenend-Satz ist das konkrete Versprechen, \"lebenswert\" führt sprachlich direkt in die Schlussfolie und greift zugleich die Frage der Köln-Aktion wieder auf."
             },
             {
               kind: "phenomenonTitle",
@@ -6340,7 +6463,7 @@
               title: "Schluss",
               kicker: "",
               headline: "Damit Menschen sagen: Ich liebe es, hier zu leben.",
-              note: "Letzte Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, gross, allein. Schliesst den Kreis: Die ganze Strategie, der Pilot, die Werttreppe, alles dient diesem einen Satz. Im Vortrag: nach der Zeitsprung-Folie kurz innehalten, dann diesen Satz. Nicht erklaeren, stehen lassen, Ende."
+              note: "Letzte Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, groß, allein. Schließt den Kreis: Die Aktion fragt, was die Stadt lebenswert macht. Die Entscheidung verspricht, es jedes Wochenende zu öffnen. Der Schluss benennt den Zustand, auf den alles zuläuft. Nicht erklären, stehen lassen, Ende."
             },
     
 
@@ -6399,13 +6522,17 @@
         <span>${String(i + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}</span>
       </div>`;
 
+    const renderCardBody = (body) => Array.isArray(body)
+      ? `<ul class="card-bullets">${body.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
+      : `<span>${escapeHtml(body)}</span>`;
+
     const cards = (items, columns = 3, revealCount = null, autoReveal = false) => `
       <div class="cards ${columns === 2 ? "two" : ""} ${columns === 4 ? "four" : ""} ${revealCount !== null ? "is-reveal" : ""} ${autoReveal ? "is-auto-reveal" : ""}">
         ${items.map(([eyebrow, title, body], cardIndex) => `
           <article class="card ${revealCount !== null && cardIndex >= revealCount ? "is-hidden" : ""}" data-reveal-card="${cardIndex}" ${autoReveal ? `style="--card-index: ${cardIndex};"` : ""}>
             <small>${escapeHtml(eyebrow)}</small>
             <strong>${escapeHtml(title)}</strong>
-            <span>${escapeHtml(body)}</span>
+            ${renderCardBody(body)}
           </article>
         `).join("")}
       </div>`;
@@ -6622,6 +6749,16 @@
               ${transitionBody}
             </div>
             ${slide.question ? `<div class="transition-question">${escapeHtml(slide.question)}</div>` : ""}
+          </div>`;
+      }
+
+      if (slide.kind === "campaignAction") {
+        return `
+          <div class="content campaign-action">
+            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            <h2>${escapeHtml(slide.headline)}</h2>
+            ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
+            ${slide.footnote ? `<p class="campaign-action-footnote">${escapeHtml(slide.footnote)}</p>` : ""}
           </div>`;
       }
 
@@ -7033,20 +7170,34 @@
       }
 
       if (slide.kind === "pocScope") {
+        const dualLayout = slide.weeklyPackage && slide.startScope;
         return `
           <div class="content poc-scope">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowEm(slide.headline)}</h2>
             <p class="poc-scope-subline">${escapeHtml(slide.subline)}</p>
-            <div class="poc-scope-grid">
-              ${slide.scope.map(([label, title, body]) => `
-                <article class="poc-scope-card">
-                  <small>${escapeHtml(label)}</small>
-                  <strong>${escapeHtml(title)}</strong>
-                  <span>${escapeHtml(body)}</span>
+            ${dualLayout ? `
+              <div class="poc-scope-dual">
+                <article class="poc-scope-zone">
+                  <small>${escapeHtml(slide.weeklyPackageLabel || "Wochenpaket")}</small>
+                  <strong>${escapeHtml(slide.weeklyPackageTitle || "Was jede Woche ankommt")}</strong>
+                  <ul class="poc-scope-list">${slide.weeklyPackage.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
                 </article>
-              `).join("")}
-            </div>
+                <article class="poc-scope-zone">
+                  <small>${escapeHtml(slide.startScopeLabel || "Startscope")}</small>
+                  <strong>${escapeHtml(slide.startScopeTitle || "Was bewusst begrenzt bleibt")}</strong>
+                  <ul class="poc-scope-list">${slide.startScope.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+                </article>
+              </div>` : `
+              <div class="poc-scope-grid">
+                ${slide.scope.map(([label, title, body]) => `
+                  <article class="poc-scope-card">
+                    <small>${escapeHtml(label)}</small>
+                    <strong>${escapeHtml(title)}</strong>
+                    <span>${escapeHtml(body)}</span>
+                  </article>
+                `).join("")}
+              </div>`}
             <p class="poc-scope-core">${escapeHtml(slide.core)}</p>
           </div>`;
       }
