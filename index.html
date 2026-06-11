@@ -907,8 +907,8 @@
 
     .campaign-action-stage {
       display: grid;
-      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.08fr);
-      gap: clamp(30px, 5vw, 72px);
+      grid-template-columns: minmax(300px, 0.54fr) minmax(0, 1.12fr);
+      gap: clamp(38px, 5vw, 74px);
       align-items: center;
     }
 
@@ -919,10 +919,10 @@
 
     .campaign-action-number {
       display: grid;
-      grid-template-columns: minmax(108px, 0.45fr) minmax(0, 1fr);
-      gap: clamp(16px, 2.2vw, 28px);
+      grid-template-columns: minmax(150px, max-content) minmax(0, 1fr);
+      gap: clamp(20px, 2vw, 28px);
       align-items: baseline;
-      padding: clamp(13px, 1.5vw, 20px) 0;
+      padding: clamp(14px, 1.6vw, 22px) 0;
       border-top: 1px solid rgba(250, 250, 248, 0.34);
     }
 
@@ -933,10 +933,11 @@
     .campaign-action-number strong {
       color: var(--paper);
       font-family: var(--serif);
-      font-size: clamp(62px, 9.2vw, 136px);
+      font-size: clamp(44px, 5.3vw, 76px);
       font-weight: 400;
-      line-height: 0.84;
-      letter-spacing: -0.04em;
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      white-space: nowrap;
     }
 
     .campaign-action-number span {
@@ -3089,6 +3090,20 @@
       color: var(--muted);
       font-size: clamp(13px, 1vw, 16px);
       line-height: 1.42;
+    }
+
+    .forward-perspective-proof ul {
+      display: grid;
+      gap: 7px;
+      margin: 12px 0 0;
+      padding-left: 1.05em;
+      color: var(--muted);
+      font-size: clamp(13px, 1vw, 16px);
+      line-height: 1.34;
+    }
+
+    .forward-perspective-proof li::marker {
+      color: var(--red);
     }
 
     .strategy-market-shift {
@@ -6615,16 +6630,15 @@
               bullets: [
                 "Ein Login macht aus anonymer Reichweite eine bekannte Beziehung.",
                 "Mitgliedschaft heißt: wiederkehrender Nutzen für Alltag, Stadt und Entscheidungen vor Ort.",
-                "Wenn der Nutzen wiederkehrt, kann das Abo wieder als Erlösmodell greifen – nicht als Zeitungsschutz, sondern als Zugang zu einem lokalen System.",
-                "Der erste Beweis muss zeigen, dass Menschen nicht nur einmal kommen, sondern sich anmelden, Interessen hinterlegen und wiederkommen."
+                "Wenn der Nutzen wiederkehrt, kann das Abo wieder greifen: nicht als Zeitungsschutz, sondern als Zugang zu einem lokalen System.",
+                "Der erste Beweis muss deshalb zeigen: Menschen melden sich an, hinterlegen Interessen und kommen wieder."
               ],
-              subline: "Die Perspektive ist groß. Die heutige Entscheidung bleibt klein: Wir beweisen zuerst, ob aus Relevanz Profil, aus Profil Beziehung und aus Beziehung Erlös werden kann.",
               proof: [
-                ["1", "Reichweite wird Profil", "Menschen werden nicht nur erreicht, sondern freiwillig bekannt."],
-                ["2", "Profil wird Beziehung", "Aus Relevanz entsteht Wiederkehr, Erwartung und Vertrauen."],
-                ["3", "Beziehung wird Erlös", "Mitgliedschaft wird erst plausibel, wenn der Nutzen wiederkehrt."]
+                ["1", "Reichweite wird Profil", ["Nicht nur Klicks.", "Freiwillig bekannte Menschen."]],
+                ["2", "Profil wird Beziehung", ["Passendere Vorschläge.", "Mehr Wiederkehr und Vertrauen."]],
+                ["3", "Beziehung wird Erlös", ["Mitgliedschaft wird plausibel.", "Das Abo bekommt wieder einen konkreten Nutzen."]]
               ],
-              note: "Neu hierarchisierte Perspektivfolie am Ende des kaufmännischen Teils. Die Headline bündelt Login und Mitgliedschaft, die Bullet Points erklären die Abo-/Erlöslogik, die drei unteren Beweisblöcke bleiben als Stufenlogik erhalten."
+              note: "Perspektivfolie am Ende des kaufmännischen Teils weiter verdichtet. Keine erklärende Copy unter den Stufen, sondern Bullet-Hierarchie: Login, Mitgliedschaft, Abo-Logik und erster Beweis."
             },
             {
               kind: "cards",
@@ -6647,25 +6661,34 @@
               title: "Der erste Schritt",
               kicker: "Block 5B · Umsetzungsperspektive",
               marker: "→",
-              headline: "Der erste Schritt ist kein Produktlaunch. Es ist ein öffentlicher Lernprozess.",
-              lead: "Der erste Schritt löst nicht die gesamte Architektur. Er testet, ob KStA.Connect gemeinsam mit Menschen lokale Relevanz lernen kann: Profil, Passung, Anschluss, Handlung und Wiederkehr.",
-              footnote: "Nicht Vorschuss auf eine Vision. Sondern Beweis vor Investition.",
-              note: "Einstieg in den POC mit neuer Rahmung: öffentlicher Lernprozess statt interner Produktpilot. Das bereitet Datenfrage und Aktion vor. CFO-Reflex weiterhin abfangen: kleinste nötige Version, klar begrenztes Investment."
+              headline: "Normalerweise wäre das ein klassischer POC. Unsere Idee: Wir machen ihn öffentlich.",
+              lead: "Nicht als interner Produkttest, sondern als sichtbare Einladung an Köln: Wir zeigen, was wir lernen wollen, und lassen Menschen den lokalen Algorithmus mitbauen.",
+              bullets: [
+                "Klein genug für den Beweis: ein Wochenendritual statt eine komplette Plattform.",
+                "Öffentlich genug für Neugierde: Menschen sehen, woran KStA.Connect arbeitet.",
+                "Konkret genug für Entscheidung: Wir messen Profil, Passung, Handlung und Wiederkehr."
+              ],
+              note: "Einstieg in den POC mit stärkerem Spannungsbogen: klassischer POC wäre intern, die Idee ist ein öffentlicher Beweis. Der untere Footnote-Block entfällt zugunsten einer klaren Bullet-Hierarchie."
             },
             {
               kind: "statement",
-              theme: "dark",
+              theme: "warm",
               title: "Die Datenfrage",
               kicker: "Block 5B · Umsetzungsperspektive",
               marker: "→",
-              headline: "Personalisierung braucht Daten. Vertrauen entscheidet, ob Menschen sie geben.",
-              lead: "Der lokale Algorithmus entsteht nicht aus Bauchgefühl. Er braucht freiwillige Signale zu Interessen, Lebenssituationen, Orten, Zeitfenstern und sozialen Schwellen. Diese Signale bekommt KStA.Connect nicht durch Technik allein, sondern durch eine klare Einladung: Hilf uns, Köln besser lesbar zu machen.",
-              core: "Die Datenbasis entsteht nicht heimlich. Sie entsteht als freiwilliger Beitrag zu einer besseren regionalen Orientierung.",
-              note: "Diese Folie nimmt die stärkste Einwandfrage des POC vorweg: Woher kommen die Daten für Individualität? Antwort: nicht durch Tracking, sondern durch Einladung. Das ist zugleich die Differenz zu Big Tech: Plattformen sammeln Daten als Abfallprodukt, ein regionales Medium kann öffentlich fragen. Genau diese Fähigkeit, also Aufruf, Aktion und Kampagne, ist ein historisches Asset des Mediums."
+              headline: "Die Datenbasis für den POC entsteht nicht heimlich. Sie entsteht als freiwilliger Beitrag zu einer besseren regionalen Orientierung.",
+              lead: "Wir machen den POC mit den Menschen gemeinsam.",
+              bullets: [
+                "Menschen sagen freiwillig, was ihr Wochenende leichter, mutiger oder schöner macht.",
+                "Aus diesen Signalen entsteht keine Überwachung, sondern die erste Relevanzschicht.",
+                "Der Unterschied zu Big Tech: KStA.Connect fragt öffentlich, erklärt den Nutzen und gibt Orientierung zurück."
+              ],
+              core: "Personalisierung beginnt hier nicht mit Tracking, sondern mit einer Einladung.",
+              note: "Datenfolie stärker erklärisch und anschlussfähig: Die bisherige Core-Zeile wird zur Headline, der gemeinsame POC mit Menschen wird als Lead gesetzt. Freiwillige Daten, bessere regionale Orientierung und Abgrenzung zu Big Tech bilden den Spannungsbogen zur Köln-Aktion."
             },
             {
               kind: "campaignAction",
-              theme: "red",
+              theme: "dark",
               title: "Die Köln-Aktion",
               kicker: "Die Köln-Aktion",
               metrics: [
@@ -6676,8 +6699,7 @@
               question: "Was macht diese Stadt für dich lebenswert?",
               headline: "Was macht diese Stadt für dich lebenswert?",
               lead: "Eine kuratierte Gruppe aus unterschiedlichen Veedeln und Lebenssituationen baut den POC mit. Sie gibt freiwillig ein Basisprofil, erhält jede Woche eine persönliche Wochenendauswahl, nutzt Angebote und gibt Feedback. So entsteht die erste echte Relevanzschicht des lokalen Algorithmus.",
-              core: "Gebaut mit Menschen, nicht nur für Menschen.",
-              note: "Wichtiger Callback im Vortrag: Die Frage der Aktion operationalisiert exakt die 20-Punkte-Lücke aus dem Zwischenfazit von Block 1: 80 Prozent leben gern in Köln, nur 60 Prozent sind zufrieden. Die Aktion ist damit kein Kampagnen-Gimmick, sondern die methodische Fortsetzung der Diagnose, mit den Bürgern als Forschungspartner. Die Teilnehmer sind keine Testnutzer, sondern Gründungsmitglieder. Nebenwirkungen mitnennen: Die Aktion erzeugt eigene Berichterstattung, und die definierte Kohorte über den definierten Zeitraum liefert saubere Kennzahlen für die spätere Investitionsentscheidung. Ehrlich benennen, falls gefragt: Wer sich meldet, ist engagierter als der Durchschnitt. Für einen Mechanismus-Beweis ist das vertretbar, Rekrutierung bewusst breit streuen. Der sprechbare Name der Aktion wird bewusst nicht im Offsite entschieden."
+              note: "Trendchart-Folie beruhigt: schwarz statt rot, Zahlen links kleiner und mit mehr Spaltenabstand, kein zusätzlicher Core-Block unter der Copy. Inhaltlich bleibt die Köln-Aktion der öffentliche Mechanismus-Beweis."
             },
             {
               kind: "pocScope",
@@ -7279,14 +7301,14 @@
                 ${slide.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
               </ul>
             ` : ""}
-            <p class="forward-perspective-subline">${escapeHtml(slide.subline)}</p>
+            ${slide.subline ? `<p class="forward-perspective-subline">${escapeHtml(slide.subline)}</p>` : ""}
             ${slide.proof ? `
               <div class="forward-perspective-proof">
                 ${slide.proof.map(([label, title, body]) => `
                   <article>
                     <small>${escapeHtml(label)}</small>
                     <strong>${escapeHtml(title)}</strong>
-                    <span>${escapeHtml(body)}</span>
+                    ${Array.isArray(body) ? `<ul>${body.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : `<span>${escapeHtml(body)}</span>`}
                   </article>
                 `).join("")}
               </div>
