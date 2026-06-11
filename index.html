@@ -5338,9 +5338,62 @@
       align-items: center;
     }
 
-    /* Vertical reference patch v1: keep reviewed slides on the same top baseline as slide 38. */
+    /* Vertical reference patch v2: keep reviewed slides calm without over-compressing dense inventory slides. */
     .slide.vertical-reference .content {
       align-content: start;
+    }
+
+    .slide.vertical-balance-down .content {
+      transform: translateY(clamp(18px, 3.1vh, 30px));
+    }
+
+    .slide.vertical-balance-strong .content {
+      transform: translateY(clamp(28px, 4.2vh, 42px));
+    }
+
+    .slide.vertical-balance-soft .content {
+      transform: translateY(clamp(8px, 1.35vh, 14px));
+    }
+
+    .slide.vertical-balance-strong .forward-perspective h2 {
+      margin-bottom: clamp(20px, 2.45vw, 34px);
+      font-size: clamp(32px, 3.85vw, 54px);
+      line-height: 1.04;
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-bullets {
+      gap: clamp(7px, 0.78vw, 10px);
+      margin-bottom: clamp(12px, 1.45vw, 20px);
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-bullets li {
+      font-size: clamp(16px, 1.22vw, 20px);
+      line-height: 1.26;
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-proof {
+      margin-top: clamp(14px, 1.55vw, 22px);
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-proof article {
+      min-height: clamp(102px, 8.2vw, 116px);
+      padding: clamp(12px, 1.25vw, 18px);
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-proof small {
+      margin-bottom: 7px;
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-proof strong {
+      font-size: clamp(18px, 1.48vw, 24px);
+      line-height: 1.08;
+    }
+
+    .slide.vertical-balance-strong .forward-perspective-proof ul {
+      gap: 4px;
+      margin-top: 8px;
+      font-size: clamp(11px, 0.86vw, 14px);
+      line-height: 1.22;
     }
 
     .slide.vertical-reference .media-cycle.compact h2 {
@@ -5438,6 +5491,56 @@
       margin-bottom: 0;
       font-size: clamp(14px, 1.05vw, 16px);
       line-height: 1.16;
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid {
+      transform: translateY(clamp(22px, 3.45vh, 36px));
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid h2 {
+      max-width: min(1320px, 86vw);
+      font-size: clamp(42px, 4.42vw, 64px);
+      line-height: 1.04;
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid .asset-grid,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.text-compact .asset-grid,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.compact .asset-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+      gap: clamp(12px, 1.28vw, 19px);
+      margin-top: clamp(20px, 2.05vw, 30px);
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid .asset-card,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.text-compact .asset-card,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.compact .asset-card {
+      gap: clamp(8px, 0.85vw, 12px);
+      min-height: clamp(122px, 10.6vw, 152px);
+      padding: clamp(16px, 1.65vw, 23px);
+      border-radius: 20px;
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid .asset-card h3,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.text-compact .asset-card h3,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.compact .asset-card h3 {
+      font-size: clamp(17px, 1.42vw, 22px);
+      line-height: 1.08;
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid .asset-card p,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.text-compact .asset-card p,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.compact .asset-card p {
+      font-size: clamp(12px, 0.98vw, 15px);
+      line-height: 1.22;
+    }
+
+    .slide.asset-inventory-room .asset-slide.inventory-grid .cycle-conclusion,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.text-compact .cycle-conclusion,
+    .slide.asset-inventory-room .asset-slide.inventory-grid.compact .cycle-conclusion {
+      max-width: min(1240px, 82vw);
+      margin-top: clamp(16px, 1.65vw, 24px);
+      font-size: clamp(15px, 1.18vw, 18px);
+      line-height: 1.2;
     }
 
     .slide.room-chart-with-headline .sources-line,
@@ -8035,14 +8138,22 @@
     // Vertical reference wave: align the reviewed transition and inventory slides to
     // the slide-38 top baseline without changing the already approved slide range 55-65.
     const verticalReferenceSlides = new Set([66, 67, 69, 70, 71, 72, 73]);
+    const verticalBalanceDownSlides = new Set([6, 29, 65, 66, 69, 91]);
+    const verticalBalanceSoftSlides = new Set([68]);
+    const verticalBalanceStrongSlides = new Set([91]);
     const assetInventoryBalancedSlides = new Set([70, 71, 72, 73]);
+    const assetInventoryRoomSlides = new Set([70, 71, 72]);
 
     const getRoomLayoutClass = (slideNumber) => {
       const classes = [];
       if (roomChartWithHeadlineSlides.has(slideNumber)) classes.push("room-chart-with-headline");
       if (roomGridCenteredSlides.has(slideNumber)) classes.push("room-grid-centered");
       if (verticalReferenceSlides.has(slideNumber)) classes.push("vertical-reference");
+      if (verticalBalanceDownSlides.has(slideNumber)) classes.push("vertical-balance-down");
+      if (verticalBalanceSoftSlides.has(slideNumber)) classes.push("vertical-balance-soft");
+      if (verticalBalanceStrongSlides.has(slideNumber)) classes.push("vertical-balance-strong");
       if (assetInventoryBalancedSlides.has(slideNumber)) classes.push("asset-inventory-balanced");
+      if (assetInventoryRoomSlides.has(slideNumber)) classes.push("asset-inventory-room");
       return classes.join(" ");
     };
 
