@@ -411,6 +411,38 @@
       background: rgba(200, 0, 14, 0.1);
     }
 
+    .agenda-stack.is-compact {
+      gap: clamp(14px, 1.8vw, 24px);
+      max-width: 840px;
+      margin-top: clamp(24px, 3vw, 42px);
+    }
+
+    .agenda-stack.is-compact .agenda-block {
+      grid-template-columns: 1fr;
+      padding: clamp(18px, 2vw, 28px) clamp(20px, 2.6vw, 34px);
+      border: 1px solid var(--line);
+      background: rgba(250, 250, 248, 0.76);
+    }
+
+    .agenda-stack.is-compact .agenda-heading {
+      grid-template-columns: minmax(64px, max-content) minmax(0, 1fr);
+      align-items: baseline;
+      gap: clamp(18px, 2.4vw, 34px);
+    }
+
+    .agenda-stack.is-compact .agenda-tag {
+      justify-content: center;
+      min-width: 46px;
+      background: rgba(200, 0, 14, 0.12);
+    }
+
+    .agenda-stack.is-compact .agenda-heading strong {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.2vw, 46px);
+      font-weight: 400;
+      line-height: 1.04;
+    }
+
     .evidence-layout {
       display: grid;
       grid-template-columns: minmax(0, 0.78fr) minmax(340px, 1fr);
@@ -5590,58 +5622,22 @@
 
     const agendaBlocks = [
       {
-        label: "Vorab",
-        title: "Ausgangssituation",
+        label: "01",
+        title: "Analyse",
         color: "#c8000e",
-        lines: [
-          "Warum die alte Logik nicht mehr greift.",
-          "Warum wir eine neue lokale Logik brauchen."
-        ]
+        lines: []
       },
       {
-        label: "Block 1",
-        title: "Diagnose",
+        label: "02",
+        title: "Narrativ",
         color: "#c8000e",
-        lines: [
-          "Auf welcher Datenbasis wir argumentieren.",
-          "Was sich im Leben der Menschen verändert."
-        ]
+        lines: []
       },
       {
-        label: "Block 2",
-        title: "Strategische Ableitung",
+        label: "03",
+        title: "Umsetzungsidee",
         color: "#c8000e",
-        lines: [
-          "Was die Diagnose für KStA.Connect bedeutet.",
-          "Welche neue Nutzungssituation entsteht."
-        ]
-      },
-      {
-        label: "Block 3",
-        title: "Strategische Antwort",
-        color: "#c8000e",
-        lines: [
-          "Der lokale Algorithmus.",
-          "Die neue Wertschöpfungslogik für den regionalen Alltag."
-        ]
-      },
-      {
-        label: "Block 4",
-        title: "Methode & Produktlogik",
-        color: "#c8000e",
-        lines: [
-          "Wie aus Haltung Methode wird.",
-          "Welche Bausteine vorhanden sind und was noch fehlt."
-        ]
-      },
-      {
-        label: "Block 5",
-        title: "Der Beweis",
-        color: "#c8000e",
-        lines: [
-          "Wie Wert entsteht und zurückfließt.",
-          "Wie der erste öffentliche POC die Entscheidung vorbereitet."
-        ]
+        lines: []
       }
     ];
 
@@ -5661,53 +5657,13 @@
         note: "Auftakt bewusst als strategische Setzung: Es geht um KStA.Connect als lokale Wertschöpfungslogik, nicht als einzelnes digitales Produkt."
       },
       {
-        kind: "agenda",
-        theme: "light",
-        title: "Agenda",
-        kicker: "Agenda",
-        headline: "Ein kurzer Vorspann.<br>Fünf Blöcke.<br>Ein erster Beweis.",
-        revealIndex: -1,
-        blocks: agendaBlocks,
-        note: "Agenda mit internem Reveal: links bleibt die Struktur sichtbar, rechts oeffnen sich Vorab und die fünf Blöcke Schritt fuer Schritt."
-      },
-      {
-        kind: "divider",
+        kind: "statement",
         theme: "dark",
-        title: "Vorab",
-        block: "→",
-        kicker: "Vorab",
-        headline: "Ausgangssituation.",
-        lead: "Bevor wir in die Diagnose einsteigen, klären wir das verabredete Zielbild.",
-        note: "Erster Trenner nach der Agenda. Kurz halten: Das ist kein eigener langer Block, sondern der Anlauf zur Diagnose."
-      },
-      {
-        kind: "split",
-        theme: "warm",
-        title: "Ausgangssituation",
-        kicker: "Warum jetzt?",
-        headline: "Das alte Geschäft verliert seine<br>Selbstverständlichkeit.<br>Aber KStA.Connect verliert nicht seinen Wert.",
-        compactHeadline: true,
-        copyAsBullets: true,
-        copy: [
-          "Der alte Tausch wird schwächer: Information gegen Aufmerksamkeit, Reichweite gegen Anzeigenumsatz.",
-          "Der eigentliche Vorsprung bleibt: Vertrauen, lokale Kompetenz, tägliche Nähe und Beziehung zu Menschen in der Region.",
-          "Die Aufgabe ist nicht, das alte Modell zu retten, sondern aus diesem Vorsprung eine neue Wertschöpfungslogik für den Alltag zu bauen."
-        ],
-        note: "Kurzer Vorspann vor der Diagnose. Mündlich ruhig führen: Das Problem ist nicht, dass KStA.Connect keinen Wert mehr hat. Das Problem ist, dass der alte Mechanismus diesen Wert nicht mehr ausreichend monetarisiert."
-      },
-      {
-        kind: "split",
-        theme: "warm",
-        title: "Zielbild",
-        kicker: "Auftrag aus KStA.Connect",
-        headline: "Das Zielbild ist gesetzt. Die strategische Logik dahinter ist noch zu klären.",
-        copyAsBullets: true,
-        copy: [
-          "KStA.Connect soll nicht nur gelesen und gehört, sondern erlebt werden.",
-          "Offen ist die Logik dahinter: Was ist der zentrale Treiber? Warum nehmen Menschen dieses Angebot wahr? Warum kommen sie wieder?",
-          "Die strategische Frage lautet: Wo entsteht daraus wirtschaftlicher Wert?"
-        ],
-        note: "Sachliche Einbettung der AR-Praesentation im Vorspann. Nicht als spaete Pointe, sondern als Aufgabenstellung: Zielbild ist da, Logik und Motivation muessen entwickelt werden."
+        title: "Fragestellung",
+        kicker: "Die zentrale Frage",
+        headline: "Welcher lokale Algorithmus kann aus der Kompetenz von KStA.Connect entstehen?",
+        lead: "Das ist die Frage, mit der sich die gesamte Präsentation beschäftigt.",
+        note: "Neue zweite Folie: Die Leitfrage kommt unmittelbar nach dem Titel und rahmt das gesamte Deck, bevor Beispiele oder Agenda folgen."
       },
       {
         kind: "statement",
@@ -5715,8 +5671,8 @@
         title: "Referenzrahmen",
         kicker: "Wir müssen groß denken.",
         headline: "Google baute kein Suchfeld.<br>Amazon keinen Shop.<br>Tinder keine Dating-App.",
-        lead: "Sie haben Systeme gebaut, die Verhalten verstehen, Erwartung erzeugen und den nächsten Impuls organisieren.",
-        note: "Neu eingefügte Referenzrahmen-Folie aus dem Konzeptangebot. Kicker gemäß Rehearsal geändert."
+        lead: "Sie haben Systeme gebaut, die Verhalten verstehen, Erwartungen erzeugen und den nächsten Impuls organisieren.",
+        note: "Plattform-Analogie als schneller Einstieg nach der zentralen Frage."
       },
       {
         kind: "cards",
@@ -5731,16 +5687,17 @@
           ["04", "Was bringt Menschen zurück ins System?", ""]
         ],
         columns: 2,
-        note: "Neu eingefügte Algorithmus-Folie aus dem Konzeptangebot. Inhalt unverändert."
+        note: "Algorithmus-Prinzip als Abschluss des kompakten Intros. Danach folgt nur noch eine sehr kurze Agenda."
       },
       {
-        kind: "statement",
-        theme: "dark",
-        title: "Einordnung",
-        kicker: "Das Zielbild",
-        headline: "Welcher lokale Algorithmus kann aus der Kompetenz von KStA.Connect entstehen?",
-        lead: "Nicht als fertige technische Antwort. Sondern als strategisches Prinzip, das regionale Kompetenz, Vertrauen, Bedürfnisse und nächste Schritte neu verbindet.",
-        note: "Das ist jetzt die erste Folie von Block 1. Sie rahmt die Diagnose: Wir fragen nicht abstrakt nach Gesellschaft, sondern danach, welche neue regionale Logik aus der Kompetenz von KStA.Connect entstehen kann."
+        kind: "agenda",
+        theme: "light",
+        title: "Agenda",
+        kicker: "Agenda",
+        headline: "Drei Schritte.<br>Dann direkt in die Diagnose.",
+        blocks: agendaBlocks,
+        compact: true,
+        note: "Radikal gekürzte statische Agenda: Analyse, Narrativ, Umsetzungsidee. Keine Vorab-Schleife und keine aufklappenden Detailtexte."
       },
       {
         kind: "divider",
@@ -5751,7 +5708,7 @@
         headline: "Einordnung & Diagnose.",
         photoDivider: "assets/editorial/local-divider-block-1.webp",
         lead: "Jetzt prüfen wir, welche Veränderungen im regionalen Alltag diese neue Logik notwendig machen.",
-        note: "Großer Trenner als eigentlicher Start von Block 1. Danach folgt die Evidenzbasis und dann die Diagnose der Menschen in der Region."
+        note: "Großer Trenner als schneller Start von Block 1 nach der kompakten Agenda. Danach folgt die Evidenzbasis und dann die Diagnose der Menschen in der Region."
       },
       {
         kind: "evidence",
@@ -7334,19 +7291,24 @@
           <div class="content narrow">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowEm(slide.headline)}</h2>
-            <div class="agenda-stack">
+            <div class="agenda-stack ${slide.compact ? "is-compact" : ""}">
               ${slide.blocks.map((block, blockIndex) => {
-                const isRevealed = slide.revealIndex === undefined || blockIndex <= slide.revealIndex;
-                const isCurrent = blockIndex === slide.revealIndex;
+                const hasReveal = Number.isInteger(slide.revealIndex);
+                const isRevealed = !hasReveal || blockIndex <= slide.revealIndex;
+                const isCurrent = hasReveal && blockIndex === slide.revealIndex;
+                const stateClass = hasReveal
+                  ? `${isRevealed ? "is-revealed" : "is-hidden"} ${isCurrent ? "is-current" : "is-future"}`
+                  : "is-static";
+                const lines = Array.isArray(block.lines) ? block.lines : [];
                 return `
-                <section class="agenda-block ${isRevealed ? "is-revealed" : "is-hidden"} ${isCurrent ? "is-current" : "is-future"}" data-agenda-block="${blockIndex}" style="--agenda-color: ${escapeHtml(block.color)};">
+                <section class="agenda-block ${stateClass}" data-agenda-block="${blockIndex}" style="--agenda-color: ${escapeHtml(block.color)};">
                   <div class="agenda-heading">
                     <span class="agenda-tag">${escapeHtml(block.label)}</span>
                     <strong>${escapeHtml(block.title)}</strong>
                   </div>
-                  <div class="agenda-lines">
-                    ${block.lines.map((line) => `<div>${escapeHtml(line)}</div>`).join("")}
-                  </div>
+                  ${lines.length ? `<div class="agenda-lines">
+                    ${lines.map((line) => `<div>${escapeHtml(line)}</div>`).join("")}
+                  </div>` : ""}
                 </section>`;
               }).join("")}
             </div>
@@ -8139,17 +8101,19 @@
     // Presentation-room wave 1 is deliberately narrow: only compact card/grid slides
     // with enough vertical room. Full analysis, diagnosis and source-heavy slides stay
     // unchanged until individually reviewed, because broad centering can crop headlines.
+    // Intro restructure removed three early slides; number-based layout sets below follow
+    // the retained slide objects after their new positions.
     const roomChartWithHeadlineSlides = new Set([]);
-    const roomGridCenteredSlides = new Set([61]);
+    const roomGridCenteredSlides = new Set([58]);
 
     // Vertical reference wave: align the reviewed transition and inventory slides to
-    // the slide-38 top baseline without changing the already approved slide range 55-65.
-    const verticalReferenceSlides = new Set([66, 67, 69, 70, 71, 72, 73]);
-    const verticalBalanceDownSlides = new Set([6, 29, 65, 66, 69, 91]);
-    const verticalBalanceSoftSlides = new Set([68]);
-    const verticalBalanceStrongSlides = new Set([91]);
-    const assetInventoryBalancedSlides = new Set([70, 71, 72, 73]);
-    const assetInventoryRoomSlides = new Set([70, 71, 72]);
+    // the slide-38 top baseline without changing the already approved slide range.
+    const verticalReferenceSlides = new Set([63, 64, 66, 67, 68, 69, 70]);
+    const verticalBalanceDownSlides = new Set([3, 26, 62, 63, 66, 88]);
+    const verticalBalanceSoftSlides = new Set([65]);
+    const verticalBalanceStrongSlides = new Set([88]);
+    const assetInventoryBalancedSlides = new Set([67, 68, 69, 70]);
+    const assetInventoryRoomSlides = new Set([67, 68, 69]);
 
     const getRoomLayoutClass = (slideNumber) => {
       const classes = [];
@@ -8271,7 +8235,7 @@
 
     const next = () => {
       const slide = slides[index];
-      if (slide?.kind === "agenda" && agendaReveal < slide.blocks.length - 1) {
+      if (slide?.kind === "agenda" && Number.isInteger(slide.revealIndex) && agendaReveal < slide.blocks.length - 1) {
         agendaReveal += 1;
         updateAgendaReveal();
         return;
@@ -8286,7 +8250,7 @@
 
     const prev = () => {
       const slide = slides[index];
-      if (slide?.kind === "agenda" && agendaReveal >= 0) {
+      if (slide?.kind === "agenda" && Number.isInteger(slide.revealIndex) && agendaReveal >= 0) {
         agendaReveal -= 1;
         updateAgendaReveal();
         return;
