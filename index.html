@@ -689,6 +689,30 @@
       border-color: var(--line-dark);
     }
 
+    .card.is-highlight {
+      position: relative;
+      background: rgba(229, 0, 28, 0.11);
+      box-shadow: inset 0 0 0 1px rgba(229, 0, 28, 0.48);
+    }
+
+    .card.is-highlight::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--red);
+    }
+
+    .card.is-muted {
+      opacity: 0.44;
+      filter: grayscale(0.35);
+    }
+
+    .dark .card.is-highlight {
+      background: rgba(229, 0, 28, 0.18);
+      box-shadow: inset 0 0 0 1px rgba(229, 0, 28, 0.58);
+    }
+
     .card small {
       color: var(--red);
       font-size: 11px;
@@ -2994,6 +3018,49 @@
       font-size: clamp(19px, 1.85vw, 27px);
       font-weight: 700;
       line-height: 1.34;
+    }
+
+    .forward-perspective-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2px;
+      max-width: 1040px;
+      margin-top: clamp(24px, 3vw, 42px);
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .forward-perspective-proof article {
+      min-height: 126px;
+      padding: clamp(18px, 2vw, 28px);
+      background: rgba(250, 250, 248, 0.9);
+    }
+
+    .forward-perspective-proof small {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .forward-perspective-proof strong {
+      display: block;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(20px, 1.75vw, 28px);
+      font-weight: 400;
+      line-height: 1.14;
+    }
+
+    .forward-perspective-proof span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: clamp(13px, 1vw, 16px);
+      line-height: 1.42;
     }
 
     .strategy-market-shift {
@@ -6465,6 +6532,21 @@
               note: "Großer Trenner für den Schlussblock. Klare Zäsur: weg vom Produktbild, hin zu Wertlogik, öffentlichem Beweis und Entscheidung. Die neue Unterzeile öffnet den Block stärker: Der Beweis ist nicht Laborlogik, sondern ein öffentlicher, mit Köln gebauter Lernprozess."
             },
             {
+              kind: "cards",
+              theme: "dark",
+              title: "Scharnier · Kaufmännische Perspektive",
+              kicker: "Block 5 · Scharnier",
+              headline: "Block 5 hat zwei Aufgaben.",
+              lead: "Zuerst klären wir, wo Wert entsteht. Danach zeigen wir, wie der erste Beweis dafür aussehen kann.",
+              columns: 2,
+              cards: [
+                ["Teil 1", "Kaufmännische Perspektive", ["Wert entsteht in Stufen.", "Drei Quellen zahlen zurück.", "Mitgliedschaft ist die Perspektive."], "highlight"],
+                ["Teil 2", "Umsetzungsperspektive", ["Kein Vollausbau.", "Ein öffentlicher Lernprozess.", "Eine konkrete Köln-Aktion als Mechanismus-Beweis."], "muted"]
+              ],
+              outro: "Wir beginnen links: mit der kaufmännischen Logik. Erst danach wechseln wir in den Beweis.",
+              note: "Erste Scharnierfolie direkt nach dem Block-5-Trenner. Linke Seite einfärben, rechte Seite zurücknehmen. Damit ist klar: Jetzt folgt 5A, die kaufmännische Perspektive."
+            },
+            {
               kind: "valueStairs",
               theme: "dark",
               title: "Werttreppe",
@@ -6501,28 +6583,33 @@
               theme: "warm",
               title: "Blick nach vorne",
               kicker: "Block 5A · Perspektive",
-              headline: "Eine spannende Perspektive für KStA.Connect",
+              headline: "Eine spannende Perspektive für KStA.Connect.",
               lines: [
                 "Der Login in deine Heimat.",
                 "Die Mitgliedschaft für dein Leben hier."
               ],
-              subline: "Das ist die Perspektive. Die konkrete Frage ist kleiner: Welcher erste Schritt beweist, dass Menschen diesen Weg mitgehen?",
-              note: "Reduzierte Perspektivfolie am Ende des kaufmännischen Teils. Login und Mitgliedschaft bleiben der große Horizont. Die Folie öffnet bewusst die konkrete Anschlussfrage: nicht Vollausbau, sondern beweisbarer erster Schritt."
+              subline: "Das ist der Horizont. Heute entscheiden wir nicht den Vollausbau, sondern den ersten belastbaren Beweis.",
+              proof: [
+                ["1", "Reichweite wird Profil", "Menschen werden nicht nur erreicht, sondern freiwillig bekannt."],
+                ["2", "Profil wird Beziehung", "Aus Relevanz entsteht Wiederkehr, Erwartung und Vertrauen."],
+                ["3", "Beziehung wird Erlös", "Mitgliedschaft wird erst plausibel, wenn der Nutzen wiederkehrt."]
+              ],
+              note: "Umgestaltete Perspektivfolie am Ende des kaufmännischen Teils. Die Folie hält den großen Horizont, macht aber klarer, dass die heutige Entscheidung kleiner ist: erst beweisen, dann ausbauen."
             },
             {
               kind: "cards",
               theme: "dark",
-              title: "Scharnier",
+              title: "Scharnier · Umsetzungsperspektive",
               kicker: "Block 5 · Scharnier",
               headline: "Block 5 hat zwei Aufgaben.",
-              lead: "Zuerst klären wir, wo Wert entsteht. Danach zeigen wir, wie der erste Beweis dafür aussehen kann.",
+              lead: "Die Wertlogik ist geklärt. Jetzt geht es um den ersten Beweis dafür.",
               columns: 2,
               cards: [
-                ["Teil 1", "Kaufmännische Perspektive", ["Wert entsteht in Stufen.", "Drei Quellen zahlen zurück.", "Mitgliedschaft ist die Perspektive."]],
-                ["Teil 2", "Umsetzungsperspektive", ["Kein Vollausbau.", "Ein öffentlicher Lernprozess.", "Eine konkrete Köln-Aktion als Mechanismus-Beweis."]]
+                ["Teil 1", "Kaufmännische Perspektive", ["Wert entsteht in Stufen.", "Drei Quellen zahlen zurück.", "Mitgliedschaft ist die Perspektive."], "muted"],
+                ["Teil 2", "Umsetzungsperspektive", ["Kein Vollausbau.", "Ein öffentlicher Lernprozess.", "Eine konkrete Köln-Aktion als Mechanismus-Beweis."], "highlight"]
               ],
-              outro: "Weil die Positionierung als Kette funktioniert, muss auch der erste Beweis als Kette gedacht werden.",
-              note: "Scharnierfolie zwischen kaufmännischer Logik und Umsetzungsperspektive. Nicht defensiv argumentieren, sondern positiv drehen: Die Wertlogik ist geklärt, jetzt wird die Kette überprüfbar gemacht. Diese Folie bereitet den Opener 'Der erste Schritt' vor."
+              outro: "Jetzt wechseln wir nach rechts: vom Geschäftslogik-Horizont zum kleinsten beweisbaren Schritt.",
+              note: "Zweite Scharnierfolie nach der kaufmännischen Perspektive. Rechte Seite einfärben, linke Seite zurücknehmen. Direkt danach folgt der Opener 'Der erste Schritt'."
             },
             {
               kind: "statement",
@@ -6734,10 +6821,12 @@
       ? `<ul class="card-bullets">${body.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
       : `<span>${escapeHtml(body)}</span>`;
 
+    const cardToneClass = (tone) => tone === "highlight" || tone === "muted" ? `is-${tone}` : "";
+
     const cards = (items, columns = 3, revealCount = null, autoReveal = false) => `
       <div class="cards ${columns === 2 ? "two" : ""} ${columns === 4 ? "four" : ""} ${revealCount !== null ? "is-reveal" : ""} ${autoReveal ? "is-auto-reveal" : ""}">
-        ${items.map(([eyebrow, title, body], cardIndex) => `
-          <article class="card ${revealCount !== null && cardIndex >= revealCount ? "is-hidden" : ""}" data-reveal-card="${cardIndex}" ${autoReveal ? `style="--card-index: ${cardIndex};"` : ""}>
+        ${items.map(([eyebrow, title, body, tone], cardIndex) => `
+          <article class="card ${cardToneClass(tone)} ${revealCount !== null && cardIndex >= revealCount ? "is-hidden" : ""}" data-reveal-card="${cardIndex}" ${autoReveal ? `style="--card-index: ${cardIndex};"` : ""}>
             <small>${escapeHtml(eyebrow)}</small>
             <strong>${escapeHtml(title)}</strong>
             ${renderCardBody(body)}
@@ -7154,6 +7243,17 @@
               ${slide.lines.map((line) => `<div class="forward-perspective-line">${escapeHtml(line)}</div>`).join("")}
             </div>
             <p class="forward-perspective-subline">${escapeHtml(slide.subline)}</p>
+            ${slide.proof ? `
+              <div class="forward-perspective-proof">
+                ${slide.proof.map(([label, title, body]) => `
+                  <article>
+                    <small>${escapeHtml(label)}</small>
+                    <strong>${escapeHtml(title)}</strong>
+                    <span>${escapeHtml(body)}</span>
+                  </article>
+                `).join("")}
+              </div>
+            ` : ""}
           </div>`;
       }
 
