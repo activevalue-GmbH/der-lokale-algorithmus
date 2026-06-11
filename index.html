@@ -966,10 +966,18 @@
     }
 
     .frank-product-header {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(92px, 0.24fr) minmax(0, 1fr) auto;
+      gap: clamp(14px, 1.8vw, 24px);
       align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+    }
+
+    .frank-product-header > div {
+      display: contents;
+    }
+
+    .frank-product-header > small:last-child {
+      justify-self: end;
     }
 
     .frank-product-header strong {
@@ -5937,12 +5945,10 @@
         theme: "warm",
         title: "Joachim Frank",
         kicker: "Beispielfall",
-        headline: "Der Testfall: Joachim Frank. Kein Event-Asset, sondern journalistische Orientierungsautorität.",
+        headline: "Der Testfall: Joachim Frank. Kein Event-Asset, sondern journalistische Stimme für Kirche, Gesellschaft, Moral, Institutionen und Macht.",
         copyAsBullets: true,
         compactHeadline: true,
         copy: [
-          "Journalist, Autor, Moderator und Chefkorrespondent des Kölner Stadt-Anzeiger.",
-          "Vertraute Stimme für Kirche, Gesellschaft, Moral, Institutionen und Macht.",
           "Glaubwürdigkeit entsteht hier nicht aus Popularität, sondern aus Einordnung, Haltung und Wiederkehr.",
           "Das macht ihn zum anspruchsvollen Testfall: Kann KStA.Connect aus Content einen Orientierungsraum bauen?"
         ],
@@ -5953,7 +5959,7 @@
         theme: "warm",
         title: "Stimmen der Region",
         kicker: "Neue Produktkategorie",
-        headline: "Wir erfinden das Format Stimmen der Region.",
+        headline: "Wir erfinden das Format „Stimmen der Region“.",
         sub: "Personengeführte Orientierungsräume. Keine Rubriken, keine Ressorts. Persönlichkeiten mit Themenautorität, regionaler Verankerung und der Fähigkeit, wiederkehrend Impulse zu setzen.",
         coreTitle: "Stimmen der Region",
         coreText: "Ein Format, das Personen nicht als Autor:innenprofil zeigt, sondern als wiederkehrenden Zugang zu Themen, Gesprächen und nächsten Schritten.",
@@ -5970,7 +5976,7 @@
         title: "Dashboard Joachim Frank",
         kicker: "Nutzerperspektive",
         singleProduct: true,
-        headline: "Für Markus aus Ehrenfeld ist Stimmen der Region nicht nur Impuls. Es ist der Einstieg in Beziehung und Transaktion.",
+        headline: "Wieder ein Login in die Heimat: ein lokal verankerter Themenraum von Beziehung bis Transaktion.",
         productLabel: "Dein Dashboard",
         productTitle: "Stimmen der Region",
         productMeta: "KStA.Connect",
@@ -5991,7 +5997,7 @@
         bullets: [
           "Frank ist ein Beispiel. Das Prinzip ist replizierbar.",
           "Was andere Plattformen schwer kopieren können, ist die personengebundene Glaubwürdigkeit, die im Haus bereits vorhanden ist.",
-          "Damit endet Block 4 nicht bei Aktivierung, sondern bei einer größeren These: KStA.Connect kann die Region auch intellektuell erschließen."
+          "„Ich liebe es, hier zu leben“ wird damit nicht nur praktisch erlebbar, sondern auch intellektuell einlösbar."
         ],
         note: "Fazitfolie des neuen Abschnitts. Sie ersetzt die GZH/Brasilien-Lektion und führt stärker in Block 5: KStA.Connect als regionale Vertrauens- und Orientierungsinfrastruktur."
       },
