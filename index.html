@@ -4061,17 +4061,33 @@
 
     .tool-button {
       bottom: 18px;
-      font-size: 12px;
+      border-radius: 999px;
+      font-size: 0;
       font-weight: 700;
       letter-spacing: 0.08em;
     }
 
     .tool-button[data-overview] {
-      right: 70px;
+      left: 18px;
     }
 
-    .tool-button[data-notes] {
-      right: 18px;
+    .tool-button[data-overview]::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      transform: translate(-2px, -2px);
+    }
+
+    .tool-button[data-overview]::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      transform: translate(8px, 8px) rotate(45deg);
     }
 
     .control-button:hover,
@@ -5836,8 +5852,7 @@
   <div class="controls" aria-label="Präsentationssteuerung">
     <button class="control-button" type="button" data-prev aria-label="Vorherige Folie">‹</button>
     <button class="control-button" type="button" data-next aria-label="Nächste Folie">›</button>
-    <button class="tool-button" type="button" data-overview aria-label="Folienübersicht anzeigen">O</button>
-    <button class="tool-button" type="button" data-notes aria-label="Sprechernotizen anzeigen">N</button>
+    <button class="tool-button" type="button" data-overview aria-label="Folienübersicht anzeigen"></button>
   </div>
   <div class="progress" aria-hidden="true"><span id="progress"></span></div>
   <div class="notes-panel" id="notesPanel" aria-live="polite"></div>
@@ -8404,10 +8419,6 @@
     document.querySelector("[data-prev]").addEventListener("click", prev);
     document.querySelector("[data-next]").addEventListener("click", next);
     document.querySelector("[data-overview]").addEventListener("click", () => overview.classList.toggle("is-visible"));
-    document.querySelector("[data-notes]").addEventListener("click", () => {
-      notesVisible = !notesVisible;
-      updateNotes();
-    });
 
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden") {
