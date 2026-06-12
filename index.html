@@ -2919,10 +2919,9 @@
 
     .bridge-arrow-line {
       position: relative;
-      display: grid;
-      grid-template-columns: clamp(38px, 4.6vw, 64px) minmax(0, 1fr);
-      gap: clamp(12px, 1.7vw, 24px);
-      align-items: baseline;
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(8px, 0.95vw, 14px);
       max-width: 980px;
       color: var(--ink) !important;
       font-weight: 850;
@@ -2931,12 +2930,13 @@
 
     .bridge-arrow-line::before {
       content: "→";
+      flex: 0 0 auto;
       color: var(--red);
       font-family: var(--sans);
-      font-size: clamp(28px, 3.3vw, 48px);
+      font-size: 1.08em;
       font-weight: 900;
-      line-height: 1;
-      transform: translateY(-0.12em);
+      line-height: inherit;
+      transform: none;
     }
 
     .dark .bridge-arrow-line {
