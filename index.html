@@ -2835,6 +2835,62 @@
       background: transparent;
     }
 
+    .transition-plain.line-bullets .transition-bullets {
+      grid-template-columns: 1fr;
+      max-width: 1040px;
+      gap: 0;
+      padding: clamp(5px, 0.6vw, 9px) 0;
+      border-top: 1px solid rgba(28, 25, 23, 0.14);
+      border-bottom: 1px solid rgba(28, 25, 23, 0.14);
+    }
+
+    .transition-plain.line-bullets .transition-bullets li,
+    .transition-plain.line-bullets .transition-bullets:has(li:nth-child(4):last-child) li:last-child {
+      position: relative;
+      display: grid;
+      grid-template-columns: clamp(28px, 2.7vw, 40px) minmax(0, 1fr);
+      gap: clamp(8px, 0.8vw, 12px);
+      align-items: start;
+      grid-column: auto;
+      border: 0;
+      border-top: 1px solid rgba(28, 25, 23, 0.1);
+      border-radius: 0;
+      padding: clamp(13px, 1.2vw, 18px) 0;
+      color: var(--ink);
+      background: transparent;
+      font-size: clamp(19px, 1.65vw, 27px);
+      font-weight: 800;
+      line-height: 1.24;
+    }
+
+    .transition-plain.line-bullets .transition-bullets li:first-child {
+      border-top: 0;
+    }
+
+    .transition-plain.line-bullets .transition-bullets li::before {
+      content: "";
+      width: clamp(5px, 0.45vw, 7px);
+      height: clamp(5px, 0.45vw, 7px);
+      margin-top: 0.62em;
+      border-radius: 999px;
+      background: var(--red);
+    }
+
+    .dark .transition-plain.line-bullets .transition-bullets {
+      border-top-color: rgba(250, 250, 248, 0.18);
+      border-bottom-color: rgba(250, 250, 248, 0.18);
+    }
+
+    .dark .transition-plain.line-bullets .transition-bullets li {
+      border-top-color: rgba(250, 250, 248, 0.12);
+      color: rgba(250, 250, 248, 0.78);
+      background: transparent;
+    }
+
+    .dark .transition-plain.line-bullets .transition-bullets li::before {
+      background: rgba(250, 250, 248, 0.78);
+    }
+
     .transition-callout {
       display: grid;
       gap: clamp(18px, 2vw, 28px);
@@ -2859,6 +2915,36 @@
       font-size: clamp(22px, 2vw, 32px);
       font-weight: 700;
       line-height: 1.3;
+    }
+
+    .bridge-arrow-line {
+      position: relative;
+      display: grid;
+      grid-template-columns: clamp(38px, 4.6vw, 64px) minmax(0, 1fr);
+      gap: clamp(12px, 1.7vw, 24px);
+      align-items: start;
+      max-width: 980px;
+      color: var(--ink) !important;
+      font-weight: 850;
+      letter-spacing: -0.01em;
+    }
+
+    .bridge-arrow-line::before {
+      content: "→";
+      color: var(--red);
+      font-family: var(--sans);
+      font-size: clamp(28px, 3.3vw, 48px);
+      font-weight: 900;
+      line-height: 0.9;
+      transform: translateY(0.02em);
+    }
+
+    .dark .bridge-arrow-line {
+      color: rgba(250, 250, 248, 0.86) !important;
+    }
+
+    .dark .bridge-arrow-line::before {
+      color: var(--red);
     }
 
     .dark .transition-callout,
@@ -6102,6 +6188,7 @@
         afterBullets: "Diese Nutzungssituation hat lokale Relevanz jeden Tag selbstverständlich gemacht. Das bedient die Zeitung gut, und das bleibt wertvoll.",
         paragraphs: [],
         question: "Es geht nicht um Untergang. Das alte Ritual ist nicht falsch. Es wird nur kleiner.",
+        questionStyle: "arrow",
         note: "Würdigt das Bestehende und nimmt den Raum tonal mit: kein Beerdigen der Zeitung, sondern strategisches Reframing."
       },
       {
@@ -6119,6 +6206,7 @@
           ["Sich gemeint fühlen", "Nicht einfach mehr Information, sondern Orientierung, Zugang und Verbindung."]
         ],
         conclusion: "Das ist kein Nischen-Phänomen. Es ist strukturell, und es wächst.",
+        conclusionStyle: "arrow",
         note: "Übersetzt die Diagnose in eine konkrete neue Nutzungssituation, ohne schon die späteren Key-Begriffe aus Block 3 zu benutzen."
       },
       {
@@ -6126,7 +6214,7 @@
         theme: "dark",
         title: "Das fehlende Ritual",
         kicker: "Die strategische Lücke",
-        headline: "Was fehlt, ist nicht Content. Was fehlt, ist die neue Wiederkehr.",
+        headline: "Was fehlt, ist nicht Content. Was fehlt, ist die neue Routine 2.0",
         bullets: [
           "Teil eines Alltagsrituals werden.",
           "Nicht als Zeitungskopie.",
@@ -6154,6 +6242,7 @@
           ["Redaktionelle Verantwortung", "Ein Unterschied zu Plattformen: Empfehlungen sind nicht anonym, sondern zurechenbar."]
         ],
         conclusion: "Vertrauen wird nur dann wertlos, wenn man es nicht in neue Nutzung übersetzt.",
+        conclusionStyle: "arrow",
         note: "Assetfolie im neuen Block 2. Selbstbewusst, aber nicht selbstzufrieden."
       },
       {
@@ -6161,11 +6250,11 @@
         theme: "dark",
         title: "Die Lücke",
         kicker: "Das Defizit",
-        headline: "Google hat Daten. Instagram hat Bilder. WhatsApp hat Gruppen. Portale haben Sterne.",
-        bulletStyle: "plain",
+        headline: "Google hat Daten. Instagram hat Bilder. WhatsApp hat Gruppen. Portale haben Sterne. Und wir schlagen sie durch Einordnung.",
+        bulletStyle: "line",
         bullets: [
-          "Aber das alles ist nicht dasselbe wie lokale Einordnung mit Verantwortung.",
-          "Was fehlt, ist der Filter mit menschlichem Gesicht: Was passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich.",
+          "Lokale Einordnung verbunden mit Verantwortung ist das fehlende System.",
+          "Der Filter mit menschlichem Gesicht wird gesucht: Was passt zu dir, hier kommst du rein, das ist relevant, das lohnt sich.",
           "KStA.Connect kann genau diese Rolle besetzen: nicht nur berichten, sondern den nächsten Schritt öffnen."
         ],
         note: "Schärft das Defizit im Markt: Nicht Informationsmenge, sondern verlässliche lokale Passung und Verantwortbarkeit."
@@ -6186,7 +6275,6 @@
           ["Newsletter / Push / Events", "Bestehende Kontaktpunkte für Wiederkehr und Aktivierung."],
           ["Communities", "Erste Räume für Zugehörigkeit, Austausch und Interessenlogik."]
         ],
-        conclusion: "Nach welchem Prinzip verbinden wir sie?",
         note: "Status-quo-Folie als unmittelbares Scharnier zu Block 3: Die Stärken sind da, aber noch nicht architektonisch verbunden."
       },
       {
@@ -6194,7 +6282,7 @@
         theme: "dark",
         title: "Die offene Stelle",
         kicker: "Die offene Stelle",
-        headline: "Die Architektur ist nicht da. Und das Narrativ, um das Ganze zusammenzuhalten, auch nicht.",
+        headline: "Was fehlt ist die Architektur. Und das Narrativ, um das Ganze zusammenzuhalten.",
         note: "Dramatische Zwischenfolie vor der Antwort. Kurz halten, damit Block 3 als Auflösung wirkt."
       },
       {
@@ -7408,13 +7496,13 @@
           ? `<ul class="transition-bullets">${slide.bullets.map((item) => `<li>${allowEm(item).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</li>`).join("")}</ul>${slide.afterBullets ? `<p class="transition-after-bullets">${allowEm(slide.afterBullets).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>` : ""}`
           : slide.paragraphs.map((paragraph) => `<p>${allowEm(paragraph).replaceAll("&lt;strong&gt;", "<strong>").replaceAll("&lt;/strong&gt;", "</strong>")}</p>`).join("");
         return `
-          <div class="content transition-plain ${slide.bullets ? "has-bullets" : ""} ${slide.bulletStyle === "plain" ? "plain-bullets" : ""}">
+          <div class="content transition-plain ${slide.bullets ? "has-bullets" : ""} ${slide.bulletStyle === "plain" ? "plain-bullets" : ""} ${slide.bulletStyle === "line" ? "line-bullets" : ""}">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <div class="transition-copy">
               ${transitionBody}
             </div>
-            ${slide.question ? `<div class="transition-question">${escapeHtml(slide.question)}</div>` : ""}
+            ${slide.question ? `<div class="transition-question ${slide.questionStyle === "arrow" ? "bridge-arrow-line" : ""}">${escapeHtml(slide.question)}</div>` : ""}
           </div>`;
       }
 
@@ -7562,7 +7650,7 @@
                 </article>
               `).join("")}
             </div>
-            ${slide.conclusion ? `<p class="cycle-conclusion">${escapeHtml(slide.conclusion)}</p>` : ""}
+            ${slide.conclusion ? `<p class="cycle-conclusion ${slide.conclusionStyle === "arrow" ? "bridge-arrow-line" : ""}">${escapeHtml(slide.conclusion)}</p>` : ""}
           </div>`;
       }
 
