@@ -1593,6 +1593,21 @@
       background: rgba(250, 250, 248, 0.78);
     }
 
+    .statement-quote-line {
+      max-width: 980px;
+      margin-top: clamp(22px, 2.8vw, 38px);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.45vw, 66px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .dark .statement-quote-line {
+      color: var(--paper);
+    }
+
     .statement-footnote {
       max-width: 840px;
       margin-top: clamp(18px, 2vw, 28px);
@@ -7090,13 +7105,7 @@
               kicker: "Der erste Schritt",
               marker: "",
               headline: "Normalerweise würden wir mit einem Proof of Concept beginnen. Unsere Idee: Wir machen ihn öffentlich.",
-              lead: "Nicht als interner Produkttest. Sondern als sichtbare Einladung an Köln, den lokalen Algorithmus mitzubauen.",
-              bullets: [
-                "Klein genug für den Beweis: ein Wochenendritual statt eine komplette Plattform.",
-                "Öffentlich genug für Neugierde: Menschen sehen, woran KStA.Connect arbeitet.",
-                "Konkret genug für Entscheidung: Wir messen Profil, Passung, Handlung und Wiederkehr."
-              ],
-              note: "Direkter Einstieg in Block 5. Proof of Concept wird bewusst ausgeschrieben. Die Folie ist als Teaser-Seite formuliert: Normalerweise intern, unsere Idee öffentlich."
+              note: "Direkter Einstieg in Block 5. Proof of Concept wird bewusst ausgeschrieben. Die Folie ist als Teaser-Seite formuliert: Normalerweise intern, unsere Idee öffentlich. Lead und Bullets entfallen bewusst, damit die Aussage allein steht."
             },
             {
               kind: "statement",
@@ -7105,33 +7114,27 @@
               kicker: "Die Einladung",
               marker: "",
               headline: "Wir richten eine Einladung an Köln.",
-              lead: "Menschen testen das Produkt unter echten Wochenendbedingungen. Und genau dadurch entsteht die Grundlage für ein individuelles Angebot.",
-              bullets: [
-                "Sie sagen freiwillig, was ihr Wochenende leichter, mutiger oder schöner macht.",
-                "Aus diesen Signalen entsteht keine Überwachung, sondern die erste Lernbasis des lokalen Algorithmus.",
-                "KStA.Connect fragt öffentlich, erklärt den Nutzen und spielt Orientierung zurück."
-              ],
-              core: "Das heutige Defizit wird zur Methode: fragen, lernen, passender werden.",
-              note: "Neue Brückenfolie nach dem Teaser. Die Einladung an Köln erklärt, warum der öffentliche Proof of Concept zugleich Produkttest, Datengrundlage und Startpunkt für individuelle Angebote ist."
-            },
-            {
-              kind: "campaignAction",
-              theme: "dark",
-              title: "Die Köln-Aktion",
-              kicker: "Die Köln-Aktion",
-              metrics: [
-                ["1.000", "Kölnerinnen und Kölner"],
-                ["10", "Wochenenden"],
-                ["1", "Frage"]
-              ],
-              question: "Was macht diese Stadt für dich lebenswert?",
-              headline: "Was macht diese Stadt für dich lebenswert?",
+              quoteLine: "„Was macht diese Stadt für dich lebenswert?“",
               bullets: [
                 "Eine kuratierte Gruppe aus unterschiedlichen Veedeln und Lebenssituationen baut den Proof of Concept mit.",
-                "Sie gibt freiwillig ein Basisprofil und erhält jede Woche eine persönliche Wochenendauswahl.",
-                "Sie nutzt Angebote, gibt Feedback und trainiert so den lokalen Algorithmus von der ersten Woche an."
+                "Sie gibt freiwillig ein Basisprofil und erhält dafür jede Woche eine persönliche Wochenendauswahl.",
+                "Sie nutzt Angebote, gibt Feedback und trainiert den lokalen Algorithmus von der ersten Woche an."
               ],
-              note: "Trendchart-Folie beruhigt: schwarz statt rot, Zahlen links kleiner und mit mehr Spaltenabstand, kein zusätzlicher Core-Block unter der Copy. Der Untertext ist in drei Bullet Points überführt: Gruppe, freiwilliges Basisprofil mit Wochenendauswahl, Nutzung und Feedback als Training des lokalen Algorithmus von der ersten Woche an."
+              note: "Neue Brückenfolie nach dem Teaser. Die Einladung wird als öffentliche Leitfrage formuliert. Lead und Kernsatz entfallen; die Mechanik steht in drei klaren Schritten: Gruppe, Basisprofil mit Wochenendauswahl, Nutzung und Feedback als Training."
+            },
+            {
+              kind: "assetGrid",
+              theme: "warm",
+              title: "Warum dieser Weg",
+              kicker: "Warum dieser Weg",
+              headline: "Ein öffentlicher Proof of Concept löst vier Aufgaben gleichzeitig.",
+              cards: [
+                ["Beteiligung", "Wir beziehen die Stadt ein, statt im Labor zu testen. Genau das erwartet man von einem Haus, das Teilhabe verspricht."],
+                ["Datengrundlage", "Das wichtigste Signal, die Lebenssituation, entsteht freiwillig. Das gesamte Produktangebot kann sich daran ausrichten."],
+                ["Marktforschung", "Zehn Wochenenden echtes Verhalten statt Hypothesen. Begleitbar durch Research, messbar von der ersten Woche an."],
+                ["Öffentlichkeit", "Der Test selbst erzeugt Sichtbarkeit und Erwartung, bevor das Produkt groß ist."]
+              ],
+              note: "Neue Begründungsfolie nach der Einladung. Sie erklärt, warum der Proof of Concept öffentlich angelegt wird: Beteiligung, Datengrundlage, Marktforschung und Öffentlichkeit entstehen in einem Schritt."
             },
             {
               kind: "pocScope",
@@ -7152,9 +7155,10 @@
               startScopeLabel: "Der Startscope",
               startScopeTitle: "Was bewusst begrenzt bleibt",
               startScope: [
-                "2 Themenwelten: Genuss + Kultur/Events.",
+                "2 Themenwelten: Genuss + Kultur/Events über Rausgegangen.",
                 "1 Moment: Donnerstag/Freitag, vor dem Wochenende.",
                 "1 Gruppe: 1.000 freiwillige Teilnehmer.",
+                "10 Wochenenden: begrenzter Zeitraum, klare Messpunkte.",
                 "3 Beweise: Relevanz, Anschluss, Handlung."
               ],
               core: "Nicht alles zeigen. Sondern beweisen, ob Menschen wiederkommen, weil sie sonst etwas verpassen.",
@@ -7201,33 +7205,34 @@
               outro: "Hier zeigt sich, ob aus Content ein nächster Schritt wird.",
               note: "Einzige 4C-Folie des Blocks, sie verbindet Anforderung und Einlösung. Damit prüft der Proof of Concept exakt die Wertschöpfungslogik, die in Block 4 eingeführt wurde. Der Hinweis auf begrenztes Investment und belastbare Kennzahlen für die spätere Investitionsentscheidung gehört in den Vortrag."
             },
-            {
-              kind: "statement",
-              theme: "dark",
-              title: "Die Wette",
-              kicker: "Die Wette",
-              headline: "Das ist eine Wette. Aber die richtige.",
-              lead: "Wir wetten nicht auf ein großes Portal. Wir wetten auf einen Mechanismus: Wenn regionale Marke, Content, Daten, Rausgegangen-Angebote und soziale Anschlussfähigkeit zusammenkommen, kann KStA.Connect vor dem Wochenende zu einer neuen Gewohnheit werden. Nicht, weil wir schon alles wissen. Sondern weil Menschen bereit sind, uns dabei zu helfen, wenn sie verstehen, wofür.",
-              core: "Früher war die Zeitung das Ritual am Morgen. Jetzt testen wir, ob KStA.Connect das Ritual vor dem Wochenende werden kann.",
-              note: "Dramaturgischer Höhepunkt vor der Entscheidung. Das Wort Wette bewusst nutzen, aber sofort erden: Wir wetten auf einen Mechanismus, nicht auf ein Portal, und wir wetten gemeinsam mit den Menschen, die mitbauen. Der Ritual-Satz ist der Anker des gesamten Proof of Concept, Callback auf Block 2: Das Ritual bleibt / Das fehlende Ritual."
-            },
+
             {
               kind: "statement",
               theme: "dark",
               title: "Die Entscheidung",
               kicker: "Die Entscheidung",
-              headline: "Die Entscheidung heute ist nicht der Vollausbau. Es ist der Start des Beweises.",
+              headline: "Die Entscheidung heute ist nicht der Vollausbau. Es ist der Start der Mission.",
               lead: "Die Frage ist nicht: Bauen wir alles? Die Frage ist: Starten wir den Beweis, gemeinsam mit Köln? Alles Weitere entscheidet sich daran, was der Proof of Concept zeigt.",
-              core: "Bevor Köln ins Wochenende geht, öffnet KStA.Connect, was dieses Wochenende lebenswert macht.",
-              note: "Der nüchterne Schluss vor dem emotionalen Callback. Eine klare Weiche, bewusst entlastend: Nicht das System steht zur Abstimmung, nur der Start des Beweises. Der Wochenend-Satz ist das konkrete Versprechen, \"lebenswert\" führt sprachlich direkt in die Schlussfolie und greift zugleich die Frage der Köln-Aktion wieder auf."
+              core: "Früher war die Zeitung das Ritual am Morgen. Jetzt testen wir, ob KStA.Connect das Ritual vor dem Wochenende werden kann.",
+              note: "Der nüchterne Schluss vor dem emotionalen Callback. Eine klare Weiche, bewusst entlastend: Nicht das System steht zur Abstimmung, sondern der Start der Mission. Der Ritual-Satz ist der Anker des Proof of Concept und der Callback auf Block 2."
             },
             {
               kind: "phenomenonTitle",
               theme: "dark",
               title: "Schluss",
               kicker: "",
-              headline: "Damit Menschen sagen: Ich liebe es, hier zu leben.",
-              note: "Letzte Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, groß, allein. Schließt den Kreis: Die Aktion fragt, was die Stadt lebenswert macht. Die Entscheidung verspricht, es jedes Wochenende zu öffnen. Der Schluss benennt den Zustand, auf den alles zuläuft. Nicht erklären, stehen lassen, Ende."
+              headline: "Damit die Ersten sagen: Ich liebe es, hier zu leben.",
+              centered: true,
+              note: "Letzte inhaltliche Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, groß, zentriert und allein. Schließt den Kreis: Die Einladung fragt, was die Stadt lebenswert macht. Die Entscheidung rahmt den Start der Mission. Der Schluss benennt den Zustand, auf den alles zuläuft."
+            },
+            {
+              kind: "phenomenonTitle",
+              theme: "dark",
+              title: "Vielen Dank",
+              kicker: "",
+              headline: "Vielen Dank.",
+              centered: true,
+              note: "Allerletzte Folie. Dunkles Theme, zentriert auf Mittelachse, ohne Kicker, ohne weitere Elemente."
             },
     
 
@@ -7338,6 +7343,7 @@
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
             <h2>${allowEm(slide.headline)}</h2>
+            ${slide.quoteLine ? `<p class="statement-quote-line">${escapeHtml(slide.quoteLine)}</p>` : ""}
             ${slide.lead ? `<p class="lead ${slide.leadStyle === "arrow" ? "bridge-arrow-line" : ""}">${escapeHtml(slide.lead)}</p>` : ""}
             ${slide.bullets ? `<ul class="statement-bullets">${slide.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
             ${slide.core ? `<p class="core-statement">${escapeHtml(slide.core)}</p>` : ""}
@@ -7707,7 +7713,7 @@
       if (slide.kind === "phenomenonTitle") {
         return `
           <div class="content phenomenon-title ${slide.centered ? "is-centered" : ""}">
-            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            ${slide.kicker ? `<span class="kicker">${escapeHtml(slide.kicker)}</span>` : ""}
             ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
             <h2>${escapeHtml(slide.headline)}</h2>
           </div>`;
