@@ -3090,6 +3090,19 @@
       font-style: italic;
     }
 
+    .sehnsucht-sub.bridge-arrow-line,
+    .cards-lead.bridge-arrow-line {
+      margin-top: clamp(24px, 3vw, 44px);
+      color: var(--ink) !important;
+      font-size: clamp(20px, 2.1vw, 30px);
+      font-style: normal;
+      line-height: 1.28;
+    }
+
+    .dark .cards-lead.bridge-arrow-line {
+      color: rgba(250, 250, 248, 0.86) !important;
+    }
+
     .open-questions {
       align-content: center;
     }
@@ -6301,7 +6314,7 @@
         theme: "dark",
         title: "Die Frage",
         kicker: "Der strategische Ausgangspunkt",
-        headline: "Zurück zum Anfang: Was wollen Menschen eigentlich?",
+        headline: "Noch einmal zurück zum Anfang: Was wollen Menschen eigentlich?",
         lead: "Wir müssen uns diese eine zentrale Frage stellen. Nicht für ein Segment. Nicht für einen Moment. Sondern als Grundlage für alles, was folgt.",
         note: "Einstieg Block 3. Die Frage bekommt einen kurzen Lead, damit sie nicht nur rhetorisch wirkt, sondern als Grundlage fuer alles Folgende gesetzt wird."
       },
@@ -6310,7 +6323,7 @@
         theme: "light",
         title: "Eine Sehnsucht",
         kicker: "Aus Forschung wird Motiv",
-        headline: "Viele Studien. Sechs JTBD-Analysen. Eine Sehnsucht. Was verbindet sie?",
+        headline: "Viele Studien. Sechs JTBD-Analysen. Ein gemeinsames Defizit! Aber auch eine gemeinsame Sehnsucht?",
         lead: "Information, Transparenz und Zugang sind Mittel. Entscheidend ist, was Menschen damit erreichen wollen.",
         note: "Brücke von der JTBD-Forschung zur Vision. Keine Studiendetails, nur die Verdichtung."
       },
@@ -6321,6 +6334,7 @@
         kicker: "Der eigentliche Job",
         lines: ["Menschen wollen erleben.", "Menschen wollen sich entfalten.", "Menschen wollen Neues entdecken.", "Menschen wollen dazugehören."],
         sub: "Suche und KI finden Treffer. Lokale Passung, sozialen Anschluss und verlässliche Einordnung leisten sie nicht.",
+        subStyle: "arrow",
         note: "Vier kurze Zeilen, die sich aufbauen. Dann der stille Satz darunter. Kein Bullet-Point, keine Erklärung. Sensibler Punkt wegen KI-Klima im Haus. Nicht triumphierend gegen KI sprechen, sondern souveraen abgrenzen: KI ist ein Werkzeug, das Treffer liefert. Den Unterschied macht, was nur Menschen und eine verantwortliche Redaktion leisten, lokale Passung, Anschluss, Einordnung."
       },
       {
@@ -6330,6 +6344,7 @@
         kicker: "Aus Bedürfnis wird Strategie",
         headline: "Diese Sehnsucht hat das Potenzial für eine Strategie.",
         lead: "Wenn Menschen erleben, sich entfalten, entdecken und dazugehören wollen, reicht Information nicht. Dann braucht es Zugänge, die aus Wissen Möglichkeiten machen.",
+        leadStyle: "arrow",
         columns: 4,
         revealCards: true,
         cards: [
@@ -6347,7 +6362,6 @@
         title: "Finaler Benefit",
         kicker: "Der gemeinsame Nenner",
         headline: "Was ist der gemeinsame Nenner dieser Sehnsucht?",
-        lead: "Am Ende geht es nicht um mehr Information. Es geht um ein besseres Verhältnis zum eigenen Leben in dieser Region.",
         note: "Fragefolie vor dem emotionalen Zielbild. Sie macht die Bruecke: Wenn KStA.Connect diesen Job leistet, welches Gefuehl entsteht daraus?"
       },
       {
@@ -7306,7 +7320,7 @@
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
             <h2>${allowEm(slide.headline)}</h2>
-            ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
+            ${slide.lead ? `<p class="lead ${slide.leadStyle === "arrow" ? "bridge-arrow-line" : ""}">${escapeHtml(slide.lead)}</p>` : ""}
             ${slide.bullets ? `<ul class="statement-bullets">${slide.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
             ${slide.core ? `<p class="core-statement">${escapeHtml(slide.core)}</p>` : ""}
             ${slide.footnote ? `<p class="statement-footnote">${escapeHtml(slide.footnote)}</p>` : ""}
@@ -7771,7 +7785,7 @@
             <div class="sehnsucht-lines">
               ${slide.lines.map((line) => `<div class="sehnsucht-line">${escapeHtml(line)}</div>`).join("")}
             </div>
-            <p class="sehnsucht-sub">${escapeHtml(slide.sub)}</p>
+            <p class="sehnsucht-sub ${slide.subStyle === "arrow" ? "bridge-arrow-line" : ""}">${escapeHtml(slide.sub)}</p>
           </div>`;
       }
 
@@ -8050,7 +8064,7 @@
           <div class="content top">
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${allowEm(slide.headline)}</h2>
-            ${slide.lead ? `<p class="lead cards-lead">${escapeHtml(slide.lead)}</p>` : ""}
+            ${slide.lead ? `<p class="lead cards-lead ${slide.leadStyle === "arrow" ? "bridge-arrow-line" : ""}">${escapeHtml(slide.lead)}</p>` : ""}
             <div style="margin-top: clamp(26px, 3vw, 40px);">${cards(slide.cards, slide.columns, revealCount, Boolean(slide.autoRevealCards))}</div>
             ${slide.outro ? `<p class="cards-outro ${slide.revealCards && revealCount < slide.cards.length ? "is-hidden" : ""} ${slide.autoRevealCards ? "is-auto-reveal" : ""}" ${slide.autoRevealCards ? `style="--outro-delay: ${outroDelayMs}ms;"` : ""}>${escapeHtml(slide.outro)}</p>` : ""}
           </div>`;
