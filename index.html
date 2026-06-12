@@ -7074,20 +7074,19 @@
         note: "Kurzprofil statt ausführlicher Vorstellung, weil Joachim Frank im Raum bekannt ist. Der Punkt ist nicht Biografie, sondern Asset-Klasse: personengebundene Orientierungsautorität."
       },
       {
-        kind: "regionVoicesConcept",
+        kind: "split",
         theme: "warm",
         title: "Stimmen der Region",
         kicker: "Neue Produktkategorie",
         headline: "Wir erfinden das Format „Stimmen der Region“.",
-        sub: "Personengeführte wiederkehrende Zugänge. Keine Rubriken, keine Ressorts. Persönlichkeiten mit Themenautorität, regionaler Verankerung und der Fähigkeit, wiederkehrend Impulse zu setzen.",
-        coreTitle: "Stimmen der Region",
-        coreText: "Ein Format, das Personen nicht als Autor:innenprofil zeigt, sondern als wiederkehrenden Zugang zu Themen, Gesprächen und nächsten Schritten.",
-        specs: [
-          ["◎", "Journalistische Substanz", "Themenautorität, die über den Einzelartikel hinausgeht und wiederkehrend wirkt."],
-          ["◉", "Regionale Verankerung", "Persönlichkeiten, die für Köln stehen und in der Region Vertrauen genießen."],
-          ["○", "Beziehungslogik", "Nicht Artikel konsumieren. In einen wiederkehrenden Dialog mit einer Stimme eintreten."]
+        copyAsBullets: true,
+        compactHeadline: true,
+        copy: [
+          "Personengeführte wiederkehrende Zugänge: keine Rubriken, keine Ressorts.",
+          "Persönlichkeiten mit Themenautorität, regionaler Verankerung und der Fähigkeit, wiederkehrend Impulse zu setzen.",
+          "Nicht Artikel konsumieren. In einen wiederkehrenden Dialog mit einer Stimme eintreten."
         ],
-        note: "Neue Konzeptfolie zwischen Beispielfall und Dashboard. Sie erfindet das Format Stimmen der Region, bevor Joachim Frank im Dashboard eingeordnet wird."
+        note: "Neue Konzeptfolie zwischen Beispielfall und Dashboard. Die Folie nutzt bewusst denselben Split-Aufbau wie der Testfall Joachim Frank, damit die neue Produktkategorie klarer und ruhiger eingeführt wird."
       },
       {
         kind: "frankDashboard",
@@ -7174,7 +7173,8 @@
               theme: "light",
               title: "Die kleinste Version",
               kicker: "Proof of Concept",
-              headline: "Dein Wochenende in Köln: die kleinste Version eines neuen Wochenendrituals. Klein genug für den Beweis. Groß genug für echte Relevanz.",
+              headline: "Dein Wochenende in Köln: die kleinste Version eines neuen Wochenendrituals.",
+              subline: "Klein genug für den Beweis. Groß genug für echte Relevanz.",
               weeklyPackageLabel: "Das Wochenpaket",
               weeklyPackageTitle: "Was jede Woche ankommt",
               weeklyPackage: [
@@ -7227,7 +7227,7 @@
               theme: "dark",
               title: "Was der Proof of Concept beweist",
               kicker: "Der Mechanismus",
-              headline: "Der Proof of Concept beweist die Architektur im Kleinen.",
+              headline: "Der Proof of Concept beweist das KStA 4C-Modell im Kleinen.",
               items: [
                 ["Content", "Wochenende öffnen", "Welche Empfehlungen und Inhalte öffnen das Wochenende?"],
                 ["Context", "Passt zu mir", "Welche Signale machen daraus \"passt zu mir\"?"],
@@ -7253,7 +7253,7 @@
               theme: "dark",
               title: "Schluss",
               kicker: "",
-              headline: "Damit die Ersten sagen: Ich liebe es, hier zu leben.",
+              headline: "Damit die Ersten sagen:<br>Ich liebe es, hier zu leben.",
               centered: true,
               note: "Letzte inhaltliche Folie. Emotionaler Callback auf das Zielbild aus Block 3. Bewusst dunkel, groß, zentriert und allein. Schließt den Kreis: Die Einladung fragt, was die Stadt lebenswert macht. Die Entscheidung rahmt den Start der Mission. Der Schluss benennt den Zustand, auf den alles zuläuft."
             },
@@ -7747,7 +7747,7 @@
           <div class="content phenomenon-title ${slide.centered ? "is-centered" : ""}">
             ${slide.kicker ? `<span class="kicker">${escapeHtml(slide.kicker)}</span>` : ""}
             ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
-            <h2>${escapeHtml(slide.headline)}</h2>
+            <h2>${allowEm(slide.headline)}</h2>
           </div>`;
       }
 
