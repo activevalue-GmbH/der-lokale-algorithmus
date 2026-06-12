@@ -6466,7 +6466,7 @@
         kicker: "Vom Portal zum Interface",
         lines: [
           "KStA.Connect ist nicht das Portal der Region.",
-          "KStA.Connect wird das Interface zum lokalen Leben."
+          "KStA.Connect wäre das Interface zum lokalen Leben."
         ],
         mutedIndex: 0,
         compact: true,
@@ -6669,18 +6669,35 @@
       {
         kind: "split",
         theme: "grey",
-        title: "Prinzip 3 Beispiel",
-        kicker: "Prinzip 3 · Beispiel",
-        headline: "Über eine Initiative zu schreiben ist gut. Den Weg zu ihr zu bauen ist die Leistung.",
+        title: "Prinzip 3 Beispiel · Adenauer-Wein",
+        kicker: "PRINZIP 3 · BEISPIEL AUS DEM EIGENEN HAUS",
+        headline: "Den Wein zu verkaufen ist gut. Den Anlass daraus zu bauen ist die Leistung.",
         copy: [
-          "Ein Beispiel aus Lüneburg: Der Mitwirk-O-Mat für soziales Engagement entstand aus der Initiative Lebendiges Lüneburg. Die Landeszeitung berichtete darüber; heute ist das Tool bei der Freiwilligenagentur Lüneburg angebunden.",
-          "Die Mechanik ist einfach: Menschen beantworten wenige Fragen und finden Initiativen, die zu ihren Interessen und Möglichkeiten passen.",
-          "Was einer ehrenamtlichen Initiative im Kleinen gelingt, könnte ein Medienhaus mit Reichweite und Vertrauen in größerem Maßstab tragen.",
-          "Aus Recherche wird Zugang, aus Lesen wird Mitmachen."
+          "150 Jahre Kölner Stadt-Anzeiger, 150 Jahre Konrad Adenauer. Dazu ein eigener Wein. Die Geschichte war da, das Produkt war da, Flaschen wurden verkauft.",
+          "In unserer Logik heißt das: Content und Checkout existierten bereits. Was fehlte, waren die beiden Stufen dazwischen, Kontext und Connect.",
+          "Eine Flasche Wein ist ein Produkt. Ein Abend mit diesem Wein ist ein Erlebnis. Eine Gemeinschaft um diesen Abend ist ein Geschäftsmodell.",
+          "Genau hier liegt der Unterschied zwischen einem Verlag, der etwas verkauft, und einer Plattform, die etwas erschließt."
         ],
         copyAsBullets: true,
-        footnote: "* Faktische Einordnung: entwickelt bei Lebendiges Lüneburg, von der Landeszeitung berichtet, heute bei der Freiwilligenagentur Lüneburg angebunden.",
-        note: "Finales Beispiel fuer Anschlussfaehigkeit. Faktisch sauber: Mitwirk-O-Mat aus Lebendiges Lueneburg, Berichterstattung durch die Landeszeitung, heutige Anbindung bei der Freiwilligenagentur. KStA.Connect als skalierender Vertrauens- und Reichweitenhebel."
+        note: "Neues Beispiel aus dem eigenen Haus. Der Adenauer-Wein zeigt die vorhandene Transaktionskraft; die Folie verschiebt den Fokus von Verkauf auf Anschlussfaehigkeit und Anlassgestaltung."
+      },
+      {
+        kind: "split",
+        theme: "grey",
+        title: "Prinzip 3 Beispiel · Inszenierung",
+        kicker: "PRINZIP 3 · DIE VOLLE INSZENIERUNG",
+        headline: "Was derselbe Anlass aus Sicht der Menschen hätte sein können.",
+        copy: [
+          "<strong>Die Verkostung.</strong> Ein Degustationsabend mit Sommelier und Chefredaktion. Geschichte trifft Geschmack, der Artikel wird zum Eintritt.",
+          "<strong>Der Restaurantabend.</strong> Ausgewählte Kölner Häuser servieren an einem Abend ein Adenauer-Menü zum Wein. Connect-Nutzer reservieren exklusiv vorab.",
+          "<strong>Der Talk.</strong> Historiker und Zeitzeugen über Adenauers Köln, der Wein steht auf dem Tisch. Aus Lesen wird Dabeisein.",
+          "<strong>Die Reise.</strong> Eine Tagesfahrt zum Winzer, limitierte Plätze, begleitet von der Redaktion. Das knappste Gut ist der Zugang, nicht die Flasche.",
+          "<strong>Das Gastgeber-Paket.</strong> Wein, Menüvorschlag und die Geschichten zum Weitererzählen für den eigenen Tisch zu Hause. Die Inszenierung wandert ins Wohnzimmer.",
+          "<strong>Der Club.</strong> Aus Käufern wird ein Weinclub mit wiederkehrenden Anlässen. Aus einer Transaktion wird eine Beziehung, aus einer Beziehung wiederkehrender Erlös.",
+          "Aus einer Flasche ein Abend. Aus einem Abend eine Gemeinschaft. Aus einer Gemeinschaft ein Modell."
+        ],
+        copyAsBullets: true,
+        note: "Zweite Adenauer-Wein-Folie als Nutzerstrecke. Sie zeigt, wie Content, Context, Connect und Checkout als Erlebnislogik zusammenlaufen koennen."
       },
       {
         kind: "statement",
@@ -6690,7 +6707,6 @@
         headline: "Die ökonomische Klammer: Alles, was wir tun, denken wir bis zur Transaktion.",
         bullets: [
           "Nicht alles mündet in einen Abschluss. Aber alles wird darauf geprüft.",
-          "Der Adenauer-Wein zeigt es: über 11.000 Flaschen verkauft, nicht durch Werbung, sondern weil eine Geschichte Relevanz schuf und die Transaktion vorbereitet hat.",
           "Relevanz ist kein Selbstzweck. Sie ist die Vorstufe.",
           "Das ist keine versteckte Agenda, sondern offengelegte Logik: Relevanz zuerst, Transaktion als mögliche Folge."
         ],
@@ -6718,7 +6734,7 @@
         title: "Das 4C-Modell",
         compact: true,
         kicker: "Das 4C-Modell · Regionale Wertschöpfungslogik",
-        headline: "Daraus kreieren wir ein eigenes KStA.Connect-System: das 4C-Modell.",
+        headline: "Das 4C-Modell für ksta.connect. Das neue Betriebssystem.",
         steps: [
           {
             value: "Content",
@@ -8051,7 +8067,7 @@
               <h2>${allowEm(slide.headline)}</h2>
             </div>
             ${slide.copyAsBullets
-              ? `<ul class="split-bullets">${slide.copy.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>`
+              ? `<ul class="split-bullets">${slide.copy.map((p) => `<li>${allowInline(p)}</li>`).join("")}</ul>`
               : `<div class="copy">${slide.copy.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>`}
               ${slide.footnote ? `<p class="statement-footnote split-footnote">${escapeHtml(slide.footnote)}</p>` : ""}
           </div>`;
