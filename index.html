@@ -3825,6 +3825,621 @@
       }
     }
 
+    .four-c-synthesis {
+      position: relative;
+      align-content: center;
+      width: min(100%, 1240px);
+      min-height: min(68vh, 620px);
+      gap: clamp(12px, 1.4vw, 18px);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .four-c-synthesis-header {
+      position: relative;
+      z-index: 2;
+      max-width: 1080px;
+    }
+
+    .four-c-synthesis h2 {
+      max-width: 980px;
+      color: var(--paper);
+      font-size: clamp(34px, 3.45vw, 49px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .four-c-synthesis-subline {
+      max-width: 900px;
+      margin-top: clamp(5px, 0.65vw, 9px);
+      color: rgba(250, 250, 248, 0.48);
+      font-size: clamp(12px, 0.95vw, 15px);
+      font-weight: 400;
+      line-height: 1.42;
+    }
+
+    .four-c-flow-bar {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr);
+      align-items: stretch;
+      min-height: clamp(50px, 5.4vw, 70px);
+      margin-top: clamp(12px, 1.25vw, 18px);
+      border: 1px solid rgba(250, 250, 248, 0.07);
+      border-radius: 13px;
+      background: rgba(250, 250, 248, 0.035);
+      overflow: hidden;
+    }
+
+    .four-c-flow-step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: clamp(7px, 0.72vw, 10px);
+      align-items: center;
+      padding: clamp(9px, 0.95vw, 13px) clamp(10px, 1.05vw, 15px);
+    }
+
+    .four-c-flow-step.is-highlighted {
+      background: rgba(200, 0, 14, 0.08);
+    }
+
+    .four-c-flow-num {
+      display: grid;
+      place-items: center;
+      width: clamp(20px, 1.65vw, 25px);
+      height: clamp(20px, 1.65vw, 25px);
+      border: 1px solid rgba(250, 250, 248, 0.18);
+      border-radius: 999px;
+      color: rgba(250, 250, 248, 0.45);
+      font-size: clamp(9px, 0.72vw, 11px);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .four-c-flow-step.is-highlighted .four-c-flow-num {
+      border-color: rgba(200, 0, 14, 0.68);
+      color: var(--red);
+      background: rgba(200, 0, 14, 0.14);
+    }
+
+    .four-c-flow-title {
+      color: rgba(250, 250, 248, 0.78);
+      font-size: clamp(11px, 0.95vw, 14px);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .four-c-flow-step.is-highlighted .four-c-flow-title {
+      color: var(--paper);
+    }
+
+    .four-c-flow-desc {
+      margin-top: 2px;
+      color: rgba(250, 250, 248, 0.38);
+      font-size: clamp(8px, 0.72vw, 10px);
+      line-height: 1.3;
+    }
+
+    .four-c-flow-arrow {
+      display: grid;
+      place-items: center;
+      color: rgba(250, 250, 248, 0.22);
+      font-size: clamp(17px, 1.6vw, 24px);
+      line-height: 1;
+    }
+
+    .four-c-main {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(160px, 0.82fr) minmax(20px, 34px) minmax(320px, 1.55fr) minmax(20px, 34px) minmax(175px, 0.88fr) minmax(20px, 34px) minmax(128px, 0.58fr);
+      gap: 0;
+      align-items: stretch;
+      min-height: clamp(310px, 33vw, 420px);
+      margin-top: clamp(12px, 1.2vw, 18px);
+    }
+
+    .four-c-col-label {
+      margin-bottom: clamp(6px, 0.7vw, 9px);
+      color: rgba(250, 250, 248, 0.38);
+      font-size: clamp(8px, 0.7vw, 10px);
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .four-c-col-label.is-red {
+      color: rgba(200, 0, 14, 0.78);
+    }
+
+    .four-c-content-col,
+    .four-c-core-col,
+    .four-c-people-col,
+    .four-c-checkout-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .four-c-source-card {
+      position: relative;
+      display: grid;
+      align-content: center;
+      gap: 4px;
+      flex: 1;
+      min-height: 0;
+      margin-bottom: clamp(6px, 0.62vw, 9px);
+      padding: clamp(10px, 1.05vw, 14px) clamp(11px, 1.12vw, 16px);
+      border: 1px solid rgba(250, 250, 248, 0.1);
+      border-radius: 9px;
+      background: rgba(250, 250, 248, 0.025);
+    }
+
+    .four-c-source-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .four-c-source-card.is-owned {
+      border-color: rgba(200, 0, 14, 0.4);
+      background: rgba(200, 0, 14, 0.055);
+    }
+
+    .four-c-source-card::before {
+      content: "";
+      position: absolute;
+      top: clamp(16px, 1.4vw, 20px);
+      left: clamp(10px, 0.9vw, 13px);
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(250, 250, 248, 0.3);
+    }
+
+    .four-c-source-card.is-owned::before {
+      background: var(--red);
+    }
+
+    .four-c-source-title {
+      padding-left: 13px;
+      color: rgba(250, 250, 248, 0.86);
+      font-size: clamp(10px, 0.88vw, 13px);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .four-c-source-desc {
+      padding-left: 13px;
+      color: rgba(250, 250, 248, 0.4);
+      font-size: clamp(8px, 0.73vw, 10px);
+      line-height: 1.34;
+    }
+
+    .four-c-arrow-col {
+      display: grid;
+      place-items: center;
+      min-width: 0;
+    }
+
+    .four-c-arrow-line {
+      position: relative;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(250, 250, 248, 0.22), transparent);
+    }
+
+    .four-c-arrow-line::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 1px;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid rgba(250, 250, 248, 0.25);
+      border-right: 1px solid rgba(250, 250, 248, 0.25);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .four-c-core-box {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      padding: clamp(14px, 1.35vw, 19px) clamp(15px, 1.55vw, 22px);
+      border: 1.5px solid var(--red);
+      border-radius: 16px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200, 0, 14, 0.14), transparent 60%), rgba(200, 0, 14, 0.04);
+      box-shadow: 0 22px 62px rgba(0, 0, 0, 0.18);
+      overflow: hidden;
+    }
+
+    .four-c-core-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 0%, rgba(250, 250, 248, 0.04), transparent 45%);
+    }
+
+    .four-c-core-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: clamp(10px, 1vw, 14px);
+    }
+
+    .four-c-core-name {
+      color: var(--paper);
+      font-family: var(--serif);
+      font-size: clamp(18px, 1.55vw, 23px);
+      line-height: 1;
+    }
+
+    .four-c-core-name span {
+      color: var(--red);
+    }
+
+    .four-c-core-tag {
+      padding: 3px 7px;
+      border: 1px solid rgba(200, 0, 14, 0.48);
+      border-radius: 5px;
+      color: var(--red);
+      font-size: clamp(7px, 0.58vw, 9px);
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      line-height: 1.1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .four-c-core-inner {
+      position: relative;
+      z-index: 1;
+      min-height: clamp(182px, 18vw, 245px);
+    }
+
+    .four-c-algo-simple,
+    .four-c-algo-split {
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .four-c-algo-simple {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(10px, 1vw, 14px);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .four-c-algo-split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(8px, 0.8vw, 11px);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+    }
+
+    .four-c-synthesis.is-step-2 .four-c-algo-simple,
+    .four-c-synthesis.is-step-3 .four-c-algo-simple,
+    .four-c-synthesis.is-step-4 .four-c-algo-simple {
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+    }
+
+    .four-c-synthesis.is-step-2 .four-c-algo-split,
+    .four-c-synthesis.is-step-3 .four-c-algo-split,
+    .four-c-synthesis.is-step-4 .four-c-algo-split {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .four-c-core-step,
+    .four-c-zone-step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      gap: 8px;
+    }
+
+    .four-c-core-icon,
+    .four-c-zone-icon {
+      display: grid;
+      place-items: center;
+      width: clamp(17px, 1.35vw, 21px);
+      height: clamp(17px, 1.35vw, 21px);
+      border: 1px solid rgba(200, 0, 14, 0.32);
+      border-radius: 999px;
+      color: var(--red);
+      background: rgba(200, 0, 14, 0.12);
+      font-size: clamp(8px, 0.64vw, 10px);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .four-c-core-text,
+    .four-c-zone-text {
+      color: rgba(250, 250, 248, 0.7);
+      font-size: clamp(10px, 0.86vw, 13px);
+      line-height: 1.36;
+    }
+
+    .four-c-core-text strong,
+    .four-c-zone-text strong {
+      color: var(--paper);
+      font-weight: 800;
+    }
+
+    .four-c-zone {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(7px, 0.68vw, 9px);
+      min-width: 0;
+      padding: clamp(9px, 0.9vw, 13px);
+      border: 1px solid rgba(250, 250, 248, 0.1);
+      border-radius: 9px;
+      background: rgba(250, 250, 248, 0.032);
+    }
+
+    .four-c-zone-label {
+      color: rgba(200, 0, 14, 0.86);
+      font-size: clamp(8px, 0.64vw, 10px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .four-c-zone-icon {
+      width: clamp(15px, 1.15vw, 18px);
+      height: clamp(15px, 1.15vw, 18px);
+      font-size: clamp(7px, 0.56vw, 9px);
+      margin-top: 1px;
+    }
+
+    .four-c-c2-box {
+      margin-top: auto;
+      padding: clamp(7px, 0.72vw, 10px) clamp(8px, 0.82vw, 11px);
+      border-left: 2px solid var(--red);
+      border-radius: 7px;
+      background: rgba(200, 0, 14, 0.08);
+    }
+
+    .four-c-c2-label {
+      margin-bottom: 3px;
+      color: var(--red);
+      font-size: clamp(7px, 0.58vw, 9px);
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .four-c-c2-text {
+      color: rgba(250, 250, 248, 0.56);
+      font-size: clamp(8px, 0.68vw, 10px);
+      font-style: italic;
+      line-height: 1.32;
+    }
+
+    .four-c-contrast {
+      position: relative;
+      z-index: 1;
+      margin-top: clamp(9px, 0.9vw, 12px);
+      padding-top: clamp(8px, 0.75vw, 10px);
+      border-top: 1px solid rgba(250, 250, 248, 0.08);
+      color: rgba(250, 250, 248, 0.38);
+      font-size: clamp(8px, 0.67vw, 10px);
+      font-style: italic;
+      line-height: 1.48;
+    }
+
+    .four-c-people-col {
+      gap: clamp(6px, 0.62vw, 8px);
+    }
+
+    .four-c-person-card {
+      display: grid;
+      grid-template-columns: clamp(44px, 4.15vw, 58px) minmax(0, 1fr);
+      gap: clamp(8px, 0.82vw, 11px);
+      align-items: center;
+      flex: 1;
+      min-height: 0;
+      padding: clamp(7px, 0.72vw, 10px);
+      border: 1px solid rgba(250, 250, 248, 0.09);
+      border-radius: 9px;
+      background: rgba(250, 250, 248, 0.018);
+    }
+
+    .four-c-person-art .dna-illustration {
+      display: block;
+      width: 100%;
+    }
+
+    .four-c-person-label {
+      margin-bottom: 3px;
+      color: rgba(250, 250, 248, 0.42);
+      font-size: clamp(7px, 0.62vw, 9px);
+      line-height: 1.22;
+    }
+
+    .four-c-person-quote {
+      color: rgba(250, 250, 248, 0.62);
+      font-family: var(--serif);
+      font-size: clamp(11px, 0.95vw, 14px);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .four-c-checkout-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(7px, 0.68vw, 9px);
+      flex: 1;
+      min-height: 0;
+      padding: clamp(11px, 1.05vw, 15px);
+      border: 1px dashed rgba(250, 250, 248, 0.16);
+      border-radius: 12px;
+      background: rgba(250, 250, 248, 0.025);
+    }
+
+    .four-c-checkout-title {
+      margin-bottom: 2px;
+      color: rgba(250, 250, 248, 0.42);
+      font-size: clamp(8px, 0.68vw, 10px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .four-c-checkout-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 7px;
+      padding: clamp(6px, 0.62vw, 8px);
+      border-radius: 7px;
+      background: rgba(250, 250, 248, 0.045);
+    }
+
+    .four-c-checkout-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(250, 250, 248, 0.22);
+    }
+
+    .four-c-checkout-text {
+      color: rgba(250, 250, 248, 0.48);
+      font-size: clamp(8px, 0.72vw, 10px);
+      line-height: 1.28;
+    }
+
+    .four-c-checkout-note {
+      margin-top: 2px;
+      padding-top: clamp(7px, 0.72vw, 9px);
+      border-top: 1px solid rgba(250, 250, 248, 0.07);
+      color: rgba(250, 250, 248, 0.38);
+      font-size: clamp(8px, 0.68vw, 10px);
+      font-style: italic;
+      line-height: 1.36;
+    }
+
+    .four-c-feedback-svg {
+      position: absolute;
+      z-index: 1;
+      inset: auto 0 0 0;
+      width: 100%;
+      height: clamp(128px, 12vw, 168px);
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .four-c-feedback-path {
+      fill: none;
+      stroke: var(--red);
+      stroke-width: 1.5;
+      stroke-dasharray: 6 4;
+      opacity: 0.58;
+    }
+
+    .four-c-feedback-head,
+    .four-c-feedback-dot {
+      fill: var(--red);
+      opacity: 0.66;
+    }
+
+    .four-c-feedback-label {
+      fill: rgba(250, 250, 248, 0.68);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .four-c-feedback-sub {
+      fill: rgba(250, 250, 248, 0.42);
+      font-family: var(--sans);
+      font-size: 10px;
+    }
+
+    .four-c-step-indicator {
+      position: absolute;
+      right: 0;
+      bottom: -2px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .four-c-step-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(250, 250, 248, 0.15);
+      transition: background 0.28s ease, transform 0.28s ease;
+    }
+
+    .four-c-step-dot.is-on {
+      background: var(--red);
+      transform: scale(1.15);
+    }
+
+    .four-c-step-hint {
+      margin-left: 8px;
+      color: rgba(250, 250, 248, 0.2);
+      font-size: clamp(8px, 0.68vw, 10px);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .four-c-r1,
+    .four-c-r3,
+    .four-c-r4 {
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .four-c-synthesis.is-step-1 .four-c-r1,
+    .four-c-synthesis.is-step-2 .four-c-r1,
+    .four-c-synthesis.is-step-3 .four-c-r1,
+    .four-c-synthesis.is-step-4 .four-c-r1,
+    .four-c-synthesis.is-step-3 .four-c-r3,
+    .four-c-synthesis.is-step-4 .four-c-r3,
+    .four-c-synthesis.is-step-4 .four-c-r4 {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    @media (max-width: 1120px) {
+      .four-c-main {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .four-c-flow-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .four-c-flow-arrow,
+      .four-c-arrow-col {
+        display: none;
+      }
+    }
+
+
     .phenomenon-detail {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.62fr);
@@ -7358,6 +7973,71 @@
         note: "Vierte Fähigkeit, bewusst zuletzt, damit die Transaktion nicht als eigentliche Absicht erscheint, sondern als Konsequenz. Wichtig für die Redaktion: erst Mensch, Anschluss, Relevanz, dann Marktplatz. Hier schließt sich Checkout aus dem 4C-Modell. Strategische Voraussetzung: Angebots-, Anbieter-, Verfügbarkeits-, Buchungs- und Transaktionsdaten machen Handlung innerhalb des Systems möglich."
       },
       {
+        kind: "localAlgorithmFourC",
+        theme: "dark",
+        title: "Das 4C-Modell in der Anwendung",
+        kicker: "Strategischer Kern · Block 3",
+        headline: "Das 4C-Modell in der Anwendung",
+        subline: "KStA.Connect als lernender lokaler Algorithmus. Jede Interaktion schärft das nächste Ergebnis.",
+        revealIndex: 0,
+        maxStep: 4,
+        hints: [
+          "Klick zum Starten",
+          "4C-Modell einblenden",
+          "Kontext und Connect schärfen",
+          "Checkout einblenden",
+          "Feedback-Loop einblenden"
+        ],
+        flow: [
+          ["1", "Content", "Eigene, kuratierte und redaktionell entdeckte Angebote", ""],
+          ["2", "Kontext", "Lebenssituation verstehen, Angebot einbetten", "hl"],
+          ["3", "Connect", "Mensch zu Angebot und Mensch zu Mensch", "hl"],
+          ["4", "Checkout", "Transaktion, Mitgliedschaft, Loyalität", ""]
+        ],
+        sources: [
+          ["Eigene Angebote", "Rausgegangen, KStA-Abende, yourJOB, yourIMMO", "owned"],
+          ["Extern kuratiert", "Restaurants, Händler, Vereine, Kultur", ""],
+          ["Redaktionell entdeckt", "Artikel werden automatisch zu Plattform-Objekten", ""]
+        ],
+        simpleSteps: [
+          ["V", "Verstehen", "Lebenssituation, Viertel, Interessen, Schwelle"],
+          ["Ü", "Übersetzen", "Angebot in Lebenskontext einbetten"],
+          ["L", "Liefern", "Ohne Suche. Zur richtigen Zeit. Passend."]
+        ],
+        splitZones: [
+          {
+            label: "Kontext",
+            steps: [
+              ["V", "Verstehen", "Lebenssituation, Viertel, Schwelle"],
+              ["Ü", "Übersetzen", "Angebot in Lebenskontext einbetten"]
+            ]
+          },
+          {
+            label: "Connect",
+            steps: [
+              ["1", "Mensch zu Angebot", "ohne Suche, zur richtigen Zeit"]
+            ],
+            c2: ["Connect 2", "Mensch zu Mensch, gemeinsame Lebenssituation als Verbindung"]
+          }
+        ],
+        contrast: "Google, Meta und Netflix sitzen hier ebenfalls. Sie optimieren auf Klick. Wir auf Lebensqualität.",
+        people: [
+          ["group", "Neu in Köln, suchen Anschluss", "„Ich will ankommen, aber weiß nicht wo anfangen.“"],
+          ["single", "Etabliert, Rodenkirchen", "„Ich will teilhaben, nicht suchen.“"],
+          ["family", "Familie, Sülz, Alltag", "„Was können wir heute unternehmen?“"]
+        ],
+        checkout: {
+          title: "Erlös + Loyalität",
+          items: ["Ticket, Buchung, Transaktion", "Mitgliedschaft, Abo", "Qualifizierter Lead"],
+          note: "Vertrauen erzeugt Transaktion, kein Werbedruck"
+        },
+        feedback: {
+          label: "Lernen + Schärfen",
+          sub: "Jede Interaktion verbessert den nächsten Treffer"
+        },
+        note: "Neue animierte Synthese-Folie am Ende der 4C-/Fähigkeiten-Sequenz. Navigation wird über die Hauptpräsentation gesteuert: erst vier interne Reveal-Schritte, danach normale Foliennavigation."
+      },
+      {
         kind: "strategyAlgorithm",
         theme: "dark",
         title: "Der lokale Algorithmus",
@@ -7607,6 +8287,7 @@
     let notesVisible = false;
     let agendaReveal = -1;
     let cardReveal = 0;
+    let fourCReveal = 0;
 
     const escapeHtml = (value = "") => String(value)
       .replaceAll("&", "&amp;")
@@ -8228,6 +8909,120 @@
           </div>`;
       }
 
+
+
+      if (slide.kind === "localAlgorithmFourC") {
+        return `
+          <div class="content four-c-synthesis is-step-0" data-four-c-synthesis>
+            <div class="four-c-synthesis-header">
+              <span class="kicker">${escapeHtml(slide.kicker)}</span>
+              <h2>${escapeHtml(slide.headline)}</h2>
+              <p class="four-c-synthesis-subline">${escapeHtml(slide.subline)}</p>
+            </div>
+            <div class="four-c-flow-bar four-c-r1">
+              ${slide.flow.map(([num, title, desc, tone], flowIndex) => `
+                <article class="four-c-flow-step ${tone === "hl" ? "is-highlighted" : ""}">
+                  <div class="four-c-flow-num">${escapeHtml(num)}</div>
+                  <div>
+                    <div class="four-c-flow-title">${escapeHtml(title)}</div>
+                    <div class="four-c-flow-desc">${escapeHtml(desc)}</div>
+                  </div>
+                </article>
+                ${flowIndex < slide.flow.length - 1 ? `<div class="four-c-flow-arrow" aria-hidden="true">›</div>` : ""}
+              `).join("")}
+            </div>
+            <div class="four-c-main">
+              <section class="four-c-content-col">
+                <div class="four-c-col-label">Content</div>
+                ${slide.sources.map(([title, desc, tone]) => `
+                  <article class="four-c-source-card ${tone === "owned" ? "is-owned" : ""}">
+                    <strong class="four-c-source-title">${escapeHtml(title)}</strong>
+                    <span class="four-c-source-desc">${escapeHtml(desc)}</span>
+                  </article>
+                `).join("")}
+              </section>
+              <div class="four-c-arrow-col" aria-hidden="true"><div class="four-c-arrow-line"></div></div>
+              <section class="four-c-core-col">
+                <div class="four-c-col-label is-red">Kontext + Connect · KStA.Connect</div>
+                <div class="four-c-core-box">
+                  <div class="four-c-core-top">
+                    <div class="four-c-core-name">KStA<span>.</span>Connect</div>
+                    <div class="four-c-core-tag">Lokaler Algorithmus</div>
+                  </div>
+                  <div class="four-c-core-inner">
+                    <div class="four-c-algo-simple">
+                      ${slide.simpleSteps.map(([icon, title, copy]) => `
+                        <div class="four-c-core-step">
+                          <div class="four-c-core-icon">${escapeHtml(icon)}</div>
+                          <div class="four-c-core-text"><strong>${escapeHtml(title)}</strong> — ${escapeHtml(copy)}</div>
+                        </div>
+                      `).join("")}
+                    </div>
+                    <div class="four-c-algo-split">
+                      ${slide.splitZones.map((zone) => `
+                        <div class="four-c-zone">
+                          <div class="four-c-zone-label">${escapeHtml(zone.label)}</div>
+                          ${zone.steps.map(([icon, title, copy]) => `
+                            <div class="four-c-zone-step">
+                              <div class="four-c-zone-icon">${escapeHtml(icon)}</div>
+                              <div class="four-c-zone-text"><strong>${escapeHtml(title)}</strong> ${escapeHtml(copy)}</div>
+                            </div>
+                          `).join("")}
+                          ${zone.c2 ? `
+                            <div class="four-c-c2-box">
+                              <div class="four-c-c2-label">${escapeHtml(zone.c2[0])}</div>
+                              <div class="four-c-c2-text">${escapeHtml(zone.c2[1])}</div>
+                            </div>
+                          ` : ""}
+                        </div>
+                      `).join("")}
+                    </div>
+                  </div>
+                  <div class="four-c-contrast">${escapeHtml(slide.contrast)}</div>
+                </div>
+              </section>
+              <div class="four-c-arrow-col" aria-hidden="true"><div class="four-c-arrow-line"></div></div>
+              <section class="four-c-people-col">
+                <div class="four-c-col-label">Menschen in der Region</div>
+                ${slide.people.map(([scene, label, quote]) => `
+                  <article class="four-c-person-card">
+                    <div class="four-c-person-art">${renderDnaPeopleScene(scene)}</div>
+                    <div>
+                      <div class="four-c-person-label">${escapeHtml(label)}</div>
+                      <div class="four-c-person-quote">${escapeHtml(quote)}</div>
+                    </div>
+                  </article>
+                `).join("")}
+              </section>
+              <div class="four-c-arrow-col four-c-r3" aria-hidden="true"><div class="four-c-arrow-line"></div></div>
+              <section class="four-c-checkout-col four-c-r3">
+                <div class="four-c-col-label">Checkout</div>
+                <div class="four-c-checkout-box">
+                  <div class="four-c-checkout-title">${escapeHtml(slide.checkout.title)}</div>
+                  ${slide.checkout.items.map((item) => `
+                    <div class="four-c-checkout-item">
+                      <div class="four-c-checkout-dot"></div>
+                      <div class="four-c-checkout-text">${escapeHtml(item)}</div>
+                    </div>
+                  `).join("")}
+                  <div class="four-c-checkout-note">${escapeHtml(slide.checkout.note)}</div>
+                </div>
+              </section>
+            </div>
+            <svg class="four-c-feedback-svg four-c-r4" viewBox="0 0 1240 160" aria-hidden="true" focusable="false">
+              <circle class="four-c-feedback-dot" cx="1152" cy="82" r="4" />
+              <path class="four-c-feedback-path" d="M1152,82 C1152,146 510,146 510,82" />
+              <polygon class="four-c-feedback-head" points="510,68 502,84 518,84" />
+              <text class="four-c-feedback-label" x="820" y="137" text-anchor="middle">${escapeHtml(slide.feedback.label)}</text>
+              <text class="four-c-feedback-sub" x="820" y="153" text-anchor="middle">${escapeHtml(slide.feedback.sub)}</text>
+            </svg>
+            <div class="four-c-step-indicator" aria-hidden="true">
+              ${Array.from({ length: slide.maxStep }, (_, dotIndex) => `<div class="four-c-step-dot" data-four-c-dot="${dotIndex + 1}"></div>`).join("")}
+              <span class="four-c-step-hint" data-four-c-hint>${escapeHtml(slide.hints[0])}</span>
+            </div>
+          </div>`;
+      }
+
       if (slide.kind === "strategyAlgorithm") {
         return `
           <div class="content strategy-algorithm">
@@ -8768,15 +9563,38 @@
       activeSection.querySelector(".cards-outro")?.classList.toggle("is-hidden", cardReveal < slide.cards.length);
     };
 
+
+    const updateFourCReveal = () => {
+      const slide = slides[index];
+      if (!slide || slide.kind !== "localAlgorithmFourC") return;
+      const activeSection = sections[index];
+      const root = activeSection.querySelector("[data-four-c-synthesis]");
+      if (!root) return;
+      const maxStep = slide.maxStep ?? 4;
+      const safeStep = Math.max(0, Math.min(maxStep, fourCReveal));
+      root.classList.remove("is-step-0", "is-step-1", "is-step-2", "is-step-3", "is-step-4");
+      root.classList.add(`is-step-${safeStep}`);
+      root.querySelectorAll("[data-four-c-dot]").forEach((dot) => {
+        const dotIndex = Number(dot.dataset.fourCDot);
+        dot.classList.toggle("is-on", dotIndex <= safeStep);
+      });
+      const hint = root.querySelector("[data-four-c-hint]");
+      if (hint) {
+        hint.textContent = safeStep >= maxStep ? "Fertig" : (slide.hints?.[safeStep === 0 ? 0 : safeStep + 1] ?? "Weiter");
+      }
+    };
+
     const update = (nextIndex, pushHash = true) => {
       index = Math.max(0, Math.min(sections.length - 1, nextIndex));
       agendaReveal = slides[index]?.kind === "agenda" ? (slides[index].revealIndex ?? -1) : -1;
       cardReveal = slides[index]?.revealCards ? (slides[index].revealIndex ?? 0) : 0;
+      fourCReveal = slides[index]?.kind === "localAlgorithmFourC" ? (slides[index].revealIndex ?? 0) : 0;
       sections.forEach((section, sectionIndex) => {
         section.classList.toggle("is-active", sectionIndex === index);
       });
       updateAgendaReveal();
       updateCardReveal();
+      updateFourCReveal();
       progress.style.width = `${((index + 1) / sections.length) * 100}%`;
       const title = sections[index].dataset.title || `Folie ${index + 1}`;
       document.title = `${String(index + 1).padStart(2, "0")} · ${title} · KStA.Connect Offsite`;
@@ -8799,6 +9617,11 @@
         updateCardReveal();
         return;
       }
+      if (slide?.kind === "localAlgorithmFourC" && fourCReveal < (slide.maxStep ?? 4)) {
+        fourCReveal += 1;
+        updateFourCReveal();
+        return;
+      }
       update(index + 1);
     };
 
@@ -8812,6 +9635,11 @@
       if (slide?.revealCards && cardReveal > 0) {
         cardReveal -= 1;
         updateCardReveal();
+        return;
+      }
+      if (slide?.kind === "localAlgorithmFourC" && fourCReveal > 0) {
+        fourCReveal -= 1;
+        updateFourCReveal();
         return;
       }
       update(index - 1);
@@ -8835,6 +9663,11 @@
     document.querySelector("[data-prev]").addEventListener("click", prev);
     document.querySelector("[data-next]").addEventListener("click", next);
     document.querySelector("[data-overview]").addEventListener("click", () => overview.classList.toggle("is-visible"));
+    sections.forEach((section) => {
+      section.querySelector("[data-four-c-synthesis]")?.addEventListener("click", () => {
+        if (sections[index] === section) next();
+      });
+    });
 
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden") {
