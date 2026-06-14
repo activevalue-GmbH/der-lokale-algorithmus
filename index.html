@@ -7286,53 +7286,6 @@
         note: "Neuer Block-3-Auftakt: Jetzt erst werden die zentralen strategischen Begriffe stark gemacht."
       },
       {
-        kind: "localAlgorithmDna",
-        theme: "dark",
-        title: "Der lokale Algorithmus – DNA",
-        kicker: "Strategischer Kern",
-        headline: "Der lokale Algorithmus wird zur DNA von KStA.Connect.",
-        subline: "Lebenssituationen verstehen. Angebote übersetzen. Relevanz liefern.",
-        sources: [
-          {
-            tone: "owned",
-            title: "Eigene Angebote",
-            desc: "Rausgegangen, KStA-Abende, yourJOB, yourIMMO — volle Kontrolle, volle Marge"
-          },
-          {
-            title: "Extern kuratiert",
-            desc: "Restaurants, Händler, Vereine, Kultur — KStA liefert Kontext und Reichweite"
-          },
-          {
-            title: "Redaktionell entdeckt",
-            desc: "Artikel werden automatisch zu kuratierten Objekten — ohne Mehraufwand"
-          }
-        ],
-        steps: [
-          ["1", "Verstehen", "Lebenssituation, Viertel, Interessen, Schwelle"],
-          ["2", "Übersetzen", "Angebot in Lebenskontext einbetten"],
-          ["3", "Liefern", "Ohne Suche. Zur richtigen Zeit. Passend."]
-        ],
-        contrast: "Google, Meta und Netflix sitzen hier ebenfalls — sie optimieren auf Klick. Wir auf Lebensqualität.",
-        people: [
-          {
-            scene: "group",
-            label: "Gruppe — neu in Köln",
-            quote: "„Ich will ankommen, aber weiß nicht wo anfangen.“"
-          },
-          {
-            scene: "single",
-            label: "Einzeln — etabliert, Rodenkirchen",
-            quote: "„Ich will teilhaben, nicht suchen.“"
-          },
-          {
-            scene: "family",
-            label: "Familie — Sülz, Alltag",
-            quote: "„Was können wir heute unternehmen?“"
-          }
-        ],
-        note: "Neuer erster Inhaltsslide von Block 3 nach dem gelieferten Briefing. Setzt den lokalen Algorithmus als Grundarchitektur, bevor die Produktlogik ausgefaltet wird."
-      },
-      {
         kind: "statement",
         theme: "dark",
         title: "Die Frage",
@@ -7504,11 +7457,67 @@
         note: "Vergleichsfolie zum Marktwechsel. Wichtig: Nicht Kanalwechsel, sondern Marktwechsel. Links altes Modell, rechts Zielmarkt."
       },
       {
+        kind: "statement",
+        theme: "dark",
+        title: "Definition",
+        kicker: "Die Definition",
+        headline: "Das ist der lokale Algorithmus.",
+        lead: "Er übersetzt individuelle Lebenssituationen in lokale Möglichkeiten. Andere Algorithmen optimieren den Klick. Unserer optimiert, was das Leben hier besser macht.",
+        note: "Höhepunkt von Block 3. Schließt die Kette aus Sehnsucht, Mission und Marktwechsel mit der Definition. Steht bewusst allein, der DNA-Chart danach zeigt nur die Mechanik."
+      },
+      {
+        kind: "localAlgorithmDna",
+        theme: "dark",
+        title: "Der lokale Algorithmus – DNA",
+        kicker: "Die Mechanik",
+        headline: "So wird er zur DNA von KStA.Connect.",
+        subline: "Lebenssituationen verstehen. Angebote übersetzen. Relevanz liefern.",
+        sources: [
+          {
+            tone: "owned",
+            title: "Eigene Angebote",
+            desc: "Rausgegangen, KStA-Abende, yourJOB, yourIMMO. Volle Kontrolle, volle Marge."
+          },
+          {
+            title: "Extern kuratiert",
+            desc: "Restaurants, Händler, Vereine, Kultur. KStA liefert Kontext und Reichweite."
+          },
+          {
+            title: "Redaktionell entdeckt",
+            desc: "Artikel werden automatisch zu kuratierten Objekten, ohne Mehraufwand."
+          }
+        ],
+        steps: [
+          ["1", "Verstehen", "Lebenssituation, Viertel, Interessen, Schwelle"],
+          ["2", "Übersetzen", "Angebot in Lebenskontext einbetten"],
+          ["3", "Liefern", "Ohne Suche. Zur richtigen Zeit. Passend."]
+        ],
+        contrast: "Dieselbe Architektur nutzen auch Google, Meta und Netflix. Den Unterschied macht das Ziel.",
+        people: [
+          {
+            scene: "group",
+            label: "Gruppe, neu in Köln",
+            quote: "„Ich will ankommen, aber weiß nicht wo anfangen.“"
+          },
+          {
+            scene: "single",
+            label: "Einzeln, etabliert in Rodenkirchen",
+            quote: "„Ich will teilhaben, nicht suchen.“"
+          },
+          {
+            scene: "family",
+            label: "Familie, Alltag in Sülz",
+            quote: "„Was können wir heute unternehmen?“"
+          }
+        ],
+        note: "Mechanikfolie direkt nach der Definition. Zeigt, wie der lokale Algorithmus Angebotsquellen, Lebenssituationen und Relevanzlogik verbindet."
+      },
+      {
         kind: "openQuestions",
         theme: "dark",
         title: "Drei Fragen",
         kicker: "Bevor wir weitermachen",
-        headline: "Ein Satz wie dieser löst sofort Fragen aus. Stellen wir sie uns selbst.",
+        headline: "Eine solche Neuausrichtung löst sofort Fragen aus. Stellen wir sie uns selbst.",
         questions: [
           ["01", "Wo bleibt der Journalismus, wenn der Artikel zur Transaktion führt?"],
           ["02", "Ist das nicht einfach Stadtmarketing in neuem Gewand?"],
@@ -8901,7 +8910,7 @@
                   ${slide.steps.map(([num, title, copy]) => `
                     <div class="dna-step">
                       <div class="dna-step-index">${escapeHtml(num)}</div>
-                      <div class="dna-step-copy"><strong>${escapeHtml(title)}</strong> — ${escapeHtml(copy)}</div>
+                      <div class="dna-step-copy"><strong>${escapeHtml(title)}</strong><span>${escapeHtml(copy)}</span></div>
                     </div>
                   `).join("")}
                 </div>
