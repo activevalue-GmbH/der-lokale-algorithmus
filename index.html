@@ -2698,6 +2698,21 @@
       line-height: 1.42;
     }
 
+    .interim-rows-heading {
+      max-width: 760px;
+      margin-top: clamp(28px, 3.2vw, 46px);
+      color: var(--accent);
+      font-size: clamp(15px, 1.15vw, 19px);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .interim-summary.compact-headline .interim-rows-heading + .interim-grid {
+      margin-top: clamp(14px, 1.6vw, 24px);
+    }
+
     .interim-grid {
       display: grid;
       gap: 8px;
@@ -6879,7 +6894,7 @@
         title: "Diagnosepfad",
         block: "→",
         kicker: "Diagnose",
-        headline: "Vom Alltag der Menschen zur strategischen Aufgabe.<br>Die Diagnose in sieben Schritten.",
+        headline: "Vom Alltag der Menschen zur strategischen Aufgabe.<br>Drei Phänomene münden in eine Diagnose.",
         lead: "",
         note: "Neues Trennchart fuer den Praesentationsfluss. Es trennt die harte Datenfolie vom folgenden Diagnosepfad."
       },
@@ -7006,7 +7021,7 @@
         title: "Phänomen 03",
         kicker: "Phänomen 03",
         marker: "→",
-        headline: "Der Nahraum wird wichtiger, aber nicht automatisch verständlicher.",
+        headline: "Das Leben vor der eigenen Haustür wird wichtiger. Aber es erklärt sich nicht von selbst.",
         note: "Titelchart fuer Phaenomen 03. Satz stehen lassen und wirken lassen."
       },
       {
@@ -7021,8 +7036,8 @@
             type: "bulletList",
             lines: [
               "Durch Homeoffice und hybride Arbeit verbringen viele Menschen wieder mehr Alltag in ihrer direkten Umgebung. Das Veedel wird vom Schlafplatz zum Lebensraum.",
-              "Es gibt eine gesellschaftliche Bewegung zurück in die Region. Die Menschen brauchen ihren Nahraum mehr als je zuvor.",
-              "Aber genau in dem Moment, in dem der Nahraum an Bedeutung gewinnt, wird die Infrastruktur, die ihn lesbar gemacht hat, schwächer. Menschen wissen nicht, was 500 Meter entfernt passiert."
+              "Es gibt eine gesellschaftliche Bewegung zurück in die Region. Die Menschen brauchen ihr eigenes Viertel mehr als je zuvor.",
+              "Aber genau in dem Moment, in dem das Viertel an Bedeutung gewinnt, wird die Infrastruktur, die es lesbar gemacht hat, schwächer. Menschen wissen nicht, was 500 Meter entfernt passiert."
             ]
           },
           {
@@ -7033,11 +7048,11 @@
         ],
         data: [
           ["24,4%", "aller Beschäftigten arbeiten zumindest teilweise von zu Hause. Stabil seit 2022, keine Trendumkehr erkennbar.", "ifo Konjunkturumfrage 2025"],
-          ["75% vs. 60%", "Die Bindung ans eigene Wohngebiet ist stärker als an die Stadt insgesamt. Der Nahraum ist der emotionale Anker.", "Stadt Köln 2023"],
+          ["75% vs. 60%", "Die Bindung ans eigene Wohngebiet ist stärker als an die Stadt insgesamt. Das eigene Viertel ist der emotionale Anker.", "Stadt Köln 2023"],
           ["nur 48%", "sagen, dass Orte für Freizeit und Sport in ihrer Nachbarschaft leicht erreichbar sind.", "Universität Duisburg-Essen 2024"]
         ],
         sources: "Quellen: ifo Konjunkturumfrage 2025 · Stadt Köln 2023 · Universität Duisburg-Essen 2024",
-        note: "Sachchart fuer Phaenomen 03. Der grüne Kasten ist bewusst die positive Grundbewegung: Rueckkehr in den Nahraum. Zahlen vor finaler Fassung quellenfest pruefen."
+        note: "Sachchart fuer Phaenomen 03. Der grüne Kasten ist bewusst die positive Grundbewegung: Rückkehr ins eigene Viertel. Zahlen vor finaler Fassung quellenfest pruefen."
       },
       {
         kind: "avatarPlaceholder",
@@ -7085,7 +7100,7 @@
             consequence: "Keine Änderung. Gastro-Studie ist stärkster Einzelbeleg."
           },
           {
-            phenomenon: "03 Nahraum wird wichtiger, aber schwerer lesbar.",
+            phenomenon: "03 Das Viertel wird wichtiger, aber schwerer lesbar.",
             sub: "Rückkehr in die Region ohne Orientierung",
             status: "Bestätigt",
             statusType: "confirmed",
@@ -7120,13 +7135,14 @@
         kicker: "Zwischenfazit",
         headline: "80% der Kölner leben gerne hier. Aber nur 60% sind zufrieden.",
         compactHeadline: true,
-        body: "Das ist kein Widerspruch. Das ist die Summe der drei Phänomene und der Kerndiagnose.",
+        body: "Das ist kein Widerspruch. Die Zuneigung zur Stadt ist da, aber die gelebte Verbindung zum eigenen Umfeld lässt nach. Und Zufriedenheit folgt dieser Verbindung.",
+        rowsHeading: "Gefühlte Verbundenheit, auf jeder Ebene rückläufig:",
         rows: [
           ["Nachbarschaft", "59% → 43%", "in drei Jahren"],
           ["Wohnort", "79% → 60%", "in drei Jahren"],
           ["Region", "76% → 62%", "in drei Jahren"]
         ],
-        outro: "Das Gefühl für die Stadt ist da. Die gelebte Verbindung fehlt. Und: Wer sich nicht verbunden fühlt, engagiert sich auch nicht.",
+        outro: "Das ist kein Zustand, sondern eine Bewegung. Und wer sich nicht verbunden fühlt, engagiert sich auch nicht.",
         sources: "Bertelsmann Stiftung 2023 (N=5.055) · Stadt Köln 2023 · Identity Foundation/rheingold 2025",
         note: "Zwischenfazit nach den drei Phaenomenen und der Kerndiagnose. Zahlen vor finaler Fassung quellenfest pruefen."
       },
@@ -7652,7 +7668,7 @@
           ["Filter", "neu in Köln", "Einstiege für Menschen ohne lokales Netz."],
           ["Filter", "nach Feierabend", "Passend zum echten Rhythmus des Tages."],
           ["Filter", "ohne Konsumzwang", "Dazugehören, ohne kaufen zu müssen."],
-          ["Filter", "quartiersnah", "Im Nahraum erreichbar und anschlussfähig."]
+          ["Filter", "quartiersnah", "Im eigenen Viertel erreichbar und anschlussfähig."]
         ],
         outro: "Diese Filter machen den Unterschied konkret.",
         note: "Beispiel fuer Lebenssituationsfilter. Tags werden als kleine Karten umgesetzt, damit die Folie ruhig bleibt."
@@ -8579,6 +8595,7 @@
             <span class="kicker">${escapeHtml(slide.kicker)}</span>
             <h2>${escapeHtml(slide.headline)}</h2>
             <p class="interim-body">${escapeHtml(slide.body)}</p>
+            ${slide.rowsHeading ? `<p class="interim-rows-heading">${escapeHtml(slide.rowsHeading)}</p>` : ""}
             <div class="interim-grid">
               ${slide.rows.map(([label, value, context]) => `
                 <div class="interim-row">
