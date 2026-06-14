@@ -3554,6 +3554,277 @@
       line-height: 1.12;
     }
 
+    .local-algorithm-dna {
+      align-content: center;
+      gap: clamp(22px, 2.6vw, 34px);
+      width: min(100%, 1240px);
+    }
+
+    .local-algorithm-dna-header {
+      max-width: 1080px;
+    }
+
+    .local-algorithm-dna h2 {
+      max-width: 980px;
+      color: var(--paper);
+      font-size: clamp(40px, 4.3vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .local-algorithm-dna-subline {
+      max-width: 940px;
+      margin-top: clamp(8px, 0.9vw, 12px);
+      color: rgba(250, 250, 248, 0.48);
+      font-size: clamp(14px, 1.22vw, 17px);
+      font-weight: 400;
+      line-height: 1.42;
+      letter-spacing: 0.01em;
+    }
+
+    .local-algorithm-dna-flow {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(24px, 42px) minmax(0, 1.03fr) minmax(24px, 42px) minmax(0, 1fr);
+      gap: clamp(12px, 1.35vw, 18px);
+      align-items: center;
+      width: 100%;
+    }
+
+    .dna-column-label {
+      margin-bottom: clamp(8px, 0.9vw, 12px);
+      color: rgba(250, 250, 248, 0.42);
+      font-size: clamp(9px, 0.78vw, 11px);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .dna-source-list,
+    .dna-people-list {
+      display: grid;
+      gap: clamp(10px, 1vw, 14px);
+    }
+
+    .dna-source-card {
+      position: relative;
+      display: grid;
+      gap: 4px;
+      min-height: clamp(82px, 7.6vw, 106px);
+      padding: clamp(14px, 1.45vw, 20px) clamp(15px, 1.6vw, 22px);
+      border: 1px solid rgba(250, 250, 248, 0.09);
+      border-radius: 14px;
+      background: rgba(250, 250, 248, 0.025);
+    }
+
+    .dna-source-card.is-owned {
+      border-color: rgba(200, 0, 14, 0.42);
+      background: linear-gradient(135deg, rgba(200, 0, 14, 0.1), rgba(250, 250, 248, 0.025));
+    }
+
+    .dna-source-card strong {
+      color: rgba(250, 250, 248, 0.9);
+      font-size: clamp(15px, 1.25vw, 18px);
+      line-height: 1.18;
+    }
+
+    .dna-source-card span {
+      color: rgba(250, 250, 248, 0.46);
+      font-size: clamp(11px, 0.94vw, 14px);
+      line-height: 1.34;
+    }
+
+    .dna-source-card::before {
+      content: "";
+      position: absolute;
+      top: clamp(17px, 1.5vw, 21px);
+      left: -4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(250, 250, 248, 0.32);
+    }
+
+    .dna-source-card.is-owned::before {
+      background: var(--red);
+    }
+
+    .dna-arrow {
+      display: grid;
+      place-items: center;
+      min-height: 80px;
+    }
+
+    .dna-arrow-line {
+      position: relative;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(250, 250, 248, 0.18), transparent);
+    }
+
+    .dna-arrow-line::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 1px;
+      width: 8px;
+      height: 8px;
+      border-top: 1px solid rgba(250, 250, 248, 0.24);
+      border-right: 1px solid rgba(250, 250, 248, 0.24);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .dna-core-box {
+      position: relative;
+      display: grid;
+      gap: clamp(16px, 1.7vw, 24px);
+      padding: clamp(24px, 2.55vw, 36px) clamp(20px, 2.2vw, 30px);
+      border: 1.5px solid var(--red);
+      border-radius: 22px;
+      background: radial-gradient(ellipse at top, rgba(200, 0, 14, 0.16), transparent 68%), rgba(200, 0, 14, 0.04);
+      text-align: center;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+    }
+
+    .dna-core-logo {
+      color: var(--paper);
+      font-family: var(--serif);
+      font-size: clamp(23px, 2vw, 30px);
+      line-height: 1;
+    }
+
+    .dna-core-logo span {
+      color: var(--red);
+    }
+
+    .dna-core-badge {
+      justify-self: center;
+      margin-top: -6px;
+      padding: 4px 9px;
+      border: 1px solid rgba(200, 0, 14, 0.48);
+      border-radius: 999px;
+      color: var(--red);
+      font-size: clamp(9px, 0.72vw, 11px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .dna-steps {
+      display: grid;
+      gap: clamp(9px, 0.95vw, 13px);
+      text-align: left;
+    }
+
+    .dna-step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+    }
+
+    .dna-step-index {
+      display: grid;
+      place-items: center;
+      width: clamp(22px, 1.8vw, 28px);
+      height: clamp(22px, 1.8vw, 28px);
+      border: 1px solid rgba(200, 0, 14, 0.42);
+      border-radius: 999px;
+      color: var(--red);
+      background: rgba(200, 0, 14, 0.14);
+      font-size: clamp(10px, 0.78vw, 12px);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .dna-step-copy {
+      color: rgba(250, 250, 248, 0.7);
+      font-size: clamp(12px, 1vw, 15px);
+      line-height: 1.34;
+    }
+
+    .dna-step-copy strong {
+      color: var(--paper);
+      font-weight: 800;
+    }
+
+    .dna-contrast {
+      padding-top: clamp(12px, 1.1vw, 16px);
+      border-top: 1px solid rgba(250, 250, 248, 0.08);
+      color: rgba(250, 250, 248, 0.42);
+      font-size: clamp(10px, 0.84vw, 12px);
+      font-style: italic;
+      line-height: 1.48;
+    }
+
+    .dna-person-card {
+      display: grid;
+      grid-template-columns: clamp(58px, 5.7vw, 78px) minmax(0, 1fr);
+      gap: clamp(11px, 1.05vw, 15px);
+      align-items: center;
+      min-height: clamp(82px, 7.6vw, 106px);
+      padding: clamp(12px, 1.22vw, 17px) 0;
+      border-top: 1px solid rgba(250, 250, 248, 0.08);
+    }
+
+    .dna-person-card:last-child {
+      border-bottom: 1px solid rgba(250, 250, 248, 0.08);
+    }
+
+    .dna-illustration {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .dna-illustration .skin {
+      fill: rgba(250, 250, 248, 0.72);
+    }
+
+    .dna-illustration .body {
+      fill: rgba(250, 250, 248, 0.34);
+    }
+
+    .dna-illustration .accent {
+      fill: rgba(200, 0, 14, 0.88);
+    }
+
+    .dna-illustration .line {
+      stroke: rgba(250, 250, 248, 0.28);
+      stroke-width: 2;
+      stroke-linecap: round;
+      fill: none;
+    }
+
+    .dna-person-copy small {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(250, 250, 248, 0.44);
+      font-size: clamp(9px, 0.8vw, 11px);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.25;
+    }
+
+    .dna-person-copy strong {
+      display: block;
+      color: rgba(250, 250, 248, 0.72);
+      font-family: var(--serif);
+      font-size: clamp(15px, 1.35vw, 20px);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    @media (max-width: 1050px) {
+      .local-algorithm-dna-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .dna-arrow {
+        min-height: 28px;
+        transform: rotate(90deg);
+      }
+    }
+
     .phenomenon-detail {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.62fr);
@@ -6384,6 +6655,53 @@
         note: "Neuer Block-3-Auftakt: Jetzt erst werden die zentralen strategischen Begriffe stark gemacht."
       },
       {
+        kind: "localAlgorithmDna",
+        theme: "dark",
+        title: "Der lokale Algorithmus – DNA",
+        kicker: "Strategischer Kern",
+        headline: "Der lokale Algorithmus",
+        subline: "Die DNA von KStA.Connect — Lebenssituationen verstehen. Angebote übersetzen. Relevanz liefern.",
+        sources: [
+          {
+            tone: "owned",
+            title: "Eigene Angebote",
+            desc: "Rausgegangen, KStA-Abende, yourJOB, yourIMMO — volle Kontrolle, volle Marge"
+          },
+          {
+            title: "Extern kuratiert",
+            desc: "Restaurants, Händler, Vereine, Kultur — KStA liefert Kontext und Reichweite"
+          },
+          {
+            title: "Redaktionell entdeckt",
+            desc: "Artikel werden automatisch zu kuratierten Objekten — ohne Mehraufwand"
+          }
+        ],
+        steps: [
+          ["1", "Verstehen", "Lebenssituation, Viertel, Interessen, Schwelle"],
+          ["2", "Übersetzen", "Angebot in Lebenskontext einbetten"],
+          ["3", "Liefern", "Ohne Suche. Zur richtigen Zeit. Passend."]
+        ],
+        contrast: "Google, Meta und Netflix sitzen hier ebenfalls — sie optimieren auf Klick. Wir auf Lebensqualität.",
+        people: [
+          {
+            scene: "group",
+            label: "Gruppe — neu in Köln",
+            quote: "„Ich will ankommen, aber weiß nicht wo anfangen.“"
+          },
+          {
+            scene: "single",
+            label: "Einzeln — etabliert, Rodenkirchen",
+            quote: "„Ich will teilhaben, nicht suchen.“"
+          },
+          {
+            scene: "family",
+            label: "Familie — Sülz, Alltag",
+            quote: "„Was können wir heute unternehmen?“"
+          }
+        ],
+        note: "Neuer erster Inhaltsslide von Block 3 nach dem gelieferten Briefing. Setzt den lokalen Algorithmus als Grundarchitektur, bevor die Produktlogik ausgefaltet wird."
+      },
+      {
         kind: "statement",
         theme: "dark",
         title: "Die Frage",
@@ -7350,6 +7668,41 @@
         `).join("")}
       </div>`;
 
+    const renderDnaPeopleScene = (scene) => {
+      const scenes = {
+        group: `
+          <svg class="dna-illustration" viewBox="0 0 92 76" aria-hidden="true" focusable="false">
+            <path class="line" d="M14 66 C28 58, 38 60, 50 66 S73 70, 82 61" />
+            <circle class="accent" cx="31" cy="22" r="8" />
+            <path class="accent" d="M20 58 C21 39, 26 32, 32 32 S43 40, 43 58 Z" opacity="0.68" />
+            <circle class="skin" cx="50" cy="26" r="7" />
+            <path class="body" d="M40 60 C41 45, 45 37, 51 37 S61 46, 62 60 Z" />
+            <circle class="skin" cx="67" cy="29" r="6" />
+            <path class="body" d="M59 62 C60 49, 63 40, 68 40 S77 49, 78 62 Z" opacity="0.78" />
+            <circle class="skin" cx="18" cy="33" r="5" opacity="0.68" />
+            <path class="body" d="M12 64 C13 52, 15 43, 19 43 S26 53, 27 64 Z" opacity="0.54" />
+          </svg>`,
+        single: `
+          <svg class="dna-illustration" viewBox="0 0 92 76" aria-hidden="true" focusable="false">
+            <path class="line" d="M26 66 C38 58, 54 58, 66 66" />
+            <circle class="skin" cx="46" cy="20" r="11" />
+            <path class="body" d="M27 66 C29 43, 36 33, 46 33 S63 45, 65 66 Z" />
+            <path class="accent" d="M38 35 C43 39, 50 39, 55 35 C54 45, 51 55, 47 66 L43 66 C40 55, 38 45, 38 35 Z" opacity="0.65" />
+          </svg>`,
+        family: `
+          <svg class="dna-illustration" viewBox="0 0 92 76" aria-hidden="true" focusable="false">
+            <path class="line" d="M10 67 C25 57, 37 58, 47 66 S68 72, 83 61" />
+            <circle class="skin" cx="28" cy="22" r="9" />
+            <path class="body" d="M14 65 C16 43, 21 33, 29 33 S43 45, 45 65 Z" />
+            <circle class="skin" cx="59" cy="24" r="8" />
+            <path class="body" d="M47 66 C48 46, 53 35, 60 35 S73 46, 75 66 Z" opacity="0.78" />
+            <circle class="accent" cx="45" cy="39" r="6" />
+            <path class="accent" d="M36 68 C37 55, 40 47, 46 47 S55 56, 56 68 Z" opacity="0.62" />
+          </svg>`
+      };
+      return scenes[scene] || scenes.group;
+    };
+
     const renderSlideInner = (slide) => {
       if (slide.kind === "title") {
         return `
@@ -7818,6 +8171,59 @@
                   `).join("")}
                 </article>
               `).join("")}
+            </div>
+          </div>`;
+      }
+
+      if (slide.kind === "localAlgorithmDna") {
+        return `
+          <div class="content local-algorithm-dna">
+            <div class="local-algorithm-dna-header">
+              <span class="kicker">${escapeHtml(slide.kicker)}</span>
+              <h2>${escapeHtml(slide.headline)}</h2>
+              <p class="local-algorithm-dna-subline">${escapeHtml(slide.subline)}</p>
+            </div>
+            <div class="local-algorithm-dna-flow">
+              <section class="dna-sources">
+                <div class="dna-column-label">Angebotsquellen</div>
+                <div class="dna-source-list">
+                  ${slide.sources.map((source) => `
+                    <article class="dna-source-card ${source.tone === "owned" ? "is-owned" : ""}">
+                      <strong>${escapeHtml(source.title)}</strong>
+                      <span>${escapeHtml(source.desc)}</span>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+              <div class="dna-arrow" aria-hidden="true"><div class="dna-arrow-line"></div></div>
+              <section class="dna-core-box">
+                <div class="dna-core-logo">KStA<span>.</span>Connect</div>
+                <div class="dna-core-badge">Lokaler Algorithmus</div>
+                <div class="dna-steps">
+                  ${slide.steps.map(([num, title, copy]) => `
+                    <div class="dna-step">
+                      <div class="dna-step-index">${escapeHtml(num)}</div>
+                      <div class="dna-step-copy"><strong>${escapeHtml(title)}</strong> — ${escapeHtml(copy)}</div>
+                    </div>
+                  `).join("")}
+                </div>
+                <div class="dna-contrast">${escapeHtml(slide.contrast)}</div>
+              </section>
+              <div class="dna-arrow" aria-hidden="true"><div class="dna-arrow-line"></div></div>
+              <section class="dna-people">
+                <div class="dna-column-label">Menschen in der Region</div>
+                <div class="dna-people-list">
+                  ${slide.people.map((person) => `
+                    <article class="dna-person-card">
+                      ${renderDnaPeopleScene(person.scene)}
+                      <div class="dna-person-copy">
+                        <small>${escapeHtml(person.label)}</small>
+                        <strong>${escapeHtml(person.quote)}</strong>
+                      </div>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
             </div>
           </div>`;
       }
