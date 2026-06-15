@@ -183,6 +183,29 @@
       line-height: 1.02;
     }
 
+    .slide.inszenierung-split-balanced .content.split {
+      width: min(100%, 1220px);
+      grid-template-columns: minmax(0, 0.93fr) minmax(500px, 0.82fr);
+      gap: clamp(54px, 6vw, 90px);
+      align-content: start;
+      align-items: start;
+      padding-top: clamp(58px, 6.6vh, 82px);
+      transform: none;
+    }
+
+    .slide.inszenierung-split-balanced .split.split-headline-compact h2 {
+      max-width: 620px;
+      font-size: clamp(40px, 5.15vw, 72px);
+      line-height: 1.02;
+    }
+
+    .slide.inszenierung-split-balanced .split.split-bullets-compact .split-bullets {
+      max-width: 560px;
+      gap: clamp(12px, 1.25vw, 18px);
+      font-size: clamp(16.5px, 1.22vw, 19px);
+      line-height: 1.36;
+    }
+
     .kicker {
       display: block;
       margin-bottom: clamp(16px, 2vw, 26px);
@@ -9503,6 +9526,7 @@
     const verticalBalanceSoftSlides = new Set([65]);
     const verticalBalanceStrongSlides = new Set([88]);
     const assetInventorySlideTitles = new Set(["Bestand · Content", "Bestand · Context", "Bestand · Connect", "Bestand · Checkout"]);
+    const inszenierungBalancedSlides = new Set([66]);
 
     const getRoomLayoutClass = (slideNumber, slide) => {
       const classes = [];
@@ -9513,6 +9537,7 @@
       if (verticalBalanceSoftSlides.has(slideNumber)) classes.push("vertical-balance-soft");
       if (verticalBalanceStrongSlides.has(slideNumber)) classes.push("vertical-balance-strong");
       if (assetInventorySlideTitles.has(slide.title)) classes.push("asset-inventory-balanced", "asset-inventory-room");
+      if (inszenierungBalancedSlides.has(slideNumber)) classes.push("inszenierung-split-balanced");
       return classes.join(" ");
     };
 
