@@ -1233,13 +1233,15 @@
 
     @media (prefers-reduced-motion: reduce) {
       .cards.is-auto-reveal .card,
-      .cards-outro.is-auto-reveal {
+      .cards-outro.is-auto-reveal,
+      .strategy-market-shift .market-shift-column {
         opacity: 1;
         transform: none;
       }
 
       .slide.is-active .cards.is-auto-reveal .card,
-      .slide.is-active .cards-outro.is-auto-reveal {
+      .slide.is-active .cards-outro.is-auto-reveal,
+      .slide.is-active .strategy-market-shift .market-shift-column {
         animation: none;
       }
     }
@@ -3471,9 +3473,42 @@
       background: rgba(250, 250, 248, 0.035);
     }
 
+    .strategy-market-shift .market-shift-column {
+      opacity: 0;
+      transform: translateX(-22px);
+    }
+
+    .slide.is-active .strategy-market-shift .market-shift-column {
+      animation: marketShiftColumnReveal 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 180ms;
+    }
+
+    .slide.is-active .strategy-market-shift .market-shift-column:nth-child(2) {
+      animation-delay: 500ms;
+    }
+
     .market-shift-column.is-new {
       border-color: rgba(180, 28, 32, 0.48);
       background: linear-gradient(135deg, rgba(180, 28, 32, 0.14), rgba(250, 250, 248, 0.035));
+    }
+
+    .slide.is-active .strategy-market-shift .market-shift-column.is-new {
+      animation-name: marketShiftColumnRevealNew;
+    }
+
+    @keyframes marketShiftColumnReveal {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes marketShiftColumnRevealNew {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+        box-shadow: 0 18px 48px rgba(180, 28, 32, 0.1);
+      }
     }
 
     .market-shift-column h3 {
