@@ -306,6 +306,9 @@
       border-top: 1px solid rgba(28, 25, 23, 0.12);
       border-bottom: 1px solid rgba(28, 25, 23, 0.08);
       overflow: hidden;
+      perspective: 980px;
+      perspective-origin: 50% 46%;
+      transform-style: preserve-3d;
     }
 
     .quote-cloud-phrase {
@@ -319,8 +322,62 @@
       font-weight: 400;
       line-height: 1.04;
       letter-spacing: -0.015em;
-      transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+      transform: translate(-50%, -50%) translate3d(var(--fly-x, 0px), var(--fly-y, 0px), -760px) scale(0.24) rotate(calc(var(--r, 0deg) - 8deg));
+      transform-origin: 50% 50%;
+      opacity: 0;
+      filter: blur(7px);
       white-space: normal;
+      will-change: transform, opacity, filter;
+      backface-visibility: hidden;
+    }
+
+    .slide.is-active .quote-cloud-stage.is-news-burst .quote-cloud-phrase {
+      animation: newsBurstIn 920ms cubic-bezier(0.15, 0.88, 0.24, 1.04) both;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(1) { --delay: 160ms; --fly-x: -42px; --fly-y: 18px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(2) { --delay: 620ms; --fly-x: 38px; --fly-y: 4px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(3) { --delay: 980ms; --fly-x: -8px; --fly-y: 32px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(4) { --delay: 1120ms; --fly-x: -55px; --fly-y: -10px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(5) { --delay: 1360ms; --fly-x: 50px; --fly-y: 24px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(6) { --delay: 1560ms; --fly-x: 4px; --fly-y: 42px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(7) { --delay: 1710ms; --fly-x: -46px; --fly-y: 32px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(8) { --delay: 1840ms; --fly-x: 36px; --fly-y: 36px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(9) { --delay: 2050ms; --fly-x: -10px; --fly-y: 48px; }
+    .quote-cloud-stage.is-news-burst .quote-cloud-phrase:nth-child(10) { --delay: 2140ms; --fly-x: 34px; --fly-y: 52px; }
+
+    @keyframes newsBurstIn {
+      0% {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translate(-50%, -50%) translate3d(var(--fly-x, 0px), var(--fly-y, 0px), -820px) scale(0.18) rotate(calc(var(--r, 0deg) - 10deg));
+      }
+      58% {
+        opacity: 1;
+        filter: blur(0.6px);
+        transform: translate(-50%, -50%) translate3d(0, 0, 80px) scale(1.12) rotate(calc(var(--r, 0deg) + 0.8deg));
+      }
+      76% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(-50%, -50%) translate3d(0, 0, -18px) scale(0.96) rotate(var(--r, 0deg));
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(-50%, -50%) translate3d(0, 0, 0) scale(1) rotate(var(--r, 0deg));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .quote-cloud-phrase,
+      .slide.is-active .quote-cloud-stage.is-news-burst .quote-cloud-phrase {
+        animation: none;
+        opacity: 1;
+        filter: none;
+        transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+      }
     }
 
     .quote-cloud-phrase.tone-strong { --a: 1; }
@@ -3501,12 +3558,12 @@
     }
 
     .slide.is-active .strategy-market-shift .market-shift-column {
-      animation: marketShiftColumnReveal 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-      animation-delay: 180ms;
+      animation: marketShiftColumnReveal 1300ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 420ms;
     }
 
     .slide.is-active .strategy-market-shift .market-shift-column:nth-child(2) {
-      animation-delay: 500ms;
+      animation-delay: 1000ms;
     }
 
     .market-shift-column.is-new {
@@ -7539,9 +7596,8 @@
         kind: "statement",
         theme: "dark",
         title: "Definition",
-        kicker: "Die Definition",
         headline: "Das ist der lokale Algorithmus.",
-        lead: "Er übersetzt individuelle Lebenssituationen in lokale Möglichkeiten. Andere Algorithmen optimieren den Klick. Unserer optimiert, was das Leben hier besser macht.",
+        lead: "Er übersetzt individuelle Lebenssituationen in lokale Möglichkeiten. Andere Algorithmen optimieren Aufmerksamkeit. Unserer Zugehörigkeit.",
         note: "Höhepunkt von Block 3. Schließt die Kette aus Sehnsucht, Mission und Marktwechsel mit der Definition. Steht bewusst allein, der DNA-Chart danach zeigt nur die Mechanik."
       },
       {
@@ -8496,7 +8552,7 @@
       if (slide.kind === "statement") {
         return `
           <div class="content narrow">
-            <span class="kicker">${escapeHtml(slide.kicker)}</span>
+            ${slide.kicker ? `<span class="kicker">${escapeHtml(slide.kicker)}</span>` : ""}
             ${slide.marker ? `<div class="statement-marker" aria-hidden="true">${escapeHtml(slide.marker)}</div>` : ""}
             <h2>${allowEm(slide.headline)}</h2>
             ${slide.quoteLine ? `<p class="statement-quote-line ${slide.quoteStyle === "newspaperCall" ? "is-newspaper-call" : ""}">${escapeHtml(slide.quoteLine)}</p>` : ""}
@@ -8533,8 +8589,8 @@
               <h2>${escapeHtml(slide.headline)}</h2>
               ${slide.lead ? `<p class="lead">${escapeHtml(slide.lead)}</p>` : ""}
             </div>
-            <div class="quote-cloud-stage" aria-label="Regionale Freude-Sätze">
-              ${slide.quotes.map((item) => `<span class="quote-cloud-phrase tone-${escapeHtml(item.tone || "medium")}" style="--x:${escapeHtml(item.x)};--y:${escapeHtml(item.y)};--s:${escapeHtml(item.size)};--w:${escapeHtml(item.w || "420px")};--r:${escapeHtml(item.rotate || "0deg")};">${escapeHtml(item.text)}</span>`).join("")}
+            <div class="quote-cloud-stage is-news-burst" aria-label="Regionale Freude-Sätze">
+              ${slide.quotes.map((item, quoteIndex) => `<span class="quote-cloud-phrase tone-${escapeHtml(item.tone || "medium")}" data-quote-index="${quoteIndex}" style="--x:${escapeHtml(item.x)};--y:${escapeHtml(item.y)};--s:${escapeHtml(item.size)};--w:${escapeHtml(item.w || "420px")};--r:${escapeHtml(item.rotate || "0deg")};">${escapeHtml(item.text)}</span>`).join("")}
             </div>
           </div>`;
       }
