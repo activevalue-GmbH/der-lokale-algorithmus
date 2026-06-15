@@ -6476,6 +6476,27 @@
       line-height: 1.14;
     }
 
+    .phenomenon-proportional .data-point-qualitative {
+      gap: clamp(5px, 0.65vw, 9px);
+    }
+
+    .phenomenon-proportional .data-point-qualitative .data-value {
+      font-size: clamp(34px, 3.15vw, 46px);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+    }
+
+    .phenomenon-proportional .data-point-qualitative .data-label {
+      font-size: clamp(13px, 1.08vw, 16px);
+      line-height: 1.18;
+      max-width: 430px;
+    }
+
+    .phenomenon-proportional .data-point-qualitative .data-source {
+      font-size: clamp(10px, 0.82vw, 12px);
+      line-height: 1.12;
+    }
+
     .insight-line {
       margin-top: clamp(10px, 1.25vw, 16px);
       padding: clamp(10px, 1.05vw, 15px) clamp(14px, 1.45vw, 22px);
@@ -7107,7 +7128,7 @@
         data: [
           ["24,4%", "aller Beschäftigten arbeiten zumindest teilweise von zu Hause. Stabil seit 2022, keine Trendumkehr erkennbar.", "ifo Konjunkturumfrage 2025"],
           ["75% vs. 60%", "Die Zufriedenheit mit dem eigenen Wohngebiet ist höher als mit der Stadt insgesamt. Lebensqualität entscheidet sich im unmittelbaren Umfeld.", "Stadt Köln 2023"],
-          ["Nähe heißt noch nicht Zugang", "Viele lokale Möglichkeiten werden erst relevant, wenn sie passend, verständlich und anschlussfähig werden.", "JTBD-Primärforschung KStA.Connect 2025/26"]
+          ["Nähe heißt noch nicht Zugang", "Viele lokale Möglichkeiten werden erst relevant, wenn sie passend, verständlich und anschlussfähig werden.", "JTBD-Primärforschung KStA.Connect 2025/26", "qualitative"]
         ],
         sources: "Quellen: ifo Konjunkturumfrage 2025 · Stadt Köln, Strukturdatenerhebung 2023 · JTBD-Primärforschung KStA.Connect 2025/26",
         note: "Sachchart fuer Phaenomen 03. Der grüne Kasten ist bewusst die positive Grundbewegung: Rückkehr ins eigene Viertel. Zahlen vor finaler Fassung quellenfest pruefen."
@@ -7166,7 +7187,7 @@
             consequence: "Leverkusen-Studie direkt deckungsgleich."
           },
           {
-            phenomenon: "04-07 Lücke, neue Formen, Vertrauen.",
+            phenomenon: "Querbefund: Lücke, neue Formen, Vertrauen.",
             sub: "Digitale Überflutung, Filterproblem, Qualitätsbedürfnis",
             status: "Bestätigt",
             statusType: "confirmed",
@@ -9183,8 +9204,8 @@
                 }).join("")}
               </div>
               <div class="data-stack">
-                ${slide.data.map(([value, label, source]) => `
-                  <div class="data-point">
+                ${slide.data.map(([value, label, source, variant]) => `
+                  <div class="data-point ${variant === "qualitative" ? "data-point-qualitative" : ""}">
                     <div class="data-value">${escapeHtml(value)}</div>
                     <div class="data-label">${escapeHtml(label)}</div>
                     <div class="data-source">${escapeHtml(source)}</div>
