@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#F5F0E7">
-  <title>Stadtagent · Ein Abend. Ein Wiedersehen.</title>
+  <title>Stadtagenten · Ein Abend. Ein Wiedersehen.</title>
   <style id="embedded-fonts">@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap");</style>
   <style id="app-styles">:root {
   --bg: #f5f0e7;
@@ -469,7 +469,7 @@ strong, b { font-weight: 700; }
 <body>
   <div class="page-shell">
     <header class="project-header">
-      <div class="project-brand"><span class="brand-dot" aria-hidden="true"></span><span>Stadtagent</span><span class="project-caption">Petrol &amp; Sand</span></div>
+      <div class="project-brand"><span class="brand-dot" aria-hidden="true"></span><span>Stadtagenten</span><span class="project-caption">Petrol &amp; Sand</span></div>
       <div class="utility-group">
         <button type="button" class="text-button" data-action="intro">Ausgangslage</button>
         <button type="button" class="text-button" data-action="business">Einordnung</button>
@@ -478,7 +478,7 @@ strong, b { font-weight: 700; }
     </header>
 
     <div class="persona-strip" aria-label="Beispielperson auswählen">
-      <span class="persona-label">Zwei Menschen. Derselbe Stadtagent.</span>
+      <span class="persona-label">Zwei Menschen. Dieselben Stadtagenten.</span>
       <div class="persona-tabs" role="group" aria-label="Profil wechseln">
         <button type="button" data-action="profile-jana" aria-pressed="true">Jana · Erleben</button>
         <button type="button" data-action="profile-helga" aria-pressed="false">Helga · Themen</button>
@@ -506,7 +506,7 @@ strong, b { font-weight: 700; }
       </aside>
     </section>
 
-    <section id="prototype-view" class="prototype-grid" hidden aria-label="Interaktiver Stadtagent-Prototyp">
+    <section id="prototype-view" class="prototype-grid" hidden aria-label="Interaktiver Stadtagenten-Prototyp">
       <aside class="story-aside">
         <p class="eyebrow">Eine Geschichte in vier Teilen</p>
         <h2>Aus einer Idee<br>wird ein Treffen.</h2>
@@ -519,9 +519,9 @@ strong, b { font-weight: 700; }
         <p class="small muted">Entscheidungen im Handy verändern den Ablauf. Die Vorführung überspringt keine erforderlichen Angaben.</p>
       </aside>
       <div class="demo-column">
-        <main class="device" aria-label="Stadtagent auf Janas Handy">
+        <main class="device" aria-label="Stadtagenten auf Janas Handy">
           <header class="app-header">
-            <button type="button" class="wordmark" data-action="home" aria-label="Stadtagent Startseite"><span class="brand-dot" aria-hidden="true"></span>Stadtagent</button>
+            <button type="button" class="wordmark" data-action="home" aria-label="Stadtagenten Startseite"><span class="brand-dot" aria-hidden="true"></span>Stadtagenten</button>
             <button type="button" class="profile-avatar" data-action="profile-toggle" aria-label="Profil wechseln" title="Jana oder Helga ansehen">J</button>
           </header>
           <div id="app-content"></div>
@@ -684,7 +684,7 @@ strong, b { font-weight: 700; }
         hSection('Nicht allein','<div class="h-social-row"><span class="h-avatar">I</span><div><strong>Ingrid mitnehmen?</strong>Gemeinsam zu einer Veranstaltung gehen oder sich einer neuen Runde anschlie\u00dfen. Entdecke, mit wem du deine Interessen teilen kannst.</div></div>'+hbutton('Menschen & Gruppen ansehen','h-people','secondary'))+helgaDemoNote,
         {kicker:'DEINE STADT \u00b7 DEINE THEMEN',back:null});
     }
-    function hTopic(){return screen('Glauben & Gesellschaft.','<p class="lede">Ein Thema, dem du folgen kannst. Journalismus liefert Einordnung. Der Stadtagent verbindet sie mit passenden Orten und Menschen.</p>'+
+    function hTopic(){return screen('Glauben & Gesellschaft.','<p class="lede">Ein Thema, dem du folgen kannst. Journalismus liefert Einordnung. Die Stadtagenten verbinden sie mit passenden Orten und Menschen.</p>'+
       '<div class="card"><div class="h-kicker"><span class="h-verified">THEMENWELT</span><span class="h-flag">REDAKTION + ERLEBNISSE</span></div><h2 class="h-card-heading">Was bewegt Kirche und Stadt?</h2><div class="h-topic-list"><span>Dom & Stadtgesellschaft</span><span>Ethik</span><span>Kirche</span><span>Philosophie</span></div>'+hbutton(H.following?'\u2713 Du folgst dem Thema \u00b7 Nicht mehr folgen':'Diesem Thema folgen','h-follow',H.following?'secondary':'primary')+'</div>'+
       '<div class="h-real-story"><div class="h-byline">'+authorImage()+'<div class="h-author-details"><strong>Joachim Frank</strong>Chefkorrespondent und Mitglied der KStA-Chefredaktion.<br>Studierte Theologie und Philosophie.</div></div>'+authorCredit+'<p class="tagline">Kirche, Gesellschaft, ethische Fragen: Journalismus, der Hintergründe zeigt und neue Perspektiven eröffnet.</p>'+externalLink(frankAuthorUrl,'Autorenprofil bei KStA')+'</div>'+
       hSection('Aktuelle Beitr\u00e4ge','<div class="h-short-list">'+realArticleCard('dom',false)+realArticleCard('meinung',true)+realArticleCard('studie',true)+'</div>')+
@@ -759,7 +759,7 @@ strong, b { font-weight: 700; }
       const story=document.querySelector('.story-aside');
       if(story.dataset.mode!==activePersona){story.innerHTML=activePersona==='helga'?helgaStory:originalJanaStory;story.dataset.mode=activePersona;}
       const avatar=document.querySelector('.app-header .profile-avatar');if(avatar){avatar.textContent=activePersona==='helga'?'H':'J';avatar.setAttribute('aria-label',activePersona==='helga'?'Helgas Profil · wechseln':'Janas Profil · wechseln');}
-      const device=document.querySelector('.device');if(device)device.setAttribute('aria-label',activePersona==='helga'?'Stadtagent auf Helgas Handy':'Stadtagent auf Janas Handy');
+      const device=document.querySelector('.device');if(device)device.setAttribute('aria-label',activePersona==='helga'?'Stadtagenten auf Helgas Handy':'Stadtagenten auf Janas Handy');
       document.querySelectorAll('[data-action="profile-jana"]').forEach(b=>b.setAttribute('aria-pressed',String(activePersona==='jana')));
       document.querySelectorAll('[data-action="profile-helga"]').forEach(b=>b.setAttribute('aria-pressed',String(activePersona==='helga')));
     }
